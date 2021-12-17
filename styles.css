@@ -306,6 +306,10 @@ button {
   .card {
     max-width: 732px;
   }
+
+  .service-grid {
+    margin-top: 200px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
