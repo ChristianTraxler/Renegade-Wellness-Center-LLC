@@ -1,41 +1,39 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
   
 /* Style the body */
 body {
-    font-family: Arial;
-    margin: 0;
-    background-color: #8DC7C1;
+  font-family: Arial;
+  margin: 0;
+  background-color: #8DC7C1;
 }
   
 /* Header/logo Title */
 .header {
-    /* padding: 60px; */
-    text-align: center;
-    background-color: #8DC7C1;
-    /* color: white; */
+  text-align: center;
+  background-color: #8DC7C1;
 }
   
 /* Style the top navigation bar */
 .navbar {
-    display: flex;
-    background-color: #333;
+  display: flex;
+  background-color: #333;
 }
   
 /* Style the navigation bar links */
 .navbar a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-    grid-gap: 10px;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  grid-gap: 10px;
 }
   
 /* Change color on hover */
 .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 .menu ul {
@@ -45,8 +43,6 @@ body {
 	grid-gap: 10px;
 	padding: 0;
 	margin-top: 40px;
-    /* margin: auto; */
-    /* padding-bottom: 200px; */
 }
 
 .menu a {
@@ -62,8 +58,8 @@ body {
 }
 
 button {
-    background: #333;;
-    border: 0;
+  background: #333;;
+  border: 0;
 	padding: 10px 10px;
 	color: white;
 	border-radius: 5px;
@@ -84,80 +80,77 @@ button {
 }
 
 .price {
-    display: flex;
-    padding: 20px;
-    justify-content: center;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
 }
 
 .book {
-    display: flex;
-    justify-content: center;
-    padding-top: 40px;
-    padding-left: 20px;
-    margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-left: 20px;
+  margin-bottom: 0;
 }
 
 .booking {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .book_now {
-    display: flex;
-    justify-content: center;
-    background-color: #204068;
-    border: none;
-    color: white;
-    height: 40px;
-    text-transform: uppercase;
-    font-family: Georgia, serif;
-    letter-spacing: 1px;
-    line-height: 38px;
-    padding: 0 28px;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 14px;
-    cursor: pointer;
-    display: inline-block;
+  display: flex;
+  justify-content: center;
+  background-color: #204068;
+  border: none;
+  color: white;
+  height: 40px;
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+  line-height: 38px;
+  padding: 0 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
 	text-decoration: none;
 	box-shadow: 5px 8px 12px #888888;
 }
   
 /* Column container */
 .row {  
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
   
 /* Create two unequal columns that sits next to each other */
   /* Sidebar/left column */
 .side {
-    flex: 30%;
-    /* background-color: #f1f1f1; */
-    padding: 10px;
+  flex: 30%;
+  padding: 10px;
 }
   
 /* Main column */
 .main {
-    flex: 70%;
-    background-color: #8DC7C1;
+  flex: 70%;
+  background-color: #8DC7C1;
 }
   
 /* Image, for homepage */
 .lungs {
-    display: flex;
+  display: flex;
 	float: left;
-    width: 50%;
+  width: 50%;
 	height: 100%;
-    margin: 30px;
+  margin: 30px;
 	margin-top: 0;
 }
 
 .side {
-    display: flex;
-    float: left;
-    font-size: 36px;
-    /* margin-top: 20px; */
-    /* line-height: 0.6em; */
+  display: flex;
+  float: left;
+  font-size: 36px;
 }
 
 .p1 {
@@ -166,21 +159,20 @@ button {
 }
 
 .info {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .indent {
-    text-indent: 30px;
+  text-indent: 30px;
 }
   
 /* Footer */
 .footer {
 	position: relative;
 	width: 100%;
-    padding: 20px;
-    text-align: center;
-	/* color: white; */
-    background-color: #ddd;
+  padding: 20px;
+  text-align: center;
+  background-color: #ddd;
 	bottom: 0;
 	margin: 0;
 }
@@ -205,7 +197,7 @@ button {
 		padding: 5%;
 	}
 
-    [aria-controls="menu-list"] {
+  [aria-controls="menu-list"] {
 		display: block;
 		margin-bottom: 10px;
 	}
@@ -228,13 +220,12 @@ button {
 		display: none;
 	}
 
-    .navbar {
+  .navbar {
 		flex-direction: column;
 	}
 
 	.header {
 		min-height: 75px;
-        /* padding-bottom: 5px; */
 	}
 
 	.menu {
@@ -243,26 +234,17 @@ button {
 	}
 
 	.menu ul {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10px, fr));
-        list-style: none;
-        grid-gap: 10px;
-        /* padding: 28px; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, fr));
+    list-style: none;
+    grid-gap: 10px;
 		padding-left: 50px;
 		padding-right: 50px;
 		padding-bottom: 0%;
 		margin-top: 15px;
-        overflow: hidden;
+    overflow: hidden;
 		display: none;
-        /* margin: auto; */
-        /* padding-bottom: 200px; */
-    }
-
-    /* .menu-list {
-        display: grid;
-        overflow: hidden;
-        grid-template-columns: repeat(auto-fit, minmax(10px, fr));
-    } */
+  }
 
 	#menu-list {
 		font-size: 80%;
@@ -271,7 +253,6 @@ button {
 	[aria-controls="menu-list"] {
 		display: block;
 		margin-bottom: 10px;
-        /* margin: 10px; */
 	}
 
 	[aria-expanded="true"] ~ ul {
@@ -310,15 +291,162 @@ button {
 	}
 	
 	.book {
-	    display: flex;
-        justify-content: center;
-        padding: 20px;
-        padding-left: 20px;
+	  display: flex;
+    justify-content: center;
+    padding: 20px;
+    padding-left: 20px;
 	}
 	
 	.price {
-	    display: flex;
-        padding: 20px;
-        justify-content: center;
+	  display: flex;
+    padding: 20px;
+    justify-content: center;
 	}
+
+  .card {
+    max-width: 732px;
   }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  .card {
+    max-width: 1140px;
+  }
+}
+
+/* Start of Frosted Cards */
+
+.container {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  /* min-height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 25px;
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.card .content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 30px;
+}
+
+.card .content .avatar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.card .content .avatar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .content .details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #111;
+}
+
+.card .content .details div {
+  display:  flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card .content .details h3 {
+  font-weight: 600;
+}
+
+.card .content .details ion-icon {
+    font-size: 1.5em;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* End of Frosted Cards */
+
+.bg-contrast {
+  background-color: var(--contrast);
+  padding: var(--size-150) 0;
+  margin: 0 auto;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  padding: var(--size-30);
+  box-shadow: 0 0 10px rgb(48 63 100 / 15%);
+  background: white;
+  border-radius: 8px;
+}
+
+.service-card span {
+  width: 4.375rem;
+  height: 4.375rem;
+  display: block;
+  float: left;
+  margin-right: 15px;
+  border-radius: 50%;
+  background-color: var(--font-color-light);
+}
+
+#more-info {
+  text-decoration: none;
+  color: black;
+}
