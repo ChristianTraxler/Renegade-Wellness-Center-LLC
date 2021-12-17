@@ -1,0 +1,324 @@
+* {
+    box-sizing: border-box;
+}
+  
+/* Style the body */
+body {
+    font-family: Arial;
+    margin: 0;
+    background-color: #8DC7C1;
+}
+  
+/* Header/logo Title */
+.header {
+    /* padding: 60px; */
+    text-align: center;
+    background-color: #8DC7C1;
+    /* color: white; */
+}
+  
+/* Style the top navigation bar */
+.navbar {
+    display: flex;
+    background-color: #333;
+}
+  
+/* Style the navigation bar links */
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    grid-gap: 10px;
+}
+  
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.menu ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	list-style: none;
+	grid-gap: 10px;
+	padding: 0;
+	margin-top: 40px;
+    /* margin: auto; */
+    /* padding-bottom: 200px; */
+}
+
+.menu a {
+	display: block;
+	background: #333;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 10px;
+	font-size: 20px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+button {
+    background: #333;;
+    border: 0;
+	padding: 10px 10px;
+	color: white;
+	border-radius: 5px;
+}
+
+.open {
+	padding: 2px;
+}
+
+[aria-controls="menu-list"] {
+	display: none;
+}
+
+.hr {
+	width: 95%;
+	border: 1px solid;
+	margin-bottom: 30px;
+}
+
+.price {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+
+.book {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.booking {
+    padding-top: 50px;
+}
+
+.book_now {
+    display: flex;
+    justify-content: center;
+    background-color: #204068;
+    border: none;
+    color: white;
+    height: 40px;
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+    letter-spacing: 1px;
+    line-height: 38px;
+    padding: 0 28px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+	text-decoration: none;
+	box-shadow: 5px 8px 12px #888888;
+}
+  
+/* Column container */
+.row {  
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+/* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+.side {
+    flex: 30%;
+    /* background-color: #f1f1f1; */
+    padding: 10px;
+}
+  
+/* Main column */
+.main {
+    flex: 70%;
+    background-color: #8DC7C1;
+}
+  
+/* Image, for homepage */
+.lungs {
+    display: flex;
+	float: left;
+    width: 50%;
+	height: 100%;
+    margin: 30px;
+	margin-top: 0;
+}
+
+.side {
+    display: flex;
+    float: left;
+    font-size: 36px;
+    /* margin-top: 20px; */
+    /* line-height: 0.6em; */
+}
+
+.p1 {
+	font-size: 20px;
+	line-height: 2em;
+}
+
+.info {
+    margin-left: 50px;
+}
+
+.indent {
+    text-indent: 30px;
+}
+  
+/* Footer */
+.footer {
+	position: relative;
+	width: 100%;
+    padding: 20px;
+    text-align: center;
+	/* color: white; */
+    background-color: #ddd;
+	bottom: 0;
+	margin: 0;
+}
+
+.link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+  
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    /* .row, .navbar {   
+      flex-direction: column;
+    } */
+
+	.h1 {
+		padding: 5%;
+	}
+
+	.signup {
+		padding: 5%;
+	}
+
+    [aria-controls="menu-list"] {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	[aria-expanded="true"] ~ ul {
+		display: grid;
+		max-height: 500px;
+		transform: rotateX(0);
+	}
+
+	[aria-expanded="false"] .close {
+		display: none;
+	}
+
+	[aria-expanded="true"] .close {
+		display: inline-block;
+	}
+
+	[aria-expanded="true"] .open {
+		display: none;
+	}
+
+    .navbar {
+		flex-direction: column;
+	}
+
+	.header {
+		min-height: 75px;
+        /* padding-bottom: 5px; */
+	}
+
+	.menu {
+		order: -1;
+		padding: 5px;
+	}
+
+	.menu ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10px, fr));
+        list-style: none;
+        grid-gap: 10px;
+        /* padding: 28px; */
+		padding-left: 50px;
+		padding-right: 50px;
+		padding-bottom: 0%;
+		margin-top: 15px;
+        overflow: hidden;
+		display: none;
+        /* margin: auto; */
+        /* padding-bottom: 200px; */
+    }
+
+    /* .menu-list {
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: repeat(auto-fit, minmax(10px, fr));
+    } */
+
+	#menu-list {
+		font-size: 80%;
+	}
+
+	[aria-controls="menu-list"] {
+		display: block;
+		margin-bottom: 10px;
+        /* margin: 10px; */
+	}
+
+	[aria-expanded="true"] ~ ul {
+		display: grid;
+		max-height: 500px;
+		transform: rotateX(0);
+	}
+
+	[aria-expanded="false"] .close {
+		display: none;
+	}
+
+	[aria-expanded="true"] .close {
+		display: inline-block;
+	}
+
+	[aria-expanded="true"] .open {
+		display: none;
+	}
+
+	.lungs {
+		display: flex;
+		float: left;
+		width: 50%;
+		height: 100%;
+		margin: 30px;
+		margin-top: 0;
+	}
+
+	.p1 {
+		font-size: 16px;
+	}
+
+	.side {
+		line-height: 0.6em;
+	}
+	
+	.book {
+	    display: flex;
+        justify-content: center;
+        padding: 20px;
+        padding-left: 20px;
+	}
+	
+	.price {
+	    display: flex;
+        padding: 20px;
+        justify-content: center;
+	}
+  }
