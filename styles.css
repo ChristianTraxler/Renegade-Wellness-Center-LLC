@@ -186,146 +186,7 @@ button {
   text-decoration: none;
 }
   
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-    /* .row, .navbar {   
-      flex-direction: column;
-    } */
 
-	.h1 {
-		padding: 5%;
-	}
-
-	.signup {
-		padding: 5%;
-	}
-
-  [aria-controls="menu-list"] {
-		display: block;
-		margin-bottom: 10px;
-	}
-
-	[aria-expanded="true"] ~ ul {
-		display: grid;
-		max-height: 500px;
-		transform: rotateX(0);
-	}
-
-	[aria-expanded="false"] .close {
-		display: none;
-	}
-
-	[aria-expanded="true"] .close {
-		display: inline-block;
-	}
-
-	[aria-expanded="true"] .open {
-		display: none;
-	}
-
-  .navbar {
-		flex-direction: column;
-	}
-
-	.header {
-		min-height: 75px;
-	}
-
-	.menu {
-		order: -1;
-		padding: 5px;
-	}
-
-	.menu ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10px, fr));
-    list-style: none;
-    grid-gap: 10px;
-		padding-left: 50px;
-		padding-right: 50px;
-		padding-bottom: 0%;
-		margin-top: 15px;
-    overflow: hidden;
-		display: none;
-  }
-
-	#menu-list {
-		font-size: 80%;
-	}
-
-	[aria-controls="menu-list"] {
-		display: block;
-		margin-bottom: 10px;
-	}
-
-	[aria-expanded="true"] ~ ul {
-		display: grid;
-		max-height: 500px;
-		transform: rotateX(0);
-	}
-
-	[aria-expanded="false"] .close {
-		display: none;
-	}
-
-	[aria-expanded="true"] .close {
-		display: inline-block;
-	}
-
-	[aria-expanded="true"] .open {
-		display: none;
-	}
-
-	.lungs {
-		display: flex;
-		width: 50%;
-		margin-top: 0;
-    border-radius: 5px;
-	}
-
-	.p1 {
-		font-size: 16px;
-	}
-
-	.side {
-		line-height: 0.6em;
-	}
-	
-	.book {
-	  display: flex;
-    justify-content: center;
-    padding: 20px;
-    padding-left: 20px;
-	}
-	
-	.price {
-	  display: flex;
-    padding: 20px;
-    justify-content: center;
-	}
-
-  .card {
-    max-width: 732px;
-  }
-
-  .service-grid {
-    margin-top: 200px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-
-  .card {
-    max-width: 1140px;
-  }
-
-  .lungs {
-    border-radius: 5px;
-  }
-}
 
 /* Start of Frosted Cards */
 
@@ -426,7 +287,7 @@ button {
 
 /* End of Frosted Cards */
 
-.bg-contrast {
+/* .bg-contrast {
   background-color: var(--contrast);
   padding: var(--size-150) 0;
   margin: 0 auto;
@@ -454,7 +315,7 @@ button {
   margin-right: 15px;
   border-radius: 50%;
   background-color: var(--font-color-light);
-}
+} */
 
 #more-info {
   text-decoration: none;
