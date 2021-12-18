@@ -135,12 +135,13 @@ button {
 .main {
   flex: 70%;
   background-color: #8DC7C1;
+  margin: auto;
 }
   
 /* Image, for homepage */
 .lungs {
   display: flex;
-	/* float: left; */
+	float: left;
   width: 50%;
 	/* height: 100%; */
   margin: auto;
@@ -150,8 +151,8 @@ button {
 
 .side {
   display: flex;
-  float: left;
   font-size: 36px;
+  padding-top: 0;
 }
 
 .p1 {
@@ -159,6 +160,8 @@ button {
 	line-height: 2em;
   margin-left: 30px;
   margin-right: 30px;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .info {
@@ -419,15 +422,19 @@ button {
     width: 85%;
     margin-top: 0;
     border-radius: 5px;
+    justify-content: center;
+    float: none;
   }
 
   .p1 {
     font-size: 16px;
     text-align: center;
+    margin-top: 20px;
   }
 
   .side {
     line-height: 0.6em;
+    float: right;
   }
 
   .book {
@@ -466,6 +473,7 @@ button {
 
   .lungs {
     border-radius: 5px;
+    margin-left: 35px;
   }
 
   .service-grid {
