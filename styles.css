@@ -144,7 +144,7 @@ body {
 }
 
 .info {
-  margin-left: 50px;
+  margin: 35px;
 }
 
 .indent {
@@ -348,9 +348,13 @@ body {
     flex-direction: column;
   } */
   
-  #navbar-brand {
+  .navbar-brand {
     display: flex;
     margin: auto;
+  }
+
+  .navbar-toggler {
+    float: left;
   }
 
   .header {
@@ -409,6 +413,7 @@ body {
     border-radius: 5px;
     justify-content: center;
     float: none;
+    margin: auto;
   }
 
   .p1 {
@@ -427,6 +432,7 @@ body {
     justify-content: center;
     padding: 20px;
     padding-left: 20px;
+    margin: 15px;
   }
 
   .price {
@@ -445,6 +451,11 @@ body {
     margin-right: 10px;
     gap: 40px;
   }
+
+  h5 {
+    font-size: medium !important;
+  }
+
 }
 
 @media screen and (min-width: 1200px) {
