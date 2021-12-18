@@ -8,150 +8,143 @@
 <link rel="stylesheet" href="styles.css">
 <!-- <link rel="stylesheet" href="./css/responsive.css"> -->
 <link rel="shortcut icon" type="image/jpg" href="img/RWC-logo.png"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 
-<!-- Header -->
 
-
-<!-- Navigation Bar -->
-<!-- <div class="menu">
-    <a href="#">Link</a>
-    <a href="#">Link</a>
-    <a href="#">Link</a>
-    <a href="#">Link</a>
-</div> -->
-
-<nav class="menu">
-    <button aria-expanded="false" aria-controls="menu-list">
-      <span class="open">&#x2630;</span>
-      <span class="close">&times;</span>
-     <span>Menu</span>
+  <nav class="navbar fixed-top navbar-expand-sm navbar-light" id="bg-light">
+    <a class="navbar-brand" href="#">Renegade Wellness Center</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <ul id="menu-list">
-      <li>
-        <a href="index.html" style="font-size: 100%;">Home</a>
-      </li>
-      <li>
-        <a href="info.html" style="font-size: 100%;">More Info</a>
-      </li>
-      <li>
-        <a href="book.html" style="font-size: 100%;">Book Now</a>
-      </li>
-      <li>
-        <a href="contact.html" style="font-size: 100%;">Contact</a>
-      </li>
-      <!-- <li>
-        <a href="appointments.html">Appointment Booking</a>
-      </li> -->
-      <!-- <li>
-        <a href="#">Wheels</a>
-      </li> -->
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link active" href="./index.html">Home</a>
+        <a class="nav-item nav-link" href="./info.html">More Info</a>
+        <a class="nav-item nav-link" href="./book.html">Book Now</a>
+        <a class="nav-item nav-link" href="./contact.html">Contact</a>
+      </div>
+    </div>
   </nav>
-
-  <div class="header">
-    <div class="logo">
-        <img src="img/RWC-logo.png" style="display: flex; width: 15%; justify-content: center; align-items: center; margin: auto; margin-bottom: -35px">
-    </div>
-  <h1 class="h1">Renegade Wellness Center</h1>
-</div>
-
-<hr class="hr">
-
-<!-- The flexible grid (content) -->
-<div class="row">
-  <!-- <div class="side">
-    <h2>About Me</h2>
-    <h5>Photo of me:</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
-  </div> -->
-  <div class="main">
-    <img src="img/cabin.png" class="lungs">
-    <div class="side">
-    <p class="p1">Renegade Wellness Center is proud to offer a private Halotherapy experience. Come enjoy the many benefits of salt therapy while relaxing in a serene environment. You can find more information about the benefits of Halotherapy by clicking the "More Info" tab on this website or please feel free to reach out with any questions that you have. Appointments can be made online or by texting/calling. I look forward to seeing you soon!</p>
-    </div>
-
-    <br>
-    <!-- <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  
+     <div class="header">
+      <div class="logo">
+          <img src="img/RWC-logo.png" style="display: flex; width: 15%; justify-content: center; align-items: center; margin: auto; margin-bottom: -35px">
+      </div>
+    <h1 class="h1">Renegade Wellness Center</h1>
   </div>
-</div>
-
-<section>
-  <div class="service-grid">
-    <div class="container">
-      <div class="card">
-        <div class="content">
-          <div class="details">
-            <div>
-              <h3><a href="./info.html" id="more-info">More Info</a></h3>
-            </div>
-          </div>
-        </div>
+  
+  <hr class="hr">
+  
+  <!-- The flexible grid (content) -->
+  <div class="row">
+    <!-- <div class="side">
+      <h2>About Me</h2>
+      <h5>Photo of me:</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <h3>More Text</h3>
+      <p>Lorem ipsum dolor sit ame.</p>
+      <div class="fakeimg" style="height:60px;">Image</div><br>
+      <div class="fakeimg" style="height:60px;">Image</div><br>
+      <div class="fakeimg" style="height:60px;">Image</div>
+    </div> -->
+    <div class="main">
+      <img src="img/cabin.png" class="lungs">
+      <div class="side">
+      <p class="p1">Renegade Wellness Center is proud to offer a private Halotherapy experience. Come enjoy the many benefits of salt therapy while relaxing in a serene environment. You can find more information about the benefits of Halotherapy by clicking the "More Info" tab on this website or please feel free to reach out with any questions that you have. Appointments can be made online or by texting/calling. I look forward to seeing you soon!</p>
       </div>
-    </div>
-    <div class="container ">
-      <div class="card">
-        <div class="content">
-          <div class="details">
-            <div>
-              <h3><a href="./book.html" id="more-info">Book Now</a></h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="card">
-        <div class="content">
-          <div class="details">
-            <div>
-              <h3><a href="./contact.html" id="more-info">Contact</a></h3>
-            </div>
-          </div>
-        </div>
-      </div>
+  
+      <br>
+      <!-- <h2>TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
     </div>
   </div>
-</section>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-<!-- Footer -->
-<div class="footer">
-    <p>Renegade Wellness Center LLC <br> (+1) 828-514-9276</p>
-    Built by <a href="https://developerofcode.com" target="_blank" style="text-decoration: none; color: black;">Developer Of Code LLC</a>
-</div>
+  
+  <section>
+    <div class="service-grid">
+      <div class="container">
+        <div class="card">
+          <div class="content">
+            <div class="details">
+              <div>
+                <h3><a href="./info.html" id="more-info">More Info</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container ">
+        <div class="card">
+          <div class="content">
+            <div class="details">
+              <div>
+                <h3><a href="./book.html" id="more-info">Book Now</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card">
+          <div class="content">
+            <div class="details">
+              <div>
+                <h3><a href="./contact.html" id="more-info">Contact</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  
+  <!-- Footer -->
+  <div class="footer">
+      <p>Renegade Wellness Center LLC <br> (+1) 828-514-9276</p>
+      Built by <a href="https://developerofcode.com" target="_blank" style="text-decoration: none; color: black;">Developer Of Code LLC</a>
+  </div>
 
 <script>
-    const navButton = document.querySelector('button[aria-expanded]');
-
-    function toggleNav({ target }) {
-      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
-      navButton.setAttribute('aria-expanded', !expanded);
-    }
-    navButton.addEventListener('click', toggleNav);
+    document.onreadystatechange = function() {
+  let lastScrollPosition = 0;
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', function(e) {
+    lastScrollPosition = window.scrollY;
+    
+    if (lastScrollPosition > 100)
+      navbar.classList.add('navbar-dark');
+    else
+      navbar.classList.remove('navbar-dark');
+  });
+}
   </script>
 
 </body>
