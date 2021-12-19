@@ -329,10 +329,10 @@ body {
     float: left;
   }
 
-  #button {
+  /* #button {
     float: left;
     margin: auto;
-  }
+  } */
 
   .header {
     min-height: 75px;
