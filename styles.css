@@ -151,6 +151,22 @@ body {
   text-indent: 30px;
 }
 
+/* Start of Contact Page */
+
+.contact {
+  justify-content: center;
+  text-align: center;
+}
+
+.hours {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* End of Contact Page */
+
 /* Start of Frosted Cards */
 
 .container {
@@ -295,10 +311,19 @@ body {
   text-decoration: none;
 }
 
+.pay {
+  margin-top: 25px;
+}
+
 .payment {
   height: 40px;
   width: 40px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+}
+
+.gpay {
+  height: 50px;
+  width: 50px;
 }
 
 /* End of Footer */
@@ -426,9 +451,23 @@ footer .footer-col {
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 
 @media screen and (max-width: 378px) {
+  .contact {
+
+  }
+  
   .pay {
     margin-left: 35px;
-    margin-right: 35px;
+    margin-right: 20px;
+    justify-content: center;
+  }
+
+  .hours {
+    justify-content: center;
+    font-weight: bold;
+    display: flex;
+    margin-left: 60px;
+    margin-right: 60px;
+    text-align: center;
   }
 }
 
