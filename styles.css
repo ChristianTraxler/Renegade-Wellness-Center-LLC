@@ -41,8 +41,6 @@ body {
   color: inherit !important;
 }
 
-
-
 .navbar-brand {
   /* display: inline-block; */
   padding-top: 0.3125rem;
@@ -152,13 +150,17 @@ body {
   padding-top: 0;
 }
 
+/* Start of Info Page */
 .info {
   margin: 35px;
+  margin-left: 50px;
 }
 
 .indent {
   text-indent: 30px;
 }
+
+/* End of Info Page */
 
 /* Start of Contact Page */
 
@@ -291,18 +293,22 @@ body {
   
 /* Start of Footer */
 .footer {
+  justify-content: center;
+  display: flex;
 	position: relative;
-	width: 100%;
+  width: 100%;
   padding: 20px;
+  padding-left: 0;
+  padding-right: 0;
   text-align: center;
   background-color: #ddd;
-	bottom: -13%;
-	margin: 0;
+  bottom: -13%;
+  margin: 0;
   left: 0;
 }
 
 .footer-container {
-
+  margin-left: 50px;
 }
 
 .renegade {
@@ -522,7 +528,17 @@ footer .footer-col {
   /* End of Contact Page */
 
   /* Start of Footer */
+  .footer-container {
+    margin-left: 15px;
+}
+
   .pay {
+    margin-left: 35px;
+    margin-right: 20px;
+    justify-content: center;
+  }
+
+  .dev-section {
     margin-left: 35px;
     margin-right: 20px;
     justify-content: center;
