@@ -496,6 +496,8 @@ footer .footer-col {
 /* Start of Responsiveness */
 
 @media screen and (max-width: 378px) {
+
+  html { scroll-behavior: smooth; }
   
   /* Start of Home Page */
   .lungs {
@@ -580,6 +582,8 @@ footer .footer-col {
 }
 
 @media screen and (max-width: 700px) {
+
+  html { scroll-behavior: smooth; }
 
   /* Start of Home Page */
   .h1 {
