@@ -747,9 +747,13 @@ footer .footer-col {
   /* End of Info Page */
 
   /* Start of Contact Page */
-.join {
-  text-align: center;
-}
+  .join {
+    text-align: center;
+  }
+
+  .hours {
+    margin-left: 16px;
+  }
 
 
   /* End of Contact Page */
