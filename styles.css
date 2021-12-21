@@ -495,6 +495,12 @@ footer .footer-col {
 
 /* Start of Responsiveness */
 
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @media screen and (max-width: 378px) {
 
   html { scroll-behavior: smooth; }
