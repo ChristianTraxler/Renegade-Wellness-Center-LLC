@@ -495,12 +495,6 @@ footer .footer-col {
 
 /* Start of Responsiveness */
 
-@media screen and (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
 @media screen and (max-width: 378px) {
 
   html { scroll-behavior: smooth; }
@@ -751,6 +745,14 @@ footer .footer-col {
   }
 
   /* End of Info Page */
+
+  /* Start of Contact Page */
+.join {
+  text-align: center;
+}
+
+
+  /* End of Contact Page */
 
   /* Start of Footer */
 
