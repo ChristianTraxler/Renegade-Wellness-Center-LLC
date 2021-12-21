@@ -529,7 +529,7 @@ footer .footer-col {
 
   /* Start of Footer */
   .footer-container {
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
   .pay {
@@ -539,7 +539,7 @@ footer .footer-col {
   }
 
   .dev-section {
-    margin-left: 35px;
+    margin-left: 20px;
     margin-right: 20px;
     justify-content: center;
   }
@@ -549,7 +549,7 @@ footer .footer-col {
 
 @media screen and (max-width: 416px) {
   .footer-container {
-    margin-left: 25px;
+    margin-left: 10px;
   }
 }
 
@@ -718,7 +718,7 @@ footer .footer-col {
   }
 
   .footer-container {
-    margin-left: 25px;
+    margin-left: 5px;
   }
 
   /* End of Footer */
