@@ -735,6 +735,13 @@ footer .footer-col {
 
   /* End of Home Page */
 
+  /* Start of Info Page */
+  .indent {
+    text-align: center;
+  }
+
+  /* End of Info Page */
+
   /* Start of Footer */
 
   .footer {
