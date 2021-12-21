@@ -153,6 +153,10 @@ body {
 
 /* Start of Contact Page */
 
+.hr {
+  margin-top: 2rem;
+}
+
 .contact {
   justify-content: center;
   text-align: center;
@@ -302,7 +306,7 @@ body {
 
 .developer {
   text-decoration: none;
-  color: black;
+  color: #D44A4B;
 }
 
 .link {
@@ -444,21 +448,57 @@ footer .footer-col {
   
 } */
 
+/* End of Working Footer being added */
+
 
 
 /* Start of Responsiveness */
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-
 @media screen and (max-width: 378px) {
-  .contact {
-
-  }
   
-  .pay {
-    margin-left: 35px;
-    margin-right: 20px;
-    justify-content: center;
+  /* Start of Home Page */
+  .lungs {
+    margin: 7%;
+  }
+
+  .side {
+    padding: 0;
+  }
+
+  .p1 {
+    margin-right: 12px;
+    margin-left: 27px;
+  }
+
+  /* End of Home Page */
+
+  /* Start of Info Page */
+  .indent {
+    text-align: center;
+  }
+
+  /* End of Info Page */
+
+  /* Start of Book Now Page */
+    .book {
+      text-align: center;
+    }
+  
+  /* End of Book Now Page */
+
+  /* Start of Contact Page */
+  /* .header {
+    margin-left: 20px;
+    margin-right: 5px;
+  } */
+
+  .hr {
+    margin-top: 1rem;
+  }
+
+  .contact {
+    margin-left: 20px;
+    margin-right: 5px;
   }
 
   .hours {
@@ -469,10 +509,22 @@ footer .footer-col {
     margin-right: 60px;
     text-align: center;
   }
+
+  /* End of Contact Page */
+
+  /* Start of Footer */
+  .pay {
+    margin-left: 35px;
+    margin-right: 20px;
+    justify-content: center;
+  }
+
+  /* End of Footer */
 }
 
 @media screen and (max-width: 700px) {
 
+  /* Start of Home Page */
   .h1 {
     padding: 5%;
   }
@@ -507,6 +559,18 @@ footer .footer-col {
   .navbar-brand {
     display: flex;
     margin: auto;
+  }
+
+  .navbar-nav {
+    float: right;
+  }
+
+  .navbar, .fixed-top, .navbar-expand-sm, .navbar-light {
+
+  }
+
+  #bg-light {
+
   }
 
   .navbar-toggler {
@@ -612,6 +676,10 @@ footer .footer-col {
     font-size: medium !important;
   }
 
+  /* End of Home Page */
+
+  /* Start of Footer */
+
   .footer {
     position: relative;
     bottom: 0;
@@ -622,9 +690,14 @@ footer .footer-col {
   
   }
 
+  /* End of Footer */
+
 }
 
 @media screen and (min-width: 1200px) {
+
+  /* Start of Home Page */
+
   .container {
     max-width: 1140px;
   }
@@ -644,13 +717,17 @@ footer .footer-col {
     margin-right: 10px;
   }
 
+  /* End of Home Page */
+
+  /* Start of Footer */
+
   .footer {
     position: relative;
     bottom: 0;
     left: 0;
   }
+
+  /* End of Footer */
 }
 
 /* End of Responsiveness
-
-/* End of Working Footer being added */
