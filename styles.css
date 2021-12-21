@@ -1,4 +1,6 @@
 /* Style the body */
+html { scroll-behavior: smooth; }
+
 body {
   font-family: Arial;
   margin: 0;
@@ -151,13 +153,15 @@ body {
 }
 
 /* Start of Info Page */
-.info {
-  margin: 35px;
-  margin-left: 50px;
-}
 
-.indent {
-  text-indent: 30px;
+.more-info {
+  min-height: 75px;
+  font-size: 30px;
+  text-align: center;
+}
+.info {
+  margin-left: 35px;
+  margin-right: 25px;
 }
 
 /* End of Info Page */
@@ -343,6 +347,28 @@ body {
 .gpay {
   height: 50px;
   width: 50px;
+}
+
+.arrow {
+  width: 70%;
+}
+
+#scrollUp {
+  background-color: transparent;
+  background-image: linear-gradient(
+    90deg, #9ccdfe 0%, #94aafd 100%);
+  color: white;
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  line-height: 25px;
+  position: fixed;
+  bottom: 18px;
+  right: 30px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100;
 }
 
 /* End of Footer */

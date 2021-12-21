@@ -16,7 +16,9 @@
   </head>
   <body>
 
+    <div id="pageTop"></div>
 
+    <!-- Start of Navbar -->
     <nav class="navbar fixed-top navbar-expand-sm navbar-light navbar-dark" id="bg-light">
       <a class="navbar-brand" href="#">Renegade Wellness Center</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,6 +33,8 @@
         </div>
       </div>
     </nav>
+
+    <!-- End of Navbar -->
     
     <br>
     <br>
@@ -199,6 +203,9 @@
       </footer>
     </div> -->
 
+    <!--Scroll Top-->
+    <a id="scrollUp" href="#pageTop"><img class="arrow" src="./img/arrow.svg" alt=""></a>
+
     <script>
       document.onreadystatechange = function() {
       let lastScrollPosition = 0;
@@ -211,6 +218,15 @@
         // else
         //   navbar.classList.remove('navbar-dark');
         });
+      }
+
+      const nav = document.getElementById("topNav");
+      window.onscroll = function () {
+        if (window.pageYOffset > 100) {
+          nav.classList.add("sticky");
+        } else {
+          nav.classList.remove("sticky");
+        }
       }
     </script>
   </body>
