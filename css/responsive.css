@@ -3,6 +3,14 @@
 @media screen and (max-width: 378px) {
 
   html { scroll-behavior: smooth; }
+
+  /* Start of Navbar */
+  .navbar-nav .nav-link {
+    padding-left: 10px;
+  }
+
+
+  /* End of Navbar */
   
   /* Start of Home Page */
   .lungs {
