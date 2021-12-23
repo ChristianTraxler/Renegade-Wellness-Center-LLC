@@ -1,8 +1,19 @@
 /* Style the body */
+html { scroll-behavior: smooth; }
+
 body {
   font-family: Arial;
   margin: 0;
   background-color: #8DC7C1 !important;
+}
+
+.logo {
+  display: flex;
+  width: 15%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: -35px
 }
   
 /* Header/logo Title */
@@ -31,8 +42,6 @@ body {
 .navbar-collapse, .navbar-nav, .nav-item {
   color: inherit !important;
 }
-
-
 
 .navbar-brand {
   /* display: inline-block; */
@@ -143,15 +152,25 @@ body {
   padding-top: 0;
 }
 
+/* Start of Info Page */
+
+.more-info {
+  min-height: 75px;
+  font-size: 30px;
+  text-align: center;
+}
 .info {
-  margin: 35px;
+  margin-left: 35px;
+  margin-right: 25px;
 }
 
-.indent {
-  text-indent: 30px;
-}
+/* End of Info Page */
 
 /* Start of Contact Page */
+
+.hr {
+  margin-top: 2rem;
+}
 
 .contact {
   justify-content: center;
@@ -278,19 +297,23 @@ body {
   
 /* Start of Footer */
 .footer {
+  justify-content: center;
+  display: flex;
 	position: relative;
-	width: 100%;
+  width: 100%;
   padding: 20px;
+  padding-left: 0;
+  padding-right: 0;
   text-align: center;
   background-color: #ddd;
-	bottom: -13%;
-	margin: 0;
+  bottom: -13%;
+  margin: 0;
   left: 0;
 }
 
-.footer-container {
-
-}
+/* .footer-container {
+  margin-left: 50px;
+} */
 
 .renegade {
 
@@ -302,7 +325,7 @@ body {
 
 .developer {
   text-decoration: none;
-  color: black;
+  color: #C95F1C;
 }
 
 .link {
@@ -324,6 +347,28 @@ body {
 .gpay {
   height: 50px;
   width: 50px;
+}
+
+.arrow {
+  width: 70%;
+}
+
+#scrollUp {
+  background-color: transparent;
+  background-image: linear-gradient(
+    90deg, #9ccdfe 0%, #94aafd 100%);
+  color: white;
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  line-height: 25px;
+  position: fixed;
+  bottom: 18px;
+  right: 30px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100;
 }
 
 /* End of Footer */
@@ -444,21 +489,59 @@ footer .footer-col {
   
 } */
 
+/* End of Working Footer being added */
+
 
 
 /* Start of Responsiveness */
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-
 @media screen and (max-width: 378px) {
-  .contact {
 
-  }
+  html { scroll-behavior: smooth; }
   
-  .pay {
-    margin-left: 35px;
-    margin-right: 20px;
-    justify-content: center;
+  /* Start of Home Page */
+  .lungs {
+    margin: 7%;
+  }
+
+  .side {
+    padding: 0;
+  }
+
+  .p1 {
+    margin-right: 12px;
+    margin-left: 27px;
+  }
+
+  /* End of Home Page */
+
+  /* Start of Info Page */
+  .indent {
+    text-align: center;
+  }
+
+  /* End of Info Page */
+
+  /* Start of Book Now Page */
+    .book {
+      text-align: center;
+    }
+  
+  /* End of Book Now Page */
+
+  /* Start of Contact Page */
+  /* .header {
+    margin-left: 20px;
+    margin-right: 5px;
+  } */
+
+  .hr {
+    margin-top: 1rem;
+  }
+
+  .contact {
+    margin-left: 20px;
+    margin-right: 5px;
   }
 
   .hours {
@@ -469,10 +552,40 @@ footer .footer-col {
     margin-right: 60px;
     text-align: center;
   }
+
+  /* End of Contact Page */
+
+  /* Start of Footer */
+  .footer-container {
+    margin-left: 5px;
+}
+
+  .pay {
+    margin-left: 35px;
+    margin-right: 20px;
+    justify-content: center;
+  }
+
+  .dev-section {
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: center;
+  }
+
+  /* End of Footer */
+}
+
+@media screen and (max-width: 416px) {
+  /* .footer-container {
+    margin-left: 5px;
+  } */
 }
 
 @media screen and (max-width: 700px) {
 
+  html { scroll-behavior: smooth; }
+
+  /* Start of Home Page */
   .h1 {
     padding: 5%;
   }
@@ -507,6 +620,18 @@ footer .footer-col {
   .navbar-brand {
     display: flex;
     margin: auto;
+  }
+
+  .navbar-nav {
+    float: right;
+  }
+
+  .navbar, .fixed-top, .navbar-expand-sm, .navbar-light {
+
+  }
+
+  #bg-light {
+
   }
 
   .navbar-toggler {
@@ -586,9 +711,9 @@ footer .footer-col {
   .book {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    padding-left: 20px;
-    margin: 15px;
+    text-align: center;
+    margin-left: 15px;
+    padding-left: 0;
   }
 
   .price {
@@ -612,6 +737,29 @@ footer .footer-col {
     font-size: medium !important;
   }
 
+  /* End of Home Page */
+
+  /* Start of Info Page */
+  .indent {
+    text-align: center;
+  }
+
+  /* End of Info Page */
+
+  /* Start of Contact Page */
+  .join {
+    text-align: center;
+  }
+
+  .hours {
+    margin-left: 16px;
+  }
+
+
+  /* End of Contact Page */
+
+  /* Start of Footer */
+
   .footer {
     position: relative;
     bottom: 0;
@@ -619,12 +767,17 @@ footer .footer-col {
   }
 
   .footer-container {
-  
+    margin-left: 10px;
   }
+
+  /* End of Footer */
 
 }
 
 @media screen and (min-width: 1200px) {
+
+  /* Start of Home Page */
+
   .container {
     max-width: 1140px;
   }
@@ -644,13 +797,21 @@ footer .footer-col {
     margin-right: 10px;
   }
 
+  /* End of Home Page */
+
+  /* Start of Footer */
+
   .footer {
     position: relative;
     bottom: 0;
     left: 0;
   }
+
+  .footer-container {
+    margin-left: 50px;
+  }
+
+  /* End of Footer */
 }
 
 /* End of Responsiveness
-
-/* End of Working Footer being added */
