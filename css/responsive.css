@@ -18,6 +18,10 @@
     margin-left: 27px;
   }
 
+  .cd-section {
+    margin-bottom: 200px;
+  }
+
   /* End of Home Page */
 
   /* Start of Info Page */
@@ -48,7 +52,7 @@
     justify-content: center;
     font-weight: bold;
     display: flex;
-    margin-left: 60px;
+    margin-left: 75px;
     margin-right: 60px;
     text-align: center;
   }
@@ -76,7 +80,9 @@
 }
 
 @media screen and (max-width: 416px) {
-  
+  /* .hours {
+    margin-left: 20px;
+  } */
 }
 
 @media screen and (max-width: 700px) {
@@ -129,7 +135,7 @@
   }
 
   .header {
-    min-height: 75px;
+    min-height: var(--size-50);
   }
 
   .menu {
@@ -187,7 +193,7 @@
   }
 
   .p1 {
-    font-size: 16px;
+    font-size: var(--size-16);
     text-align: center;
     margin-top: var(--size-20);
   }
@@ -240,10 +246,6 @@
     text-align: center;
   }
 
-  .hours {
-    margin-left: 16px;
-  }
-
 
   /* End of Contact Page */
 
@@ -285,6 +287,13 @@
   }
 
   /* End of Home Page */
+
+  /* Start of Contact Page */
+  .hours {
+    margin: 0;
+  }
+
+  /* End of Contact Page */
 
   /* Start of Footer */
 

@@ -35,6 +35,8 @@
 .header {
   text-align: center;
   background-color: #8DC7C1;
+  font-size: var(--size-30);
+  min-height: var(--size-50);
 }
 
 .logo {
@@ -54,37 +56,8 @@
 
 .price {
   display: flex;
-  padding: 20px;
+  padding: var(--size-20);
   justify-content: center;
-}
-
-.book {
-  display: flex;
-  justify-content: center;
-  padding-top: var(--size-40);
-  padding-left: var(--size-20);
-  margin-bottom: 0;
-}
-
-.book_now {
-  display: flex;
-  justify-content: center;
-  background-color: #204068;
-  border: none;
-  color: white;
-  height: var(--size-40);
-  text-transform: uppercase;
-  font-family: Georgia, serif;
-  letter-spacing: 1px;
-  line-height: 38px;
-  padding: 0 28px;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: var(--size-14);
-  cursor: pointer;
-  display: inline-block;
-	text-decoration: none;
-	box-shadow: 5px 8px 12px #888888;
 }
   
 /* Column container */
@@ -133,6 +106,17 @@
 }
 
 /* Start of Frosted Cards */
+.cd-section {
+  margin-bottom: 400px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--size-20);
+  margin-top: var(--size-100);
+}
+
 .container {
   background-size: cover;
   background-position: center;
@@ -223,13 +207,6 @@
   font-size: 1.5em;
 }
 
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--size-20);
-  margin-top: var(--size-100);
-}
-
 #more-info {
   text-decoration: none;
   color: black;
@@ -240,21 +217,66 @@
 /* End of Home Page */
 
 /* Start of Info Page */
+.info-section {
+  margin-bottom: var(--size-150);
+}
+
 .more-info {
   min-height: 75px;
   font-size: var(--size-30);
   text-align: center;
 }
+
 .info {
   margin-left: 35px;
-  margin-right: 25px;
+  margin-right: var(--size-25);
 }
 
 /* End of Info Page */
 
+/* Start of Book Page */
+.book-section {
+  margin-bottom: 280px;
+}
+
+.book {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--size-40);
+  padding-left: var(--size-20);
+  margin-bottom: 0;
+}
+
+.book_now {
+  display: flex;
+  justify-content: center;
+  background-color: #204068;
+  border: none;
+  color: white;
+  height: var(--size-40);
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+  line-height: 38px;
+  padding: 0 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: var(--size-14);
+  cursor: pointer;
+  display: inline-block;
+	text-decoration: none;
+	box-shadow: 5px 8px 12px #888888;
+}
+
+/* End of Book Page */
+
 /* Start of Contact Page */
 .hr {
   margin-top: 2rem;
+}
+
+.contact-section {
+  margin-bottom: var(--size-150);
 }
 
 .contact {
@@ -267,6 +289,7 @@
   justify-content: center;
   text-align: center;
   font-weight: bold;
+  margin-left: var(--size-20);
 }
 
 /* End of Contact Page */
@@ -328,9 +351,9 @@
   font-size: var(--size-20);
   height: var(--size-30);
   width: var(--size-30);
-  line-height: var(--size-25);
+  line-height: var(--size-30);
   position: fixed;
-  bottom: var(--size-18)
+  bottom: 18px;
   right: var(--size-30);
   text-align: center;
   border-radius: 8px;
