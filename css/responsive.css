@@ -52,7 +52,7 @@
     justify-content: center;
     font-weight: bold;
     display: flex;
-    margin-left: 75px;
+    margin-left: 65px;
     margin-right: 60px;
     text-align: center;
   }
@@ -132,10 +132,6 @@
 
   .navbar-toggler {
     float: left;
-  }
-
-  .header {
-    min-height: var(--size-50);
   }
 
   .menu {
@@ -289,6 +285,10 @@
   /* End of Home Page */
 
   /* Start of Contact Page */
+  .header {
+    min-height: var(--size-50);
+  }
+  
   .hours {
     margin: 0;
   }

@@ -36,7 +36,6 @@
   text-align: center;
   background-color: #8DC7C1;
   font-size: var(--size-30);
-  min-height: var(--size-50);
 }
 
 .logo {
