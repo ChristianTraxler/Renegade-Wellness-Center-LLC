@@ -1,0 +1,41 @@
+:root {
+  --white: #FFF;
+  --black: #000;
+  --font-color-base: #666;
+  --font-color-dark: #212529;
+  --font-color-light: #B0AEBE;
+  --font-color-link: #57A6FF;
+  --footer: #34314B;
+  --footer-base: #2E2B45;
+  --contrast: rgba(246, 248, 249, 0.8);
+  --success: #64ECF5;
+  --danger: #FF8B8D;
+  --grad-1: #A1ECFF;
+  --grad-2:#7DBCFF;
+
+  --size-10: 0.625rem;
+  --size-14: 0.875rem;
+  --size-16: 1rem;
+  --size-18: 1.125rem;
+  --size-20: 1.25rem;
+  --size-25: 1.5625rem;
+  --size-30: 1.875rem;
+  --size-40: 2.5rem;
+  --size-50: 3.125rem;
+  --size-100: 6.25rem;
+  --size-150: 9.325rem;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial;
+  margin: 0;
+  background-color: #8DC7C1 !important;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
