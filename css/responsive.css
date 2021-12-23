@@ -28,18 +28,13 @@
   /* End of Info Page */
 
   /* Start of Book Now Page */
-    .book {
-      text-align: center;
-    }
+  .book {
+    text-align: center;
+  }
   
   /* End of Book Now Page */
 
   /* Start of Contact Page */
-  /* .header {
-    margin-left: 20px;
-    margin-right: 5px;
-  } */
-
   .hr {
     margin-top: 1rem;
   }
@@ -81,9 +76,7 @@
 }
 
 @media screen and (max-width: 416px) {
-  /* .footer-container {
-    margin-left: 5px;
-  } */
+  
 }
 
 @media screen and (max-width: 700px) {
@@ -129,14 +122,6 @@
 
   .navbar-nav {
     float: right;
-  }
-
-  .navbar, .fixed-top, .navbar-expand-sm, .navbar-light {
-
-  }
-
-  #bg-light {
-
   }
 
   .navbar-toggler {
@@ -199,7 +184,6 @@
     border-radius: 5px;
     justify-content: center;
     float: none;
-    /* margin: auto; */
   }
 
   .p1 {
@@ -264,7 +248,6 @@
   /* End of Contact Page */
 
   /* Start of Footer */
-
   .footer {
     position: relative;
     bottom: 0;
@@ -282,7 +265,6 @@
 @media screen and (min-width: 1200px) {
 
   /* Start of Home Page */
-
   .container {
     max-width: 1140px;
   }
