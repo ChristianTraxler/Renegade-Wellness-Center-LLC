@@ -1,14 +1,20 @@
 /* Start of Responsiveness */
 
-@media screen and (max-width: 378px) {
+@media only screen and (min-width: 375px) {
 
   html { scroll-behavior: smooth; }
 
   /* Start of Navbar */
-  .navbar-nav .nav-link {
-    padding-left: 10px;
+  .navbar-nav, .nav-link {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 
+  .navbar-nav, .ml-auto {
+    display: flex !important;
+    flex-direction: initial !important;
+    margin-top: 10px !important;
+  }
 
   /* End of Navbar */
   
@@ -87,15 +93,36 @@
   /* End of Footer */
 }
 
-@media screen and (max-width: 416px) {
-  /* .hours {
-    margin-left: 20px;
-  } */
+@media only screen and (min-width: 414px) {
+  /* Start of Navbar */
+  .navbar-nav, .nav-link {
+    padding-left: 14px !important;
+    padding-right: 12px !important;
+  }
+
+  .navbar-nav, .ml-auto {
+    display: flex !important;
+    flex-direction: initial !important;
+    margin-top: 10px !important;
+  }
+
+/* End of Navbar */
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 414px) {
 
   html { scroll-behavior: smooth; }
+
+  /* .navbar-nav, .nav-link {
+    padding-left: 14px !important;
+    padding-right: 12px !important;
+  } */
+
+  /* .navbar-nav, .ml-auto {
+    display: flex !important;
+    flex-direction: initial !important;
+    margin-top: 10px !important;
+  } */
 
   /* Start of Home Page */
   .h1 {
@@ -281,6 +308,7 @@
 
   .lungs {
     border-radius: 5px;
+    margin-top: 0;
     margin-left: 48px;
   }
 

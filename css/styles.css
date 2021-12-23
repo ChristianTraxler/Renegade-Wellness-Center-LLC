@@ -27,12 +27,6 @@
   margin: auto !important;
 }
 
-.navbar-nav, .ml-auto {
-  display: flex !important;
-  flex-direction: initial !important;
-  margin-top: 10px !important;
-}
-
 .navbar-nav, .nav-link {
   padding-left: 10px !important;
   padding-right: 10px !important;
@@ -246,7 +240,7 @@
 
 /* Start of Book Page */
 .book-section {
-  margin-bottom: 280px;
+  margin-bottom: 310px;
 }
 
 .book {
