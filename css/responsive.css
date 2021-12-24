@@ -113,6 +113,16 @@
     justify-content: center;
   }
 
+  .join {
+    text-align: center;
+  }
+
+  .p1 {
+    font-size: var(--size-16);
+    text-align: center;
+    margin-top: var(--size-20);
+  }
+
 /* End of Navbar */
 }
 
