@@ -300,6 +300,10 @@
     text-align: center;
   }
 
+  #mc_embed_signup {
+    margin-left: var(--size-20);
+  }
+
 
   /* End of Contact Page */
 
