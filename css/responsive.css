@@ -41,6 +41,7 @@
 
   .cd-section {
     margin-bottom: 200px;
+    height: 780px;
   }
 
   /* End of Home Page */
@@ -136,7 +137,7 @@
   .cd-section {
     /* margin-bottom: 200px; */
   background-size: cover;
-  height: 800px;
+  height: 842px;
   background-image: url("../img/salt-rock.jpeg");
 }
 
@@ -304,12 +305,11 @@
     max-width: 732px;
   }
 
-  .cd-section {
-    /* margin-bottom: 200px; */
+  /* .cd-section {
     background-size: cover;
     height: 535px;
     background-image: url(../img/salt-rock.jpeg);
-  }
+  } */
 
   .service-grid {
     margin-top: var(--size-100);
@@ -401,6 +401,19 @@
   /* End of Contact Page */
 }
 
+@media  screen and (min-width: 1024px) {
+  .cd-section {
+    /* margin-bottom: 200px; */
+    background-size: cover;
+    height: 350px;
+    background-image: url(../img/salt-rock.jpeg);
+  }
+
+  .service-grid .container {
+    margin-top: 65px;
+  }
+}
+
 @media screen and (min-width: 1200px) {
 
   /* Start of Home Page */
@@ -427,7 +440,7 @@
   }
 
   .cd-section {
-    height: 500px;
+    /* height: 500px; */
     margin-bottom: 200px;
   }
 
