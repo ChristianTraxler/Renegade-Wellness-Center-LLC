@@ -138,9 +138,17 @@
   html { scroll-behavior: smooth; }
 
   /* Start of Home Page */
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* margin-bottom: -35px */
+  }
+
   .h1 {
     padding: 5%;
-    margin-top: var(--size-20);
+    /* margin-top: var(--size-20); */
   }
 
   .signup {
