@@ -113,7 +113,9 @@
 /* Start of Frosted Cards */
 .cd-section {
   margin-bottom: 400px;
-  /* background-image: url("../img/salt-rock.jpeg"); */
+  /* background-image: url("../img/salt-rock.jpeg");
+  height: 500px;
+  background-size: cover; */
 }
 
 .service-grid {

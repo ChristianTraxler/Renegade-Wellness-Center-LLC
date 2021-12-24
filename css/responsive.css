@@ -129,6 +129,17 @@
     /* margin-top: var(--size-20); */
   }
 
+  /* .service-grid, .container {
+    margin-top: 25px;
+  } */
+
+  .cd-section {
+    /* margin-bottom: 200px; */
+  background-size: cover;
+  height: 750px;
+  /* background-image: url(../img); */
+}
+
   /* Start of Contact Page */
   .indicates-required {
     text-align: right;
@@ -380,6 +391,7 @@
   /* Start of Home Page */
   .container {
     max-width: 1140px;
+    margin-top: 155px;
   }
 
   .card {
@@ -397,6 +409,10 @@
   .side {
     padding: 0;
     float: none;
+  }
+
+  .cd-section {
+    margin-bottom: 200 px;
   }
 
   .service-grid {
