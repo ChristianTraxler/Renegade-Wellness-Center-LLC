@@ -108,11 +108,9 @@
 
   .lungs {
     display: flex;
-    width: 90%;
     margin-top: 0;
     border-radius: 5px;
     justify-content: center;
-    float: none;
   }
 
 /* End of Navbar */
