@@ -129,6 +129,12 @@
   }
 
   /* Start of Contact Page */
+  .indicates-required {
+    text-align: right;
+    font-size: 11px;
+    margin-right: 5px !important;
+    float: right;
+  }
 
   .mc-field-group {
     margin: var(--size-20);
@@ -358,6 +364,15 @@
   }
 
   /* End of Home Page */
+
+  /* Start of Contact Page */
+  .indicates-required {
+    text-align: right;
+    font-size: 11px;
+    margin-right: 4%;
+  }
+
+  /* End of Contact Page */
 }
 
 @media screen and (min-width: 1200px) {
