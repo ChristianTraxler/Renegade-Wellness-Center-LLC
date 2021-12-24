@@ -112,13 +112,11 @@
     flex-direction: initial !important;
     margin-top: 10px !important;
   }
+  /* End of Navbar */
 
-  /* .lungs {
-    display: flex;
-    margin-top: 0;
-    border-radius: 5px;
-    justify-content: center;
-  } */
+  .header {
+    margin-bottom: var(--size-20);
+  }
 
   .join {
     text-align: center;
@@ -130,7 +128,20 @@
     /* margin-top: var(--size-20); */
   }
 
-/* End of Navbar */
+  /* Start of Contact Page */
+
+  .mc-field-group {
+    margin: var(--size-20);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .clear {
+    margin-left: var(--size-20);
+    margin-top: var(--size-10);
+  }
+
+  /* End of Contact Page */
 }
 
 @media screen and (max-width: 414px) {
@@ -299,15 +310,6 @@
   .join {
     text-align: center;
   }
-
-  .mc-field-group {
-    margin-left: 35px;
-  }
-
-  .clear {
-    margin-left: 36px;
-  }
-
 
   /* End of Contact Page */
 
