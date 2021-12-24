@@ -151,6 +151,7 @@
   .mc-field-group {
     margin: var(--size-20);
     padding-bottom: 0 !important;
+    width: 95% !important;
   }
 
   .clear {
