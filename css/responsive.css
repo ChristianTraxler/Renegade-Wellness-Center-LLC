@@ -401,7 +401,7 @@
   /* End of Contact Page */
 }
 
-@media screen and (min-width: 849px) {
+@media screen and (min-width: 760px) {
   .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(271px, 1fr));
