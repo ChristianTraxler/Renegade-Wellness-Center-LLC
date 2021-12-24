@@ -120,6 +120,7 @@
 
   .join {
     text-align: center;
+    margin-bottom: 30px !important;
   }
 
   .p1 {
@@ -138,8 +139,7 @@
 
   .mc-field-group {
     margin: var(--size-20);
-    margin-top: 0;
-    margin-bottom: 0;
+    padding-bottom: 0 !important;
   }
 
   .clear {
