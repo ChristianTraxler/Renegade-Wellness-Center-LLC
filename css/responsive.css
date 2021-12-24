@@ -106,12 +106,12 @@
     margin-top: 10px !important;
   }
 
-  .lungs {
+  /* .lungs {
     display: flex;
     margin-top: 0;
     border-radius: 5px;
     justify-content: center;
-  }
+  } */
 
   .join {
     text-align: center;
@@ -235,6 +235,7 @@
     display: flex;
     width: 90%;
     margin-top: 0;
+    margin-bottom: var(--size-20);
     border-radius: 5px;
     justify-content: center;
     float: none;
