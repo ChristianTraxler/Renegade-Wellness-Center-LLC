@@ -19,17 +19,24 @@
   /* End of Navbar */
   
   /* Start of Home Page */
-  /* .lungs {
-    margin: 7%;
-  } */
+  .lungs {
+    display: flex;
+    width: 90%;
+    margin-top: 0;
+    margin-bottom: var(--size-20);
+    border-radius: 5px;
+    justify-content: center;
+    float: none;
+  }
 
   .side {
     padding: 0;
+    float: right;
   }
 
   .p1 {
     margin-right: 12px;
-    margin-left: 27px;
+    margin-left: 30px;
   }
 
   .cd-section {
@@ -120,7 +127,7 @@
   .p1 {
     font-size: var(--size-16);
     text-align: center;
-    margin-top: var(--size-20);
+    /* margin-top: var(--size-20); */
   }
 
 /* End of Navbar */
@@ -130,20 +137,10 @@
 
   html { scroll-behavior: smooth; }
 
-  /* .navbar-nav, .nav-link {
-    padding-left: 14px !important;
-    padding-right: 12px !important;
-  } */
-
-  /* .navbar-nav, .ml-auto {
-    display: flex !important;
-    flex-direction: initial !important;
-    margin-top: 10px !important;
-  } */
-
   /* Start of Home Page */
   .h1 {
     padding: 5%;
+    margin-top: var(--size-20);
   }
 
   .signup {
@@ -313,6 +310,38 @@
 
 }
 
+@media screen and (min-width: 768px) {
+  /* Start of Home Page */
+  
+  .lungs {
+    border-radius: 5px;
+    margin-top: 0;
+    margin-left: 48px;
+    width: 50%;
+    float: left;
+  }
+
+  .side {
+    padding: 0;
+    float: none;
+  }
+
+  .p1 {
+    font-size: var(--size-16);
+    text-align: center;
+    /* margin-top: var(--size-20); */
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+    gap: var(--size-20);
+    margin-top: var(--size-100);
+  }
+
+  /* End of Home Page */
+}
+
 @media screen and (min-width: 1200px) {
 
   /* Start of Home Page */
@@ -328,6 +357,13 @@
     border-radius: 5px;
     margin-top: 0;
     margin-left: 48px;
+    width: 50%;
+    float: left;
+  }
+
+  .side {
+    padding: 0;
+    float: none;
   }
 
   .service-grid {
