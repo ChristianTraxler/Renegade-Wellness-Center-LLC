@@ -136,10 +136,10 @@
 
   .cd-section {
     /* margin-bottom: 200px; */
-  background-size: cover;
-  height: 800px;
-  background-image: url("../img/salt-rock.jpeg");
-}
+    background-size: cover;
+    height: 800px;
+    background-image: url("../img/salt-rock.jpeg");
+  }
 
   /* Start of Contact Page */
   .indicates-required {
@@ -401,7 +401,16 @@
   /* End of Contact Page */
 }
 
-@media  screen and (min-width: 1024px) {
+@media screen and (min-width: 849px) {
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: var(--size-20);
+    margin-top: var(--size-100);
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .cd-section {
     /* margin-bottom: 200px; */
     background-size: cover;
