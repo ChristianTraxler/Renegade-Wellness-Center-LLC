@@ -277,7 +277,9 @@
 }
 
 .booknow {
-  
+  margin-top: -25px;
+  cursor: pointer;
+  transition: 1s;
 }
 
 .glass_button {
@@ -298,11 +300,11 @@
   transition: 1s;
 }
 
-.glass_button:hover {
+.booknow:hover {
   transform: scale(1.1);
 }
 
-.glass_button::before {
+.booknow::before {
   content: "";
   position: absolute;
   bottom: 0;
