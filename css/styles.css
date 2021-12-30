@@ -257,6 +257,7 @@
 
 .book_now:hover {
   color: white;
+  text-decoration: none;
 }
 
 .book_now {
