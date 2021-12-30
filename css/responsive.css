@@ -119,6 +119,10 @@
     margin-bottom: var(--size-20);
   }
 
+  .logo {
+    width: 25%;
+  }
+
   .join {
     text-align: center;
     margin-bottom: 30px !important;
@@ -173,11 +177,12 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+    width: 25%;
     /* margin-bottom: -35px */
   }
 
   .h1 {
-    padding: 5%;
+    /* padding: 5%; */
     /* margin-top: var(--size-20); */
   }
 
@@ -355,6 +360,10 @@
 
 @media screen and (min-width: 768px) {
   /* Start of Home Page */
+
+  .logo {
+    width: 15%;
+  }
   
   .lungs {
     border-radius: 5px;
@@ -426,6 +435,10 @@
 @media screen and (min-width: 1200px) {
 
   /* Start of Home Page */
+
+  .logo {
+    width: 15%;
+  }
   .container {
     max-width: 1140px;
     margin-top: 155px;
