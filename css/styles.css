@@ -255,6 +255,10 @@
   margin-bottom: 0;
 }
 
+.book_now:hover {
+  color: white;
+}
+
 .book_now {
   display: flex;
   justify-content: center;
@@ -274,6 +278,11 @@
   display: inline-block;
 	text-decoration: none;
 	box-shadow: 5px 8px 12px #888888;
+  transition: 1s;
+}
+
+.book_now:hover {
+  transform: scale(1.1);
 }
 
 .booknow {
