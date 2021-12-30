@@ -283,6 +283,7 @@
 
 .book_now:hover {
   transform: scale(1.1);
+  text-decoration: none;
 }
 
 .booknow {
