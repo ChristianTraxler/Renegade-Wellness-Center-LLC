@@ -277,9 +277,14 @@
 }
 
 .booknow {
-  margin-top: -25px;
+  /* margin-top: -25px; */
   cursor: pointer;
   transition: 1s;
+  /* height: 100px; */
+}
+
+#rock {
+  background-image: url('../img/salt-rock.jpeg');
 }
 
 .glass_button {
