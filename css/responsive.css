@@ -21,7 +21,7 @@
   /* Start of Home Page */
   .lungs {
     display: flex;
-    width: 90%;
+    width: 89%;
     margin-top: 0;
     margin-bottom: var(--size-20);
     border-radius: 5px;
@@ -62,7 +62,7 @@
 
   /* Start of Contact Page */
   .hr {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
   .contact {
@@ -182,7 +182,7 @@
   }
 
   .h1 {
-    /* padding: 5%; */
+    padding: 5% 5% 2% 5%;
     /* margin-top: var(--size-20); */
   }
 
@@ -439,6 +439,11 @@
   .logo {
     width: 15%;
   }
+
+  .h1 {
+    margin-top: 50px;
+  }
+
   .container {
     max-width: 1140px;
     margin-top: 155px;
