@@ -36,6 +36,10 @@
   background-color: none !important;
 }
 
+.nb-logo {
+  height: 70px;
+}
+
 /* Start of Home Page */
 .header {
   text-align: center;
