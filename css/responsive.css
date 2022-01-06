@@ -21,7 +21,7 @@
   /* Start of Home Page */
   .lungs {
     display: flex;
-    width: 89%;
+    width: 90%;
     margin-top: 0;
     margin-bottom: var(--size-20);
     border-radius: 5px;
