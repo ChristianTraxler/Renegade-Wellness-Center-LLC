@@ -127,6 +127,11 @@
     margin-bottom: var(--size-20);
   }
 
+  .h1 {
+    padding: 5% 5% 2% 5%;
+    /* margin-top: var(--size-20); */
+  }
+
   .logo {
     width: 25%;
   }
@@ -191,7 +196,7 @@
 
   .h1 {
     padding: 5% 5% 2% 5%;
-    /* margin-top: var(--size-20); */
+    margin-top: var(--size-20);
   }
 
   .signup {
@@ -368,7 +373,7 @@
 
 @media screen and (min-width: 768px) {
   /* Start of Home Page */
-
+  
   .logo {
     width: 15%;
   }
