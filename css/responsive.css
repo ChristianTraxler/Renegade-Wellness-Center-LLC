@@ -42,6 +42,14 @@
   .cd-section {
     margin-bottom: 200px;
     height: 780px;
+    background-image: url("../img/salt-rock.jpeg");
+    background-size: cover;
+  }
+
+  #more-info1 {
+    text-decoration: none;
+    color: black;
+    margin-top: 20px;
   }
 
   /* End of Home Page */
