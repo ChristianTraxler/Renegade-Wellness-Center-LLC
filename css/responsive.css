@@ -394,9 +394,31 @@
 
 }
 
+@media only screen and (min-width: 425px) {
+
+  html { scroll-behavior: smooth; }
+
+  /* Start of Home Page */
+  .cd-section {
+    background-size: cover;
+    height: 760px;
+    background-image: url("../img/salt-rock.jpeg");
+  }
+
+  .service-grid {
+    margin-top: var(--size-100);
+    margin-left: var(--size-10);
+    margin-right: var(--size-10);
+    gap: 0;
+  }
+  /* End of Home Page */
+}
+
 @media only screen and (min-width: 760px) {
 
   html { scroll-behavior: smooth; }
+
+  /* Start of Home Page */
 
   .service-grid {
     display: grid;
@@ -404,6 +426,7 @@
     gap: var(--size-20);
     margin-top: var(--size-100);
   }
+  /* End of Home Page */
 }
 
 @media only screen and (min-width: 768px) {
