@@ -14,10 +14,6 @@
     margin-right: var(--size-10);
   }
 
-  .container {
-
-  }
-
   .card {
     width: 250px;
     height: 200px;
@@ -114,7 +110,7 @@
   /* Start of Footer */
   .footer-container {
     margin-left: 5px;
-}
+  }
 
   .pay {
     margin-left: 35px;

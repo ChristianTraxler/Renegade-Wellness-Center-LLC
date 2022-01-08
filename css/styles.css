@@ -4,7 +4,7 @@
   background-color: rgba(0, 0, 0, 0) !important;
   transition-property: background-color, color;
   transition-duration: 0.5s;
-  transition-function: ease-in-out;
+  transition: ease-in-out;
 }
 
 .navbar-dark {
@@ -53,7 +53,6 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  /* margin-bottom: -35px */
 }
 
 .hr {
@@ -117,9 +116,6 @@
 /* Start of Frosted Cards */
 .cd-section {
   margin-bottom: 400px;
-  /* background-image: url("../img/salt-rock.jpeg");
-  height: 500px;
-  background-size: cover; */
 }
 
 .service-grid {
@@ -292,15 +288,9 @@
 }
 
 .booknow {
-  /* margin-top: -25px; */
   cursor: pointer;
   transition: 1s;
-  /* height: 100px; */
 }
-
-/* #rock {
-  background-image: url('../img/salt-rock.jpeg');
-} */
 
 .glass_button {
   display: flex;
