@@ -154,7 +154,7 @@
   .cd-section {
     /* margin-bottom: 200px; */
     background-size: cover;
-    height: 800px;
+    height: 875px;
     background-image: url("../img/salt-rock.jpeg");
   }
 
@@ -326,7 +326,7 @@
   /* .cd-section {
     background-size: cover;
     height: 535px;
-    background-image: url(../img/salt-rock.jpeg);
+    background-image: url("../img/salt-rock.jpeg");
   } */
 
   .service-grid {
