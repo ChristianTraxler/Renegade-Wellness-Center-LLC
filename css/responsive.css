@@ -1,5 +1,33 @@
 /* Start of Responsiveness */
 
+@media only screen and (min-width: 320px) {
+  .cd-section {
+    margin-bottom: 200px;
+    height: 760px;
+    background-image: url("../img/salt-rock.jpeg");
+    background-size: cover;
+  }
+
+  .service-grid {
+    margin-top: var(--size-100);
+    margin-left: var(--size-10);
+    margin-right: var(--size-10);
+  }
+
+  .container {
+
+  }
+
+  .card {
+    width: 250px;
+    height: 200px;
+  }
+
+  .lungs {
+    
+  }
+}
+
 @media only screen and (min-width: 375px) {
 
   html { scroll-behavior: smooth; }
@@ -41,16 +69,10 @@
 
   .cd-section {
     margin-bottom: 200px;
-    height: 840px;
+    height: 760px;
     background-image: url("../img/salt-rock.jpeg");
     background-size: cover;
   }
-
-  /* #more-info1 {
-    text-decoration: none;
-    color: black;
-    margin-top: 20px;
-  } */
 
   .container {
     margin-top: 25px;
@@ -113,15 +135,10 @@
   /* End of Footer */
 }
 
-/* @media only screen and (max-width: 376px) {
-  .cd-section {
-    background-size: cover;
-    height: 740px;
-    background-image: url("../img/salt-rock.jpeg");
-  }
-} */
-
 @media only screen and (min-width: 414px) {
+  
+  html { scroll-behavior: smooth; }
+
   /* Start of Navbar */
   .navbar-nav, .nav-link {
     padding-left: 14px !important;
@@ -141,7 +158,6 @@
 
   .h1 {
     padding: 5% 5% 2% 5%;
-    /* margin-top: var(--size-20); */
   }
 
   .logo {
@@ -156,17 +172,15 @@
   .p1 {
     font-size: var(--size-16);
     text-align: center;
-    /* margin-top: var(--size-20); */
   }
 
   .service-grid, .container {
-    margin-top: 25px;
+    margin-top: 40px;
   }
 
   .cd-section {
-    /* margin-bottom: 200px; */
     background-size: cover;
-    height: 840px;
+    height: 760px;
     background-image: url("../img/salt-rock.jpeg");
   }
 
@@ -192,7 +206,7 @@
   /* End of Contact Page */
 }
 
-@media screen and (max-width: 414px) {
+@media only screen and (max-width: 415px) {
 
   html { scroll-behavior: smooth; }
 
@@ -203,7 +217,6 @@
     align-items: center;
     margin: auto;
     width: 25%;
-    /* margin-bottom: -35px */
   }
 
   .h1 {
@@ -335,17 +348,15 @@
     max-width: 732px;
   }
 
-  /* .cd-section {
-    background-size: cover;
-    height: 878px;
-    background-image: url("../img/salt-rock.jpeg");
-  } */
-
   .service-grid {
     margin-top: var(--size-100);
     margin-left: var(--size-10);
     margin-right: var(--size-10);
-    gap: var(--size-40);
+    gap: 0;
+  }
+
+  .container {
+    margin-top: 40px;
   }
 
   h5 {
@@ -383,7 +394,10 @@
 
 }
 
-@media screen and (min-width: 760px) {
+@media only screen and (min-width: 760px) {
+
+  html { scroll-behavior: smooth; }
+
   .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(271px, 1fr));
@@ -392,7 +406,10 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
+
+  html { scroll-behavior: smooth; }
+
   /* Start of Home Page */
   
   .logo {
@@ -415,13 +432,11 @@
   .p1 {
     font-size: var(--size-16);
     text-align: center;
-    /* margin-top: var(--size-20); */
   }
 
   .cd-section {
-    /* margin-bottom: 200px; */
     background-size: cover;
-    height: 535px;
+    height: 542px;
     background-image: url("../img/salt-rock.jpeg");
   }
 
@@ -444,11 +459,13 @@
   /* End of Contact Page */
 }
 
-@media screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
+
+  html { scroll-behavior: smooth; }
+
   .cd-section {
-    /* margin-bottom: 200px; */
     background-size: cover;
-    height: 352px;
+    height: 330px;
     background-image: url("../img/salt-rock.jpeg");
   }
 
@@ -462,15 +479,9 @@
   }
 }
 
-/* @media  screen and (max-width: 1025px) {
-  #more-info1 {
-    text-decoration: none;
-    color: black;
-    margin-top: 20px;
-  }
-} */
+@media only screen and (min-width: 1200px) {
 
-@media screen and (min-width: 1200px) {
+  html { scroll-behavior: smooth; }
 
   /* Start of Home Page */
 
@@ -505,7 +516,6 @@
   }
 
   .cd-section {
-    /* height: 500px; */
     margin-bottom: 200px;
   }
 
