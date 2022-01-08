@@ -22,10 +22,6 @@
     width: 250px;
     height: 200px;
   }
-
-  .lungs {
-    
-  }
 }
 
 @media only screen and (min-width: 375px) {
@@ -494,11 +490,6 @@
 
   .service-grid .container {
     margin-top: 65px;
-  }
-
-  #more-info1 {
-    text-decoration: none;
-    color: black;
   }
 }
 
