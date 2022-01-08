@@ -41,15 +41,19 @@
 
   .cd-section {
     margin-bottom: 200px;
-    height: 780px;
+    height: 840px;
     background-image: url("../img/salt-rock.jpeg");
     background-size: cover;
   }
 
-  #more-info1 {
+  /* #more-info1 {
     text-decoration: none;
     color: black;
     margin-top: 20px;
+  } */
+
+  .container {
+    margin-top: 25px;
   }
 
   /* End of Home Page */
@@ -109,6 +113,14 @@
   /* End of Footer */
 }
 
+/* @media only screen and (max-width: 376px) {
+  .cd-section {
+    background-size: cover;
+    height: 740px;
+    background-image: url("../img/salt-rock.jpeg");
+  }
+} */
+
 @media only screen and (min-width: 414px) {
   /* Start of Navbar */
   .navbar-nav, .nav-link {
@@ -154,7 +166,7 @@
   .cd-section {
     /* margin-bottom: 200px; */
     background-size: cover;
-    height: 875px;
+    height: 840px;
     background-image: url("../img/salt-rock.jpeg");
   }
 
@@ -325,7 +337,7 @@
 
   /* .cd-section {
     background-size: cover;
-    height: 535px;
+    height: 878px;
     background-image: url("../img/salt-rock.jpeg");
   } */
 
@@ -371,6 +383,15 @@
 
 }
 
+@media screen and (min-width: 760px) {
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(271px, 1fr));
+    gap: var(--size-20);
+    margin-top: var(--size-100);
+  }
+}
+
 @media screen and (min-width: 768px) {
   /* Start of Home Page */
   
@@ -401,7 +422,7 @@
     /* margin-bottom: 200px; */
     background-size: cover;
     height: 535px;
-    background-image: url(../img/salt-rock.jpeg);
+    background-image: url("../img/salt-rock.jpeg");
   }
 
   .service-grid {
@@ -423,27 +444,31 @@
   /* End of Contact Page */
 }
 
-@media screen and (min-width: 760px) {
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(271px, 1fr));
-    gap: var(--size-20);
-    margin-top: var(--size-100);
-  }
-}
-
 @media screen and (min-width: 1024px) {
   .cd-section {
     /* margin-bottom: 200px; */
     background-size: cover;
-    height: 350px;
-    background-image: url(../img/salt-rock.jpeg);
+    height: 352px;
+    background-image: url("../img/salt-rock.jpeg");
   }
 
   .service-grid .container {
     margin-top: 65px;
   }
+
+  #more-info1 {
+    text-decoration: none;
+    color: black;
+  }
 }
+
+/* @media  screen and (max-width: 1025px) {
+  #more-info1 {
+    text-decoration: none;
+    color: black;
+    margin-top: 20px;
+  }
+} */
 
 @media screen and (min-width: 1200px) {
 
