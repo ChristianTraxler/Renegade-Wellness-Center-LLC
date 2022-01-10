@@ -111,6 +111,7 @@
   margin-right: var(--size-30);
   margin-top: 0;
   padding-top: 0;
+  /* border: solid 1px; */
 }
 
 /* Start of Frosted Cards */
@@ -233,6 +234,7 @@
   min-height: 75px;
   font-size: var(--size-30);
   text-align: center;
+  margin-left: var(--size-18);
 }
 
 .info {
