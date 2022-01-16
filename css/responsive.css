@@ -177,6 +177,11 @@
   }
 
   /* Start of Contact Page */
+
+  .header-2 {
+    margin-bottom: var(--size-20);
+  }
+
   .indicates-required {
     text-align: right;
     font-size: 11px;

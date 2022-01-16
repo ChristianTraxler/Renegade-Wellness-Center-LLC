@@ -332,6 +332,20 @@
   margin-top: 2rem;
 }
 
+.header-2 {
+  text-align: center;
+  background-color: #8DC7C1;
+  font-size: var(--size-30);
+  padding-left: var(--size-20);
+}
+
+.header-3 {
+  text-align: center;
+  background-color: #8DC7C1;
+  font-size: var(--size-30);
+  padding-left: var(--size-20);
+}
+
 .contact-section {
   margin-bottom: var(--size-150);
 }
