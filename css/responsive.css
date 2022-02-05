@@ -55,8 +55,8 @@
   }
 
   .p1 {
-    margin-right: 12px;
-    margin-left: 30px;
+    margin-right: 10px;
+    margin-left: 25px;
   }
 
   .cd-section {
@@ -451,6 +451,10 @@
     gap: var(--size-20);
     margin-top: var(--size-100);
   }
+
+  .lungs {
+    margin-left: 47px;
+  }
   /* End of Home Page */
 }
 
@@ -480,6 +484,8 @@
   .p1 {
     font-size: var(--size-16);
     text-align: center;
+    margin-right: 30px;
+    margin-left: 25px;
   }
 
   .cd-section {
