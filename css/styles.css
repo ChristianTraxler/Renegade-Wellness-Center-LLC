@@ -405,6 +405,11 @@
   width: var(--size-40);
 }
 
+.payment2 {
+  height: var(--size-40);
+  width: var(--size-30);
+}
+
 .gpay {
   height: var(--size-50);
   width: var(--size-50);
