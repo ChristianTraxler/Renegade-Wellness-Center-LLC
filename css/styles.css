@@ -87,15 +87,13 @@
 }
   
 /* Image, for homepage */
-.lungs {
+/* .lungs {
   display: flex;
-	float: left;
-  width: 50%;
+  width: 36%;
   margin: auto;
 	margin-top: 0;
   border-radius: 5px;
-  margin-left: 29px;
-}
+} */
 
 .side {
   display: flex;
@@ -111,8 +109,28 @@
   margin-right: var(--size-30);
   margin-top: 0;
   padding-top: 0;
-  /* border: solid 1px; */
 }
+
+/* Start of Pricing */
+
+.pricing {
+  display: flex;
+  position: relative;
+  top: 130px;
+  margin: var(--size-100);
+  text-align: center;
+  font-size: var(--size-18);
+}
+
+.pricing-list {
+  display: flex;
+  position: relative;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 260px;
+}
+
+/* End of Pricing */
 
 /* Start of Frosted Cards */
 .cd-section {
