@@ -335,6 +335,14 @@
     margin-top: var(--size-20);
   }
 
+  .pricing-list {
+    display: flex;
+    position: relative;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 260px;
+  }
+
   .side {
     line-height: 0.6em;
     float: right;
@@ -502,7 +510,7 @@
     display: flex;
     position: relative;
     top: 38px;
-    margin: var(--size-150);
+    margin: var(--size-100);
     text-align: center;
   }
 

@@ -117,7 +117,8 @@
   display: flex;
   position: relative;
   top: 130px;
-  margin: var(--size-100);
+  margin: var(--size-50);
+  margin-bottom: var(--size-100);
   text-align: center;
   font-size: var(--size-18);
 }
