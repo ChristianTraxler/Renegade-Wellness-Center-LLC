@@ -45,6 +45,8 @@
   text-align: center;
   background-color: #8DC7C1;
   font-size: var(--size-30);
+  position: relative;
+  top: 44px;
 }
 
 .logo {
@@ -56,6 +58,8 @@
 }
 
 .hr {
+  position: relative;
+  top: 44px;
 	width: 95%;
 	border: 1px solid;
 	margin-bottom: var(--size-30);
@@ -70,7 +74,10 @@
 /* Column container */
 .row {  
   display: flex;
-  flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+  text-align: center;
+  margin: auto;
+  margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
@@ -87,13 +94,14 @@
 }
   
 /* Image, for homepage */
-/* .lungs {
+.lungs {
   display: flex;
-  width: 36%;
+  position: relative;
+  top: 50px;
+  width: 50%;
   margin: auto;
-	margin-top: 0;
   border-radius: 5px;
-} */
+}
 
 .side {
   display: flex;
@@ -103,12 +111,14 @@
 
 .p1 {
   color: var(--font-color-dark);
-	font-size: var(--size-20);
+	font-size: var(--size-18);
 	line-height: 2em;
   margin-left: var(--size-30);
   margin-right: var(--size-30);
   margin-top: 0;
   padding-top: 0;
+  position: relative;
+  top: 20px;
 }
 
 /* Start of Pricing */
@@ -117,8 +127,8 @@
   display: flex;
   position: relative;
   top: 130px;
-  margin: var(--size-50);
-  margin-bottom: var(--size-100);
+  margin: 0 100px;
+  margin-bottom: var(--size-150);
   text-align: center;
   font-size: var(--size-18);
 }
@@ -126,6 +136,7 @@
 .pricing-list {
   display: flex;
   position: relative;
+  top: 60px;
   width: 50%;
   margin: auto;
   margin-bottom: 260px;
@@ -135,7 +146,10 @@
 
 /* Start of Frosted Cards */
 .cd-section {
-  margin-bottom: 400px;
+  background-size: cover;
+  height: 332px;
+  background-image: url(../img/salt-rock.jpeg);
+  margin-bottom: 200px;
 }
 
 .service-grid {
@@ -143,6 +157,8 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--size-20);
   margin-top: var(--size-100);
+  position: relative;
+  top: 56px;
 }
 
 .container {

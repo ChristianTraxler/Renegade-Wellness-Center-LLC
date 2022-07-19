@@ -1,564 +1,7 @@
 /* Start of Responsiveness */
 
-@media only screen and (min-width: 320px) {
-  .cd-section {
-    margin-bottom: 200px;
-    height: 760px;
-    background-image: url("../img/salt-rock.jpeg");
-    background-size: cover;
-  }
 
-  .service-grid {
-    margin-top: var(--size-100);
-    margin-left: var(--size-10);
-    margin-right: var(--size-10);
-  }
-
-  .card {
-    width: 250px;
-    height: 200px;
-  }
-}
-
-@media only screen and (min-width: 375px) {
-
-  html { scroll-behavior: smooth; }
-
-  /* Start of Navbar */
-  .navbar-nav, .nav-link {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
-
-  .navbar-nav, .ml-auto {
-    display: flex !important;
-    flex-direction: initial !important;
-    margin-top: 10px !important;
-  }
-
-  /* End of Navbar */
-  
-  /* Start of Home Page */
-  .lungs {
-    display: flex;
-    width: 90%;
-    margin-top: 0;
-    margin-bottom: var(--size-20);
-    border-radius: 5px;
-    justify-content: center;
-    float: none;
-    right: -24px;
-    position: relative;
-  }
-
-  .side {
-    padding: 0;
-    float: right;
-  }
-
-  .p1 {
-    margin-right: 10px;
-    margin-left: 25px;
-  }
-
-  .pricing {
-    position: relative;
-    top: 60px;
-  }
-
-  .cd-section {
-    margin-bottom: 200px;
-    height: 760px;
-    background-image: url("../img/salt-rock.jpeg");
-    background-size: cover;
-  }
-
-  .container {
-    margin-top: 25px;
-  }
-
-  /* End of Home Page */
-
-  /* Start of Info Page */
-  .indent {
-    text-align: center;
-  }
-
-  /* End of Info Page */
-
-  /* Start of Book Now Page */
-  .book {
-    text-align: center;
-  }
-  
-  /* End of Book Now Page */
-
-  /* Start of Contact Page */
-  .hr {
-    margin-top: 2rem;
-  }
-
-  .header-2 {
-    margin-bottom: var(--size-20);
-  }
-
-  .contact {
-    margin-left: var(--size-20);
-    margin-right: 5px;
-  }
-
-  .hours {
-    justify-content: center;
-    font-weight: bold;
-    display: flex;
-    margin-left: 60px;
-    margin-right: 60px;
-    text-align: center;
-  }
-
-  /* End of Contact Page */
-
-  /* Start of Footer */
-  .footer-container {
-    margin-left: 5px;
-  }
-
-  .pay {
-    margin-left: 35px;
-    margin-right: var(--size-20);
-    justify-content: center;
-  }
-
-  .dev-section {
-    margin-left: var(--size-20);
-    margin-right: var(--size-20);
-    justify-content: center;
-  }
-
-  /* End of Footer */
-}
-
-@media only screen and (min-width: 414px) {
-  
-  html { scroll-behavior: smooth; }
-
-  /* Start of Navbar */
-  .navbar-nav, .nav-link {
-    padding-left: 14px !important;
-    padding-right: 12px !important;
-  }
-
-  .navbar-nav, .ml-auto {
-    display: flex !important;
-    flex-direction: initial !important;
-    margin-top: 10px !important;
-  }
-  /* End of Navbar */
-
-  .header {
-    margin-bottom: var(--size-20);
-  }
-
-  .h1 {
-    padding: 5% 5% 2% 5%;
-  }
-
-  .logo {
-    width: 25%;
-  }
-
-  .join {
-    text-align: center;
-    margin-bottom: 30px !important;
-  }
-
-  .p1 {
-    font-size: var(--size-16);
-    text-align: center;
-  }
-
-  .service-grid, .container {
-    margin-top: 40px;
-  }
-
-  .cd-section {
-    background-size: cover;
-    height: 760px;
-    background-image: url("../img/salt-rock.jpeg");
-  }
-
-  /* Start of Contact Page */
-
-  .header-2 {
-    margin-bottom: var(--size-20);
-  }
-
-  .indicates-required {
-    text-align: right;
-    font-size: 11px;
-    margin-right: 5px !important;
-    float: right;
-  }
-
-  .mc-field-group {
-    margin: var(--size-20);
-    padding-bottom: 0 !important;
-    width: 95% !important;
-  }
-
-  .clear {
-    margin-left: var(--size-20);
-    margin-top: var(--size-10);
-  }
-
-  /* End of Contact Page */
-}
-
-@media only screen and (max-width: 415px) {
-
-  html { scroll-behavior: smooth; }
-
-  /* Start of Home Page */
-  .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 25%;
-  }
-
-  .h1 {
-    padding: 5% 5% 2% 5%;
-    margin-top: var(--size-20);
-  }
-
-  .signup {
-    padding: 5%;
-  }
-
-  [aria-controls="menu-list"] {
-    display: block;
-    margin-bottom: var(--size-10);
-  }
-
-  [aria-expanded="true"] ~ ul {
-    display: grid;
-    max-height: 500px;
-    transform: rotateX(0);
-  }
-
-  [aria-expanded="false"] .close {
-    display: none;
-  }
-
-  [aria-expanded="true"] .close {
-    display: inline-block;
-  }
-
-  [aria-expanded="true"] .open {
-    display: none;
-  }
-  
-  .navbar-brand {
-    display: flex;
-    margin: auto;
-  }
-
-  .navbar-nav {
-    float: right;
-  }
-
-  .navbar-toggler {
-    float: left;
-  }
-
-  .menu {
-    order: -1;
-    padding: 5px;
-  }
-
-  .menu ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10px, fr));
-    list-style: none;
-    grid-gap: var(--size-10);
-    padding-left: var(--size-50);
-    padding-right: var(--size-50);
-    padding-bottom: 0%;
-    margin-top: 15px;
-    overflow: hidden;
-    display: none;
-  }
-
-  #menu-list {
-    font-size: 80%;
-  }
-
-  [aria-controls="menu-list"] {
-    display: block;
-    margin-bottom: var(--size-10);
-  }
-
-  [aria-expanded="true"] ~ ul {
-    display: grid;
-    max-height: 500px;
-    transform: rotateX(0);
-  }
-
-  [aria-expanded="false"] .close {
-    display: none;
-  }
-
-  [aria-expanded="true"] .close {
-    display: inline-block;
-  }
-
-  [aria-expanded="true"] .open {
-    display: none;
-  }
-
-  .lungs {
-    display: flex;
-    width: 80%;
-    margin-top: 0;
-    margin-bottom: var(--size-20);
-    border-radius: 5px;
-    justify-content: center;
-    float: none;
-    position: relative;
-    right: -50px;
-  }
-
-  .p1 {
-    font-size: var(--size-16);
-    text-align: center;
-    margin-top: var(--size-20);
-  }
-
-  .pricing-list {
-    display: flex;
-    position: relative;
-    width: 80%;
-    margin: auto;
-    margin-bottom: 260px;
-  }
-
-  .side {
-    line-height: 0.6em;
-    float: right;
-  }
-
-  .book {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-left: 15px;
-    padding-top: 25px;
-    padding-left: 0;
-  }
-
-  .price {
-    display: flex;
-    padding: var(--size-20);
-    justify-content: center;
-  }
-
-  .card {
-    max-width: 732px;
-  }
-
-  .service-grid {
-    margin-top: var(--size-100);
-    margin-left: var(--size-10);
-    margin-right: var(--size-10);
-    gap: 0;
-  }
-
-  .container {
-    margin-top: 40px;
-  }
-
-  h5 {
-    font-size: medium !important;
-  }
-
-  /* End of Home Page */
-
-  /* Start of Info Page */
-  .indent {
-    text-align: center;
-  }
-
-  /* End of Info Page */
-
-  /* Start of Contact Page */
-  .join {
-    text-align: center;
-  }
-
-  .h5 {
-    font-size: 1.05rem;
-  }
-
-  /* End of Contact Page */
-
-  /* Start of Footer */
-  .footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-  }
-
-  .footer-container {
-    margin-left: var(--size-10);
-  }
-
-  /* End of Footer */
-
-}
-
-@media only screen and (min-width: 416px) {
-  h5 {
-    font-size: medium !important;
-  }
-
-  .book {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-left: 15px;
-    padding-top: 25px;
-    padding-left: 0;
-  }
-}
-
-@media only screen and (min-width: 425px) {
-
-  html { scroll-behavior: smooth; }
-
-  /* Start of Home Page */
-  .cd-section {
-    background-size: cover;
-    height: 760px;
-    background-image: url("../img/salt-rock.jpeg");
-  }
-
-  .service-grid {
-    margin-top: var(--size-100);
-    margin-left: var(--size-10);
-    margin-right: var(--size-10);
-    gap: 0;
-  }
-
-  .pricing-list {
-    width: 80%;
-  }
-  /* End of Home Page */
-
-  h5 {
-    font-size: medium !important;
-  }
-}
-
-@media only screen and (min-width: 760px) {
-
-  html { scroll-behavior: smooth; }
-
-  /* Start of Home Page */
-
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(271px, 1fr));
-    gap: var(--size-20);
-    margin-top: var(--size-100);
-  }
-
-  /* End of Home Page */
-}
-
-@media only screen and (min-width: 768px) {
-
-  html { scroll-behavior: smooth; }
-
-  /* Start of Home Page */
-  
-  .logo {
-    width: 15%;
-  }
-  
-  .lungs {
-    border-radius: 5px;
-    margin-top: 0;
-    margin: auto;
-    width: 50%;
-  }
-
-  .side {
-    padding: 0;
-    float: none;
-  }
-
-  .p1 {
-    font-size: var(--size-16);
-    text-align: center;
-    /* margin-right: 30px;
-    margin-left: 25px; */
-    margin: 10px 10px 10px 24px;
-  }
-
-  .pricing {
-    display: flex;
-    position: relative;
-    top: 38px;
-    margin: var(--size-100);
-    text-align: center;
-  }
-
-  .pricing-list {
-    width: 50%;
-  }
-
-  .cd-section {
-    background-size: cover;
-    height: 542px;
-    background-image: url("../img/salt-rock.jpeg");
-  }
-
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-    gap: var(--size-20);
-    margin-top: var(--size-100);
-  }
-
-  /* End of Home Page */
-
-  /* Start of Contact Page */
-  .indicates-required {
-    text-align: right;
-    font-size: 11px;
-    margin-right: 4%;
-  }
-
-  /* End of Contact Page */
-}
-
-@media only screen and (min-width: 1024px) {
-
-  html { scroll-behavior: smooth; }
-
-  .cd-section {
-    background-size: cover;
-    height: 332px;
-    background-image: url("../img/salt-rock.jpeg");
-  }
-
-  .service-grid .container {
-    margin-top: 65px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 1200px) {
 
   html { scroll-behavior: smooth; }
 
@@ -585,7 +28,7 @@
     border-radius: 5px;
     margin-top: 0;
     margin: auto;
-    width: 36%;
+    width: 50%;
     position: relative;
     top: 40px;
     right: -4px;
@@ -597,6 +40,7 @@
   }
 
   .cd-section {
+    height: 332px;
     margin-bottom: 200px;
   }
 
@@ -604,6 +48,14 @@
     margin-top: 200px;
     margin-left: var(--size-10);
     margin-right: var(--size-10);
+    position: relative;
+    top: -76px;
+  }
+
+  .cd-section {
+    background-size: cover;
+    height: 760px;
+    background-image: url("../img/salt-rock.jpeg");
   }
 
   /* End of Home Page */
@@ -634,4 +86,112 @@
   /* End of Footer */
 }
 
+@media only screen and (min-width: 768px) {
+
+  html { scroll-behavior: smooth; }
+
+  /* Start of Home Page */
+  
+  .logo {
+    width: 15%;
+  }
+  
+  .lungs {
+    border-radius: 5px;
+    margin-top: 0;
+    margin: auto;
+  }
+
+  .side {
+    padding: 0;
+    float: none;
+  }
+
+  .p1 {
+    font-size: var(--size-16);
+    text-align: center;
+    /* margin-right: 30px;
+    margin-left: 25px; */
+    margin: 10px 10px 10px 24px;
+  }
+
+  /* .pricing {
+    display: flex;
+    position: relative;
+    top: 38px;
+    margin: var(--size-100);
+    text-align: center;
+  }
+
+  .pricing-list {
+    width: 50%;
+  } */
+
+  .cd-section { height: 380px; }
+
+  /* .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+    gap: var(--size-20);
+    margin-top: var(--size-100);
+  } */
+
+  /* End of Home Page */
+
+  /* Start of Contact Page */
+  .indicates-required {
+    text-align: right;
+    font-size: 11px;
+    margin-right: 4%;
+  }
+
+  /* End of Contact Page */
+}
+
+@media only screen and (max-width: 599px) {
+  /* Start of Home Page */
+  .lungs {
+    width: 90%;
+  }
+
+  .pricing {
+    margin: 50px 30px;
+    margin-bottom: 100px;
+  }
+
+  .pricing-list {
+    width: 90%;
+  }
+
+  .cd-section {
+    height: 1125px;
+  }
+
+  .service-grid {
+    gap: 0
+    ;
+  }
+
+  .card {
+    width: 250px;
+  }
+
+  /* End of Home Page */
+}
+
+@media only screen and (max-width: 390px) {
+  /* Start of Home Page */
+
+  .cd-section {
+    height: 1125px;
+  }
+
+
+
+  /* End of Home Page */
+}
+
+@media only screen and (max-width: 375px) {
+  
+}
 /* End of Responsiveness
