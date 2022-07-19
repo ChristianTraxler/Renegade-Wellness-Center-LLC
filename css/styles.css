@@ -126,9 +126,9 @@
 .pricing {
   display: flex;
   position: relative;
-  top: 130px;
+  top: 70px;
   margin: 0 100px;
-  margin-bottom: var(--size-150);
+  margin-bottom: var(--size-50);
   text-align: center;
   font-size: var(--size-18);
 }
