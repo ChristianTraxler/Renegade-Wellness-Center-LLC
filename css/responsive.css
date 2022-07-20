@@ -223,9 +223,26 @@
 
 
   /* End of Home Page */
+
+  /* Start of Contact Page */
+
+  .hours {
+    margin: 0 94px;
+  }
+
+
+  /* End of Contact Page */
 }
 
 @media only screen and (max-width: 375px) {
   
+
+  /* Start of Contact Page */
+
+  .hours {
+    margin: 0 70px;
+  }
+
+  /* End of Contact Page */
 }
 /* End of Responsiveness
