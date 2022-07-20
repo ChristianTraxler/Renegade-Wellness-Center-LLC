@@ -273,8 +273,7 @@
 }
 
 .info {
-  margin-left: 35px;
-  margin-right: var(--size-25);
+  margin: 0 25px;
 }
 
 /* End of Info Page */
