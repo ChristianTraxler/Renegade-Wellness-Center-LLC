@@ -180,6 +180,26 @@
   }
 
   /* End of Home Page */
+
+  /* Start of More Info Page */
+
+    .info {
+      margin: 0 25px
+    }
+
+  /* End og More Info Page */
+
+  /* Start of Contact Page */
+
+  h5 {
+    font-size: 1.0rem !important;
+  }
+
+  .header-3 {
+    font-size: var(--size-25);
+  }
+
+  /* End of Contact Page */
 }
 
 @media only screen and (max-width: 390px) {
