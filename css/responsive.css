@@ -3,9 +3,9 @@
 @media only screen and (max-width: 1500px) {
   /* Start of Contact Page */
 
-  .hours {
+  /* .hours {
     margin: 0 534px;
-  }
+  } */
 
   /* End of Contact Page */
 }
@@ -69,9 +69,9 @@
     min-height: var(--size-50);
   }
   
-  .hours {
+  /* .hours {
     margin: 0 500px;
-  }
+  } */
 
   /* End of Contact Page */
 
@@ -147,9 +147,9 @@
     margin-right: 4%;
   }
 
-  .hours {
+  /* .hours {
     margin: 0 278px;
-  }
+  } */
 
   /* End of Contact Page */
 }
@@ -206,9 +206,9 @@
     font-size: var(--size-25);
   }
 
-  .hours {
+  /* .hours {
     margin: 0 115px;
-  }
+  } */
 
   /* End of Contact Page */
 }
@@ -226,9 +226,9 @@
 
   /* Start of Contact Page */
 
-  .hours {
+  /* .hours {
     margin: 0 94px;
-  }
+  } */
 
 
   /* End of Contact Page */
@@ -239,9 +239,9 @@
 
   /* Start of Contact Page */
 
-  .hours {
+  /* .hours {
     margin: 0 70px;
-  }
+  } */
 
   /* End of Contact Page */
 }
