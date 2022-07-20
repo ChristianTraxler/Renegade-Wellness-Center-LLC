@@ -31,6 +31,7 @@
   padding-left: 10px !important;
   padding-right: 10px !important;
   flex-direction: inherit !important;
+  justify-content: center;
 }
 
 #bg-light {
