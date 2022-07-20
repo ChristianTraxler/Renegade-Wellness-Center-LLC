@@ -375,7 +375,6 @@
   text-align: center;
   background-color: #8DC7C1;
   font-size: var(--size-30);
-  padding-left: var(--size-20);
 }
 
 .contact-section {
@@ -385,6 +384,8 @@
 .contact {
   justify-content: center;
   text-align: center;
+  position: relative;
+  top: 14px;
 }
 
 .hours {
@@ -392,7 +393,6 @@
   justify-content: center;
   text-align: center;
   font-weight: bold;
-  margin-left: var(--size-20);
 }
 
 /* End of Contact Page */
