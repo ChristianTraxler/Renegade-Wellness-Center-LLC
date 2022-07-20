@@ -269,7 +269,7 @@
   min-height: 75px;
   font-size: var(--size-30);
   text-align: center;
-  margin-left: var(--size-18);
+  padding-top: 20px;
 }
 
 .info {
@@ -368,8 +368,7 @@
 .header-2 {
   text-align: center;
   background-color: #8DC7C1;
-  font-size: var(--size-30);
-  padding-left: var(--size-20);
+  font-size: var(--size-30);padding-top: 20px;
 }
 
 .header-3 {
