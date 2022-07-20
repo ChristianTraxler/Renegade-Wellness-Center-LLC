@@ -205,9 +205,11 @@
     font-size: var(--size-25);
   }
 
-  /* .hours {
-    margin: 0 115px;
-  } */
+  .relief {
+    display: flex;
+    text-align: left;
+    justify-content: center;
+  }
 
   /* End of Contact Page */
 }

@@ -276,6 +276,13 @@
   margin: 0 25px;
 }
 
+.relief {
+  display: flex;
+  columns: 0 2;
+  justify-content: center;
+  text-align: left;
+}
+
 /* End of Info Page */
 
 /* Start of Book Page */
