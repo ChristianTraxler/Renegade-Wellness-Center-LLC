@@ -61,7 +61,7 @@
   }
   
   .hours {
-    margin: 0 105px;
+    margin: 0 500px;
   }
 
   /* End of Contact Page */
@@ -193,6 +193,10 @@
 
   .header-3 {
     font-size: var(--size-25);
+  }
+
+  .hours {
+    margin: 0 104px;
   }
 
   /* End of Contact Page */
