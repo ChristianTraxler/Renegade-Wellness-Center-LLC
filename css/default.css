@@ -24,9 +24,9 @@
   --size-50: 3.125rem;
   --size-100: 6.25rem;
   --size-150: 9.325rem;
+
+  /* color-scheme: light dark; */
 }
-
-
 
 html { scroll-behavior: smooth; }
 
