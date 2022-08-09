@@ -461,6 +461,11 @@
 .mastercard {
   position: relative;
   left: 3px;
+  height: 38px;
+}
+
+.amex {
+  height: 47px;
 }
 
 .gpay {
