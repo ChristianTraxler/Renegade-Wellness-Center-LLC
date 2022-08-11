@@ -464,8 +464,7 @@
 }
 
 .faq-cabin, .faq-products {
-  position: relative;
-  left: 15px;
+  padding-left: 15px;
 }
 
 
