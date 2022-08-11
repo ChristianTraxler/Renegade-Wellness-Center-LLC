@@ -414,6 +414,11 @@
 /* End of Contact Page */
 
 /* Start of FAQ Page */
+.faqs {
+  position: relative;
+  top: 30px;
+}
+
 .accordion {
   background-color: #eee;
   color: #444;
