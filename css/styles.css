@@ -455,6 +455,7 @@
   max-width: 80%;
   position: relative;
   left: 15px;
+  bottom: 6px;
 }
 
 .faq-cabin, .faq-products {
