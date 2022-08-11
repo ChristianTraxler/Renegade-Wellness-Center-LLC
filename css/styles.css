@@ -517,6 +517,13 @@
   height: 50px;
 }
 
+.checks {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  bottom: 2px;
+}
+
 .mastercard {
   position: relative;
   left: 3px;
