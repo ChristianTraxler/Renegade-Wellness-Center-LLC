@@ -451,6 +451,11 @@
   transition: max-height 0.2s ease-out;
 }
 
+.faq-cabin, .faq-products {
+  position: relative;
+  left: 15px;
+}
+
 
 
 /* End of FAQ Page */
