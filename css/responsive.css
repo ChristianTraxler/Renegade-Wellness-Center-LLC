@@ -212,6 +212,19 @@
   }
 
   /* End of Contact Page */
+
+  /* Start of FAQ Page */
+  .accordion {
+    width: 94%;
+  }
+
+  .panel {
+    width: 94%;
+  }
+
+
+
+  /* End of FAQ Page */
 }
 
 @media only screen and (max-width: 390px) {
@@ -233,6 +246,18 @@
 
 
   /* End of Contact Page */
+
+  /* Start of FAQ Page */
+  .accordion {
+    width: 92%;
+  }
+
+  .panel {
+    width: 92%;
+  }
+
+
+  /* End of FAQ Page */
 }
 
 @media only screen and (max-width: 375px) {

@@ -420,14 +420,14 @@
 }
 
 .accordion {
-  background-color: #eee;
-  color: #444;
+  background-color: #C5C5C5;
+  color: #000000;
   cursor: pointer;
   position: relative;
   left: 15px;
   margin-bottom: 5px;
   padding: 18px;
-  width: 80%;
+  width: 45%;
   border: none;
   text-align: left;
   outline: none;
@@ -441,7 +441,7 @@
 
 .accordion:after {
   content: '\002B';
-  color: #777;
+  color: #000000;
   font-weight: bold;
   float: right;
   margin-left: 5px;
@@ -457,7 +457,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  max-width: 80%;
+  width: 45%;
   position: relative;
   left: 15px;
   bottom: 6px;
@@ -465,9 +465,13 @@
 
 .faq-cabin, .faq-products {
   padding-left: 15px;
+  text-decoration: underline;
 }
 
-
+.products {
+  position: relative;
+  top: 40px;
+}
 
 /* End of FAQ Page */
   
