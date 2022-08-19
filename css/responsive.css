@@ -235,6 +235,36 @@
 }
 
 @media only screen and (max-width: 390px) {
+  /* Start of Navbar */
+  .nav-home, .nav-info, .nav-book, .nav-contact, .nav-faq {
+    font-size: 14px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .nav-home {
+    right: 50px;
+  }
+
+  .nav-info {
+    right: 30px;
+  }
+
+  .nav-book {
+    right: 4px;
+  }
+
+  .nav-contact {
+    left: 24px;
+  }
+
+  .nav-faq {
+    left: 50px;
+  }
+
+
+  /* End of Navbar */
+
   /* Start of Home Page */
 
   .cd-section {

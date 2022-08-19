@@ -52,10 +52,10 @@
   right: 10px;
 }
 
-/*.nav-book {*/
-/*  position: relative;*/
-/*  left: 5px;*/
-/*}*/
+.nav-book {
+  position: relative;
+  /*left: 5px;*/
+}
 
 .nav-contact {
   position: relative;
