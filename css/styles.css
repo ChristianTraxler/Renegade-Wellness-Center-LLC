@@ -83,6 +83,19 @@
   width: 14px;
 }
 
+.icons3 {
+  position: relative;
+  right: 6px;
+  width: 17px;
+}
+
+.icons4 {
+  position: relative;
+  right: 6px;
+  bottom: 2px;
+  width: 17px;
+}
+
 /* End of Navbar */
 
 /* Start of Home Page */
