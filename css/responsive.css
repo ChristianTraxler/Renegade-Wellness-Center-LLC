@@ -156,6 +156,25 @@
 @media only screen and (max-width: 599px) {
   /* Start of Navbar */
 
+  .nav-home {
+    width: 83px;
+  }
+
+  .nav-info {
+    width: 66px;
+  }
+
+  .nav-book {
+    width: 71px;
+  }
+
+  .nav-contact {
+    width: 95px;
+  }
+
+  .nav-faq {
+    width: 68px;
+  }
 
 
 
@@ -243,23 +262,28 @@
   }
 
   .nav-home {
-    right: 50px;
+    right: 46px;
+    width: 57px;
   }
 
   .nav-info {
-    right: 30px;
+    right: 27px;
+    width: 43px;
   }
 
   .nav-book {
-    right: 4px;
+    right: 2px;
+    width: 47px;
   }
 
   .nav-contact {
-    left: 24px;
+    left: 25px;
+    width: 69px;
   }
 
   .nav-faq {
     left: 50px;
+    width: 44px;
   }
 
 
