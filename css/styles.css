@@ -525,6 +525,10 @@
   bottom: 6px;
 }
 
+.p-pad {
+  padding-top: 10px;
+}
+
 .faq-cabin, .faq-products {
   padding-left: 15px;
   text-decoration: underline;
