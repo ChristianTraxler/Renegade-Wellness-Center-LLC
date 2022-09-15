@@ -156,6 +156,11 @@
 @media only screen and (max-width: 599px) {
   /* Start of Navbar */
 
+  .navbar-nav {
+    padding-left: inherit !important;
+    padding-right: inherit !important;
+  }
+
   .nav-home {
     width: 83px;
   }
