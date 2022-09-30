@@ -154,6 +154,38 @@
 }
 
 @media only screen and (max-width: 599px) {
+  /* Start of Navbar */
+
+  .navbar-nav {
+    padding-left: inherit !important;
+    padding-right: inherit !important;
+  }
+
+  .nav-home {
+    width: 83px;
+  }
+
+  .nav-info {
+    width: 66px;
+  }
+
+  .nav-book {
+    width: 71px;
+    right: 4px;
+  }
+
+  .nav-contact {
+    width: 95px;
+  }
+
+  .nav-faq {
+    width: 68px;
+  }
+
+
+
+  /* End of Navbar */
+
   /* Start of Home Page */
   .lungs {
     width: 90%;
@@ -212,9 +244,52 @@
   }
 
   /* End of Contact Page */
+
+  /* Start of FAQ Page */
+  .accordion {
+    width: 92.9%;
+  }
+
+  .panel {
+    width: 92.9%;
+  }
+
+
+
+  /* End of FAQ Page */
 }
 
 @media only screen and (max-width: 390px) {
+  /* Start of Navbar */
+  .nav-home, .nav-info, .nav-book, .nav-contact, .nav-faq {
+    font-size: 14px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .nav-home {
+    right: 46px;
+    width: 57px;
+  }
+
+  .nav-book {
+    right: 14px;
+    width: 47px;
+  }
+
+  .nav-contact {
+    left: 18px;
+    width: 69px;
+  }
+
+  .nav-faq {
+    left: 50px;
+    width: 44px;
+  }
+
+
+  /* End of Navbar */
+
   /* Start of Home Page */
 
   .cd-section {
@@ -233,6 +308,18 @@
 
 
   /* End of Contact Page */
+
+  /* Start of FAQ Page */
+  .accordion {
+    width: 92%;
+  }
+
+  .panel {
+    width: 92%;
+  }
+
+
+  /* End of FAQ Page */
 }
 
 @media only screen and (max-width: 375px) {
