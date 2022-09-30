@@ -539,6 +539,12 @@
   top: 40px;
 }
 
+.footnote {
+  position: relative;
+  top: 100px;
+  padding: 20px;
+}
+
 /* End of FAQ Page */
   
 /* Start of Footer */
@@ -593,24 +599,26 @@
   bottom: 2px;
 }
 
-.mastercard {
-  position: relative;
-  left: 3px;
-  height: 38px;
+.ccard {
+  height: 48px;
+  width: 47px;
 }
 
-.amex {
-  height: 47px;
+.discover {
+  position: relative;
+  height: 42px;
+  width: 40px;
+  left: 4px;
 }
 
 .gpay {
-  height: var(--size-50);
-  width: var(--size-50);
+  position: relative;
+  left: 3px;
 }
 
 .cash-app {
-  height: var(--size-40);
-  width: var(--size-30);
+  height: 48px;
+  width: 47px;
 }
 
 .arrow {
