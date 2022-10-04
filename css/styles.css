@@ -606,9 +606,18 @@
 
 .discover {
   position: relative;
-  height: 42px;
+  height: 34px;
   width: 40px;
+  top: 2px;
+  left: 2px;
+}
+
+.apple {
+  position: relative;
+  top: 3px;
   left: 4px;
+  height: 37px;
+  width: 47px;
 }
 
 .gpay {
