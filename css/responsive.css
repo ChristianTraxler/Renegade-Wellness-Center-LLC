@@ -16,18 +16,11 @@
 
   /* Start of Home Page */
 
-  .logo {
-    width: 15%;
-  }
+  .logo { width: 15%; }
 
-  .container {
-    max-width: 1140px;
-    /*margin-top: 155px;*/
-  }
+  .container { max-width: 1140px; }
 
-  .card {
-    max-width: 1140px;
-  }
+  .card { max-width: 1140px; }
 
   .lungs {
     border-radius: 5px;
@@ -65,13 +58,7 @@
   /* End of Home Page */
 
   /* Start of Contact Page */
-  .header {
-    min-height: var(--size-50);
-  }
-  
-  /* .hours {
-    margin: 0 500px;
-  } */
+  .header { min-height: var(--size-50); }
 
   /* End of Contact Page */
 
@@ -83,9 +70,7 @@
     left: 0;
   }
 
-  .footer-container {
-    margin-left: var(--size-50);
-  }
+  .footer-container { margin-left: var(--size-50); }
 
   /* End of Footer */
 }
@@ -96,9 +81,7 @@
 
   /* Start of Home Page */
   
-  .logo {
-    width: 15%;
-  }
+  .logo { width: 15%; }
   
   .lungs {
     border-radius: 5px;
@@ -161,81 +144,54 @@
     padding-right: inherit !important;
   }
 
-  .nav-home {
-    width: 83px;
-  }
+  .nav-home { width: 83px; }
 
-  .nav-info {
-    width: 66px;
-  }
+  .nav-info { width: 66px; }
 
   .nav-book {
     width: 71px;
     right: 4px;
   }
 
-  .nav-contact {
-    width: 95px;
-  }
+  .nav-contact { width: 95px; }
 
-  .nav-faq {
-    width: 68px;
-  }
+  .nav-faq { width: 68px; }
 
 
 
   /* End of Navbar */
 
   /* Start of Home Page */
-  .lungs {
-    width: 90%;
-  }
+  .lungs { width: 90%; }
 
   .pricing {
     margin: 50px 30px;
-    margin-bottom: 50px;
+    /*margin-bottom: 50px;*/
   }
 
-  .pricing-list {
-    width: 90%;
-  }
+  .pricing-list { width: 90%; }
 
-  .cd-section {
-    height: 1125px;
-  }
+  .cd-section { height: 1125px; }
 
-  .service-grid {
-    gap: 0
-    ;
-  }
+  .service-grid { gap: 0; }
 
-  .card {
-    width: 250px;
-  }
+  .card { width: 250px; }
 
-  .footer-container {
-    margin: auto;
-  }
+  .footer-container { margin: auto; }
 
   /* End of Home Page */
 
   /* Start of More Info Page */
 
-    .info {
-      margin: 0 25px
-    }
+    .info { margin: 0 25px }
 
   /* End og More Info Page */
 
   /* Start of Contact Page */
 
-  h5 {
-    font-size: 1.0rem !important;
-  }
+  h5 { font-size: 1.0rem !important; }
 
-  .header-3 {
-    font-size: var(--size-25);
-  }
+  .header-3 { font-size: var(--size-25); }
 
   .relief {
     display: flex;
@@ -246,13 +202,9 @@
   /* End of Contact Page */
 
   /* Start of FAQ Page */
-  .accordion {
-    width: 92.9%;
-  }
+  .accordion { width: 92.9%; }
 
-  .panel {
-    width: 92.9%;
-  }
+  .panel { width: 92.9%; }
 
 
 
@@ -292,9 +244,7 @@
 
   /* Start of Home Page */
 
-  .cd-section {
-    height: 1125px;
-  }
+  .cd-section { height: 1125px; }
 
 
 
@@ -310,13 +260,9 @@
   /* End of Contact Page */
 
   /* Start of FAQ Page */
-  .accordion {
-    width: 92%;
-  }
+  .accordion { width: 92%; }
 
-  .panel {
-    width: 92%;
-  }
+  .panel { width: 92%; }
 
 
   /* End of FAQ Page */

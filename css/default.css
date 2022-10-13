@@ -33,7 +33,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: Arial;
   margin: 0;
-  background-color: #8DC7C1 !important;
+  /*background-color: #8DC7C1 !important;*/
 }
 
 *,
