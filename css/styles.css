@@ -478,6 +478,22 @@
   transition: 0.4s;
 }
 
+.accordion2 {
+  background-color: #C5C5C5;
+  color: #000000;
+  cursor: pointer;
+  position: relative;
+  left: 15px;
+  margin-bottom: 5px;
+  padding: 18px;
+  width: 45%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
 .active, .accordion:hover { background-color: #ccc; }
 
 .accordion:after {
@@ -486,6 +502,17 @@
   font-weight: bold;
   float: right;
   margin-left: 5px;
+}
+
+.accordion2:after {
+  position: relative;
+  bottom: 14px;
+  content: '\002B';
+  color: #000000;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+
 }
 
 .active:after { content: "\2212"; }
@@ -504,19 +531,24 @@
 
 .p-pad { padding-top: 10px; }
 
-.faq-cabin, .faq-products {
+.faq-cabin, .faq-infrared, .faq-products {
   padding-left: 15px;
   text-decoration: underline;
 }
 
-.products {
+.infrared {
   position: relative;
   top: 40px;
 }
 
+.products {
+  position: relative;
+  top: 80px;
+}
+
 .footnote {
   position: relative;
-  top: 100px;
+  top: 120px;
   padding: 20px;
 }
 

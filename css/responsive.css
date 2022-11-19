@@ -202,7 +202,7 @@
   /* End of Contact Page */
 
   /* Start of FAQ Page */
-  .accordion { width: 92.9%; }
+  .accordion, .accordion2 { width: 92.9%; }
 
   .panel { width: 92.9%; }
 
