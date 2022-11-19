@@ -494,7 +494,7 @@
   transition: 0.4s;
 }
 
-.active, .accordion:hover { background-color: #ccc; }
+.active, .accordion:hover, .accordion2:hover { background-color: #ccc; }
 
 .accordion:after {
   content: '\002B';
@@ -504,7 +504,7 @@
   margin-left: 5px;
 }
 
-.accordion2:after {
+.plus:after {
   position: relative;
   bottom: 14px;
   content: '\002B';
@@ -512,10 +512,9 @@
   font-weight: bold;
   float: right;
   margin-left: 5px;
-
 }
 
-.active:after { content: "\2212"; }
+.active:after, .active2:after { content: "\2212"; }
 
 .panel {
   padding: 0 18px;
