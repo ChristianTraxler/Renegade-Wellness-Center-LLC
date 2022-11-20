@@ -342,6 +342,13 @@
   justify-content: center;
   padding-top: var(--size-40);
   margin-bottom: 0;
+  position: relative;
+  top: 20px;
+}
+
+.renegade-prices {
+  position: relative;
+  top: 40px;
 }
 
 .book_now:hover {
