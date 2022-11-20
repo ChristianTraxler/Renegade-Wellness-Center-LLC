@@ -350,7 +350,14 @@
   display: inline-block;
   position: relative;
   top: 40px;
-  text-align: left;
+}
+
+.book-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  position: relative;
+  top: 100px;
 }
 
 .book_now:hover {
