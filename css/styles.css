@@ -347,8 +347,10 @@
 }
 
 .renegade-prices {
+  display: inline-block;
   position: relative;
   top: 40px;
+  text-align: left;
 }
 
 .book_now:hover {
