@@ -352,6 +352,8 @@
   top: 40px;
 }
 
+.asterisk { white-space: pre-line; }
+
 .book-btn {
   display: flex;
   justify-content: center;
