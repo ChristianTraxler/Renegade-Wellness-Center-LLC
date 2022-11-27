@@ -183,13 +183,7 @@
 
   /* Start of Book Page */
 
-    .asterisk {
-      /*display: flex;*/
-      /*margin-left: 30px;*/
-      /*margin-right: 30px;*/
-      /*right: inherit;*/
-      white-space: inherit;
-    }
+    .asterisk { white-space: inherit; }
 
   /* End og Book Page */
 
@@ -214,6 +208,8 @@
     position: relative;
     bottom: 14px;
   }
+
+  .plus2:after { bottom: 14px; }
 
   .panel { width: 92.9%; }
 

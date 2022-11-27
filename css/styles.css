@@ -352,14 +352,7 @@
   top: 40px;
 }
 
-.asterisk {
-  /*display: flex;*/
-  /*position: relative;*/
-  /*margin-left: 460px;*/
-  /*margin-right: 32px;*/
-  /*right: 220px;*/
-  white-space: pre-line;
-}
+.asterisk { white-space: pre-line; }
 
 .book-btn {
   display: flex;
@@ -532,6 +525,16 @@
 .plus:after {
   position: relative;
   bottom: 14px;
+  content: '\002B';
+  color: #000000;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.plus2:after {
+  position: relative;
+  bottom: inherit;
   content: '\002B';
   color: #000000;
   font-weight: bold;
