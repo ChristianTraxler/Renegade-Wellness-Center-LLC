@@ -352,14 +352,14 @@
   top: 40px;
 }
 
-.asterisk {
-  display: flex;
-  position: relative;
-  margin-left: 460px;
-  margin-right: 32px;
-  right: 220px;
-  /*white-space: pre-line;*/
-}
+/*.asterisk {*/
+/*  display: flex;*/
+/*  position: relative;*/
+/*  margin-left: 460px;*/
+/*  margin-right: 32px;*/
+/*  right: 220px;*/
+/*  !*white-space: pre-line;*!*/
+/*}*/
 
 .book-btn {
   display: flex;
