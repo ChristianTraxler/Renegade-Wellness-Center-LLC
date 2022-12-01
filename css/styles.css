@@ -195,9 +195,112 @@
   position: relative;
   top: 134px;
   width: 50%;
-  margin: auto;
-  margin-bottom: 260px;
+  margin: auto auto 260px auto;
+  border-radius: 10px;
 }
+
+/*.pricing-section {*/
+/*  padding: var(--size-150) 0;*/
+/*  margin: 0 auto;*/
+/*}*/
+
+/*.block-text.pricing-header {*/
+/*  text-align: center;*/
+/*  padding-right: 0;*/
+/*  margin: var(--size-100) 0;*/
+/*}*/
+
+/*.pricing-table {*/
+/*  display: grid;*/
+/*  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));*/
+/*  gap: var(--size-30);*/
+/*  margin: auto;*/
+/*  align-items: flex-start;*/
+/*}*/
+
+/*.price-card {*/
+/*  background-color: var(--white);*/
+/*  border-radius: 8px;*/
+/*  padding: var(--size-40) var(--size-16);*/
+/*}*/
+
+/*.price-card1 {*/
+/*  background-color: var(--white);*/
+/*  border-radius: 8px;*/
+/*  padding: var(--size-40) var(--size-16);*/
+/*  display: none;*/
+/*}*/
+
+/*.price-card2 {*/
+/*  background-color: var(--white);*/
+/*  border-radius: 8px;*/
+/*  padding: var(--size-40) var(--size-16);*/
+/*}*/
+
+/*.side-by-side1 { float: left; }*/
+/*.side-by-side2 { float: right; }*/
+
+/*.price-card .checked { color: var(--success); }*/
+/*.price-card .times {*/
+/*  color: var(--danger);*/
+/*  width: var(--size-14);*/
+/*}*/
+
+/*.price-card img, .price-card1 img, .price-card2 img {*/
+/*  border-radius: 10px;*/
+/*}*/
+
+/*.price-card1.featured, .price-card2.featured {*/
+/*  box-shadow: 0 10px 20px rgba(82, 179, 255, 0.2);*/
+/*  margin-top: -1rem;*/
+/*}*/
+
+/*.price-card h3 {*/
+/*  font-size: var(--size-18);*/
+/*  color: var(--font-color-dark);*/
+/*}*/
+
+/*.price-card1, .price-card2 h3 {*/
+/*  font-size: var(--size-18);*/
+/*  color: var(--font-color-dark);*/
+/*}*/
+
+/*.price-card hr { margin: 2rem 0 1rem; }*/
+
+/*.price {*/
+/*  color: var(--font-color-link);*/
+/*  font-size: var(--size-30);*/
+/*  font-weight: 600;*/
+/*  line-height: 60px;*/
+/*}*/
+
+/*.price-card h3, .price-card .price,*/
+/*.price-card .billed {*/
+/*  text-align: center;*/
+/*  position: relative;*/
+/*  top: 15px;*/
+/*}*/
+
+/*.price-card1 h3, .price-card2 h3, .price-card1 .price, .price-card2 .price,*/
+/*.price-card1 .billed, .price-card2 .billed { text-align: center; }*/
+
+/*.billed { line-height: 1.1rem; }*/
+
+/*.pricing-table ul { line-height: 20px; }*/
+
+/*.price-card li { margin-bottom: var(--size-20); }*/
+/*.price-card .icon {*/
+/*  float: right;*/
+/*  font-weight: 600;*/
+/*}*/
+
+/*.plan-btn-wrapper {*/
+/*  text-align: center;*/
+/*  position: relative;*/
+/*  top: 20px;*/
+/*  margin-bottom: 6px;*/
+/*}*/
+/*.plan-btn-wrapper a { width: 100%; }*/
 
 /* End of Pricing */
 
@@ -310,6 +413,26 @@
 }
 
 /* End of Frosted Cards */
+
+.giftcards1 {
+  position: relative;
+  bottom: 80px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.giftcards1 > a > button {
+  margin-top: 30px;
+}
+
+.giftcards2 {
+  position: relative;
+  top: 168px;
+}
+
+.giftcards2 > a > button {
+  margin-top: 20px;
+}
 
 /* End of Home Page */
 
