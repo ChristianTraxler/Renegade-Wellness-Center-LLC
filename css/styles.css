@@ -10,6 +10,7 @@
 .navbar-dark {
   background-color: rgba(0, 0, 0, 0.8) !important;
   color: #ffffff !important;
+  backdrop-filter: blur(3px);
 }
 
 .navbar-collapse, .navbar-nav, .nav-item { color: inherit !important; }
