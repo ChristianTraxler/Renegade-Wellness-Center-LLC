@@ -171,7 +171,23 @@
     /*margin-bottom: 50px;*/
   }
 
-  .pricing-list { width: 90%; }
+  /*.pricing-list { width: 90%; }*/
+
+  .price-sheets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+    gap: 10px;
+    /*margin-bottom: 250px;*/
+  }
+
+  .pricing-list1, .pricing-list2, .pricing-list3, .pricing-list {
+    width: 90%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .pricing-list1 { right: 0; }
+  .pricing-list3 { left: 0; }
 
   .cd-section { height: 1125px; }
 

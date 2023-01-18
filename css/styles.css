@@ -191,14 +191,22 @@
   font-size: var(--size-18);
 }
 
-.pricing-list {
+.price-sheets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+}
+
+.pricing-list1, .pricing-list2, .pricing-list3, .pricing-list4 {
   display: flex;
   position: relative;
   top: 134px;
-  width: 50%;
+  width: 90%;
   margin: auto auto 260px auto;
   border-radius: 10px;
 }
+
+/*.pricing-list1 { right: 20px; }*/
+/*.pricing-list3 { left: 20px; }*/
 
 /*.pricing-section {*/
 /*  padding: var(--size-150) 0;*/
@@ -417,7 +425,7 @@
 
 .giftcards1 {
   position: relative;
-  bottom: 80px;
+  bottom: 60px;
   text-align: center;
   padding-bottom: 40px;
 }
