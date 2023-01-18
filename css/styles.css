@@ -205,7 +205,7 @@
   grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
 }
 
-.pricing-list1, .pricing-list2, .pricing-list3, .pricing-list4 {
+.pricing-list1, .pricing-list2, .pricing-list3, .pricing-list4, .pricing-list5 {
   display: flex;
   position: relative;
   top: 134px;

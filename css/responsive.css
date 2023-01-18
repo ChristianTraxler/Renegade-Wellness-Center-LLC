@@ -171,16 +171,19 @@
     /*margin-bottom: 50px;*/
   }
 
-  /*.pricing-list { width: 90%; }*/
+  .pricing-list {
+    width: 94%;
+    margin-bottom: 260px;
+  }
 
   .price-sheets {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
     gap: 10px;
-    /*margin-bottom: 250px;*/
+    margin-bottom: 250px;
   }
 
-  .pricing-list1, .pricing-list2, .pricing-list3, .pricing-list {
+  .pricing-list1, .pricing-list2, .pricing-list3, .pricing-list4, .pricing-list5 {
     width: 90%;
     margin-top: 0;
     margin-bottom: 0;
