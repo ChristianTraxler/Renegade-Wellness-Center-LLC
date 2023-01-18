@@ -274,7 +274,12 @@
 
   .cd-section { height: 1125px; }
 
-
+  .price-sheets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: 10px;
+    margin-bottom: 250px;
+  }
 
   /* End of Home Page */
 
