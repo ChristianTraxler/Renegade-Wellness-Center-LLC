@@ -191,6 +191,15 @@
   font-size: var(--size-18);
 }
 
+.pricing-list {
+  display: flex;
+  position: relative;
+  top: 134px;
+  width: 50%;
+  margin: auto auto 260px;
+  border-radius: 10px;
+}
+
 .price-sheets {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
