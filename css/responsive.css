@@ -178,7 +178,7 @@
 
   .price-sheets {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(167px, 1fr));
     gap: 10px;
     margin-bottom: 250px;
   }
