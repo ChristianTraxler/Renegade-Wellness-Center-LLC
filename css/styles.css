@@ -323,11 +323,34 @@
 /* End of Pricing */
 
 /* Start of Frosted Cards */
-.cd-section {
-  background-size: cover;
-  height: 332px;
+.image {
+  position: relative;
+  width: 800px;
   background-image: url(../img/salt-rock.jpeg);
+}
+
+.title, .description {
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  align-items: center;
+  background: rgba(0,0, 0, 0.6);
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+}
+
+.salt--overlay {
+  background-size: cover;
+  width: 100%;
+  height: 332px;
+  /*background-image: url(../img/salt-rock.jpeg);*/
   margin-bottom: 200px;
+}
+
+.salt--overlay:hover {
+  opacity: 1;
 }
 
 .service-grid {

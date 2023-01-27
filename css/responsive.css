@@ -36,10 +36,10 @@
     float: none;
   }
 
-  .cd-section {
-    height: 332px;
-    margin-bottom: 200px;
-  }
+  /*.cd-section {*/
+  /*  height: 332px;*/
+  /*  margin-bottom: 200px;*/
+  /*}*/
 
   .service-grid {
     margin-top: 200px;
@@ -51,7 +51,7 @@
 
   .cd-section {
     background-size: cover;
-    height: 760px;
+    /*height: 760px;*/
     background-image: url("../img/salt-rock.jpeg");
   }
 
