@@ -1,104 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Renegade Wellness Center, LLC</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Halotherapy and Natural Wellness">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="shortcut icon" type="image/jpg" href="img/RWC-logo.png"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </head>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Renegade Wellness Center, LLC</title>
+		<meta name="description" content="Halotherapy and Natural Wellness">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./css/default.css">
+		<link rel="stylesheet" href="./css/styles.css">
+		<link rel="stylesheet" href="./css/responsive.css">
+		<link rel="shortcut icon" type="image/jpg" href="./assets/images/RWC-logo.png"/>
+	</head>
 	<body>
 		<div id="pageTop"></div>
-
-		<!-- Start of Navbar -->
-		<nav class="navbar fixed-top navbar-expand-sm navbar-light navbar-dark" id="bg-light">
-			<!-- <a class="navbar-brand" href="#">Renegade Wellness Center</a> -->
-			<a href="./index.html"><img src="./img/RWC-logo(white).svg" alt="Renegade Wellness Center Logo" class="nb-logo"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav ml-auto">
-					<a class="nav-item nav-link nav-home" href="./index.html"><img src="./img/home.svg" class="icons1">Home</a>
-					<a class="nav-item nav-link nav-book" href="./book.html"><img src="./img/booking.svg" class="icons2">Book</a>
-					<a class="nav-item nav-link nav-contact" href="./contact.html"><img src="./img/Speech-bubble.svg" class="icons3">Contact</a>
-					<a class="nav-item nav-link nav-faq" href="./faq.html"><img src="./img/faq.svg" class="icons4">FAQ</a>
-				</div>
+		<nav id="topNav" class="navbar nav">
+			<div class="container">
+				<button class="navbar-toggler" aria-expanded="false" aria-controls="navbarDropdown">
+					<span>&#9776;</span>
+				</button>
+				<a class="navbar-brand" href="index.html">Renegade Wellness Center, LLC</a>
+				<ul class="navbar-nav">
+					<li class="nav-link">
+						<a href="index.html">Home</a>
+					</li>
+					<li class="nav-link">
+						<a href="products.html">Products</a>
+					</li>
+					<li class="nav-link">
+						<a href="contact.html">Contact</a>
+					</li>
+					<li class="nav-link">
+						<a href="faq.html">FAQ</a>
+					</li>
+				</ul>
 			</div>
 		</nav>
 
-		<!-- End of Navbar -->
+		<header class="bg-header">
+			<div class="container">
+				<div class="hero-wrapper">
+					<h2 class="hero-header"><br>
+<!--						Renegade Wellness Center-->
+					</h2>
+					<img src="./assets/images/RWC-logo(white).svg" alt="Renegade Wellness Center Logo"
+																			class="rwc-logo">
+					<!--<a class="btn btn-white" href="#">Learn More</a>-->
+				</div>
+			</div>
+		</header>
 
-		<!-- Start of Main Section -->
-		<main class="container">
-			<div class="header">
-				<h1 class="h1">Renegade Wellness Center</h1>
+		<!--FAQ Page-->
+		<section class="pricing-section">
+			<div class="block-text faq-header">
+				<h2>FAQs</h2>
 			</div>
 
-			<hr class="hr">
-			<br>
+			<div class="container">
+				<section class="info-section">
+					<section class="faqs">
+						<div class="salt-cabin">
+							<h2 class="faq-cabin">Salt Cabin</h2>
+							<button class="accordion">What is Halotherapy?</button>
+							<div class="panel">
+								<p class="p-pad">Halotherapy (also know as Salt Therapy) is an inhalation of kinetically activated pure dry salt particles. Dry salt is super absorbent, antibacterial, and antifungal.
+									These micro sized salt particles travel deep into the respiratory system and absorb excess moisture, remove allergens, toxins, foreign substances, break up stagnated mucus, restore
+									the function of cilia and widen the airways for better lung function and more efficient oxygen distribution. Halotherapy is also topically beneficial and can help manage many skin conditions.</p>
+							</div>
 
-			<!-- The flexible grid (content) -->
-			<section class="info-section">
-
-				<h2 class="more-info">FAQs</h2>
-
-				<section class="faqs">
-					<div class="salt-cabin">
-						<h3 class="faq-cabin">Salt Cabin</h3>
-						<button class="accordion">What is Halotherapy?</button>
-						<div class="panel">
-							<p class="p-pad">Halotherapy (also know as Salt Therapy) is an inhalation of kinetically activated pure dry salt particles. Dry salt is super absorbent, antibacterial, and antifungal.
-								These micro sized salt particles travel deep into the respiratory system and absorb excess moisture, remove allergens, toxins, foreign substances, break up stagnated mucus, restore
-								the function of cilia and widen the airways for better lung function and more efficient oxygen distribution. Halotherapy is also topically beneficial and can help manage many skin conditions.</p>
-						</div>
-
-						<button class="accordion plus">What conditions could Halotherapy help <br> provide relief from?</button>
-						<div class="panel">
-							<p class="p-pad">While the list is extensive, here are some of the many conditions from which Halotherapy
-								could help provide relief:</p>
-							• Allergies<br>
-							• Asthma<br>
-							• Bronchitis<br>
-							• Bronchial Infections<br>
-							• COPD<br>
-							• Cold & Flu<br>
-							• Cystic Fibrosis<br>
-							• Emphysema<br>
-							• Pneumonia<br>
-							• Rhinitis<br>
-							• Sinusitis<br>
-							• Smoker's Cough<br>
-							• Wheezing<br>
-							• Snoring (in some cases)<br>
-							• Acne<br>
-							• Dermatitis<br>
-							• Dry/Flaky Skin<br>
-							• Eczema<br>
-							• Psoriasis<br>
-							• Rash<br>
-							• Rosacea<br>
-							• Skin Aging<br>
-							• Inflammation<br>
-							• Stress<br>
-							• Lack of Focus<br>
-							• Low Energy<br>
-							• Sleep Disturbances<br>
-						</div>
+							<button class="accordion plus">What conditions could Halotherapy <br> help provide relief
+								from?</button>
+							<div class="panel">
+								<p class="p-pad">While the list is extensive, here are some of the many conditions from which Halotherapy
+									could help provide relief:</p>
+								<div class="panel2 panel2-1">
+									• Allergies<br>
+									• Asthma<br>
+									• Bronchitis<br>
+									• Bronchial Infections<br>
+									• COPD<br>
+									• Cold & Flu<br>
+									• Cystic Fibrosis<br>
+									• Emphysema<br>
+									• Pneumonia<br>
+									• Rhinitis<br>
+									• Sinusitis<br>
+									• Smoker's Cough<br>
+									• Wheezing<br>
+									• Snoring (in some cases)<br>
+									• Acne<br>
+									• Dermatitis<br>
+									• Dry/Flaky Skin<br>
+									• Eczema<br>
+									• Psoriasis<br>
+									• Rash<br>
+									• Rosacea<br>
+									• Skin Aging<br>
+									• Inflammation<br>
+									• Stress<br>
+									• Lack of Focus<br>
+									• Low Energy<br>
+									• Sleep Disturbances<br>
+								</div>
+							</div>
 
 							<button class="accordion">What clothing should I wear?</button>
 							<div class="panel">
 								<p class="p-pad">You may wear whatever you are comfortable in. If you would like to expose more skin than
-									your
-									clothing
-									will allow a spa wrap will be provided.</p>
+									your clothing will allow a spa wrap will be provided.</p>
 							</div>
 
 							<button class="accordion">Do I wear my shoes in the salt cabin?</button>
@@ -113,283 +127,310 @@
 									toes into the Himalayan floor salt. You may bring a book or something to journal in if you would like.</p>
 							</div>
 
-						<button class="accordion">Can I take my phone or tablet in?</button>
-						<div class="panel">
-							<p class="p-pad">Electronics and salt don't mix so take this time to give your eyes and mind a
-								break from the blue light.</p>
+							<button class="accordion">Can I take my phone or tablet in?</button>
+							<div class="panel">
+								<p class="p-pad">Electronics and salt don't mix so take this time to give your eyes and mind a
+									break from the blue light.</p>
+							</div>
+
+							<button class="accordion">What if I'm claustrophobic?</button>
+							<div class="panel">
+								<p class="p-pad">There is a door and window in the salt cabin that you can see out of. Opening
+									the blinds and letting sunlight in the window seems to help those with claustrophobia
+									relax and enjoy their time. If you get uncomfortable you may end your
+									session at any time.</p>
+							</div>
+
+							<button class="accordion">Should I remove my jewelry?</button>
+							<div class="panel">
+								<p class="p-pad">This depends, salt can be corrosive to non-precious metals. We recommend
+									removing any costume jewelry and watches. Wedding rings and other jewelry made of
+									gold, platinum, titanium, etc. will be fine left on.</p>
+							</div>
+
+							<button class="accordion">Will I sweat in the salt cabin?</button>
+							<div class="panel">
+								<p class="p-pad">No, the salt cabin stays at room temperature.</p>
+							</div>
+
+							<button class="accordion plus">I have allergies, is there anything of <br> concern in the salt
+								solution?</button>
+							<div class="panel">
+								<p class="p-pad">The salt used in the cabin is pharmaceutical grade which means it has been
+									tested for purity with no additives. You will only be exposed to pure, dry salt.</p>
+							</div>
+
+							<button class="accordion plus">I've been told to lower my salt intake <br> how will this affect
+								me?</button>
+							<div class="panel">
+								<p class="p-pad">Pharmaceutical grade salt is different than table salt since it is pure with no
+									additives. Also, since you will be breathing it in versus digesting it through your
+									stomach salt therapy should not affect those markers. Always consult with your
+									physician if you have specific concerns.</p>
+							</div>
+
+							<button class="accordion plus">I like to wear perfume, can I get in <br> the salt cabin?</button>
+							<div class="panel">
+								<p class="p-pad">We kindly ask that you reserve putting on your favorite fragrance until after your
+									time in the cabin. The cabin is ventilated and cleaned between each client, however,
+									heavy fragrances can linger causing those with allergies to be affected.</p>
+							</div>
+
+							<button class="accordion">Can children benefit from Halotherapy?</button>
+							<div class="panel">
+								<p class="p-pad">Absolutely, Halotherapy is a gentle and natural therapy and is appropriate for
+									children 6 months and older. For very young children the salt concentration will be
+									adjusted. Kids love their time in the salt cabin playing in the Himalayan floor salt and
+									listening to music. They may also bring a book if they would like.</p>
+							</div>
+
+							<button class="accordion">When should I avoid Halotherapy?</button>
+							<div class="panel">
+								<p class="p-pad">Halotherapy should be avoided during the acute phase of any illness, including the
+									following: infections accompanied by fever, acute active tuberculosis, cardiac
+									insufficiency, COPD that is in third stage, bleeding, spitting of blood, contagious
+									ailments, when an oxygen tank is used for breathing, alcohol or drug intoxication,
+									unstable or uncontrolled hypertension, and acute stages of respiratory disease.</p>
+							</div>
 						</div>
 
-						<button class="accordion">What if I'm claustrophobic?</button>
-						<div class="panel">
-							<p class="p-pad">There is a door and window in the salt cabin that you can see out of. Opening
-								the blinds and letting sunlight in the window seems to help those with claustrophobia
-								relax and enjoy their time. If you get uncomfortable you may end your
-								session at any time.</p>
+						<div class="infrared">
+							<h2 class="faq-infrared">Infrared</h2>
+							<button class="accordion">What is Infrared Therapy?</button>
+							<div class="panel">
+								<p class="p-pad">Infrared is a safe and gentle wavelength in the natural spectrum of light.
+									It penetrates human tissue and the energy it delivers is just the right
+									nudge cells need to stimulate warmth, growth, and release. Infrared
+									saunas emit lightwaves that penetrate the body to stimulate health
+									benefits from within.</p>
+							</div>
+
+							<button class="accordion plus">What is the difference between a <br> traditional sauna and an
+								infrared <br> sauna?</button>
+							<div class="panel">
+								<p class="p-pad">Traditional saunas heat the air to a point that initiates the body’s natural cooling process.
+									This means that blood comes to the surface of the skin and opens the pores.<br><br>
+									Infrared saunas emit safe lightwaves that penetrate the body to stimulate the health benefits from within at
+									a cellular level and allow for a deeper detox.</p>
+							</div>
+
+							<button class="accordion">What type of infrared sauna do you have?</button>
+							<div class="panel">
+								<p class="p-pad">Renegade Wellness Center has chosen a far infrared sauna bed. This allows for a private,
+									comfortable experience and allows you to keep your face out of the direct heat. Since your face tends to get hot first, keeping
+									it out of the sauna bed allows your body to tolerate longer sessions and therefore deeper detox and better health benefits.</p>
+							</div>
+
+							<button class="accordion plus">What all is included and how long is the <br> infrared therapy
+								session?</button>
+							<div class="panel">
+								<p class="p-pad">Your session will total 45 minutes which includes 25-40 minutes in the sauna depending on your preference and
+									the rest of the time spent as cool down time in a relaxing environment. A bottle of alkaline or regular water will be provided
+									so that you can rehydrate. Your session will also include rose water mist and cooling pads for the eyes or forehead applied 15
+									minutes into your session if you like.</p>
+							</div>
+
+							<button class="accordion">What are the benefits of infrared therapy?</button>
+							<div class="panel">
+								<p class="p-pad">There are many clinically proven benefits to infrared therapy:<br><br>
+
+									- Boosts Metabolism<br>
+									- Supports Weight Loss<br>
+									- Supports Detoxification<br>
+									- Improves Heart Health<br>
+									- Aids in Muscle Repair & Joint Health<br>
+									- Increases Circulation<br>
+									- Improves Flexibility<br>
+									- Relieves Stress<br>
+									- Promotes Relaxation<br>
+									- Rejuvenates Skin<br>
+									- Improves Sleep Quality<br>
+									- Strengthens Immunity</p>
+							</div>
+
+							<button class="accordion">Do you sweat during infrared therapy?</button>
+							<div class="panel">
+								<p class="p-pad">You will sweat during infrared therapy. Some people will sweat more than others but sweating is part of the
+									natural detox process and is fantastic for the body. You will have time to cool down and rehydrate after your time in the infrared bed.</p>
+							</div>
+
+							<button class="accordion">Can the heat level be adjusted if I’m more sensitive?</button>
+							<div class="panel">
+								<p class="p-pad">Yes, the infrared sauna bed has 3 different sections that can be controlled separately to
+									create a custom experience for you.</p>
+							</div>
+
+							<button class="accordion">What do I wear during a sauna session?</button>
+							<div class="panel">
+								<p class="p-pad">The less you wear the better. It is recommended to get in the sauna bed without
+									clothing so that	the infrared can penetrate your tissues as deep as possible. You may wear undergarments
+									or light gym clothing if you are more comfortable just make sure to bring fresh ones to change into after
+									your session since you will be sweating. Spa wraps are also provided for cool down so that you can stop
+									sweating before you get dressed.</p>
+							</div>
+
+							<button class="accordion">What is the age limit for infrared therapy?</button>
+							<div class="panel">
+								<p class="p-pad">Infrared therapy at Renegade Wellness Center is geared for ages 16 and up.
+									However, infrared therapy is used on newborns in hospitals so it is safe for children
+									with some restrictions and a shorter session. Please ask if you are interested in
+									sessions for children younger than 16 and we can discuss your options and whether it
+									is right for your child.</p>
+							</div>
+
+							<button class="accordion">Who shouldn’t use the Infrared Sauna?</button>
+							<div class="panel">
+								<p class="p-pad">You should not use the infrared sauna if you are pregnant, have cardiovascular issues including
+									a pacemaker or defibrillator, are under the influence of alcohol or drugs, have a chronic condition that reduces
+									your ability to sweat, are a hemophiliac or are prone to bleeding, or if you have a fever or insensitivity to heat.</p>
+							</div>
 						</div>
 
-						<button class="accordion">Should I remove my jewelry?</button>
-						<div class="panel">
-							<p class="p-pad">This depends, salt can be corrosive to non-precious metals. We recommend
-								removing any costume jewelry and watches. Wedding rings and other jewelry made of
-								gold, platinum, titanium, etc. will be fine left on.</p>
+						<div class="products">
+							<h2 class="faq-products">Payment</h2>
+							<button class="accordion">What type of payments do you take?</button>
+							<div class="panel">
+								<p class="p-pad">Renegade Wellness Center uses Square processing allowing us to accept cash, check, credit card, Apple
+									Pay, G Pay and Cash App.</p>
+							</div>
+
+							<button class="accordion">Do you offer gift cards?</button>
+							<div class="panel">
+								<p class="p-pad">Yes, gift cards are available year round. Thank you for sharing Renegade Wellness
+									Center	with your
+									friends and family!</p>
+							</div>
 						</div>
+						<!--				<div class="products">-->
+						<!--					<h3 class="faq-products">Products</h3>-->
+						<!--						<button class="accordion">Section 1</button>-->
+						<!--						<div class="panel">-->
+						<!--							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+						<!--						</div>-->
 
-						<button class="accordion">Will I sweat in the salt cabin?</button>
-						<div class="panel">
-							<p class="p-pad">No, the salt cabin stays at room temperature.</p>
-						</div>
+						<!--						<button class="accordion">Section 2</button>-->
+						<!--						<div class="panel">-->
+						<!--							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+						<!--						</div>-->
 
-						<button class="accordion plus">I have allergies, is there anything of concern <br> in the salt
-							solution?</button>
-						<div class="panel">
-							<p class="p-pad">The salt used in the cabin is pharmaceutical grade which means it has been
-								tested for purity with no additives. You will only be exposed to pure, dry salt.</p>
-						</div>
+						<!--						<button class="accordion">Section 3</button>-->
+						<!--							<div class="panel">-->
+						<!--								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+						<!--							</div>-->
+						<!--				</div>-->
+					</section>
 
-						<button class="accordion plus">I've been told to lower my salt intake how will <br> this affect me?</button>
-						<div class="panel">
-							<p class="p-pad">Pharmaceutical grade salt is different than table salt since it is pure with no
-								additives. Also, since you will be breathing it in versus digesting it through your
-								stomach salt therapy should not affect those markers. Always consult with your
-								physician if you have specific concerns.</p>
-						</div>
+					<section class="footnote">
+						<p>*Renegade Wellness Center, LLC does not claim to be a replacement for medical care.</p>
+					</section>
 
-						<button class="accordion plus">I like to wear perfume, can I get in the salt <br> cabin?</button>
-						<div class="panel">
-							<p class="p-pad">We kindly ask that you reserve putting on your favorite fragrance until after your
-								time in the cabin. The cabin is ventilated and cleaned between each client, however,
-								heavy fragrances can linger causing those with allergies to be affected.</p>
-						</div>
+					<script>
+						var acc = document.getElementsByClassName("accordion");
+						var i;
 
-						<button class="accordion">Can children benefit from Halotherapy?</button>
-						<div class="panel">
-							<p class="p-pad">Absolutely, Halotherapy is a gentle and natural therapy and is appropriate for
-								children 6 months and older. For very young children the salt concentration will be
-								adjusted. Kids love their time in the salt cabin playing in the Himalayan floor salt and
-								listening to music. They may also bring a book if they would like.</p>
-						</div>
-
-						<button class="accordion">When should I avoid Halotherapy?</button>
-						<div class="panel">
-							<p class="p-pad">Halotherapy should be avoided during the acute phase of any illness, including the
-								following: infections accompanied by fever, acute active tuberculosis, cardiac
-								insufficiency, COPD that is in third stage, bleeding, spitting of blood, contagious
-								ailments, when an oxygen tank is used for breathing, alcohol or drug intoxication,
-								unstable or uncontrolled hypertension, and acute stages of respiratory disease.</p>
-						</div>
-					</div>
-
-					<div class="infrared">
-						<h3 class="faq-infrared">Infrared</h3>
-						<button class="accordion">What is Infrared Therapy?</button>
-						<div class="panel">
-							<p class="p-pad">Infrared is a safe and gentle wavelength in the natural spectrum of light.
-								It penetrates human tissue and the energy it delivers is just the right
-								nudge cells need to stimulate warmth, growth, and release. Infrared
-								saunas emit lightwaves that penetrate the body to stimulate health
-								benefits from within.</p>
-						</div>
-
-						<button class="accordion plus">What is the difference between a traditional <br> sauna and an infrared
-							sauna?</button>
-						<div class="panel">
-							<p class="p-pad">Traditional saunas heat the air to a point that initiates the body’s natural cooling process.
-								This means that blood comes to the surface of the skin and opens the pores.<br><br>
-								Infrared saunas emit safe lightwaves that penetrate the body to stimulate the health benefits from within at
-								a cellular level and allow for a deeper detox.</p>
-						</div>
-
-						<button class="accordion">What type of infrared sauna do you have?</button>
-						<div class="panel">
-							<p class="p-pad">Renegade Wellness Center has chosen a far infrared sauna bed. This allows for a private,
-								comfortable experience and allows you to keep your face out of the direct heat. Since your face tends to get hot first, keeping
-								it out of the sauna bed allows your body to tolerate longer sessions and therefore deeper detox and better health benefits.</p>
-						</div>
-
-						<button class="accordion plus">What all is included and how long is the <br> infrared therapy
-							session?</button>
-						<div class="panel">
-							<p class="p-pad">Your session will total 45 minutes which includes 25-40 minutes in the sauna depending on your preference and
-								the rest of the time spent as cool down time in a relaxing environment. A bottle of alkaline or regular water will be provided
-								so that you can rehydrate. Your session will also include rose water mist and cooling pads for the eyes or forehead applied 15
-								minutes into your session if you like.</p>
-						</div>
-
-						<button class="accordion">What are the benefits of infrared therapy?</button>
-						<div class="panel">
-							<p class="p-pad">There are many clinically proven benefits to infrared therapy:<br><br>
-
-								- Boosts Metabolism<br>
-								- Supports Weight Loss<br>
-								- Supports Detoxification<br>
-								- Improves Heart Health<br>
-								- Aids in Muscle Repair & Joint Health<br>
-								- Increases Circulation<br>
-								- Improves Flexibility<br>
-								- Relieves Stress<br>
-								- Promotes Relaxation<br>
-								- Rejuvenates Skin<br>
-								- Improves Sleep Quality<br>
-								- Strengthens Immunity</p>
-						</div>
-
-						<button class="accordion">Do you sweat during infrared therapy?</button>
-						<div class="panel">
-							<p class="p-pad">You will sweat during infrared therapy. Some people will sweat more than others but sweating is part of the
-								natural detox process and is fantastic for the body. You will have time to cool down and rehydrate after your time in the infrared bed.</p>
-						</div>
-
-						<button class="accordion plus2">Can the heat level be adjusted if I’m more sensitive?</button>
-						<div class="panel">
-							<p class="p-pad">Yes, the infrared sauna bed has 3 different sections that can be controlled separately to
-								create a custom experience for you.</p>
-						</div>
-
-						<button class="accordion">What do I wear during a sauna session?</button>
-						<div class="panel">
-							<p class="p-pad">The less you wear the better. It is recommended to get in the sauna bed without
-								clothing so that	the infrared can penetrate your tissues as deep as possible. You may wear undergarments
-								or light gym clothing if you are more comfortable just make sure to bring fresh ones to change into after
-								your session since you will be sweating. Spa wraps are also provided for cool down so that you can stop
-								sweating before you get dressed.</p>
-						</div>
-
-						<button class="accordion">What is the age limit for infrared therapy?</button>
-						<div class="panel">
-							<p class="p-pad">Infrared therapy at Renegade Wellness Center is geared for ages 16 and up.
-								However, infrared therapy is used on newborns in hospitals so it is safe for children
-								with some restrictions and a shorter session. Please ask if you are interested in
-								sessions for children younger than 16 and we can discuss your options and whether it
-								is right for your child.</p>
-						</div>
-
-						<button class="accordion">Who shouldn’t use the Infrared Sauna?</button>
-						<div class="panel">
-							<p class="p-pad">You should not use the infrared sauna if you are pregnant, have cardiovascular issues including
-								a pacemaker or defibrillator, are under the influence of alcohol or drugs, have a chronic condition that reduces
-								your ability to sweat, are a hemophiliac or are prone to bleeding, or if you have a fever or insensitivity to heat.</p>
-						</div>
-					</div>
-
-					<div class="products">
-						<h3 class="faq-products">Payment</h3>
-						<button class="accordion">What type of payments do you take?</button>
-						<div class="panel">
-							<p class="p-pad">Renegade Wellness Center uses Square processing allowing us to accept cash, check, credit card, Apple
-								Pay, G Pay and Cash App.</p>
-						</div>
-
-						<button class="accordion">Do you offer gift cards?</button>
-						<div class="panel">
-							<p class="p-pad">Yes, gift cards are available year round. Thank you for sharing Renegade Wellness Center
-								with your
-								friends and family!</p>
-						</div>
-					</div>
-
-	<!--				<div class="products">-->
-	<!--					<h3 class="faq-products">Products</h3>-->
-	<!--						<button class="accordion">Section 1</button>-->
-	<!--						<div class="panel">-->
-	<!--							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
-	<!--						</div>-->
-
-	<!--						<button class="accordion">Section 2</button>-->
-	<!--						<div class="panel">-->
-	<!--							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
-	<!--						</div>-->
-
-	<!--						<button class="accordion">Section 3</button>-->
-	<!--							<div class="panel">-->
-	<!--								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
-	<!--							</div>-->
-	<!--				</div>-->
-				</section>
-
-				<section class="footnote">
-					<p>*Renegade Wellness Center, LLC does not claim to be a replacement for medical care.</p>
-				</section>
-
-				<script>
-					var acc = document.getElementsByClassName("accordion");
-					var i;
-
-					for (i = 0; i < acc.length; i++) {
-						acc[i].addEventListener("click", function() {
-							this.classList.toggle("active");
-							var panel = this.nextElementSibling;
-							if (panel.style.maxHeight) {
-								panel.style.maxHeight = null;
+						for (i = 0; i < acc.length; i++) {
+							acc[i].addEventListener("click", function() {
+								this.classList.toggle("active");
+								var panel = this.nextElementSibling;
+								if (panel.style.maxHeight) {
+									panel.style.maxHeight = null;
 								} else {
 									panel.style.maxHeight = panel.scrollHeight + "px";
 								}
-								});
-					}
-				</script>
-			</section>
-		</main>
-
-		<!-- End of Main Section -->
-
-		<!-- Footer -->
-		<footer>
-			<div class="footer">
-				<div class="footer-container">
-					<section>
-						<span class="renegade">Renegade Wellness Center, LLC <br> (+1) 828-514-9276</span>
-					</section>
-
-					<section>
-						<div class="pay">
-							<img src="./img/cash.svg" alt="cash" class="payment2">
-							<img src="./img/check-book.svg" alt="checks" class="payment2 checks">
-							<img src="./img/Credit_Card/Visa.png" alt="Visa" class="ccard">
-							<img src="./img/Credit_Card/Mastercard.png" alt="Mastercard" class="ccard">
-							<img src="./img/Credit_Card/Amex.png" alt="American Express" class="ccard">
-							<img src="./img/Credit_Card/Discover.png" alt="Discover" class="discover">
-						</div>
-						<div class="pay">
-							<img src="./img/contactless_payment.svg" alt="contactless payments" class="payment">
-							<img src="./img/Credit_Card/Apple-Pay3.png" alt="Apple Pay" class="payment apple">
-							<img src="./img/Credit_Card/Google%20Pay.png" alt="GPay" class="ccard gpay">
-							<img src="./img/Credit_Card/Cash-App.png" alt="Cash-App" class="ccard">
-						</div>
-					</section>
-
-					<section class="dev-section">
-						<span>Built by <a href="https://developerofcode.com" target="_blank" class="developer">Developer Of Code,
-							LLC</a></span>
-					</section>
-				</div>
+							});
+						}
+					</script>
+				</section>
 			</div>
+		</section>
+
+		<!--Footer-->
+		<footer class="bg-footer">
+			<section class="footer-top">
+				<div class="footer-col">
+<!--					<h4>Need Help?</h4>-->
+					<div class="contact-info">
+						<ul>
+							<li><img src="./assets/images/map-pin.svg" alt="location" class="icons">630 W 21st St Newton, NC <br>
+								<span class="inside">(Inside Reaves Chiropractic)</span></li>
+							<li><img src="./assets/images/mobile.svg" alt="mobile" class="icons phone email">(+1) 828-514-9276
+								<br><span class="inside">(Call/text)</span></li>
+							<li><img src="./assets/images/mail.svg" alt="mail" class="icons"><a
+								href="mailto:renegadewellnesscenter@gmail.com" class="email">renegadewellnesscenter@gmail.com</a></li>
+						</ul>
+					</div>
+				</div>
+<!--				<div class="footer-col">-->
+<!--					<h4>Services</h4>-->
+<!--					<div class="services-wrapper">-->
+<!--						<h5>Salt Therapy</h5>-->
+<!--						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+<!--					</div>-->
+<!--					<div class="services-wrapper">-->
+<!--						<h5>Infrared Therapy</h5>-->
+<!--						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+<!--					</div>-->
+<!--				</div>-->
+			</section>
+
+			<section class="payments">
+				<div class="pay">
+					<img src="./assets/images/payments/cash.svg" alt="cash" class="payment2 cash">
+					<img src="./assets/images/payments/check-book(white).svg" alt="checks" class="payment2 checks">
+					<img src="./assets/images/payments/Visa.png" alt="Visa" class="ccard visa">
+					<img src="./assets/images/payments/Mastercard.png" alt="Mastercard" class="ccard">
+					<img src="./assets/images/payments/Amex.png" alt="American Express" class="ccard">
+					<img src="./assets/images/payments/Discover.png" alt="Discover" class="discover">
+				</div>
+				<div class="pay2">
+					<img src="./assets/images/payments/contactless_payment(white).svg" alt="contactless payments"
+							 class="contactless payment">
+					<img src="./assets/images/payments/Apple-Pay3.png" alt="Apple Pay" class="payment apple">
+					<img src="./assets/images/payments/Google%20Pay.png" alt="GPay" class="ccard gpay">
+					<img src="./assets/images/payments/Cash-App.png" alt="Cash-App" class="ccard cash-app">
+				</div>
+			</section>
+
+			<section class="footer-bottom">
+				<div class="footer-bottom-wrapper">
+					<div class="copyright">
+						<p>Built by
+							<a href="https://developerofcode.com" target="_blank" class="developer">&nbsp;Developer Of Code, LLC</p>
+					</div>
+					<div class="footer-bottom-links">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="products.html">Products</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a href="#">FAQ</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
 		</footer>
 
 		<!--Scroll Top-->
-		<a id="scrollUp" href="#pageTop"><img class="arrow" src="./img/arrow.svg" alt=""></a>
+		<a id="scrollUp" href="#pageTop"><img class="arrow" src="./assets/images/arrow.svg" alt=""></a>
 
 		<script>
-			document.onreadystatechange = function() {
-				let lastScrollPosition = 0;
-				const navbar = document.querySelector('.navbar');
-				window.addEventListener('scroll', function(e) {
-					lastScrollPosition = window.scrollY;
-
-						if (lastScrollPosition > 100)
-								navbar.classList.add('navbar-dark');
-							// else
-							//   navbar.classList.remove('navbar-dark');
-					});
-			}
 
 			const nav = document.getElementById("topNav");
 			window.onscroll = function () {
 				if (window.pageYOffset > 100) {
-						nav.classList.add("sticky");
+					nav.classList.add("sticky");
 				} else {
 					nav.classList.remove("sticky");
 				}
 			}
+
+			const navButton = document.querySelector('button[aria-expanded]');
+
+			function toggleNav({ target }) {
+				const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+				navButton.setAttribute('aria-expanded', !expanded);
+			}
+
+			navButton.addEventListener('click', toggleNav);
 		</script>
 	</body>
 </html>
-

@@ -1,315 +1,1475 @@
-/* Start of Responsiveness */
+@media screen and (max-width: 1200px) {
 
-@media only screen and (max-width: 1500px) {
-  /* Start of Contact Page */
 
-  /* .hours {
-    margin: 0 534px;
-  } */
 
-  /* End of Contact Page */
-}
 
-@media only screen and (max-width: 1200px) {
 
-  html { scroll-behavior: smooth; }
+/* Start of Products page */
 
-  /* Start of Home Page */
+  /*.container2 { margin-left: 0; }*/
+  .container3 { margin-right: 0; }
 
-  .logo { width: 15%; }
 
-  .container { max-width: 1140px; }
 
-  .card { max-width: 1140px; }
+  /* End of Products page */
 
-  .lungs {
-    border-radius: 5px;
-    margin-top: 0;
-    margin: auto;
-    width: 50%;
-    position: relative;
-    top: 40px;
-  }
 
-  .side {
-    padding: 0;
-    float: none;
-  }
 
-  /*.cd-section {*/
-  /*  height: 332px;*/
-  /*  margin-bottom: 200px;*/
+
+
+  /* Start of Hydrosols page */
+
+  /*.image-hydrosol {*/
+  /*  right: 20px;*/
+  /*  top: 20px;*/
   /*}*/
 
+  .hydrosol2 { width: 24%; }
+
+
+
+
+  /* End of Hydrosols page */
+
+
+  /* Start of Juice Masks */
+
+  .milk-title { font-size: 1.1em; }
+
+  .pink-dream-juice { top: 26px; }
+
+  .juice-overlay {
+    left: 281px;
+    width: 236px;
+    height: 237px;
+  }
+
+  .juice-overlay2 {
+    left: 537px;
+    width: 236px;
+    height: 237px;
+  }
+
+  .milk-overlay3 { left: 409px; }
+
+  .description { font-size: 0.5em; }
+
+
+
+  /* End of Juice Masks */
+}
+
+/* iPads and Tablets - portrait */
+
+@media screen and (max-width: 1024px) {
+/* Start of Home page */
   .service-grid {
-    margin-top: 200px;
-    margin-left: var(--size-10);
-    margin-right: var(--size-10);
+    grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
+    gap: 0;
+    right: 7px;
+  }
+
+  /*.container2 { margin-left: 0; }*/
+  .container3 { margin-right: 0; }
+  .container4 { margin-left: auto; }
+
+  .hydros { margin-left: 0; }
+  .hydros2 { margin-left: 12px; }
+  .carriers { margin-right: 0; }
+  .carriers2 {
     position: relative;
-    top: -76px;
+    left: 200px;
   }
 
-  .cd-section {
-    background-size: cover;
-    /*height: 760px;*/
-    background-image: url("../img/salt-rock.jpeg");
+
+
+  .card2 {
+    margin: auto;
+    margin-right: 0;
   }
 
-  /* End of Home Page */
+  /* End of Home page */
 
-  /* Start of Contact Page */
-  .header { min-height: var(--size-50); }
+  /* Start of Aromatics Products */
 
-  /* End of Contact Page */
+
+
+
+  /* Start of Essential Oils */
+
+  .oils { left: 36px; }
+
+  .oils-row-1 { left: -30px; }
+  .oils-row-2 { left: -10px; }
+
+  .peppermint-image, .lavender-image { left: -18px; }
+
+  .breathe-clear-overlay {
+    right: -40px;
+    left: initial;
+  }
+
+  .lemon-overlay, .orange-overlay, .mandarin-overlay { left: -60px; }
+  .peppermint-overlay { left: -80px; }
+
+
+  /* End of Essential Oils */
+
+  /* Start of Hydrosols page */
+
+  .sprays1 {
+    position: relative;
+    right: 55px;
+  }
+
+  .hydrosol2 { left: 26px; }
+
+  .lavender-hydro { width: 32%; }
+  .rose-hydro { width: 32%; }
+  .lemon-hydro { width: 32%; }
+  .pepp { width: 32%; }
+  .ginger-hydro { width: 32%; }
+  .frankincense-hydro { width: 32%; }
+
+  .pepp { left: 37px; }
+  .frankincense-hydro { left: 64px; }
+  .ginger-hydro, .frank-hydro { left: 70px; }
+
+  .lav-hydro-overlay { left: 112px; }
+  .rose-hydro-overlay { right: 237px; }
+  .lemon-hydro-overlay { right: 3px; }
+  .hydro-pepp-overlay { left: 112px; }
+  .ginger-hydro-overlay { right: 237px; }
+  .frank-hydro-overlay { left: 600px; }
+
+
+  /* End of Hydrpsols page */
+
+  /* Start of Carriers */
+
+  .mango { width: 16%; }
+
+
+  /* End of Carriers */
+
+
+  /* End of Aromatics Products */
+
+
+  /* Start of ESW Beauty Products */
+
+  .carriers2 { left: 0; }
+
+
+
+  /* Start of Juice Masks */
+  .artisan-lavender { width: 31%; }
+
+  .juice-overlay {
+    left: 210px;
+    width: 299px;
+    height: 299px;
+  }
+
+  .juice-overlay2 {
+    left: 529px;
+    width: 300px;
+  }
+
+  .juice-overlay3 {
+    width: 300px;
+    left: 369px;
+  }
+
+
+
+  /* End of Juice Masks */
+
+  /* Start of Milk Masks */
+  .milk-overlay {
+    width: 300px;
+    height: 300px;
+    left: 210px;
+  }
+
+  .milk-overlay2 { left: 529px; }
+
+  /* End of Milk Masks */
+
+  /* Start of Facial Tools page */
+
+  .facial-overlay {
+    width: 300px;
+    height: 300px;
+    left: 210px;
+  }
+
+  .facial-overlay2 {
+    width: 300px;
+    height: 300px;
+    right: 135px;
+  }
+
+  /* End og Facial Tools page */
+
+
+  /* End of ESW Beauty Products */
+
+
+  /* Start of The Original Salt Company */
+
+  .salt-lamps2 { bottom: 22px; }
+
+  .white-natural {
+    width: 50%;
+    top: initial;
+    bottom: initial;
+  }
+
+  .nightlight { top: 2px; }
+
+  .salt-lamps-overlay {
+    width: 130%;
+    height: 124%;
+  }
+
+
+
+
+  /* End of The Original Salt Company */
+
+  /* Start of Diffusers page */
+
+  .diffuser { right: 37px; }
+
+  .diffusers3 { margin-bottom: 300px; }
+
+  .diffuser-overlay { left: 200px; }
+
+
+  /* End of Diffusers page */
+  
+}
+
+@media screen and (max-width: 768px) {
+  /*[aria-controls="navbarDropdown"] {*/
+  /*  display: block;*/
+  /*}*/
+
+  /*[aria-expanded="false"] ~ ul {*/
+  /*  display: none;*/
+  /*}*/
+
+  [aria-expanded="true"] ~ ul {
+    right: 0;
+    top: var(--size-50);
+    background-color: var(--white);
+    width: 100%;
+  }
+
+  [aria-expanded="true"] ~ ul li a {
+    color: var(--font-color-dark);
+    margin-right: var(--size-20);
+  }
+
+  .navbar-nav {
+    position: relative;
+    top: 2px;
+  }
+
+  .nav-link a { margin-right: 20px;
+  }
+
+  /*.block-text {*/
+  /*  left: 182px;*/
+  /*}*/
+
+  footer .footer-col:nth-child(3) {
+    grid-column: 1 / 3;
+  }
+
+  .copyright p {
+    position: relative;
+    left: 48px;
+  }
+
+  /* Start of Aromatics Products */
+
+  .container2 {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .carriers {
+    position: initial;
+    margin-right: auto;
+  }
+
+  .carriers2 { margin-left: 78px; }
+  .hydros2 { margin-left: 5px; }
+
+
+  /* Start of Essential Oils */
+
+  .oils {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(327px, 1fr));
+    gap: 12em;
+    left: 200px;
+  }
+
+  .lemon, .blood-orange, .green-mandarin, .peppermint,
+  .lavender, .greek-lavender, .frankincense, .breathe-clear { width: 50%; }
+
+  .eucalyptus {
+    width: 50%;
+    right: 14px;
+  }
+
+  .mountain_bandits {
+    width: 50%;
+    right: 1px;
+  }
+
+  .breathe-clear {
+    width: 50%;
+    right: 16px;
+  }
+
+  .lemon-overlay, .orange-overlay, .mandarin-overlay { left: initial; }
+
+
+  .lemon-overlay, .orange-overlay, .mandarin-overlay { right: -5px; }
+
+  .lavender-overlay, .greek-lavender-overlay, .frankincense-overlay, .eucalyptus-overlay,
+  .mountain_bandits-overlay { right: 15px; }
+
+  .peppermint-overlay {
+    right: 15px;
+    left: initial;
+  }
+
+  .breathe-clear-overlay {
+    right: 15px;
+    left: initial;
+  }
+
+  .artisan-lavender { width: 42%; }
+
+  .milk-overlay {
+    width: 299px;
+    height: 299px;
+    left: 83px;
+  }
+
+
+
+  /* End of Essential Oils */
+
+  /* Start of Hydrosols page */
+
+  .sprays1 { right: 22px; }
+
+  .hydrosol, .hydrosol-row2 {
+    gap: 30px;
+    right: 35px;
+  }
+
+  .lavender-hydro { width: 33%; }
+  .frankincense-hydro { left: 70px; }
+
+  .lav-hydro-overlay {
+    right: 342px;
+    left: initial;
+  }
+  .rose-hydro-overlay { right: 115px; }
+  .lemon-hydro-overlay, .frank-hydro-overlay { left: 444px; }
+  .hydro-pepp-overlay {
+    right: 343px;
+    left: initial;
+  }
+  .ginger-hydro-overlay { right: 112px; }
+
+  .rose-hydro, .lemon-hydro, .ginger-hydro, .frankincense-hydro { width: 33%; }
+
+  .ginger-hydro { right: 143px; }
+
+
+
+  .pepp {
+    width: 33%;
+    left: 40px;
+  }
+
+
+  /* End of Hydrosols page */
+
+  /* Start of Carriers */
+
+  .mango { width: 20%; }
+
+
+  /* End of Carriers */
+
+  /* End of Aromatics Products */
+
+  /* Start of ESW Beauty page */
+
+  .service-grid2 { grid-template-columns: repeat(auto-fit, minmax(344px, 1fr)); }
+
+  .milk-overlay2 { left: 400px; }
+
+  /* Start of Juice Masks */
+
+  .juice-overlay { left: 83px; }
+  .juice-overlay2 { left: 400px; }
+  .juice-overlay3 { left: 242px; }
+  /* End of Juice Masks */
+
+  /* Start of Facial Tools page */
+
+  .facial-overlay { left: 83px; }
+  .facial-overlay2 { right: 8px; }
+
+  /* End of Facial Tools page *?
+
+  /* End of ESW Beauty page */
+
+  /* Start of Salt Lamps */
+
+  .salt1, .salt2, .salt3 { left: initial }
+
+  .salt-cards { left: 170px; }
+
+  .cross-lamp { bottom: 24px; }
+  .angel-lamp, .dolphin-lamp { bottom: 36px; }
+  .flower-lamp { bottom: 32px; }
+
+  .soccer-ball {
+    top: initial;
+    bottom: 44px;
+  }
+
+  .pink-natural { bottom: 26px; }
+
+  .white-natural {
+    width: 48%;
+    bottom: 40px;
+  }
+
+  .salt-lamps-overlay { left: -42px; }
+  .soccer-ball-overlay { height: 144%; }
+  .white-natural-overlay { height: 134%; }
+
+
+
+  /* End of Salt Lamps */
+
+  /* Start of Diffusers page */
+
+  .diffuser { right: 34px; }
+
+  .diffusers3 { margin-bottom: 300px; }
+
+  .diffuser-overlay { left: 64px; }
+
+
+  /* End of Diffusers page*/
+}
+
+/* Mobile Screens */
+
+@media screen and (max-width: 599px) {
+
+  /* Start of Home page */
+
+  .bg-header { padding: 0; }
+
+  .rwc-logo {
+    bottom: 30px;
+    height: 138px;
+  }
+
+  .why-me { padding-bottom: 80px; }
+
+  .block-text { left: 0; }
+
+  .container2 { margin-left: auto; }
+  .container3 { margin-right: auto; }
+
+  .price-sheet { display: none; }
+
+  .side-by-side1 {
+    position: relative;
+    left: 40px;
+  }
+
+  .side-by-side2 {
+    position: relative;
+    right: 40px;
+  }
+
+  .btn-primary2 { font-size: 18px; }
+
+  .wrapper { padding: initial; }
+
+
+  /* End of Home page */
+
+  /* Start of FAQ page */
+
+  .footnote {
+    text-align: center;
+    top: 170px;
+  }
+
+  /* End of FAQ page */
+
+  /* Start of Products page */
+
+  .service-grid { right: 0; }
+
+
+  /* End of Products page */
+
+  /* Start of Aromatics Products */
+
+  .column1 { margin-right: auto; }
+
+  /* End of Aromatics Products */
+
+  /* Start of Essential Oils page */
+
+  .oils { left: initial; }
+  .oils-row-1, .oils-row-2 { left: 20px; }
+
+  .peppermint-image, .lavender-image, .greek-lavender-image, .frankincense-image { left: initial; }
+
+  .breathe { top: 16px; }
+  .breathe-clear2 { width: initial; }
+
+  .eucalyptus-image, .mountain_bandits-image { left: initial; }
+
+  .breathe-clear-overlay { top: -60px; }
+
+
+
+  /* End of Essential Oils page */
+
+  /* Start of Hydrosols */
+  .sprays { top: 653px; }
+  .hydrosol { left: 20px; }
+
+  .tools {
+    top: 63px;
+    right: 7px;
+  }
+
+  .artisan-lavender { position: relative; }
+  .artisan-lavender, .peppermint-hydrosol, .ginger, .rose, .lemon-balm, .ginger, .frankincense-hydrosol {
+    width: 110%;
+  }
+
+  .hydrosol {
+    display: grid;
+    gap: 10em;
+    margin-bottom: 146px;
+  }
+
+  .rose-hydro, .lemon-hydro, .ginger-hydro { width: 25%; }
+
+  .hydrosol-row2 {
+    position: relative;
+    top: initial;
+    bottom: 70px;
+    margin-bottom: 0;
+  }
+
+  .image-hydrosol {
+    top: initial;
+    right: 17px;
+    left: initial;
+  }
+
+  .pepp {
+    width: 26%;
+    right: 15px;
+    bottom: 10px;
+  }
+
+  .ginger-hydro { bottom: 62px; }
+
+  .frankincense-hydro {
+    width: 25%;
+    bottom: 115px;
+  }
+
+  .hydrosol-overlay { right: 10px; }
+  .frank-hydro { top: 653px; }
+
+  .hydrosol-overlay2 {
+    top: 308px;
+    left: 2.40625rem;
+  }
+
+  .hydrosol-overlay3 { left: 40px; }
+
+  .hydrosol-overlay4 {
+    top: -46px;
+    left: 40px;
+  }
+
+  .lav-hydro-overlay { left: initial; }
+  .lemon-hydro-overlay { top: 652px; }
+
+  .mango { width: 48%; }
+
+  .image-carrier {
+    position: relative;
+    top: 16px;
+  }
+
+  /* End of Hydrosol */
+
+  /* Start of Carrier Oils */
+
+  .carrier-overlay { left: 30px; }
+
+
+  /* End of Carrier Oils */
+
+  /* Start of Juice Masks */
+
+  .juices {
+    top: 42px;
+    right: 6px;
+  }
+
+  .masks3 {
+    display: grid;
+    width: 70%;
+    margin: auto auto 20px;
+    top: initial;
+    left: 9px;
+    bottom: 144px;
+  }
+
+  .pineapple-juice, .pink-dream-juice, .anti-aging-juice { padding: 0 8px 0 8px; }
+
+  .juice-price { top: 50px; }
+  .pineapple-price, .anti-aging-price, .strawberries-price, .deep-detox-price { top: 46px; }
+  .pink-dream-price { top: 40px; }
+
+  /* End of Juice Masks */
+
+  /* Start of Milk Mask */
+
+  .milks {
+    position: relative;
+    top: 41px;
+    right: 7px;
+  }
+
+  .masks1, .masks2 {
+    display: grid;
+    width: 70%;
+    margin: auto auto 20px;
+    left: 9px;
+  }
+
+  .masks2 { margin-bottom: 244px; }
+
+  .milk-overlay {
+    width: 331px;
+    height: 329px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: -18px;
+  }
+
+  .juice-overlay {
+    width: 329px;
+    height: 329px;
+    top: initial;
+    right: 17px;
+    bottom: 0;
+    left: initial;
+  }
+
+  .milk-price { top: 44px; }
+
+  .blueberry-milk, .matcha-milk { padding: 0 28px; }
+  .avocado-milk-price { top: 40px; }
+
+
+  /* End of Milk Mask */
+
+  /* Start of Facial Tools */
+
+  .tools {
+    position: relative;
+    top: 19px;
+    bottom: 1px;
+  }
+
+  .facial-tools {
+    display: grid;
+    width: 70%;
+    margin: 50px auto 50px;
+    left: 9px;
+  }
+
+  .facial-overlay {
+    width: 329px;
+    height: 329px;
+    top: initial;
+    bottom: 20px;
+    left: -17px;
+  }
+
+  .facial-overlay2 {
+    width: 329px;
+    height: 329px;
+    top: 0;
+    right: 17px;
+  }
+
+  .rose-quartz-price, .jade-roller-price { top: 45px; }
+
+
+  /* End of Facial Tools */
+
+  /* Start of The Original Salt Company Section */
+
+  /* Start of Hand Carved Salt Lamps */
+
+  .lamps {
+    position: relative;
+    right: 3px;
+  }
+
+  .salt3 { margin-bottom: 200px; }
+
+  .salt-lamps { width: 47%; }
+
+  .salt-lamps2 {
+    width: 32%;
+    top: -24px;
+    bottom: 34px;
+  }
+
+  .salt-cards { left: initial; }
+
+  .salt-lamps-overlay {
+    width: 94%;
+    height: 126%;
+    left: 28px;
+  }
+
+  .soccer-overlay { height: 150%; }
+
+  .cross-lamp {
+    top: -28px;
+    bottom: 28px;
+  }
+
+  .angel-lamp { bottom: 38px; }
+  .flower-lamp, .dolphin-lamp { bottom: 32px; }
+
+  .soccer-ball {
+    top: -20px;
+    left: 13px;
+  }
+
+  .pink-natural {
+    width: 35%;
+    top: -22px;
+  }
+
+  .white-natural { bottom: 40px; }
+
+  .nightlight {
+    width: 45%;
+    top: 40px;
+    left: 11px;
+  }
+
+  .nightlight-overlay { height: 100%; }
+  /* End of Hand Carved Salt Lamps */
+
+  /* End of The Original Salt Company Section */
+
+  /* Start of Diffusers section */
+
+  .diffuser {
+    top: 70px;
+    right: initial;
+  }
+
+  .diffusers1, .diffusers2, .diffusers3 {
+    display: grid;
+    width: 70%;
+    margin: auto auto 20px;
+    left: 9px;
+  }
+
+  .diffusers1, .diffusers2, .diffusers3 {
+    position: relative;
+    left: 2px;
+  }
+
+  .diffusers1 { margin-bottom: 100px; }
+
+  .diffusers2 { top: 100px; }
+
+  .diffusers3 {
+    top: 150px;
+    margin-bottom: 420px;
+  }
+
+  .diffuser-card { top: 50px; }
+
+  .leah-card { bottom: 24px; }
+  .blizzard-card { top: 100px; }
+  .breezy-card { top: 120px; }
+
+  .diffuser-title { top: 10px; }
+
+
+
+  /* End of Diffusers section */
+
+  /* Start of Contact page */
+  .pricing-section { padding: 100px 0 200px 0; }
+
+  .contact > h3, .hours { font-size: 1rem; }
+
+  .email2 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 4px;
+  }
+
+  .email2 > a {
+    position: relative;
+    left: 8px;
+  }
+
+
+  /* End of Contact page */
+
+  /* Start of FAQ page */
+  .accordion, .panel { width: 92%; }
+
+
+
+  /* End of FAQ page */
+
 
   /* Start of Footer */
 
-  .footer {
+  .footer-bottom-wrapper { display: flex; }
+
+  .copyright {
     position: relative;
-    bottom: 0;
-    left: 0;
+    left: 6px;
   }
 
-  .footer-container { margin-left: var(--size-50); }
+  .footer-bottom-links {
+    position: relative;
+    left: 6px;
+  }
 
   /* End of Footer */
 }
 
-@media only screen and (max-width: 768px) {
-
-  html { scroll-behavior: smooth; }
-
-  /* Start of Home Page */
-  
-  .logo { width: 15%; }
-  
-  .lungs {
-    border-radius: 5px;
-    margin-top: 0;
-    margin: auto;
-  }
-
-  .side {
-    padding: 0;
-    float: none;
-  }
-
-  .p1 {
-    font-size: var(--size-16);
-    text-align: center;
-  }
-
-  /* .pricing {
-    display: flex;
-    position: relative;
-    top: 38px;
-    margin: var(--size-100);
-    text-align: center;
-  }
-
-  .pricing-list {
-    width: 50%;
-  } */
-
-  /* .cd-section { height: 380px; } */
-
-  /* .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-    gap: var(--size-20);
-    margin-top: var(--size-100);
-  } */
-
-  /*.pricing-table { max-width: 720px; }*/
-
-  /* End of Home Page */
-
-  /* Start of Contact Page */
-  .indicates-required {
-    text-align: right;
-    font-size: 11px;
-    margin-right: 4%;
-  }
-
-  /* .hours {
-    margin: 0 278px;
-  } */
-
-  /* End of Contact Page */
-}
-
-@media only screen and (max-width: 599px) {
+@media screen and (max-width: 480px) {
   /* Start of Navbar */
+
+  [aria-controls="navbarDropdown"] { display: block; }
+
+  [aria-expanded="false"] ~ ul { display: none; }
+
+  [aria-expanded="true"] ~ ul {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background-color: transparent;
+  }
+
+  [aria-expanded="true"] ~ ul li a {
+    color: var(--white);
+    margin-right: var(--size-20);
+  }
 
   .navbar-nav {
-    padding-left: inherit !important;
-    padding-right: inherit !important;
-  }
-
-  .nav-home { width: 83px; }
-
-  .nav-info { width: 66px; }
-
-  .nav-book {
-    width: 71px;
-    right: 4px;
-  }
-
-  .nav-contact { width: 95px; }
-
-  .nav-faq { width: 68px; }
-
-
-
-  /* End of Navbar */
-
-  /* Start of Home Page */
-  .lungs { width: 90%; }
-
-  .pricing {
-    margin: 50px 30px;
-    /*margin-bottom: 50px;*/
-  }
-
-  .pricing-list {
-    width: 94%;
-    margin-bottom: 60px;
-  }
-
-  .price-sheets {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(167px, 1fr));
-    gap: 10px;
-    margin-bottom: 250px;
-  }
-
-  .pricing-list1, .pricing-list2, .pricing-list3, .pricing-list4, .pricing-list5 {
-    width: 90%;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .pricing-list1 { right: 0; }
-  .pricing-list3 { left: 0; }
-
-  .cd-section { height: 1125px; }
-
-  .service-grid { gap: 0; }
-
-  .card { width: 250px; }
-
-  .footer-container { margin: auto; }
-
-  /* End of Home Page */
-
-  /* Start of Book Page */
-
-    .asterisk { white-space: inherit; }
-
-  /* End og Book Page */
-
-  /* Start of Contact Page */
-
-  h5 { font-size: 1.0rem !important; }
-
-  .header-3 { font-size: var(--size-25); }
-
-  .relief {
     display: flex;
-    text-align: left;
     justify-content: center;
+    padding: 10px;
+    background-color: transparent;
   }
 
-  /* End of Contact Page */
+  .navbar-nav.sticky { background-color: var(--white); }
 
-  /* Start of FAQ Page */
-  .accordion { width: 92.9%; }
+  .container { padding-bottom: 24px; }
 
-  .plus:after {
-    position: relative;
-    bottom: 14px;
-  }
+  .nav-link { position: initial; }
 
-  .plus2:after { bottom: 14px; }
+  /*.rwc-logo1 {*/
+  /*  display: none;*/
+  /*}*/
 
-  .panel { width: 92.9%; }
+  .rwc-logo1.sticky { display: none; }
 
+  .rwc-logo2 { display: inherit; }
 
-
-  /* End of FAQ Page */
-}
-
-@media only screen and (max-width: 390px) {
-  /* Start of Navbar */
-  .nav-home, .nav-info, .nav-book, .nav-contact, .nav-faq {
-    font-size: 14px;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .nav-home {
-    right: 46px;
-    width: 57px;
-  }
-
-  .nav-book {
-    right: 14px;
-    width: 47px;
-  }
-
-  .nav-contact {
-    left: 18px;
-    width: 69px;
-  }
-
-  .nav-faq {
-    left: 50px;
-    width: 44px;
-  }
-
+  .navbar.rwc-logo2.sticky { display: inherit; }
 
   /* End of Navbar */
 
-  /* Start of Home Page */
-
-  .cd-section { height: 1125px; }
-
-  .price-sheets {
+  /* Start of Essential Oils */
+  .oils {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(167px, 1fr));
-    gap: 10px;
-    margin-bottom: 250px;
+    gap: 10em;
+    /*margin-bottom: 146px;*/
   }
 
-  /* End of Home Page */
+  .oils3 { margin-bottom: 250px; }
 
-  /* Start of Contact Page */
+  .lemon, .blood-orange, .green-mandarin, .peppermint, .breathe-clear,
+  .lavender, .greek-lavender, .frankincense, .eucalyptus, .mountain_bandits, .breathe-clear { width: 94%; }
 
-  /* .hours {
-    margin: 0 94px;
-  } */
+  /*.breathe-clear2 {*/
+  /*  width: 124%;*/
+  /*  right: 46px;*/
+  /*}*/
+
+  /*.breathe-clear2 { width: 128%; }*/
+
+  /*.image-oils { left: 12px; }*/
+
+  .image-oils2 { left: 10px; }
+
+  .image-oils3 { left: 0; }
+
+  .oils-overlay { left: 18px; }
+
+  .oils-overlay2 { left: 18px; }
+
+  /*.oils-overlay3 { left: 48px; }*/
+
+  /*.oils-overlay4 { left: -25px; }*/
 
 
-  /* End of Contact Page */
-
-  /* Start of FAQ Page */
-  .accordion { width: 92%; }
-
-  .panel { width: 92%; }
 
 
-  /* End of FAQ Page */
+  /* End of Essential Oils */
+
+  /*!* Start of Hydrosol *!*/
+
+  /*.hydrosol-overlay2, .hydrosol-overlay3, .hydrosol-overlay4 { left: 21.5px; }*/
+
+
+  /*!* End of Hydrosol *!*/
+
+  /* Start of Carrier Oils */
+
+  .carrier-overlay { left: 38px; }
+
+
+  /* End of Carrier Oils */
+
+  .hero-wrapper { text-align: center; }
+
+  /*.why-me { padding-bottom: 0; }*/
+
+  .why-me-wrapper {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .why-me-wrapper .block-text { padding-right: 0; }
+
+  .why-me-wrapper > div { flex: initial; }
+
+  /*.price-sheet {*/
+  /*  position: relative;*/
+  /*  top: 60px;*/
+  /*}*/
+
+  .bg-price-section { padding-top: 0 }
+
+  .price-card .price-card1 h3 { font-weight: 600; }
+  .price-card h3 { font-size: var(--size-20)}
+
+  .price-card1 {
+    display: inherit;
+    font-size: var(--size-18);
+  }
+
+  /*.side-by-side1 {*/
+  /*  position: relative;*/
+  /*  left: 60px;*/
+  /*}*/
+  /*.side-by-side2 {*/
+  /*  position: relative;*/
+  /*  right: 60px;*/
+  /*}*/
+
+  .price-card2 { display: none; }
+
+  .salt-therapy { height: auto; }
+
+  /*!* Start of Contact Page *!*/
+
+  /*.contact h3, .hours {*/
+  /*  font-size: 1.1rem;*/
+  /*  line-height: 1.3rem;*/
+  /*}*/
+
+  /*!* End of Contact Page *!*/
+
+  /*!* Start of FAQ Page *!*/
+
+  /*.accordion, .panel { width: 92% }*/
+
+  /*!* End of FAQ Page *!*/
+
+  /*!* Start of Footer *!*/
+
+  /*footer .footer-col:nth-child(3) {*/
+  /*  grid-column: initial;*/
+  /*}*/
+
+  /*footer .footer-col:nth-child(1) {*/
+  /*  order: 3;*/
+  /*}*/
+
+  /*.email {*/
+  /*  text-decoration: none;*/
+  /*  color: var(--white);*/
+  /*}*/
+
+  /*.visa { height: 51px; }*/
+
+  /*!*.discover {*!*/
+  /*!*  height: 34px;*!*/
+  /*!*  width: 46px;*!*/
+  /*!*  top: 9px;*!*/
+  /*!*}*!*/
+
+  /*.footer-bottom { padding: var(--size-30); }*/
+
+  /*.copyright {*/
+  /*  position: relative;*/
+  /*  right: 6px;*/
+  /*}*/
+
+  /*.footer-bottom-links {*/
+  /*  position: relative;*/
+  /*  left: var(--size-10);*/
+  /*}*/
+
+
+  /*!* End of Footer *!*/
 }
 
-@media only screen and (max-width: 375px) {
-  
+@media screen and (max-width: 400px) {
 
-  /* Start of Contact Page */
+  /* Start of Home page */
+  .why-me { padding-top: 50px; }
 
-  /* .hours {
-    margin: 0 70px;
-  } */
 
-  /* End of Contact Page */
+
+
+
+  /* End of Home page */
+
+  /* Start of Essential Oils */
+  .oils { left: 2px; }
+
+  .oils-overlay4 { left: 20px; }
+
+  .oils-row-1, .oils-row-2 { left: 1px; }
+
+  .oils3 { left: -6px; }
+
+  .breathe-clear {
+    top: 10px;
+    left: 7px;
+  }
+
+
+  /* End of Essential Oils */
+
+  /* Start of Hydrosol */
+  .sprays1 {
+    top: initial;
+    right: 0;
+    bottom: 23px;
+  }
+
+  .hydrosol {
+    right: initial;
+    left: initial;
+  }
+
+  .hydrosol-sprays { width: 20%; }
+
+  .image-hydrosol { top: 42px; }
+
+  .hydrosol-row2 {
+    top: 80px;
+    margin-bottom: 200px;
+  }
+
+  .hydrosol-overlay2 { left: 22px; }
+
+  .hydrosol-overlay3 { left: 22px; }
+
+  .lav-hydro-overlay { left: initial; }
+
+
+  /* End of Hydrosol */
+
+  /* Start of Carrier Oils */
+
+  .carrier-overlay { left: 21px; }
+
+  /* End of Carrier Oils */
+
+  /* Start of Juice Masks */
+
+  .juices { top: 0; }
+
+  .juice-overlay {
+    width: 303px;
+    height: 303px;
+    top: 42px;
+  }
+
+  .pink-dream-juice { top: 26px; }
+  .pink-dream-price {
+    font-size: var(--size-20);
+    font-weight: 600;
+    line-height: 60px;
+    margin-bottom: 0;
+    position: relative;
+    top: 22px; }
+
+  .juice-price {
+    position: relative;
+    top: 22px;
+  }
+
+  .anti-aging-price { top: 42px; }
+
+  .pineapple-price, .strawberries-price, .deep-detox-price { top: 38px; }
+
+
+
+  /* End of Juice Masks */
+
+  /* Start of Plant-Based Masks */
+
+  .milks {
+    position: relative;
+    top: initial;
+    right: 6px;
+  }
+
+  .milk-overlay {
+    width: 305px;
+    height: 305px;
+    top: 83px;
+  }
+
+  .milk-price { top: 32px; }
+  .vanilla-price { top: 38px; }
+
+  .vanilla-milk { padding: 0 2px; }
+  .avocado-milk { padding: 0 3px; }
+
+
+
+  /* End of Plant-Based Masks */
+
+
+  /* Start of Facial Tools */
+
+  .sprays {
+    /*top: initial;*/
+    right: 6px;
+    bottom: 23px;
+  }
+
+  .tools {
+    top: initial;
+  }
+
+  .facial-overlay {
+    width: 303px;
+    height: 303px;
+    top: 22px;
+  }
+
+  .facial-overlay2 {
+    width: 303px;
+    height: 303px;
+    top: 42px;
+  }
+
+  .rose-quartz-price, .jade-roller-price { top: 39px; }
+
+  /* End of Facial Tools */
+
+
+  /* Start of The Original Salt Company Section */
+
+  /* Start of Hand Carved Salt Lamps */
+
+  .lamps {
+    position: relative;
+    right: initial;
+    left: 1px;
+  }
+
+  .salt3 { margin-bottom: 200px; }
+
+  .salt-lamps { width: 52%; }
+
+  .salt-lamps2 {
+    width: 32%;
+    /*top: -42px;*/
+    bottom: 34px;
+  }
+
+  .salt-lamps-overlay {
+    width: 94%;
+    height: 126%;
+    left: 22px;
+  }
+
+  .soccer-overlay { height: 150%; }
+
+  .angel-lamp { bottom: 38px; }
+  .flower-lamp, .dolphin-lamp { bottom: 32px; }
+
+  .soccer-ball {
+    top: -24px;
+    left: 5px;
+  }
+
+  .pink-natural {
+    width: 35%;
+    top: -27px;
+  }
+
+  .nightlight {
+    width: 45%;
+    top: 30px;
+    left: 7px;
+  }
+
+  .nightlight-overlay { height: 104%; }
+  /* End of Hand Carved Salt Lamps */
+
+  /* End of The Original Salt Company Section */
+
+  /* Start of Diffusers section */
+
+  .diffuser { top: 30px; }
+
+  .diffusers2, .diffusers3 {
+    display: grid;
+    width: 70%;
+    margin: auto auto 20px;
+    left: 9px;
+  }
+
+  .diffusers3 { margin-bottom: 420px; }
+
+
+  .diffuser-title { top: 10px; }
+
+
+
+  /* End of Diffusers section */
+
+
+  /* Start of Footer */
+  .copyright {
+    right: 3px;
+    left: initial;
+  }
+
+  /* End of Footer */
 }
-/* End of Responsiveness
+
+@media screen and (max-width: 375px) {
+
+  /* Start of Essential Oils */
+
+  .oils-overlay2, .oils-overlay3 { left: 12px; }
+  /*.oils-overlay5 { left: 0; }*/
+
+  .oils { left: 3px; }
+
+  .oils-overlay4 { left: 20px; }
+
+  .oils-row-1, .oils-row-2 { left: -2px; }
+
+  .oils3 { left: -6px; }
+
+  .frankincense-image, .mountain_bandits-image, .breathe-clear-image { left: 12px; }
+
+  .breathe-clear { top: 10px; }
+  .breathe { left: 20px; }
+
+  /* End of Essential Oils */
+
+  /* Start of Hydrosol */
+
+  .hydrosol-overlay2, .hydrosol-overlay3 { left: 12px; }
+
+  .hydrosol-overlay6 { left: 20px; }
+
+
+  /* End of Hydrosol */
+
+  /* Start of Carrier Oils */
+
+  .carrier-overlay { left: 12px; }
+
+  /* End of Carrier Oils */
+
+  /* Start of Juice Masks */
+
+  .juices { bottom: 48px; }
+
+  .juice-overlay {
+    width: 289px;
+    height: 289px;
+  }
+
+  .pineapple-juice, .strawberries-juice, .deep-detox-juice { top: 30px; }
+  .pineapple-price, .strawberries-price, .deep-detox-price { top: 34px; }
+  .anti-aging-price { top: 34px; }
+
+  .pink-dream-price { top: 22px; }
+
+
+  /* End of Juice Masks */
+
+
+  /* Start of Milk Masks */
+
+  .milks {
+    position: relative;
+    right: 5px;
+    bottom: 47px;
+  }
+
+  .masks1, .masks2 {
+    display: grid;
+    width: 70%;
+    margin: auto auto 20px;
+    left: 9px;
+  }
+
+  .masks1 {
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .masks2 { margin-bottom: 150px; }
+
+  .milk-masks {
+    width: 100%;
+    bottom: 2px;
+  }
+
+  .milk-overlay {
+    width: 292px;
+    height: 292px;
+    top: 85px;
+    right: 22px;
+    bottom: 2px;
+  }
+
+  .masks3 { bottom: 50px; }
+
+  .blueberry-price, .vanilla-price, .matcha-price, .avocado-milk-price { top: 28px; }
+
+
+  /* End of Milk Masks */
+
+  /* Start of Facial Tools */
+
+  .sprays {
+    top: initial;
+    right: 5px;
+  }
+
+  .facial-overlay {
+    width: 289px;
+    height: 289px;
+  }
+
+  .facial-overlay2 {
+    width: 289px;
+    height: 289px;
+  }
+
+  .rose-quartz-price { top: 31px; }
+  .jade-roller-price { top: 34px; }
+
+  /* End of Facial Tools */
+
+  /* Start of The Original Salt Company Section */
+
+  /* Start of Hand Carved Salt Lamps */
+
+  .lamps { left: 10px; }
+
+  .nightlight {
+    right: 3px;
+    left: initial;
+  }
+
+  .salt-lamps-overlay { left: 12px; }
+
+  /* End of Hand Carved Salt Lamps */
+
+  /* End of The Original Salt Company Section */
+
+  /* Start of Diffusers page */
+
+  .diffuser { top: 30px; }
+
+  .diffusers1, .diffusers2 { left: 8px; }
+
+
+  .moon-glow { width: 80%; }
+  .marble { width: 42%; }
+  .leah { width: 56%; }
+  .kate { width: 42%; }
+  .meadow { width: 56%; }
+  .blizzard { width: 65%; }
+  .breezy { width: 65%; }
+
+
+
+  /* End of Diffuser page */
+
+
+  /* Start of Footer */
+  .copyright {
+    right: 8px;
+    left: initial;
+  }
+
+  /* End of Footer */
+}
