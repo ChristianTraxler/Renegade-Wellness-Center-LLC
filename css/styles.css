@@ -351,6 +351,7 @@ section {
 }
 
 .bg-price-section {
+  display: block;
   padding: var(--size-150) 0;
   padding-top: 0;
   margin: 0 auto;
@@ -360,6 +361,49 @@ section {
   position: relative;
   height: 210px;
   bottom: 1px;
+}
+
+.giftcards2 {
+  text-align: center;
+  position: relative;
+  top: 168px;
+  margin-bottom: 100px;
+}
+
+.giftcards2 > a > button {
+  margin-top: 20px;
+}
+
+.book_now:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.book_now {
+  display: flex;
+  justify-content: center;
+  background-color: #204068;
+  border: none;
+  color: white;
+  height: var(--size-40);
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+  line-height: 38px;
+  padding: 0 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: var(--size-14);
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 8px 8px -4px #2F609D;
+  transition: 1s;
+}
+
+.book_now:hover {
+  transform: scale(1.1);
+  text-decoration: none;
 }
 
 /* End of Home page */
