@@ -69,7 +69,7 @@
 }
 
 .bg-header, .video-demo {
-  
+
   background-color: var(--footer);
   background-repeat: no-repeat;
   background-size: cover;
@@ -87,9 +87,9 @@
 
 .bg-header::before {
   background-image: linear-gradient(
-    30deg,
-    rgba(21, 27, 38, 0.8) 0%,
-    rgba(0, 0, 0, 0.2) 100%
+          30deg,
+          rgba(21, 27, 38, 0.8) 0%,
+          rgba(0, 0, 0, 0.2) 100%
   );
   position: absolute;
   top: 0;
@@ -534,7 +534,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 .price-card .checked { color: var(--success); }
 .price-card .times {
-  color: var(--danger); 
+  color: var(--danger);
   width: var(--size-14);
 }
 
@@ -581,7 +581,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 .pricing-table ul { line-height: 20px; }
 
 .price-card li { margin-bottom: var(--size-20); }
-.price-card .icon { 
+.price-card .icon {
   float: right;
   font-weight: 600;
 }
@@ -1566,8 +1566,8 @@ footer .footer-top {
   padding-top: 60px;
 }
 
-footer .footer-col { 
-  justify-self: center; 
+footer .footer-col {
+  justify-self: center;
   max-width: 269px;
 }
 
@@ -1694,7 +1694,7 @@ footer .footer-col {
   left: 5px;
 }
 
-.services-wrapper p { 
+.services-wrapper p {
   color: #858497;
   line-height: var(--size-20);
 }
@@ -1711,7 +1711,7 @@ footer .footer-col {
   margin-right: var(--size-10);
 }
 
-.post-inner h6 { 
+.post-inner h6 {
   margin: 0;
   line-height: var(--size-20);
 }
@@ -1748,7 +1748,7 @@ footer .footer-col {
   color: #C95F1C;
 }
 
-.copyright p { 
+.copyright p {
   color: var(--white);
 }
 
@@ -1782,7 +1782,7 @@ footer .footer-col {
 #scrollUp {
   background-color: transparent;
   background-image: linear-gradient(
-    90deg, #9ccdfe 0%, #94aafd 100%);
+          90deg, #9ccdfe 0%, #94aafd 100%);
   color: var(--white);
   font-size: var(--size-20);
   height: var(--size-30);
