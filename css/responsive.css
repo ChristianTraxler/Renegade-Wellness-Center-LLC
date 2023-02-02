@@ -4,7 +4,7 @@
 
 
 
-/* Start of Products page */
+  /* Start of Products page */
 
   /*.container2 { margin-left: 0; }*/
   .container3 { margin-right: 0; }
@@ -62,7 +62,7 @@
 /* iPads and Tablets - portrait */
 
 @media screen and (max-width: 1024px) {
-/* Start of Home page */
+  /* Start of Home page */
   .service-grid {
     grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
     gap: 0;
@@ -248,7 +248,7 @@
 
 
   /* End of Diffusers page */
-  
+
 }
 
 @media screen and (max-width: 768px) {
@@ -685,12 +685,12 @@
   .masks2 { margin-bottom: 244px; }
 
   .milk-overlay {
-    width: 331px;
-    height: 329px;
+    width: 333px;
+    height: 333px;
     margin: auto;
     top: 0;
     bottom: 0;
-    left: -18px;
+    left: -17px;
   }
 
   .juice-overlay {
@@ -705,7 +705,7 @@
   .milk-price { top: 44px; }
 
   .blueberry-milk, .matcha-milk { padding: 0 28px; }
-  .avocado-milk-price { top: 40px; }
+  .blueberry-price, .vanilla-price, .matcha-price, .avocado-milk-price { top: 48px; }
 
 
   /* End of Milk Mask */
@@ -848,8 +848,6 @@
     position: relative;
     bottom: 14px;
   }
-
-
 
   /* End of Diffusers section */
 
@@ -1095,22 +1093,21 @@
   .why-me { padding-top: 50px; }
 
 
-  .bg-price-section {
-    position: relative;
-    bottom: 80px;
-  }
+
 
 
   /* End of Home page */
 
   /* Start of Essential Oils */
-  .oils { left: 2px; }
+  /*.oils { left: 2px; }*/
 
   .oils-overlay4 { left: 20px; }
 
   .oils-row-1, .oils-row-2 { left: 1px; }
 
   .oils3 { left: -6px; }
+
+  .lemon-oil { left: 10px; }
 
   .breathe-clear {
     top: 10px;
@@ -1203,7 +1200,7 @@
   }
 
   .milk-price { top: 32px; }
-  .vanilla-price { top: 38px; }
+  .vanilla-price, .blueberry-price, .matcha-price, .avocado-milk-price { top: 42px; }
 
   .vanilla-milk { padding: 0 2px; }
   .avocado-milk { padding: 0 3px; }
@@ -1331,18 +1328,18 @@
   .oils-overlay2, .oils-overlay3 { left: 12px; }
   /*.oils-overlay5 { left: 0; }*/
 
-  .oils { left: 3px; }
+  /*.oils { left: 3px; }*/
 
-  .oils-overlay4 { left: 20px; }
+  /*.oils-overlay4 { left: 20px; }*/
 
-  .oils-row-1, .oils-row-2 { left: -2px; }
+  /*.oils-row-1, .oils-row-2 { left: -2px; }*/
 
   .oils3 { left: -6px; }
 
   .frankincense-image, .mountain_bandits-image, .breathe-clear-image { left: 12px; }
 
   .breathe-clear { top: 10px; }
-  .breathe { left: 20px; }
+  /*.breathe { left: 20px; }*/
 
   /* End of Essential Oils */
 
@@ -1417,7 +1414,7 @@
 
   .masks3 { bottom: 50px; }
 
-  .blueberry-price, .vanilla-price, .matcha-price, .avocado-milk-price { top: 28px; }
+  .blueberry-price, .vanilla-price, .matcha-price, .avocado-milk-price { top: 38px; }
 
 
   /* End of Milk Masks */

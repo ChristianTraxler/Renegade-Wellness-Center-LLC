@@ -808,6 +808,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 .oils3 { margin-bottom: 250px; }
 
+.lemon-oil { left: 10px !important; }
+
 .lemon, .blood-orange, .green-mandarin, .peppermint, .lavender, .greek-lavender,
 .frankincense, .breathe-clear, .mountain_bandits, .eucalyptus, .artisan-lavender,
 .rose, .lemon-balm, .ginger { width: 24%; }
@@ -846,7 +848,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   width: 20%;
   margin: auto;
   position: relative;
-  left: 15px;
+  /*left: 15px;*/
 }
 
 .image-oils4 { left: 9px; }
