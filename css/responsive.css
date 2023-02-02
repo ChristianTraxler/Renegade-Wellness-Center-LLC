@@ -844,6 +844,11 @@
     top: 10px;
   }
 
+  .daisy-title {
+    position: relative;
+    bottom: 10px;
+  }
+
 
 
   /* End of Diffusers section */
