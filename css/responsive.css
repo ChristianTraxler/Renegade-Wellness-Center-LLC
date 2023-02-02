@@ -545,8 +545,22 @@
 
   /* Start of Essential Oils page */
 
+  .group2 { top: 14px; }
+
+  .group3 {
+    top: initial;
+    bottom: 60px;
+  }
+
+  .group4 {
+    top: initial;
+    bottom: 140px;
+  }
+
   .oils { left: initial; }
   .oils-row-1, .oils-row-2 { left: 20px; }
+
+  .oils3 { margin-bottom: 120px; }
 
   .peppermint-image, .lavender-image, .greek-lavender-image, .frankincense-image { left: initial; }
 
@@ -659,11 +673,25 @@
     bottom: 144px;
   }
 
-  .pineapple-juice, .pink-dream-juice, .anti-aging-juice { padding: 0 8px 0 8px; }
+  .pineapple-juice, .pink-dream-juice, .anti-aging-juice, .strawberries-juice, .deep-detox-juice {
+    font-size: 1.3em;
+    padding: 0 20px 0 20px;
+  }
 
   .juice-price { top: 50px; }
-  .pineapple-price, .anti-aging-price, .strawberries-price, .deep-detox-price { top: 46px; }
-  .pink-dream-price { top: 40px; }
+  .pineapple-price, .anti-aging-price, .strawberries-price, .deep-detox-price { top: 40px; }
+  .pink-dream-price { top: 30px; }
+
+  .juice-overlay {
+    width: 331px;
+    height: 331px;
+    top: initial;
+    right: 17px;
+    bottom: 0;
+    left: initial;
+  }
+
+  .description { font-size: 1em; }
 
   /* End of Juice Masks */
 
@@ -693,15 +721,6 @@
     left: -17px;
   }
 
-  .juice-overlay {
-    width: 329px;
-    height: 329px;
-    top: initial;
-    right: 17px;
-    bottom: 0;
-    left: initial;
-  }
-
   .milk-price { top: 44px; }
 
   .blueberry-milk, .matcha-milk { padding: 0 28px; }
@@ -725,6 +744,11 @@
     left: 9px;
   }
 
+  .rose-quartz, .jade-roller {
+    font-size: 1.2em;
+    padding: 0 25px 0 25px;
+  }
+
   .facial-overlay {
     width: 329px;
     height: 329px;
@@ -740,7 +764,7 @@
     right: 17px;
   }
 
-  .rose-quartz-price, .jade-roller-price { top: 45px; }
+  .rose-quartz-price, .jade-roller-price { top: 40px; }
 
 
   /* End of Facial Tools */
@@ -947,7 +971,7 @@
     /*margin-bottom: 146px;*/
   }
 
-  .oils3 { margin-bottom: 250px; }
+  /*.oils3 { margin-bottom: 250px; }*/
 
   .lemon, .blood-orange, .green-mandarin, .peppermint, .breathe-clear,
   .lavender, .greek-lavender, .frankincense, .eucalyptus, .mountain_bandits, .breathe-clear { width: 94%; }
@@ -961,7 +985,7 @@
 
   /*.image-oils { left: 12px; }*/
 
-  .image-oils2 { left: 10px; }
+  /*.image-oils2 { left: 10px; }*/
 
   .image-oils3 { left: 0; }
 
@@ -1099,7 +1123,17 @@
   /* End of Home page */
 
   /* Start of Essential Oils */
-  /*.oils { left: 2px; }*/
+  .group2 { top: 14px; }
+
+  .group3 {
+    top: initial;
+    bottom: 26px;
+  }
+
+  .group4 {
+    top: initial;
+    bottom: 40px;
+  }
 
   .oils-overlay4 { left: 20px; }
 
@@ -1177,9 +1211,9 @@
     top: 22px;
   }
 
-  .anti-aging-price { top: 42px; }
+  .anti-aging-price { top: 32px; }
 
-  .pineapple-price, .strawberries-price, .deep-detox-price { top: 38px; }
+  .pineapple-price, .strawberries-price, .deep-detox-price { top: 26px; }
 
 
 
@@ -1200,7 +1234,12 @@
   }
 
   .milk-price { top: 32px; }
-  .vanilla-price, .blueberry-price, .matcha-price, .avocado-milk-price { top: 42px; }
+  .vanilla-price { top: 30px; }
+  .blueberry-price, .matcha-price, .avocado-milk-price { top: 24px; }
+
+  .blueberry-milk, .vanilla-milk, .matcha-milk, .avocado-milk {
+    font-size: 1.3em;
+  }
 
   .vanilla-milk { padding: 0 2px; }
   .avocado-milk { padding: 0 3px; }
@@ -1234,7 +1273,7 @@
     top: 42px;
   }
 
-  .rose-quartz-price, .jade-roller-price { top: 39px; }
+  .rose-quartz-price, .jade-roller-price { top: 24px; }
 
   /* End of Facial Tools */
 
@@ -1414,7 +1453,7 @@
 
   .masks3 { bottom: 50px; }
 
-  .blueberry-price, .vanilla-price, .matcha-price, .avocado-milk-price { top: 38px; }
+  .blueberry-price, .vanilla-price, .matcha-price, .avocado-milk-price { top: 20px; }
 
 
   /* End of Milk Masks */
@@ -1436,8 +1475,7 @@
     height: 289px;
   }
 
-  .rose-quartz-price { top: 31px; }
-  .jade-roller-price { top: 34px; }
+  .rose-quartz-price, .jade-roller-price { top: 24px; }
 
   /* End of Facial Tools */
 
