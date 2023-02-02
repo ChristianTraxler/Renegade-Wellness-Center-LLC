@@ -513,6 +513,11 @@
 
   .wrapper { padding: initial; }
 
+  .bg-price-section {
+    position: relative;
+    bottom: 80px;
+  }
+
 
   /* End of Home page */
 
@@ -1082,7 +1087,10 @@
   .why-me { padding-top: 50px; }
 
 
-
+  .bg-price-section {
+    position: relative;
+    bottom: 80px;
+  }
 
 
   /* End of Home page */

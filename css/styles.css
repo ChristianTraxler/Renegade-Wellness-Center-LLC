@@ -352,9 +352,11 @@ section {
 
 .bg-price-section {
   display: block;
-  padding: var(--size-150) 0;
+  padding: var(--size-50) 0;
   padding-top: 0;
   margin: 0 auto;
+  position: relative;
+  bottom: 80px;
 }
 
 .salt-therapy {
@@ -366,7 +368,7 @@ section {
 .giftcards2 {
   text-align: center;
   position: relative;
-  top: 168px;
+  top: 120px;
   margin-bottom: 100px;
 }
 
