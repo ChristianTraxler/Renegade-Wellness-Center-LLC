@@ -713,8 +713,8 @@
   .masks2 { margin-bottom: 244px; }
 
   .milk-overlay {
-    width: 333px;
-    height: 333px;
+    width: 332px;
+    height: 332px;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -723,8 +723,12 @@
 
   .milk-price { top: 44px; }
 
+  .blueberry-milk, .vanilla-milk, .matcha-milk, .avocado-milk { font-size: 1.2em; }
+
+  .avocado-milk { padding: 0 20px 0 20px; }
+
   .blueberry-milk, .matcha-milk { padding: 0 28px; }
-  .blueberry-price, .vanilla-price, .matcha-price, .avocado-milk-price { top: 48px; }
+  .blueberry-price, .vanilla-price, .matcha-price, .avocado-milk-price { top: 42px; }
 
 
   /* End of Milk Mask */
@@ -1235,7 +1239,7 @@
 
   .milk-price { top: 32px; }
   .vanilla-price { top: 30px; }
-  .blueberry-price, .matcha-price, .avocado-milk-price { top: 24px; }
+  .blueberry-price, .matcha-price, .avocado-milk-price { top: 22px; }
 
   .blueberry-milk, .vanilla-milk, .matcha-milk, .avocado-milk {
     font-size: 1.3em;
