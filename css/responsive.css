@@ -756,18 +756,18 @@
   }
 
   .facial-overlay {
-    width: 329px;
-    height: 329px;
+    width: 331px;
+    height: 331px;
     top: initial;
     bottom: 20px;
     left: -17px;
   }
 
   .facial-overlay2 {
-    width: 329px;
-    height: 329px;
+    width: 331px;
+    height: 331px;
     top: 0;
-    right: 17px;
+    left: -19px;
   }
 
   .rose-quartz-price, .jade-roller-price { top: 40px; }
