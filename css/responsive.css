@@ -518,6 +518,12 @@
     bottom: 80px;
   }
 
+  .people {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .valentines { width: 90%; }
 
   /* End of Home page */
 

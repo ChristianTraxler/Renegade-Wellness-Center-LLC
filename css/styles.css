@@ -408,6 +408,11 @@ section {
   text-decoration: none;
 }
 
+.valentines {
+  width: 50%;
+  border-radius: 10px;
+}
+
 /* End of Home page */
 
 /* Start of Services */
@@ -529,6 +534,10 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   padding: var(--size-40) var(--size-16);
 }
 
+.price-card > h5 { text-align: center; }
+
+.plan-btn-wrapper > h5 { margin: 20px 0 0 0; }
+
 .side-by-side1 { float: left; }
 .side-by-side2 { float: right; }
 
@@ -577,6 +586,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 .price-card1 .billed, .price-card2 .billed { text-align: center; }
 
 .billed { line-height: 1.1rem; }
+
+.people { margin-top: 4px; }
 
 .pricing-table ul { line-height: 20px; }
 
