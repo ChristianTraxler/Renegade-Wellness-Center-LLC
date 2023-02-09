@@ -887,6 +887,18 @@
 
   /* End of Diffusers section */
 
+  /* Start of Portland Bee Balm */
+
+  .bee-balm {
+    width: 78%;
+    margin: auto;
+    top: 50px;
+    left: 17px;
+  }
+
+
+  /* End of Portland Bee Balm */
+
   /* Start of Contact page */
   .pricing-section { padding: 100px 0 200px 0; }
 
@@ -1526,6 +1538,13 @@
 
 
   /* End of Diffuser page */
+
+  /* Start of Portland Bee Balm */
+
+  .bee-balm { top: 0; }
+
+
+  /* End of Portland Bee Balm */
 
 
   /* Start of Footer */
