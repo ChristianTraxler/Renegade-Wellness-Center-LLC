@@ -320,6 +320,18 @@ section {
   flex: 1;
 }
 
+.block-text > p {
+  position: relative;
+  bottom: 38px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.block-text > a {
+  position: relative;
+  bottom: 38px;
+}
+
 /*.block-text {*/
 /*  position: relative;*/
 /*  left: 257px;*/
@@ -782,6 +794,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   top: 80px;
   padding: 0 50px 0 50px;
   line-height: 1.5em;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .container4 { margin-left: 0; }
