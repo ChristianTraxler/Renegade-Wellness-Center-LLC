@@ -515,7 +515,7 @@
 
   .bg-price-section {
     position: relative;
-    bottom: 80px;
+    bottom: 120px;
   }
 
   .people {
@@ -1140,7 +1140,13 @@
   /* Start of Home page */
   .why-me { padding-top: 50px; }
 
+  .block-text > p {
+    top: 12px;
+  }
 
+  .block-text > a {
+    top: 14px;
+  }
 
 
 
