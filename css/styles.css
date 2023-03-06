@@ -951,6 +951,12 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   padding: 1em 1em;
 }
 
+.oil-description {
+  font-size: 0.8em;
+  /* margin-top: 0.25em; */
+  padding: 1em 1em;
+}
+
 
 /* End of Essential Oils */
 
