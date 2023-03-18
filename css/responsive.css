@@ -47,6 +47,9 @@
 
 @media screen and (max-width: 1024px) {
   /* Start of Home page */
+
+  .bg-header { padding: 0; }
+
   .service-grid {
     grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
     gap: 0;
