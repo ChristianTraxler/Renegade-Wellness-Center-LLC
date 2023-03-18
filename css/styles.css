@@ -19,9 +19,7 @@
   padding-bottom: var(--size-10);
 }
 
-.navbar.sticky .nav-link a {
-  color: var(--font-color-dark);
-}
+.navbar.sticky .nav-link a { color: var(--font-color-dark); }
 
 .navbar-toggler {
   position: absolute;
@@ -39,13 +37,9 @@
   pointer-events: none;
 }
 
-[aria-controls="navbarDropdown"] {
-  display: none;
-}
+[aria-controls="navbarDropdown"] { display: none; }
 
-.nb-logo, .nb-logo2 {
-  height: 70px;
-}
+.nb-logo, .nb-logo2 { height: 70px; }
 
 .navbar-nav {
   display: flex;
@@ -69,7 +63,6 @@
 }
 
 .bg-header, .video-demo {
-
   background-color: var(--footer);
   background-repeat: no-repeat;
   background-size: cover;
@@ -162,6 +155,8 @@
 
 /* End of Navbar */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Home page */
 .companies {
   display: block;
@@ -185,18 +180,14 @@
   background-size: cover;
   width: 100%;
   height: 332px;
-  /*background-image: url(../img/salt-rock.jpeg);*/
   margin-bottom: 200px;
 }
 
-.salt--overlay:hover {
-  opacity: 1;
-}
+.salt--overlay:hover { opacity: 1; }
 
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(398px, 1fr));
-  /*gap: var(--size-20);*/
   margin-top: var(--size-100);
   position: relative;
   top: 56px;
@@ -283,8 +274,8 @@
 
 .card .content .details ion-icon { font-size: 1.5em; }
 
-.details > * { text-align: center; }
 .details > * {
+  text-align: center;
   width: 80%;
   margin: auto;
 }
@@ -301,6 +292,7 @@ section {
 }
 
 .wrapper {
+  margin: auto;
   width: 100%;
   max-width: 1200px;
   padding: 0 30px;
@@ -311,14 +303,7 @@ section {
   padding-bottom: 80px;
 }
 
-/*.why-me-wrapper {*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*}*/
-
-.why-me-wrapper div {
-  flex: 1;
-}
+.why-me-wrapper div { flex: 1; }
 
 .block-text > p {
   position: relative;
@@ -332,13 +317,7 @@ section {
   bottom: 38px;
 }
 
-/*.block-text {*/
-/*  position: relative;*/
-/*  left: 257px;*/
-/*}*/
-
 .why-me-wrapper .block-text {
-  /*padding-right: var(--size-100);*/
   max-width: 35rem;
   margin: auto;
 }
@@ -358,9 +337,7 @@ section {
   margin-top: 0.5rem;
 }
 
-.price-sheet {
-  border-radius: 10px;
-}
+.price-sheet { border-radius: 10px; }
 
 .bg-price-section {
   display: block;
@@ -384,9 +361,7 @@ section {
   margin-bottom: 100px;
 }
 
-.giftcards2 > a > button {
-  margin-top: 20px;
-}
+.giftcards2 > a > button { margin-top: 20px; }
 
 .book_now:hover {
   color: white;
@@ -394,7 +369,7 @@ section {
 }
 
 .book_now {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   background-color: #204068;
   border: none;
@@ -409,7 +384,6 @@ section {
   font-weight: 500;
   font-size: var(--size-14);
   cursor: pointer;
-  display: inline-block;
   text-decoration: none;
   box-shadow: 0 8px 8px -4px #2F609D;
   transition: 1s;
@@ -420,12 +394,9 @@ section {
   text-decoration: none;
 }
 
-.valentines {
-  width: 50%;
-  border-radius: 10px;
-}
-
 /* End of Home page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Services */
 
@@ -434,12 +405,6 @@ section {
   padding: var(--size-150) 0;
   margin: 0 auto;
 }
-
-/*.service-grid {*/
-/*  display: grid;*/
-/*  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
-/*  gap: var(--size-20);*/
-/*}*/
 
 .service-card {
   padding: var(--size-30);
@@ -467,42 +432,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 /* End of Services */
 
-/* Start of Video Demo */
-
-/*.video-demo { text-align: center; }*/
-/*.video-demo .block-text { padding-right: 0; }*/
-
-/*.video-demo .block-text h2, */
-/*.video-demo .block-text p {*/
-/*  color: var(--white);*/
-/*  margin: var(--size-50) 0;*/
-/*}*/
-
-/*.video-btn {*/
-/*  position: absolute;*/
-/*  top: 50%;*/
-/*  left: 50%;*/
-/*  transform: translate(-50%, -50%);*/
-/*  box-shadow: 0 10px 20px rgb(57 166 251 / 30%);*/
-/*}*/
-
-/*.video-btn img {*/
-/*  width: var(--size-100);*/
-/*  height: var(--size-100);*/
-/*}*/
-
-/*.video-box {*/
-/*  position: relative;*/
-/*  margin-bottom: -9.375rem;*/
-/*  z-index: 100;*/
-/*}*/
-
-/*.video-box > img {*/
-/*  max-width: 600px;*/
-/*  border-radius: 8px;*/
-/*}*/
-
-/* End of Video Demo */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Book Page */
 
@@ -580,13 +510,6 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 .price-card hr { margin: 2rem 0 1rem; }
 
-/*.price {*/
-/*  color: var(--font-color-link);*/
-/*  font-size: var(--size-30);*/
-/*  font-weight: 600;*/
-/*  line-height: 60px;*/
-/*}*/
-
 .price-card h3, .price-card .price,
 .price-card .billed {
   text-align: center;
@@ -616,7 +539,10 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   margin-bottom: 6px;
 }
 .plan-btn-wrapper a { width: 100%; }
+
 /* End of Book Page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Products page */
 
@@ -632,6 +558,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 
 /* End of Products page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Contact Page */
 
@@ -659,6 +587,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 
 /* End of Contact Page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of FAQ Page */
 
@@ -745,9 +675,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   bottom: 6px;
 }
 
-.panel2-1 {
-  max-height: 530px !important;
-}
+.panel2-1 { max-height: 530px !important; }
 
 .panel2 {
   padding-bottom: 10px;
@@ -782,6 +710,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 /* End of FAQ Page */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Products page */
 
 .aromatics { font-size: 28px; }
@@ -802,6 +732,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 /* End of Products page */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Aromatics Page */
 
 .service-grid2 {
@@ -816,15 +748,30 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 /* End of Aromatics Page */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Essential Oils */
+
+.essential {
+  display: flex;
+  justify-content: center;
+  font-size: var(--size-50);
+}
+
+.flavors {
+  display: flex;
+  justify-content: center;
+}
+
+h3 > a { color: black; }
+
+.e-o { margin: 10px; }
 
 .oils {
   display: flex;
   justify-content: center;
   position: relative;
   top: 80px;
-  /*grid-template-columns: repeat(auto-fit, minmax(343px, 1fr));*/
   gap: 4em;
   margin-bottom: 200px;
 }
@@ -837,7 +784,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 .lemon, .blood-orange, .green-mandarin, .peppermint, .lavender, .greek-lavender,
 .frankincense, .breathe-clear, .mountain_bandits, .eucalyptus, .artisan-lavender,
-.rose, .lemon-balm, .ginger { width: 24%; }
+.rose, .lemon-balm, .ginger { width: 30%; }
 
 .image {
   position: relative;
@@ -847,9 +794,6 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 .oils > * {
   position: relative;
-  /*width: 350px;*/
-  top: 70px;
-  /*right: 180px;*/
   line-height: 1.5em;
 }
 
@@ -860,20 +804,18 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 .image-oils {
   display: block;
-  width: 20%;
+  width: 30%;
   margin: auto;
   position: relative;
-  left: -4px;
+  top: 26px;
+  left: 3px;
 }
-
-.oils-row-1 { left: -11px; }
 
 .image-oils2 {
   display: block;
-  width: 20%;
+  width: 30%;
   margin: auto;
   position: relative;
-  /*left: 15px;*/
 }
 
 .image-oils4 { left: 9px; }
@@ -882,7 +824,6 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   display: flex;
   position: absolute;
   bottom: -58px;
-  /*left: 0;*/
   width: 351px;
   height: 320px;
   background: rgba(0, 0, 0, 0.6);
@@ -895,18 +836,9 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   border-radius: 10px;
 }
 
-.lemon-overlay, .orange-overlay, .mandarin-overlay { left: -27px; }
-
-.oils-overlay2 { right: -24px; }
-
-.oils-overlay3 { right: -40px; }
-
 .oils-overlay4 { left: -15px; }
 
-.oils-overlay-blur {
-  /*-webkit-filter: blur(5px);*/
-  backdrop-filter: blur(5px);
-}
+.oils-overlay-blur { backdrop-filter: blur(5px); }
 
 .oils-overlay > * {
   transform: translateY(20px);
@@ -924,18 +856,32 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   top: 18px;
 }
 
-.bld-orange { color: #FE4B03 }
-.brth-clear { color: #5398C2 }
-.eucalyp { color: #208354 }
-.frank { color: #788E9F }
-.mandarin { color: #75B063 }
-.lavend { color: #977BB5 }
-.lem { color: #E0B644 }
-.mountain { color: #7BB170 }
-.mint { color: #84ADC6 }
+.basil { color: #76A882; }
+.bld-orange { color: #FE4B03; }
+.blue-tan { color: #B1C4CD; }
+.brth-clear { color: #5398C2; }
+.chamomile-german { color: #EE8842; }
+.chamomile-roman { color: #C975B6; }
+.clove-bud { color: #C56C30; }
+.eucalyp { color: #208354; }
+.eucalyptus-dives { color: #D08ABB; }
+.frank { color: #788E9F; }
+.grapefruit { color: #E887A1; }
+.gymnocephalum { color: #DA363C; }
+.italicum { color: #DA6916; }
+.lavend { color: #977BB5; }
+.lem { color: #E0B644; }
+.lemongrass { color: #54B448; }
+.mandarin { color: #75B063; }
+.marjoram { color: #81BB6F; }
+.mountain { color: #7BB170; }
+.mint { color: #84ADC6; }
+.myrrh { color: #C17349; }
+.orange { color: #f58235; }
+.ravintsara { color: #23AAD7; }
+.wintergreen { color: #799E82; }
 
 .price {
-  /*color: var(--font-color-link);*/
   font-size: var(--size-20);
   font-weight: 600;
   line-height: 60px;
@@ -947,28 +893,96 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 .description {
   text-align: center;
   font-size: 0.8em;
-  /*margin-top: 0.25em;*/
   padding: 1em 1em;
 }
 
 .oil-description {
   font-size: 0.8em;
-  /* margin-top: 0.25em; */
+  text-align: center;
   padding: 1em 1em;
+}
+
+hr {
+  width: 85%;
+  border: 1px solid black;
+}
+
+.section2 {
+  display: block;
+  margin-bottom: 100px;
+  height: 1350px;
+}
+
+.section3 {
+  display: block;
+  margin-bottom: 100px;
+  height: 1804px;
+}
+
+.section4, .section7 {
+  display: block;
+  margin-bottom: 100px;
+  height: 897px;
+}
+
+.section5 {
+  display: block;
+  margin-bottom: 100px;
+  height: 443px;
+}
+
+.section6 {
+  display: block;
+  margin-bottom: 100px;
+  height: 900px;
+}
+
+.section8 {
+  display: block;
+  margin-bottom: 100px;
+  height: 980px;
+}
+
+.new-items {
+  position: relative;
+  top: 40px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 
 /* End of Essential Oils */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Hydrosols */
 
-.hydrosol {
+.hydrosol-title {
   display: flex;
+  justify-content: center;
+  font-size: var(--size-50);
+}
+
+.hydrosol {
+  display: grid;
   justify-content: center;
   position: relative;
   top: 80px;
-  margin-bottom: 290px;
+  margin-bottom: 80px;
+  grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
 }
+
+.hydrosol-row3 { margin-bottom: 150px; }
+
+.hydrosol-image {
+  margin: auto;
+  width: 80%;
+}
+
+.hydrosol-image3 { width: 40%; }
+
+.more-width { width: 28.2%; }
 
 .hydrosol-sprays {
   display: block;
@@ -977,37 +991,23 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   position: relative;
 }
 
-.image-hydrosol {
-  top: 42px;
-  left: 37px;
-}
-
 .image-hydrosol2 {
   top: initial;
   left: initial;
 }
 
-.hydrosols { width: 22%; }
+.hydrosols { width: 28%; }
 .hydrosols2 { width: 25%; }
 
 .hydrosol > * { line-height: 1.5em; }
-.pepp { left: 54px; }
-
-.carrier {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 80px;
-  margin: 200px 0 400px 0;
-  line-height: 1.5em;
-}
 
 .hydrosol-overlay {
   display: flex;
   position: absolute;
-  top: -38px;
+  top: 0;
+  left: 114px;
   width: 351px;
-  height: 320px;
+  height: 378px;
   background: rgba(0, 0, 0, 0.6);
   color: #ffffff;
   flex-direction: column;
@@ -1016,6 +1016,19 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   opacity: 0;
   transition: opacity 0.25s;
   border-radius: 10px;
+}
+
+.elderberry-hydro-overlay {
+  right: 109px;
+  left: initial;
+}
+
+.frank-hydro-overlay, .ginger-hydro-overlay, .lav-hydro-overlay, .lemon-hydro-overlay,
+.hydro-pepp-overlay, .rose-otto-overlay { height: 382px; }
+.lemon-verbena-overlay { height: 380px; }
+.victorian-overlay {
+  height: 380px;
+  left: 394px;
 }
 
 .hydrosol-overlay-blur { backdrop-filter: blur(5px); }
@@ -1034,32 +1047,72 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   right: 12px;
 }
 
-.rose-hydro { bottom: 48px; }
-.lemon-hydro { bottom: 100px; }
-.hydro-pepp-overlay { left: 156px; }
-.frankincense-hydro {
-  right: -21px;
-  left: initial;
+.lav-bo-spear {
+  color: #A5CAA1;
+  text-align: center;
 }
 
+.blood-orange-hydro { color: #DE7028; }
 .rose-otto { color: #E299AE; }
 .ging { color: #D7894A; }
 .lemon-b { color: #D9A0AE; }
+.lemon-verbena { color: #4EA15A; }
+.victorian { color: #B5524E; }
 
-/* End of Hydrosols */
+/* END OF HYDROSOLS PAGE */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Carrier Oils */
+
+.carrier-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  font-size: 40px;
+}
+
+.carrier-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(339px, 1fr));
+}
+
+.carrier {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 80px;
+  margin: 0 0 300px 0;
+  line-height: 1.5em;
+}
+
+.carriers-oils {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
 
 .mango {
   display: flex;
   justify-content: center;
-  width: 10%;
+  width: 34%;
+  height: 70%;
+}
+
+.image-carrier2 {
+  position: relative;
+  top: 86px;
+}
+
+.image-carrier {
+  position: relative;
+  top: 20px;
 }
 
 .carrier-overlay {
   display: flex;
   position: absolute;
-  bottom: -58px;
+  bottom: -30px;
   width: 351px;
   height: 320px;
   background: rgba(0, 0, 0, 0.6);
@@ -1083,19 +1136,21 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 .carrier-overlay:hover > * { transform: translateY(0); }
 
-.man {
-  color: #E5965A;
-}
+.man { color: #E5965A; }
 
 
 /* End of Carrier Oils */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Juice Masks */
 
-.juices {
-  position: relative;
-  right: 37px;
-  top: 75px;
+.raw-juice-title {
+  display: flex;
+  justify-content: center;
+  font-size: var(--size-50);
+  padding: 10px;
+  text-align: center;
 }
 
 .masks3 {
@@ -1107,11 +1162,20 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   margin-bottom: 200px;
 }
 
+.juice-title {
+  position: relative;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 0 2px;
+  top: 24px;
+}
+
 .juice-overlay {
   display: flex;
   position: absolute;
-  top: 42px;
-  left: 323px;
+  top: 0;
+  left: 286px;
   width: 274px;
   height: 274px;
   background: rgba(0, 0, 0, 0.6);
@@ -1124,7 +1188,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   border-radius: 10px;
 }
 
-.juice-overlay2 { left: 617px; }
+.juice-overlay2 { left: 580px; }
+.juice-overlay3 { left: 433px; }
 
 .juice-overlay-blur { backdrop-filter: blur(5px); }
 
@@ -1136,6 +1201,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 .juice-overlay:hover { opacity: 1; }
 
 .juice-overlay:hover > * { transform: translateY(0); }
+
+.raw-juice { width: 24%; }
 
 .raw-price {
   font-size: var(--size-20);
@@ -1157,6 +1224,15 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   top: 20px;
 }
 
+.strawberries-price, .anti-aging-price, .deep-detox-price { top: 17px; }
+
+.juice-description {
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  padding: 1em 1em;
+}
+
 .deep-detox { padding: 0 10px 0 10px; }
 
 .pineapple-juice { color: #A0A451; }
@@ -1166,12 +1242,11 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 .deep-detox { color: #97968E; }
 /* End of Juice Masks */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Milk Masks */
 
-.milks {
-  position: relative;
-  right: 37px;
-}
+.plant-based { width: 24%; }
 
 .masks1 {
   display: flex;
@@ -1202,8 +1277,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 .milk-overlay {
   display: flex;
   position: absolute;
-  top: 42px;
-  left: 323px;
+  top: 0;
+  left: 286px;
   width: 274px;
   height: 274px;
   background: rgba(0, 0, 0, 0.6);
@@ -1216,8 +1291,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   border-radius: 10px;
 }
 
-.milk-overlay2 { left: 617px; }
-.milk-overlay3 { left: 470px; }
+.milk-overlay2 { left: 580px; }
 
 .milk-overlay-blur { backdrop-filter: blur(5px); }
 
@@ -1239,6 +1313,12 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   top: 24px;
 }
 
+.milk-description {
+  text-align: center;
+  font-size: 1em;
+  padding: 1em 1em;
+}
+
 .milk-price {
   font-size: var(--size-20);
   font-weight: 600;
@@ -1247,9 +1327,6 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   position: relative;
   top: 20px;
 }
-
-.anti-aging-price { top: 30px; }
-.strawberries-price, .deep-detox-price { top: 26px; }
 
 .vanilla-milk { color: #B4C5D5; }
 .blueberry-milk { color: #8F9FB4; }
@@ -1260,36 +1337,34 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 /* End of Milk Masks */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Facial Tools */
 .facial { margin-bottom: 38px; }
 
-.sprays {
-  position: relative;
-  bottom: 42px;
-}
-
-.tools {
-  right: 37px;
-  bottom: 23px;
-}
+.tools { bottom: 23px; }
 
 .facial-tools {
   display: flex;
   justify-content: center;
   position: relative;
-  gap: 20px;margin: 200px 0 200px 0;
+  gap: 20px;margin: 100px 0 200px 0;
   top: 0;
 }
+
+.title-and-description { text-align: center; }
+
+.facial-tools-image { width: 30%; }
 
 .facial-tools > * { line-height: 1.5em; }
 
 .facial-overlay {
   display: flex;
   position: absolute;
-  top: 22px;
-  left: 323px;
-  width: 274px;
-  height: 274px;
+  top: -20px;
+  left: 218px;
+  width: 342px;
+  height: 342px;
   background: rgba(0, 0, 0, 0.6);
   color: #ffffff;
   flex-direction: column;
@@ -1303,10 +1378,10 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 .facial-overlay2 {
   display: flex;
   position: absolute;
-  top: 42px;
-  right: 249px;
-  width: 274px;
-  height: 274px;
+  top: 0;
+  right: 218px;
+  width: 342px;
+  height: 342px;
   background: rgba(0, 0, 0, 0.6);
   color: #ffffff;
   flex-direction: column;
@@ -1329,33 +1404,74 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 .facial-overlay:hover > * { transform: translateY(0); }
 
 
-.rose-quartz { color: #deb7b2; }
+.rose-quartz {
+  padding: 0 6px;
+  color: #deb7b2;
+}
+
 .jade-roller { color: #8caa8c; }
 
-.rose-quartz-price { top: 24px; }
+.rose-quartz-price, .jade-roller-price { top: 21px; }
+
+.facial-description {
+  text-align: center;
+  font-size: 1em;
+  padding: 1em 1em;
+}
 
 /* End of Facial Tools */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of The Original Salt Company */
 
 /* Start of Salt Lamps */
 
+.salt-wrapper {
+  margin: auto;
+  width: 100%;
+  height: 1500px;
+  max-width: 1200px;
+  padding: 0 30px;
+  position: relative;
+  top: 200px;
+}
+
 .salt-lamps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
+  gap: 12%;
+}
+
+.salt-row-2 {
+  position: relative;
+  top: 100px;
+}
+
+.salt-row-3 {
+  position: relative;
+  top: 200px;
+}
+
+.salt-cards {
   display: block;
-  width: 60%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.salt-lamps2 {
+  display: block;
+  width: 50%;
   margin: auto;
   position: relative;
-  left: 8px;
 }
 
 .salt-lamps-overlay {
   display: flex;
   position: absolute;
-  right: -42px;
-  bottom: -6px;
-  /*left: 0;*/
-  width: 351px;
-  height: 320px;
+  top: 0;
+  width: 289px;
+  height: 243px;
   background: rgba(0, 0, 0, 0.6);
   color: #ffffff;
   flex-direction: column;
@@ -1366,10 +1482,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   border-radius: 10px;
 }
 
-.salt-lamps-overlay-blur {
-  /*-webkit-filter: blur(5px);*/
-  backdrop-filter: blur(5px);
-}
+.salt-lamps-overlay-blur { backdrop-filter: blur(5px); }
 
 .salt-lamps-overlay > * {
   transform: translateY(20px);
@@ -1380,6 +1493,18 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 .salt-lamps-overlay:hover > * { transform: translateY(0); }
 
+.white-natural-overlay {
+  width: 330px;
+  height: 330px;
+  left: 87px;
+}
+
+.nightlight-overlay {
+  width: 331px;
+  height: 330px;
+  right: 85px;
+}
+
 .oils-title {
   font-size: 1.5em;
   font-weight: bold;
@@ -1387,30 +1512,39 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   top: 18px;
 }
 
-.cross-lamp { rotate: -2deg; }
-.angel-lamp, .dolphin-lamp { bottom: 22px; }
-.flower-lamp { bottom: 18px; }
+.cross-lamp {
+  top: 26px;
+  rotate: -2deg;
+}
+
+.angel-lamp, .dolphin-lamp {
+  width: 50%;
+  top: 6px;
+}
+
+.flower-lamp {
+  width: 50%;
+  top: 10px;
+}
 
 .soccer-ball {
-  top: 22px;
-  left: 5px;
+  width: 50%;
+  top: 40px;
 }
 
 .pink-natural {
   position: relative;
   width: 45%;
-  bottom: 6px;
 }
 
 .white-natural {
-  width: 40%;
-  top: 48px;
+  width: 30%;
+  top: 24px;
 }
 
 .nightlight {
-  width: 60%;
-  top: 30px;
-  right: 1px;
+  width: 35%;
+  top: 38px;
   left: initial;
 }
 
@@ -1421,9 +1555,22 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 /* End of Salt Lamps */
 /* End of The Original Salt Company */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Diffusers section */
 
-.diffuser { top: 30px; }
+.diffuser {
+  position: relative;
+  top: 100px;
+}
+
+.diffuser-lamps {
+  display: block;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  border-radius: 10px;
+}
 
 .diffuse {
   position: relative;
@@ -1445,7 +1592,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   position: relative;
   top: 80px;
   gap: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 62px;
 }
 
 .diffusers3 {
@@ -1454,63 +1601,95 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   position: relative;
   top: 80px;
   gap: 20px;
+  margin-bottom: 142px;
+}
+
+.diffusers4 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  gap: 20px;
   margin-bottom: 244px;
 }
 
-.diffuser-overlay { left: 319px; }
-
-.moon-glow {
-  width: 80%;
-  top: 74px;
-  /*left: 65px;*/
+.diffuser-overlay {
+  display: flex;
+  position: absolute;
+  width: 342px;
+  height: 280px;
+  top: 0;
+  left: 218px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+  border-radius: 10px;
 }
 
-.marble {
-  width: 42%;
-  top: 59px;
-  /*left: 89px;*/
+.diffuser-overlay > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
 }
 
-.leah {
-  width: 56%;
-  top: 65px;
-  /*left: 68px;*/
+.diffuser-overlay:hover { opacity: 1; }
+
+.diffuser-overlay:hover > * { transform: translateY(0); }
+
+.diffuser-overlay-blur { backdrop-filter: blur(5px); }
+
+.diffuser-overlay2 {
+  width: 342px;
+  height: 280px;
+  top: 0;
+  left: 580px;
 }
+
+.blizzard-overlay, .breezy-overlay { height: 265px; }
+
+.diffuser-title {
+  position: relative;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0 2px;
+  top: 0;
+}
+
+.diffuser-price {
+  font-size: var(--size-20);
+  font-weight: 600;
+  line-height: 60px;
+  margin-bottom: 0;
+  position: relative;
+  top: 0;
+  text-align: center;
+}
+
+.moon-glow { width: 80%; }
+.marble { width: 37%; }
+.leah { width: 52%; }
 
 .daisy {
-  width: 100%;
-  top: 60px;
-  /*left: 88px;*/
+  width: 82%;
+  top: 8px;
 }
 
-.kate {
-  width: 42%;
-  top: 60px;
-  /*left: 66px;*/
-}
-
-.meadow {
-  width: 56%;
-  top: 70px;
-  /*left: 85px;*/
-}
-
-.blizzard {
-  width: 65%;
-  top: 78px;
-  /*left: 65px;*/
-}
-
-.breezy {
-  width: 65%;
-  top: 90px;
-  /*left: 87px;*/
-}
+.kate { width: 37%; }
+.meadow { width: 53%; }
+.blizzard { width: 65%; }
+.breezy { width: 75%; }
 
 
 /* End of Diffusers section */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Portland Bee Balm section */
+
+.balm { width: 30%; }
 
 .bee-balm {
   width: 30%;
@@ -1520,10 +1699,9 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 .bee3 { margin-bottom: 40px; }
 
-
-
-
 /* End of Portland Bee Balm section */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Testimonials */
 
@@ -1598,6 +1776,8 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 /* End of Testimonials */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Footer */
 
 footer.bg-footer { background-color: var(--footer); }
@@ -1641,9 +1821,7 @@ footer .footer-col {
   margin-bottom: var(--size-14);
 }
 
-.contact-info li i {
-  padding-right: var(--size-10);
-}
+.contact-info li i { padding-right: var(--size-10); }
 
 .social-icons ul li {
   display: inline-block;
@@ -1780,11 +1958,9 @@ footer .footer-col {
 }
 
 .footer-bottom-wrapper {
-  /*display: flex;*/
   justify-content: space-around;
   margin: 0 auto;
   flex-wrap: wrap;
-
 }
 
 .copyright { margin-top: 6px; }
@@ -1794,13 +1970,9 @@ footer .footer-col {
   color: #C95F1C;
 }
 
-.copyright p {
-  color: var(--white);
-}
+.copyright p { color: var(--white); }
 
-.footer-bottom-links {
-  margin-top: var(--size-10);
-}
+.footer-bottom-links { margin-top: var(--size-10); }
 
 .footer-bottom-links ul li {
   display: inline-block;
@@ -1815,15 +1987,15 @@ footer .footer-col {
   color: var(--white);
 }
 
-.tel {
-  color: white;
-}
+.tel { color: white; }
 
 /* End of Footer */
 
-.arrow {
-  width: 70%;
-}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Scroll-top section */
+
+.arrow { width: 70%; }
 
 #scrollUp {
   background-color: transparent;
@@ -1842,3 +2014,5 @@ footer .footer-col {
   cursor: pointer;
   z-index: 100;
 }
+
+/* End of Scroll-Top section */
