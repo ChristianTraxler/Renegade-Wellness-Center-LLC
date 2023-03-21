@@ -86,13 +86,16 @@
   }
 
   .bergamot-tablet { left: 29px; }
-  .lemon-tablet { left: -61px; }
-  .mandarin-red-tablet { left: -64px; }
+  .lemon-tablet { left: -23px; }
+  .mandarin-red-tablet { left: 34px;}
+  .orange-sweet-tablet { left: -25px; }
   .blue-tansy-tablet { left: 31px; }
   .chamomile-german-tablet { left: -38px; }
   .chamomile-roman-tablet, .italicum-tablet { left: 32px; }
   .gymnocephalum-tablet, .lavender-oil-tablet { left: -38px; }
+  .lemongrass-ct-tablet { left: 32px; }
   .lemongrass-tablet { left: 8px; }
+  .mandarin-green-tablet { left: -25px; }
   .spike-lavender-tablet { left: -30px; }
   .bergamot-mint-tablet { left: 36px; }
   .eucalyptus-dives-tablet { left: -33px; }
@@ -105,15 +108,15 @@
   .tea-tree-tablet { left: 6px; }
   .white-spruce-tablet { left: -34px; }
 
-  .grapefruit-overlay { right: -29px; }
-  .orange-sweet-overlay { right: -33px; }
-  .mandarin-red-overlay { right: 30px; }
+  .grapefruit-overlay, .makrut-overlay { right: -34px; }
+  .mandarin-green-overlay, .orange-sweet-overlay { right: 0; }
+  .mandarin-red-overlay { right: -69px; }
   .orange-blood-overlay { right: -30px; }
   .blue-tansy-overlay { width: 346px; }
-  .carrot-seed-overlay, .geranium-overlay, .lavender-oil-overlay { left: -36px; }
+  .carrot-seed-overlay, .geranium-overlay, .lavender-oil-overlay, .lemongrass-overlay { left: -36px; }
   .chamomile-german-overlay, .gymnocephalum-overlay, .lavender-greece-overlay, .lemon-overlay,
   .orange-overlay, .mandarin-overlay, .wintergreen-overlay { left: -67px; }
-  .orange-sweet-overlay { left: -35px; }
+  /*.orange-sweet-overlay { left: -45px; }*/
   .chamomile-roman-overlay, .carrot-seed-overlay { width: 348px; }
   .spike-lavender-overlay { left: -60px; }
   .eucalyptus-overlay, .ravintsara-overlay { left: -37px; }
@@ -128,7 +131,7 @@
   .breathe-clear-overlay { right: -28px; }
   .tum-ease-overlay { left: -34px; }
 
-  .lemon-eo-overlay { right: 27px; }
+  .lemon-eo-overlay { right: 0; }
 
   /* End of Essential Oils */
 
@@ -144,7 +147,7 @@
   }
 
   .hydrosol-image2 { width: 82.5%; }
-  .hydrosol-image3 { width: 80%; }
+  .hydrosol-image3 { width: 66%; }
 
   .hydrosols { width: 50%; }
 
@@ -170,8 +173,9 @@
   .lemon-hydro-overlay { right: 3px; }
   .frank-hydro-overlay, .ginger-hydro-overlay, .hydro-pepp-overlay, .rose-hydro-overlay { height: 371px; }
 
+  .hydro-pepp-overlay, .victorian-overlay { left: 547px; }
+
   .rose-otto-overlay { height: 370px; }
-  .victorian-overlay { left: 306px; }
 
 
   /* END OF HYDROSOL PAGE */
@@ -388,12 +392,12 @@
 
   /* Start of Essential Oils */
 
-  .section2 { height: 4425px; }
-  .section3 { height: 6100px; }
-  .section4 { height: 3300px; }
-  .section5 { height: 1143px; }
-  .section6 { height: 2300px; }
-  .section7 { height: 2800px; }
+  .section2 { height: 4838px; }
+  .section3 { height: 6466px; }
+  .section4 { height: 3205px; }
+  .section5 { height: 1042px; }
+  .section6 { height: 2144px; }
+  .section7 { height: 2672px; }
   .section8 { height: 2280px; }
 
   .oils {
@@ -421,6 +425,8 @@
   .spike-lavender-tablet, .bergamot-mint-tablet, .eucalyptus-dives-tablet, .peppermint-tablet,
   .ravintsara-tablet, .wintergreen-tablet, .bergamot-mint-tablet, .sandalwood-tablet,
   .tea-tree-tablet, .white-spruce-tablet { left: initial; }
+
+  .mandarin-green-tablet, .orange-sweet-tablet, .lemongrass-ct-tablet { left: 0; }
 
   .gymnocephalum {
     text-align: center;
@@ -461,6 +467,7 @@
   }
 
   .hydrosol-image, .hydrosol-image2 { width: initial; }
+  .hydrosol-image3 { width: 85%; }
 
   .hydrosol-row2 { gap: 130px; }
 
@@ -495,15 +502,16 @@
     height: 478px;
   }
 
-  .rose-otto-overlay {
-    top: 593px;
-    height: 463px;
-  }
+  .hydro-pepp-overlay { top: 607px; }
+
+  .rose-otto-overlay { height: 463px; }
+
+  .victorian-overlay { top: 593px; }
 
   .lav-bo-spear { line-height: 1em; }
 
-  .description {
-    font-size: 1.3em;
+  .hydro-description {
+    font-size: 1.2em;
     line-height: 1.5em;
   }
 
@@ -855,8 +863,8 @@
 
   .oils > * { }
 
-  .section2 { height: 3690px; }
-  .section3 { height: 5081px; }
+  .section2 { height: 4152px; }
+  .section3 { height: 5542px; }
   .section4 { height: 2762px; }
   .section5 { height: 906px; }
   .section6 { height: 1838px; }
@@ -909,7 +917,7 @@
   .oils-title { font-size: 1.5em; }
   .price { font-size: initial; }
 
-  .oil-description { font-size: 0.7em; }
+  .oil-description { font-size: 0.8em; }
 
   .lemongrass-overlay { top: 0; }
 
@@ -922,8 +930,6 @@
   .mountain_bandits-overlay { height: 309px; }
   .tranquil-overlay { height: 307px; }
 
-  .spike-lavender-overlay { top: -60px; }
-
   /* End of Essential Oils page */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -933,6 +939,7 @@
   .sprays { top: 653px; }
 
   .hydrosol-image { width: 70%; }
+  .hydrosol-image3 { width: 59%; }
 
   .tools {
     top: 63px;
@@ -985,16 +992,17 @@
   }
 
   .hydro-pepp-overlay { height: 324px; }
-  .rose-otto-overlay {
-    top: 464px;
-    height: 323px;
-  }
+  .rose-otto-overlay { height: 323px; }
 
   .blood-orange-overlay { top: 750px; }
   .rose-hydro-overlay { top: -57px; }
-  .victorian-overlay { height: 334px; }
+  .hydro-pepp-overlay { top: 471px; }
+  .victorian-overlay {
+    height: 334px;
+    top: 463px;
+  }
 
-  .description { font-size: 1em; }
+  .hydro-description { font-size: 1em; }
 
   .mango {
     width: 56%;
@@ -1484,13 +1492,13 @@
 
   .essential { font-size: var(--size-40); }
 
-  .section2 { height: 3436px; }
-  .section3 { height: 4741px; }
-  .section4 { height: 2583px; }
-  .section5 { height: 859px; }
-  .section6 { height: 1707px; }
-  .section7 { height: 2144px; }
-  .section8 { height: 1786px; }
+  .section2 { height: 3904px; }
+  .section3 { height: 5209px; }
+  .section4 { height: 2612px; }
+  .section5 { height: 889px; }
+  .section6 { height: 1736px; }
+  .section7 { height: 2173px; }
+  .section8 { height: 1815px; }
 
   .group2 { top: 14px; }
   .group3 { bottom: 46px; }
@@ -1511,8 +1519,6 @@
 
   .breathe-clear-overlay, .tranquil-overlay { height: 345px; }
   .mountain_bandits-overlay { height: 350px; }
-
-  .spike-lavender-overlay { top: -60px; }
 
   .oils-overlay4 { left: 20px; }
 
@@ -1556,7 +1562,7 @@
   }
 
   .ginger-hydro-overlay { top: 464px; }
-  .lav-bo-spear-overlay, .rose-otto-overlay {
+  .lav-bo-spear-overlay {
     width: 363px;
     top: 464px;
     left: 15px;
@@ -1567,14 +1573,17 @@
     left: 15px;
   }
 
+  .hydro-pepp-overlay { top: 471px; }
+
   .victorian-overlay {
     width: 363px;
+    top: 464px;
   }
 
   .blood-orange-overlay { top: 684px; }
   .rose-hydro-overlay { top: 20px; }
 
-  .description { font-size: 0.9em; }
+  .hydro-description { font-size: 0.9em; }
 
   /* End of Hydrosol */
 
@@ -1840,13 +1849,13 @@
 
   .breathe-clear { top: 10px; }
 
-  .section2 { height: 3399px; }
-  .section3 { height: 4682px; }
-  .section4 { height: 2542px; }
-  .section5 { height: 832px; }
-  .section6 { height: 1690px; }
-  .section7 { height: 2115px; }
-  .section8 { height: 1722px; }
+  .section2 { height: 3858px; }
+  .section3 { height: 5141px; }
+  .section4 { height: 2574px; }
+  .section5 { height: 865px; }
+  .section6 { height: 1722px; }
+  .section7 { height: 2147px; }
+  .section8 { height: 1753px; }
 
   .eo-tablet-overlay {
     width: 350px;
@@ -1882,6 +1891,9 @@
     width: 363px;
     top: 464px;
   }
+
+  .hydro-pepp-overlay { top: 468px; }
+  .victorian-overlay { top: 463px; }
 
   /* End of Hydrosol */
 

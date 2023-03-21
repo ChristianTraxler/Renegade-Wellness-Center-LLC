@@ -981,7 +981,7 @@ hr {
   width: 80%;
 }
 
-.hydrosol-image3 { width: 40%; }
+
 
 .more-width { width: 28.2%; }
 
@@ -1029,8 +1029,10 @@ hr {
 .lemon-verbena-overlay { height: 380px; }
 .victorian-overlay {
   height: 380px;
-  left: 394px;
+  left: 684px;
 }
+
+.hydro-pepp-overlay { left: 684px; }
 
 .hydrosol-overlay-blur { backdrop-filter: blur(5px); }
 
@@ -1053,12 +1055,20 @@ hr {
   text-align: center;
 }
 
+.rose-otto-overlay { height: 382px; }
+
 .blood-orange-hydro { color: #DE7028; }
 .rose-otto { color: #E299AE; }
 .ging { color: #D7894A; }
 .lemon-b { color: #D9A0AE; }
 .lemon-verbena { color: #4EA15A; }
 .victorian { color: #B5524E; }
+
+.hydro-description {
+  text-align: center;
+  font-size: 0.9em;
+  padding: 1em 1em;
+}
 
 /* END OF HYDROSOLS PAGE */
 
