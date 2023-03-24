@@ -108,6 +108,33 @@ img {
   box-shadow: 0 10px 20px rgb(255 255 255 / 35%)
 }
 
+/*@media (prefers-color-scheme: dark) {*/
+/*  body {*/
+/*    color: #EEE;*/
+/*    background: #121212;*/
+/*  }*/
+
+/*  h2, h3, .email2 {*/
+/*    color: #EEE;*/
+/*  }*/
+
+/*  hr {*/
+/*    border: 1px solid white;*/
+/*  }*/
+
+/*  h5, .cabin, .price, .original-salt, .diffusers {*/
+/*    color: black;*/
+/*  }*/
+
+/*  .card, .card2 {*/
+/*    background-color: #8DC7C1 !important;*/
+/*  }*/
+
+/*  .p-pad, .panel2, .panel2-1 {*/
+/*    color: black;*/
+/*  }*/
+/*}*/
+
 @media (min-width: 768px) {
   .pricing-table, .testimonial-grid, .footer-bottom-wrapper { max-width: 720px; }
 }
