@@ -1465,7 +1465,7 @@
 
   /* Start of Footer */
 
-  .footer-bottom-wrapper { display: flex; }
+  .footer-bottom-wrapper { text-align: center }
 
   .footer-bottom-links {
     position: relative;
