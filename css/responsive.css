@@ -915,7 +915,7 @@
   }
 
   .oils-title { font-size: 1.5em; }
-  .price { font-size: initial; }
+  /*.price { font-size: initial; }*/
 
   .oil-description { font-size: 0.8em; }
 
