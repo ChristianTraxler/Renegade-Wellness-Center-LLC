@@ -935,7 +935,7 @@ hr {
 .section6 {
   display: block;
   margin-bottom: 100px;
-  height: 900px;
+  height: 1338px;
 }
 
 .section8 {
@@ -1002,6 +1002,8 @@ hr {
 
 .hydrosol > * { line-height: 1.5em; }
 
+.victorian-hydro { width: 14%; }
+
 .hydrosol-overlay {
   display: flex;
   position: absolute;
@@ -1019,6 +1021,11 @@ hr {
   border-radius: 10px;
 }
 
+.hydrosol-overlay2 {
+  right: 109px;
+  left: initial;
+}
+
 .elderberry-hydro-overlay {
   right: 109px;
   left: initial;
@@ -1029,7 +1036,7 @@ hr {
 .lemon-verbena-overlay { height: 380px; }
 .victorian-overlay {
   height: 380px;
-  left: 684px;
+  left: 394px;
 }
 
 .hydro-pepp-overlay { left: 684px; }
@@ -1055,6 +1062,8 @@ hr {
   text-align: center;
 }
 
+.pepper-hydro { height: 383px; }
+
 .rose-otto-overlay { height: 382px; }
 
 .blood-orange-hydro { color: #DE7028; }
@@ -1075,6 +1084,9 @@ hr {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Carrier Oils */
+
+.carrier-section1 { padding-bottom: 0; }
+.carrier-section2 { padding-top: 0;}
 
 .carrier-title {
   display: flex;
@@ -1102,6 +1114,8 @@ hr {
   justify-content: center;
   width: 20%;
 }
+
+.carriers-oils2 { width: 13%; }
 
 .mango {
   display: flex;

@@ -867,7 +867,7 @@
   .section3 { height: 5542px; }
   .section4 { height: 2762px; }
   .section5 { height: 906px; }
-  .section6 { height: 1838px; }
+  .section6 { height: 2331px; }
   .section7 { height: 2299px; }
   .section8 { height: 1854px; }
 
@@ -971,6 +971,8 @@
     margin-bottom: 336px;
   }
 
+  .hydrosol-row4 { top: 16px; }
+
   .hydrosol-overlay {
     width: 407px;
     height: 333px;
@@ -978,28 +980,47 @@
   }
 
   .elderberry-hydro-overlay { top: 475px; }
-  .frank-hydro-overlay, .lav-hydro-overlay { height: 324px; }
-  .ginger-hydro-overlay {
+  .frank-hydro-overlay { height: 326px; }
+
+  .lav-hydro-overlay {
     top: 464px;
-    height: 324px;
+    height: 328px;
   }
 
-  .lav-bo-spear-overlay { top: 464px; }
-  .lemon-hydro-overlay { height: 324px; }
+  .german-chamomile-overlay {
+    top: 464px;
+    height: 335px;
+  }
+
+  .ginger-hydro-overlay {
+    top: 0;
+    height: 326px;
+  }
+
+  .lav-bo-spear-overlay { top: 0; }
+  .lemon-hydro-overlay {
+    height: 336px;
+    top: 468px;
+  }
   .lemon-verbena-overlay {
     height: 334px;
-    top: 464px;
+    top: 0;
   }
 
+  .myrrh-hydro-overlay { top: 473px; }
+
   .hydro-pepp-overlay { height: 324px; }
-  .rose-otto-overlay { height: 323px; }
+  .rose-otto-overlay {
+    height: 326px;
+    top: 463px;
+  }
 
   .blood-orange-overlay { top: 750px; }
   .rose-hydro-overlay { top: -57px; }
   .hydro-pepp-overlay { top: 471px; }
   .victorian-overlay {
     height: 334px;
-    top: 463px;
+    top: 0;
   }
 
   .hydro-description { font-size: 1em; }
@@ -1016,7 +1037,7 @@
   /* Start of Carrier Oils */
 
   .carrier { margin: 100px 0 100px 0; }
-  .carrier2 { margin: -52px 0 100px 0;}
+  /*.carrier2 { margin: -52px 0 100px 0;}*/
   .carrier3 { margin: 34px 0 200px 0; }
 
   .carriers-oils { width: 34%; }
@@ -1435,7 +1456,7 @@
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   /* Start of Contact page */
-  .pricing-section { padding: 100px 0 200px 0; }
+  .pricing-section { padding: 100px 0 50px 0; }
 
   .contact > h3, .hours { font-size: 1rem; }
 
@@ -1496,7 +1517,7 @@
   .section3 { height: 5209px; }
   .section4 { height: 2612px; }
   .section5 { height: 889px; }
-  .section6 { height: 1736px; }
+  .section6 { height: 2207px; }
   .section7 { height: 2173px; }
   .section8 { height: 1815px; }
 
@@ -1552,32 +1573,44 @@
   .hydrosol-overlay {
     top: 0;
     width: 362px;
+    right: 15px;
   }
 
-  .hydrosol-overlay2, .lemon-hydro-overlay { left: 15px; }
+  .hydrosol-overlay2 { left: 15px; }
   .elderberry-hydro-overlay { top: 475px; }
-  .frank-hydro-overlay, .lav-hydro-overlay, .hydro-pepp-overlay {
+  .frank-hydro-overlay, .hydro-pepp-overlay {
     width: 363px;
     left: 15px;
   }
 
-  .ginger-hydro-overlay { top: 464px; }
-  .lav-bo-spear-overlay {
+  .lav-hydro-overlay, .lemon-hydro-overlay {
     width: 363px;
     top: 464px;
+    left: 15px;
+  }
+
+  .german-chamomile-overlay { top: 465px; }
+
+  .ginger-hydro-overlay { top: 0; }
+  .lav-bo-spear-overlay {
+    width: 363px;
+    top: 0;
     left: 15px;
   }
 
   .lemon-verbena-overlay {
-    top: 464px;
+    top: 0;
     left: 15px;
   }
 
-  .hydro-pepp-overlay { top: 471px; }
+  .myrrh-hydro-overlay { top: 473px; }
+
+  .hydro-pepp-overlay { top: 0; }
+  .rose-otto-overlay { top: 464px; }
 
   .victorian-overlay {
     width: 363px;
-    top: 464px;
+    top: 0;
   }
 
   .blood-orange-overlay { top: 684px; }
@@ -1591,7 +1624,7 @@
 
   /* Start of Carrier Oils */
 
-  .carrier2 { margin: -26px 0 100px 0;}
+  /*.carrier2 { margin: -26px 0 100px 0;}*/
   .carrier3 { margin: 55px 0 200px 0; }
 
   .description { line-height: 1.8em; }
@@ -1853,7 +1886,7 @@
   .section3 { height: 5141px; }
   .section4 { height: 2574px; }
   .section5 { height: 865px; }
-  .section6 { height: 1722px; }
+  .section6 { height: 2179px; }
   .section7 { height: 2147px; }
   .section8 { height: 1753px; }
 
@@ -1887,13 +1920,7 @@
 
   .hydrosol-overlay6 { left: 20px; }
 
-  .lav-bo-spear-overlay {
-    width: 363px;
-    top: 464px;
-  }
-
   .hydro-pepp-overlay { top: 468px; }
-  .victorian-overlay { top: 463px; }
 
   /* End of Hydrosol */
 
