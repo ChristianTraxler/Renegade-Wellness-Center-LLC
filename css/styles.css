@@ -1031,6 +1031,8 @@ hr {
   left: initial;
 }
 
+.frank-hydro-overlay { right: 109px; }
+
 .frank-hydro-overlay, .ginger-hydro-overlay, .lav-hydro-overlay, .lemon-hydro-overlay,
 .hydro-pepp-overlay, .rose-otto-overlay { height: 382px; }
 .lemon-verbena-overlay { height: 380px; }

@@ -370,7 +370,7 @@
 
   footer .footer-col:nth-child(3) { grid-column: 1 / 3; }
 
-   /* End of Navbar and Footer */
+  /* End of Navbar and Footer */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -980,7 +980,10 @@
   }
 
   .elderberry-hydro-overlay { top: 475px; }
-  .frank-hydro-overlay { height: 326px; }
+  .frank-hydro-overlay {
+    height: 334px;
+    top: 468px;
+  }
 
   .lav-hydro-overlay {
     top: 464px;
@@ -989,7 +992,7 @@
 
   .german-chamomile-overlay {
     top: 464px;
-    height: 335px;
+    height: 344px;
   }
 
   .ginger-hydro-overlay {
@@ -1355,7 +1358,7 @@
   .diffuser-price { top: 0; }
 
   .moon-glow {
-     top: 0;
+    top: 0;
     left: -15px;
   }
 
@@ -1571,7 +1574,6 @@
   }
 
   .hydrosol-overlay {
-    top: 0;
     width: 362px;
     right: 15px;
   }
@@ -1589,7 +1591,7 @@
     left: 15px;
   }
 
-  .german-chamomile-overlay { top: 465px; }
+  .german-chamomile-overlay { top: 473px; }
 
   .ginger-hydro-overlay { top: 0; }
   .lav-bo-spear-overlay {
