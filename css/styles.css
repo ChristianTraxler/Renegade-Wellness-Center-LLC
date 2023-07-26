@@ -60,6 +60,7 @@
   width: 100%;
   transition: ease-in-out 0.3s;
   color: var(--white);
+  text-align: left;
 }
 
 .bg-header, .video-demo {
@@ -153,6 +154,44 @@
   width: 17px;
 }
 
+div > .navbar-nav { top: 0; }
+
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+  margin-right: initial;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+ul.breadcrumb > .not-active > a { color: gray; }
+
 /* End of Navbar */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -187,16 +226,12 @@
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(398px, 1fr));
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 30%);
+  justify-content: center;
   margin-top: var(--size-100);
   position: relative;
   top: 56px;
-}
-
-.container2 {
-  padding: 18px 20px 10px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .card {
@@ -214,7 +249,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background-color: transparent !important;*/
   border: 1px solid rgba(0,0,0,.125);
 }
 
@@ -286,7 +320,6 @@
 }
 
 section {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -312,11 +345,6 @@ section {
   line-height: 1.5;
 }
 
-.block-text > a {
-  position: relative;
-  bottom: 38px;
-}
-
 .why-me-wrapper .block-text {
   max-width: 35rem;
   margin: auto;
@@ -331,7 +359,6 @@ section {
   font-size: var(--size-40);
   font-family: "Hinds", sans-serif;
   font-weight: 600;
-  /*color: var(--font-color-dark);*/
   margin-bottom: var(--size-20);
   line-height: 1.3;
   margin-top: 0.5rem;
@@ -423,13 +450,6 @@ section {
   background-color: var(--font-color-light);
 }
 
-span.bg-color-1 { background-image: linear-gradient(90deg, #55EDC0 0%, #4BDBDB 100%); }
-span.bg-color-2 { background-image: linear-gradient(90deg, #FDA498 0%, #F58B9E 100%); }
-span.bg-color-3 { background-image: linear-gradient(90deg, #9CCDF3 0%, #94AAFD 100%); }
-span.bg-color-4 { background-image: linear-gradient(90deg, #F2A7CA 0%, #C289F4 100%); }
-span.bg-color-5 { background-image: linear-gradient(90deg, #A1ECFF 0%, #7DBCFF 100%); }
-span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 100%); }
-
 /* End of Services */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -438,7 +458,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 .pricing-section {
   display: block;
-  padding: var(--size-100) 0;
+  padding: var(--size-150) 0;
   margin: 0 auto;
 }
 
@@ -520,6 +540,11 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 .price-card1 h3, .price-card2 h3, .price-card1 .price, .price-card2 .price,
 .price-card1 .billed, .price-card2 .billed { text-align: center; }
 
+.featured > h3 {
+  position: relative;
+  top: 15px;
+}
+
 .billed { line-height: 1.1rem; }
 
 .people { margin-top: 4px; }
@@ -546,16 +571,56 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 /* Start of Products page */
 
-.column1 { margin-right: initial; }
-.column2 { margin-left: initial; }
+.product-container {
+  display: block;
+  padding: var(--size-150) 0;
+  margin: 0 auto;
+}
+
+/*.column1 { margin-right: initial; }*/
+/*.column2 { margin-left: initial; }*/
 
 .original-salt, .diffusers { font-size: 1em; }
 
+.original-salt {
+  font-family: 'Lumanosimo', sans-serif;
+  position: relative;
+  right: 170px;
+  width: 324px;
+  font-size: 1.46rem;
+}
+
 .diffusers {
+  font-family: 'Lumanosimo','Macondo Swash Caps', sans-serif;
   position: relative;
   right: 15px;
 }
 
+.aromatics { font-size: 28px; }
+.beauty { font-size: 30px; }
+
+.information {
+  text-align: center;
+  font-size: 1.2rem;
+  position: relative;
+  top: 40px;
+  padding: 0 50px 0 50px;
+  line-height: 1.5em;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container4 { margin-left: 0; }
+
+img[src*="FA98204A"] {
+  width: 329px;
+  max-width: initial;
+  height: 310px;
+  border-radius: 10px;
+  position: relative;
+  left: 80px;
+  opacity: 40%;
+}
 
 /* End of Products page */
 
@@ -583,8 +648,6 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   text-align: center;
   font-weight: bold;
 }
-
-
 
 /* End of Contact Page */
 
@@ -664,6 +727,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 .active:after, .active2:after { content: "\2212"; }
 
 .panel {
+  margin: auto;
   padding: 0 18px;
   background-color: white;
   max-height: 0;
@@ -688,6 +752,7 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
   padding-left: 15px;
   text-decoration: underline;
   font-weight: 700;
+  margin-bottom: 30px;
 }
 
 .infrared {
@@ -712,37 +777,21 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/* Start of Products page */
-
-.aromatics { font-size: 28px; }
-.beauty { font-size: 30px; }
-
-.information {
-  text-align: center;
-  font-size: 1.2rem;
-  position: relative;
-  top: 40px;
-  padding: 0 50px 0 50px;
-  line-height: 1.5em;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.container4 { margin-left: 0; }
-
-/* End of Products page */
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
 /* Start of Aromatics Page */
 
 .service-grid2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
-  gap: var(--size-20);
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 30%);
+  justify-content: center;
   margin-top: var(--size-100);
   position: relative;
   top: 56px;
+}
+
+.container2 {
+  padding: 10px 20px 10px;
+  margin: auto;
 }
 
 
@@ -751,6 +800,22 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Essential Oils */
+
+.essential-oils-wrapper {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px;
+  position: relative;
+}
+
+.essential-oils {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 35%);
+  justify-content: center;
+  padding-top: 60px;
+}
 
 .essential {
   display: flex;
@@ -766,16 +831,47 @@ span.bg-color-6 { background-image: linear-gradient(90deg, #FFC187 0%, #FE93A7 1
 
 h3 > a { color: black; }
 
+.citrus-section {
+  display: block;
+  padding: var(--size-50) 0;
+  margin: 0 auto;
+}
+
+.floral-section {
+  display: block;
+  padding: var(--size-50) 0;
+  margin: 0 auto;
+}
+
+.mint-section, .spices-section, .forest-section, .resin-section, .blends-section {
+  padding: var(--size-50) 0;
+}
+
+#resin-oils {
+  margin: auto;
+  justify-content: center;
+  grid-template-columns: repeat(2, 35%);
+}
+
 .e-o { margin: 10px; }
+
+.essential-oils-card {
+  margin: 0 auto;
+  padding: 15px 10px 0 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  border-radius: 10px;
+  width: 87%;
+}
 
 .oils {
   display: flex;
   justify-content: center;
-  position: relative;
-  top: 80px;
-  gap: 4em;
-  margin-bottom: 200px;
+  margin: auto;
+  width: 20%;
 }
+
+.price-container { margin: 10px auto 0; }
 
 .oils2 { left: 24px; }
 
@@ -873,6 +969,7 @@ h3 > a { color: black; }
 .lavend { color: #977BB5; }
 .lem { color: #E0B644; }
 .lemongrass { color: #54B448; }
+.lymph { color: #B52228 }
 .mandarin { color: #75B063; }
 .marjoram { color: #81BB6F; }
 .mountain { color: #7BB170; }
@@ -904,54 +1001,16 @@ h3 > a { color: black; }
 }
 
 hr {
+  margin: auto;
   width: 85%;
   border: 1px solid black;
 }
 
-.section2 {
-  display: block;
-  margin-bottom: 100px;
-  height: 1350px;
-}
-
-.section3 {
-  display: block;
-  margin-bottom: 100px;
-  height: 1804px;
-}
-
-.section4, .section7 {
-  display: block;
-  margin-bottom: 100px;
-  height: 897px;
-}
-
-.section5 {
-  display: block;
-  margin-bottom: 100px;
-  height: 443px;
-}
-
-.section6 {
-  display: block;
-  margin-bottom: 100px;
-  height: 1338px;
-}
-
-.section8 {
-  display: block;
-  margin-bottom: 100px;
-  height: 980px;
-}
-
 .new-items {
-  position: relative;
-  top: 40px;
   text-align: center;
   font-weight: 600;
   text-decoration: underline;
 }
-
 
 /* End of Essential Oils */
 
@@ -966,12 +1025,13 @@ hr {
 }
 
 .hydrosol {
-  display: grid;
-  justify-content: center;
+  width: 25%;
+  margin: auto;
+}
+
+.hydro-name {
   position: relative;
-  top: 80px;
-  margin-bottom: 80px;
-  grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
+  top: 15px;
 }
 
 .hydrosol-row3 { margin-bottom: 150px; }
@@ -981,7 +1041,13 @@ hr {
   width: 80%;
 }
 
-
+.hydrosol-card {
+  margin: 0 auto;
+  padding: 25px 0 0 0;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  border-radius: 10px;
+}
 
 .more-width { width: 28.2%; }
 
@@ -1001,58 +1067,6 @@ hr {
 .hydrosols2 { width: 25%; }
 
 .hydrosol > * { line-height: 1.5em; }
-
-.victorian-hydro { width: 14%; }
-
-.hydrosol-overlay {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 114px;
-  width: 351px;
-  height: 378px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.25s;
-  border-radius: 10px;
-}
-
-.hydrosol-overlay2 {
-  right: 109px;
-  left: initial;
-}
-
-.elderberry-hydro-overlay {
-  right: 109px;
-  left: initial;
-}
-
-.frank-hydro-overlay { right: 109px; }
-
-.frank-hydro-overlay, .ginger-hydro-overlay, .lav-hydro-overlay, .lemon-hydro-overlay,
-.hydro-pepp-overlay, .rose-otto-overlay { height: 382px; }
-.lemon-verbena-overlay { height: 380px; }
-.victorian-overlay {
-  height: 380px;
-  left: 394px;
-}
-
-.hydro-pepp-overlay { left: 684px; }
-
-.hydrosol-overlay-blur { backdrop-filter: blur(5px); }
-
-.hydrosol-overlay > * {
-  transform: translateY(20px);
-  transition: transform 0.25s;
-}
-
-.hydrosol-overlay:hover { opacity: 1; }
-
-.hydrosol-overlay:hover > * { transform: translateY(0); }
 
 .hydro {
   position: relative;
@@ -1076,6 +1090,8 @@ hr {
 .victorian { color: #B5524E; }
 
 .hydro-description {
+  position: relative;
+  bottom: 40px;
   text-align: center;
   font-size: 0.9em;
   padding: 1em 1em;
@@ -1086,6 +1102,31 @@ hr {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Carrier Oils */
+
+.carrier-oils-wrapper {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px;
+  position: relative;
+}
+
+.carriers {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 35%);
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.carrier-oil {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 35%;
+}
+
+.kernel { width: 53%; }
 
 .carrier-section1 { padding-bottom: 0; }
 .carrier-section2 { padding-top: 0;}
@@ -1133,13 +1174,11 @@ hr {
 
 .image-carrier {
   position: relative;
-  /*top: 20px;*/
 }
 
 .carrier-overlay {
   display: flex;
   position: absolute;
-  /*bottom: 0px;*/
   width: 351px;
   height: 383px;
   background: rgba(0, 0, 0, 0.6);
@@ -1180,6 +1219,11 @@ hr {
   text-align: center;
 }
 
+.pineapple-bliss {
+  position: relative;
+  top: 24px;
+}
+
 .masks3 {
   display: flex;
   justify-content: center;
@@ -1198,61 +1242,6 @@ hr {
   top: 24px;
 }
 
-.juice-overlay {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 286px;
-  width: 274px;
-  height: 274px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.25s;
-  border-radius: 10px;
-}
-
-.juice-overlay2 { left: 580px; }
-.juice-overlay3 { left: 433px; }
-
-.juice-overlay-blur { backdrop-filter: blur(5px); }
-
-.juice-overlay > * {
-  transform: translateY(20px);
-  transition: transform 0.25s;
-}
-
-.juice-overlay:hover { opacity: 1; }
-
-.juice-overlay:hover > * { transform: translateY(0); }
-
-.raw-juice { width: 24%; }
-
-.raw-price {
-  font-size: var(--size-20);
-  font-weight: 600;
-  line-height: 60px;
-  margin-bottom: 0;
-  position: relative;
-  top: 20px;
-}
-
-.pink-dream-juice { top: 26px; }
-
-.pink-dream-price {
-  font-size: var(--size-20);
-  font-weight: 600;
-  line-height: 60px;
-  margin-bottom: 0;
-  position: relative;
-  top: 20px;
-}
-
-.strawberries-price, .anti-aging-price, .deep-detox-price { top: 17px; }
-
 .juice-description {
   text-align: center;
   font-size: 0.9em;
@@ -1260,13 +1249,12 @@ hr {
   padding: 1em 1em;
 }
 
-.deep-detox { padding: 0 10px 0 10px; }
-
 .pineapple-juice { color: #A0A451; }
 .pink-dream-juice { color: #CE8E99; }
 .anti-aging-juice { color: #839E2E; }
 .strawberries-juice { color: #e6b0b6; }
 .deep-detox { color: #97968E; }
+
 /* End of Juice Masks */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -1275,61 +1263,9 @@ hr {
 
 .plant-based { width: 24%; }
 
-.masks1 {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 80px;
-  gap: 20px;
-  margin-bottom: 50px;
-}
+.mask-container { margin: 0 auto 0; }
 
-.masks2 {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 80px;
-  gap: 20px;
-  margin-bottom: 244px;
-}
-
-.milk-masks {
-  display: block;
-  width: 100%;
-  margin: auto;
-  position: relative;
-  border-radius: 10px;
-}
-
-.milk-overlay {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 286px;
-  width: 274px;
-  height: 274px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.25s;
-  border-radius: 10px;
-}
-
-.milk-overlay2 { left: 580px; }
-
-.milk-overlay-blur { backdrop-filter: blur(5px); }
-
-.milk-overlay > * {
-  transform: translateY(20px);
-  transition: transform 0.25s;
-}
-
-.milk-overlay:hover { opacity: 1; }
-
-.milk-overlay:hover > * { transform: translateY(0); }
+.mask-container > .price-tag { top: 18px; }
 
 .milk-title {
   position: relative;
@@ -1360,76 +1296,18 @@ hr {
 .matcha-milk { color: #B7CB8D; }
 .avocado-milk { color: #859A62 }
 
-.masks1, .masks2, .masks3 > * { line-height: 1.5em; }
-
 /* End of Milk Masks */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Facial Tools */
-.facial { margin-bottom: 38px; }
 
-.tools { bottom: 23px; }
-
-.facial-tools {
-  display: flex;
-  justify-content: center;
+.tools-price {
   position: relative;
-  gap: 20px;margin: 100px 0 200px 0;
-  top: 0;
+  top: 12px;
 }
 
 .title-and-description { text-align: center; }
-
-.facial-tools-image { width: 30%; }
-
-.facial-tools > * { line-height: 1.5em; }
-
-.facial-overlay {
-  display: flex;
-  position: absolute;
-  top: -20px;
-  left: 218px;
-  width: 342px;
-  height: 342px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.25s;
-  border-radius: 10px;
-}
-
-.facial-overlay2 {
-  display: flex;
-  position: absolute;
-  top: 0;
-  right: 218px;
-  width: 342px;
-  height: 342px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.25s;
-  border-radius: 10px;
-}
-
-.facial-overlay-blur, .facial-overlay-blur2 { backdrop-filter: blur(5px); }
-
-.facial-overlay, .facial-overlay-blur2  > * {
-  transform: translateY(20px);
-  transition: transform 0.25s;
-}
-
-.facial-overlay:hover, .facial-overlay-blur2:hover { opacity: 1; }
-
-.facial-overlay:hover > * { transform: translateY(0); }
-
 
 .rose-quartz {
   padding: 0 6px;
@@ -1437,8 +1315,6 @@ hr {
 }
 
 .jade-roller { color: #8caa8c; }
-
-.rose-quartz-price, .jade-roller-price { top: 21px; }
 
 .facial-description {
   text-align: center;
@@ -1454,132 +1330,151 @@ hr {
 
 /* Start of Salt Lamps */
 
-.toscompany { padding: 0 10px; }
+.block-text > .salt-products-header { font-family: 'Lumanosimo', sans-serif; }
 
 .salt-wrapper {
   margin: auto;
   width: 100%;
-  height: 1500px;
   max-width: 1200px;
   padding: 0 30px;
   position: relative;
-  top: 200px;
 }
 
 .salt-lamps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
-  gap: 12%;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.salt-row-2 {
+.salt-lamp-container {
   position: relative;
-  top: 100px;
+  top: 80px;
 }
 
-.salt-row-3 {
+.container {
   position: relative;
-  top: 200px;
-}
-
-.salt-cards {
-  display: block;
   margin: 0 auto;
-  width: 100%;
+  text-align: center;
+  height: 66%;
 }
 
-.salt-lamps2 {
-  display: block;
-  width: 50%;
-  margin: auto;
-  position: relative;
-}
-
-.salt-lamps-overlay {
-  display: flex;
-  position: absolute;
-  top: 0;
-  width: 289px;
-  height: 243px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.25s;
+.salt-lamp-card {
+  margin: 0 auto;
+  padding: 25px 0 0 0;
+  height: 430px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   border-radius: 10px;
 }
 
-.salt-lamps-overlay-blur { backdrop-filter: blur(5px); }
-
-.salt-lamps-overlay > * {
-  transform: translateY(20px);
-  transition: transform 0.25s;
+.lamp {
+  width: 50%;
+  margin: auto;
 }
 
-.salt-lamps-overlay:hover { opacity: 1; }
-
-.salt-lamps-overlay:hover > * { transform: translateY(0); }
-
-.white-natural-overlay {
-  width: 330px;
-  height: 330px;
-  left: 87px;
+.content {
+  display: grid;
+  border-radius: 10px;
 }
 
-.nightlight-overlay {
-  width: 331px;
-  height: 330px;
-  right: 85px;
+.content > h1 {
+  margin-top: 15px;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Lumanosimo', sans-serif;
 }
 
-.oils-title {
-  font-size: 1.5em;
-  font-weight: bold;
+.price-days {
+  margin: 10px auto 40px;
+  text-align: center;
+}
+
+.price > h1 {
+  font-size: var(--size-25);
+}
+
+.price > p {
+  margin: 6px 0 0 4px;
+  font-size: 15px;
+  color: hsl(215, 51%, 70%);
+}
+
+.price, .time {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.price > h1 > sup { font-size: 14px; }
+
+.angel { margin: 0 auto; }
+
+.price-tag {
+  margin: 0 auto 0;
   position: relative;
-  top: 18px;
+  bottom: 22px;
+  top: 0;
 }
 
-.cross-lamp {
-  top: 26px;
-  rotate: -2deg;
+.salt-lamp-name {
+  position: relative;
+  top: 15px;
 }
 
-.angel-lamp, .dolphin-lamp {
-  width: 50%;
-  top: 6px;
+.salt-lamp-name-2 {
+  position: relative;
+  top: 42px;
 }
 
-.flower-lamp {
-  width: 50%;
-  top: 10px;
+.salt-lamp-name-3 {
+  position: relative;
+  bottom: 7px;
 }
 
-.soccer-ball {
-  width: 50%;
+.salt-lamp-name-4 {
+  position: relative;
+  top: 12px;
+}
+
+img[src*="cross"] {
+  position: relative;
+  top: 20px;
+}
+
+img[src*="soccer"] {
+  position: relative;
   top: 40px;
 }
 
-.pink-natural {
+.soccer-ball {
   position: relative;
-  width: 45%;
+  top: 83px;
 }
 
-.white-natural {
-  width: 30%;
-  top: 24px;
+img[src*="white-natural"] {
+  position: relative;
+  top: 20px;
 }
 
-.nightlight {
-  width: 35%;
-  top: 38px;
-  left: initial;
+img[src*="foot-dome"] {
+  position: relative;
+  top: 70px;
 }
 
+.foot-dome {
+  position: relative;
+  top: 133px;
+}
 
+img[src*="nightlight"] {
+  position: relative;
+  top: 40px;
+}
 
-.salt-lamps-title { color: #F7CDC7; }
+img[src*="moon-nightlight"] {
+  position: relative;
+  top: initial;
+}
 
 /* End of Salt Lamps */
 /* End of The Original Salt Company */
@@ -1589,8 +1484,9 @@ hr {
 /* Start of Diffusers section */
 
 .diffuser {
-  position: relative;
-  top: 100px;
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .diffuser-lamps {
@@ -1641,52 +1537,6 @@ hr {
   margin-bottom: 244px;
 }
 
-.diffuser-overlay {
-  display: flex;
-  position: absolute;
-  width: 342px;
-  height: 280px;
-  top: 0;
-  left: 218px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.25s;
-  border-radius: 10px;
-}
-
-.diffuser-overlay > * {
-  transform: translateY(20px);
-  transition: transform 0.25s;
-}
-
-.diffuser-overlay:hover { opacity: 1; }
-
-.diffuser-overlay:hover > * { transform: translateY(0); }
-
-.diffuser-overlay-blur { backdrop-filter: blur(5px); }
-
-.diffuser-overlay2 {
-  width: 342px;
-  height: 280px;
-  top: 0;
-  left: 580px;
-}
-
-.blizzard-overlay, .breezy-overlay { height: 265px; }
-
-.diffuser-title {
-  position: relative;
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
-  padding: 0 2px;
-  top: 0;
-}
-
 .diffuser-price {
   font-size: var(--size-20);
   font-weight: 600;
@@ -1698,7 +1548,7 @@ hr {
 }
 
 .moon-glow { width: 80%; }
-.marble { width: 37%; }
+.marble { width: 38%; }
 .leah { width: 52%; }
 
 .daisy {
@@ -1860,6 +1710,7 @@ footer .footer-col {
 }
 
 .icons {
+  display: inline-block;
   width: 30px;
   height: 30px;
   padding-right: var(--size-10);
@@ -1901,6 +1752,11 @@ footer .footer-col {
   position: relative;
   width: 45px;
   height: 45px;
+}
+
+img[src*="check-book"], img[src*="contactless_payment"] {
+  position: relative;
+  top: initial;
 }
 
 .visa {
@@ -1984,6 +1840,7 @@ footer .footer-col {
 
 .footer-bottom {
   padding: var(--size-16) 0;
+  text-align: center;
 }
 
 .footer-bottom-wrapper {
@@ -2001,7 +1858,10 @@ footer .footer-col {
 
 .copyright p { color: var(--white); }
 
-.footer-bottom-links { margin-top: var(--size-10); }
+.footer-bottom-links {
+  margin-top: var(--size-10);
+  padding-left: 10px;
+}
 
 .footer-bottom-links ul li {
   display: inline-block;
@@ -2024,7 +1884,10 @@ footer .footer-col {
 
 /* Start of Scroll-top section */
 
-.arrow { width: 70%; }
+.arrow {
+  display: inline-block;
+  width: 70%;
+}
 
 #scrollUp {
   background-color: transparent;

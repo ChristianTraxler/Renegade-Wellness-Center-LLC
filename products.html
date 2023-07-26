@@ -39,7 +39,11 @@
 		<link rel="apple-touch-icon" href="assets/images/RWC-logo(w:background-color).png" sizes="1024x1024">
 		<link rel="apple-touch-startup-image" href="assets/images/RWC-logo(w:background-color).png">
 		<link rel="manifest" href="/manifest.webmanifest">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lumanosimo&family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
 	</head>
+
 	<body onclick>
 		<div id="pageTop"></div>
 		<nav id="topNav" class="navbar nav">
@@ -70,15 +74,25 @@
 				<div class="hero-wrapper">
 					<h2 class="hero-header"><br>
 					</h2>
-					<img src="./assets/images/RWC-logo(white).svg" alt="Renegade Wellness Center Logo"
-																			class="rwc-logo">
+					<img src="./assets/images/RWC-logo(white).svg" alt="Renegade Wellness Center Logo" class="rwc-logo">
 					<!--<a class="btn btn-white" href="#">Learn More</a>-->
 				</div>
 			</div>
 		</header>
 
+		<!--		Breadcrumb navigation-->
+		<div>
+			<ul class="navbar-nav breadcrumb">
+				<li class="nav-link not-active">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="nav-link">
+					<a href="products.html" class="not-active">Products</a>
+				</li>
+			</ul>
+		</div>
 
-		<section class="pricing-section">
+		<section class="product-container">
 			<div class="block-text contact-header">
 				<h2>Products</h2>
 			</div>
@@ -122,12 +136,13 @@
 						</div>
 
 						<div class="container2 container3 column1">
-							<a href="toscompany.html" id="more-info">
+							<a href="himalayan-salt-products.html" id="more-info">
 								<div class="card card2">
 									<div class="content">
 										<div class="details">
+
 											<div>
-												<h3 class="original-salt">Himalayan Salt Products</h3>
+												<img src="assets/images/FA98204A-ADB6-46EE-A58B-77C8A6C437F5.jpeg"><h3 class="original-salt">Himalayan Salt Products</h3>
 											</div>
 										</div>
 									</div>
@@ -149,7 +164,7 @@
 							</a>
 						</div>
 
-						<div class="container2 container4c column1">
+						<div class="container2 container3 column1">
 							<a href="bee-balm.html" id="more-info">
 								<div class="card">
 									<div class="content">
@@ -171,7 +186,6 @@
 		<footer class="bg-footer">
 			<section class="footer-top">
 				<div class="footer-col">
-<!--					<h4>Need Help?</h4>-->
 					<div class="contact-info">
 						<ul>
 							<li><img src="./assets/images/map-pin.svg" alt="location" class="icons">630 W 21st St Newton, NC <br>
@@ -182,47 +196,7 @@
 								href="mailto:renegadewellnesscenter@gmail.com" class="email">renegadewellnesscenter@gmail.com</a></li>
 						</ul>
 					</div>
-		<!--			<div class="social-icons">-->
-		<!--				<ul>-->
-		<!--					<li><a href="#"><img src="./assets/images/behance.svg" alt="behance"></a></li>-->
-		<!--					<li><a href="#"><img src="./assets/images/dribble.svg" alt="dribble"></a></li>-->
-		<!--					<li><a href="#"><img src="./assets/images/twitter.svg" alt="twitter"></a></li>-->
-		<!--					<li><a href="#"><img src="./assets/images/medium.svg" alt="medium"></a></li>-->
-		<!--				</ul>-->
-		<!--			</div>-->
 				</div>
-<!--				<div class="footer-col">-->
-<!--					<h4>Services</h4>-->
-<!--					<div class="services-wrapper">-->
-<!--						<h5>Salt Therapy</h5>-->
-<!--						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
-<!--					</div>-->
-<!--					<div class="services-wrapper">-->
-<!--						<h5>Infrared Therapy</h5>-->
-<!--						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
-<!--					</div>-->
-<!--				</div>-->
-		<!--		<div class="footer-col">-->
-		<!--			<h5>Recent Posts</h5>-->
-		<!--			<div class="recent-posts">-->
-		<!--				<div class="post-img-wrapper">-->
-		<!--					<img src="./assets/images/blog1.jpg" alt="blog 1">-->
-		<!--				</div>-->
-		<!--				<div class="post-inner">-->
-		<!--					<h6><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h6>-->
-		<!--					<span>May 15, 2020</span>-->
-		<!--				</div>-->
-		<!--			</div>-->
-		<!--			<div class="recent-posts">-->
-		<!--				<div class="post-img-wrapper">-->
-		<!--					<img src="./assets/images/blog2.jpg" alt="blog 2">-->
-		<!--				</div>-->
-		<!--				<div class="post-inner">-->
-		<!--					<h6><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h6>-->
-		<!--					<span>May 07, 2020</span>-->
-		<!--				</div>-->
-		<!--			</div>-->
-		<!--		</div>-->
 			</section>
 
 			<section class="payments">
