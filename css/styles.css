@@ -1841,6 +1841,21 @@ img[src*="check-book"], img[src*="contactless_payment"] {
   left: 5px;
 }
 
+.jcb {
+  position: relative;
+  width: 60px;
+  height: 64px;
+  bottom: 10px;
+  left: 0;
+}
+
+.venmo {
+  position: relative;
+  height: 26px;
+  width: 38px;
+  top: 11px;
+}
+
 .services-wrapper p {
   color: #858497;
   line-height: var(--size-20);
