@@ -1,0 +1,177 @@
+:root {
+  --white: #FFF;
+  --black: #000;
+  --font-color-base: #666;
+  --font-color-dark: #212529;
+  --font-color-light: #B0AEBE;
+  --font-color-link: #57A6FF;
+  --footer: #34314B;
+  --footer-base: #2E2B45;
+  --contrast: rgba(246, 248, 249, 0.8);
+  --success: #64ECF5;
+  --danger: #FF8B8D;
+  --grad-1: #A1ECFF;
+  --grad-2:#7DBCFF;
+
+  --size-10: 0.625rem;
+  --size-14: 0.875rem;
+  --size-16: 1rem;
+  --size-18: 1.125rem;
+  --size-20: 1.25rem;
+  --size-25: 1.5625rem;
+  --size-30: 1.875rem;
+  --size-40: 2.5rem;
+  --size-50: 3.125rem;
+  --size-100: 6.25rem;
+  --size-150: 9.325rem;
+}
+
+/*html { border: 2px solid yellow; }*/
+
+/* 1. Use a more-intuitive box-sizing model. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: var(--size-14);
+  letter-spacing: 0;
+  color: var(--font-color-dark);
+  margin: 0;
+  padding: 0;
+  background-color: #8DC7C1;
+  /*border: 2px solid red;*/
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  border-style: none;
+}
+
+/* 6. Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Create a root stacking context */
+#root, #__next {
+  isolation: isolate;
+}
+
+html { scroll-behavior: smooth; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a { text-decoration: none; }
+p {
+  margin-top: 0;
+  line-height: 20px;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.container {
+  width: 100%;
+  padding: 18px 20px 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: var(--font-color-dark);
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  border-radius: 1.25rem;
+  transition: ease-in-out 0.3s;
+}
+
+.btn-primary {
+  background-image: linear-gradient(90deg, var(--grad-1) 0%, var(--grad-2) 100%);
+  border: 1px solid var(--grad-1);
+  box-shadow: 0 10px 20px rgba(161, 236, 255, 0.5);
+  transition: ease-in-out 0.3s;
+  color: var(--white);
+  padding: 7px 25px;
+}
+
+.btn-white {
+  background-color: var(--white);
+  color: var(--font-color-link);
+  padding: 0.475rem 1.75rem;
+  box-shadow: 0 10px 20px rgb(255 255 255 / 35%)
+}
+
+/*@media (prefers-color-scheme: dark) {*/
+/*  body {*/
+/*    color: #EEE;*/
+/*    background: #121212;*/
+/*  }*/
+
+/*  h2, h3, .email2 {*/
+/*    color: #EEE;*/
+/*  }*/
+
+/*  hr {*/
+/*    border: 1px solid white;*/
+/*  }*/
+
+/*  h5, .cabin, .price, .original-salt, .diffusers {*/
+/*    color: black;*/
+/*  }*/
+
+/*  .card, .card2 {*/
+/*    background-color: #8DC7C1 !important;*/
+/*  }*/
+
+/*  .p-pad, .panel2, .panel2-1 {*/
+/*    color: black;*/
+/*  }*/
+/*}*/
+
+@media (min-width: 768px) {
+  .pricing-table, .testimonial-grid, .footer-bottom-wrapper { max-width: 720px; }
+}
+
+@media (min-width: 992px) {
+  footer .container {max-width: 960px;}
+}
+
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+}
+
