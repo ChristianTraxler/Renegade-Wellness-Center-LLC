@@ -541,7 +541,7 @@
 
   .milk-overlay2 { left: 364px; }
 
-  .milk-title { font-size: 1.7em; }
+  /*.milk-title { font-size: 1.7em; }*/
 
   .milk-description {
     font-size: 1.3em;
@@ -926,7 +926,7 @@
     bottom: 144px;
   }
 
-  .pineapple-juice, .pink-dream-juice, .anti-aging-juice, .strawberries-juice, .deep-detox-juice {
+  .blue-spirulina, .pineapple-juice, .pink-dream-juice, .anti-aging-juice, .strawberries-juice, .deep-detox-juice {
     font-size: 1.3em;
     padding: 0 20px 0 20px;
   }
@@ -941,6 +941,15 @@
   }
 
   .juice-overlay2 { right: 17px; }
+
+  .spirulina {
+    width: 16%;
+    top: 86px;
+    right: 0;
+    left: 26px;
+  }
+
+  .apple-pear { left: 26px; }
 
   /* End of Juice Masks */
 
@@ -964,7 +973,7 @@
 
   .milk-price { top: 44px; }
 
-  .blueberry-milk, .vanilla-milk, .matcha-milk, .avocado-milk { font-size: 1.2em; }
+  .milk-title, .blueberry-milk, .vanilla-milk, .matcha-milk, .avocado-milk { font-size: 1.3em; }
 
   .avocado-milk { padding: 0 20px 0 20px; }
 
@@ -975,6 +984,10 @@
   .milk-description { font-size: 1.1em; }
 
   .description2 { font-size: 1em; }
+
+  .pumpkin { left: 26px; }
+
+  .cacao { left: 26px; }
 
   /* End of Milk Mask */
 

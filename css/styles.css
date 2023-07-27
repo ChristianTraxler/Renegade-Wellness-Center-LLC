@@ -1222,6 +1222,8 @@ hr {
 .pineapple-bliss {
   position: relative;
   top: 24px;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 .masks3 {
@@ -1249,11 +1251,29 @@ hr {
   padding: 1em 1em;
 }
 
+.spirulina {
+  position: absolute;
+  width: 5%;
+  top: 86px;
+  right: 888px;
+  z-index: 1;
+}
+
+.apple-pear {
+  position: absolute;
+  width: 16%;
+  top: 30px;
+  left: 50px;
+  z-index: 1;
+}
+
 .pineapple-juice { color: #A0A451; }
 .pink-dream-juice { color: #CE8E99; }
 .anti-aging-juice { color: #839E2E; }
 .strawberries-juice { color: #e6b0b6; }
 .deep-detox { color: #97968E; }
+.blue-spirulina { color: #8EB9C7; }
+.red-apple { color: #AF5461; }
 
 /* End of Juice Masks */
 
@@ -1291,10 +1311,28 @@ hr {
   top: 20px;
 }
 
+.pumpkin {
+  position: absolute;
+  width: 18%;
+  top: 27px;
+  left: 50px;
+  z-index: 1;
+}
+
+.cacao {
+  position: absolute;
+  width: 18%;
+  top: 27px;
+  left: 50px;
+  z-index: 1;
+}
+
 .vanilla-milk { color: #B4C5D5; }
 .blueberry-milk { color: #8F9FB4; }
 .matcha-milk { color: #B7CB8D; }
-.avocado-milk { color: #859A62 }
+.avocado-milk { color: #859A62; }
+.pumpkin-spice { color: #EF9E73; }
+.cacao-powder { color: #926E5D; }
 
 /* End of Milk Masks */
 
