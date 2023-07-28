@@ -1181,6 +1181,20 @@
     padding-left: 10px;
   }
 
+  .payments {
+    grid-template-rows: repeat(2, 40%);
+    grid-template-columns: repeat(1, 90%);
+  }
+
+  img[src*="check-book(white)"], img[src*="contactless_payment"] {
+     top: initial;
+  }
+
+  .cash {
+    right: initial;
+    bottom: 10px;
+  }
+
   /* End of Footer */
 }
 

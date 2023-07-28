@@ -1760,15 +1760,16 @@ footer .footer-col {
 }
 
 .payments {
-  display: block;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 30%);
   position: relative;
   bottom: 60px;
 }
 
 .pay, .pay2 {
   display: flex;
-  justify-content: center;
-  margin: auto;
+  justify-content: space-evenly;
 }
 
 .payment {
@@ -1783,24 +1784,30 @@ footer .footer-col {
 
 .cash {
   position: relative;
-  right: 5px;
+  bottom: 10px;
 }
 
 .checks {
   position: relative;
   width: 45px;
   height: 45px;
+  bottom: 8px;
 }
 
 img[src*="check-book"], img[src*="contactless_payment"] {
   position: relative;
   top: initial;
+  bottom: 8px;
 }
 
 .visa {
-  position: relative;
-  height: 51px;
-  bottom: 1px;
+  width: 50px;
+  height: 32px;
+}
+
+.credit-card {
+  height: 30px;
+  width: 50px;
 }
 
 .ccard {
@@ -1834,12 +1841,12 @@ img[src*="check-book"], img[src*="contactless_payment"] {
   left: 5px;
 }
 
-.cash-app {
-  position: relative;
-  height: 48px;
-  width: 47px;
-  left: 5px;
-}
+/*.cash-app {*/
+/*  position: relative;*/
+/*  height: 51px;*/
+/*  width: 62px;*/
+/*  bottom: 10px;*/
+/*}*/
 
 .jcb {
   position: relative;
