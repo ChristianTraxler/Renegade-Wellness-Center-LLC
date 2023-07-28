@@ -1772,6 +1772,11 @@ footer .footer-col {
   justify-content: space-evenly;
 }
 
+.pay2 {
+  position: relative;
+  left: 2px;
+}
+
 .payment {
   height: var(--size-40);
   width: var(--size-40);
@@ -1854,6 +1859,12 @@ img[src*="check-book"], img[src*="contactless_payment"] {
   height: 64px;
   bottom: 10px;
   left: 0;
+}
+
+img[src*="venmo"] {
+  position: relative;
+  right: 2px;
+  width: 48px;
 }
 
 .venmo {
