@@ -1575,6 +1575,28 @@ img[src*="moon-nightlight"] {
   margin-bottom: 244px;
 }
 
+img[src*="MoonGlow-Hero(2)"] {
+  position: relative;
+  top: 70px;
+  width: 60%;
+}
+
+.moon {
+  position: relative;
+  top: 86px;
+}
+
+img[src*="Breezy-White-Hero(2)"] {
+  position: relative;
+  top: 46px;
+  width: 60%;
+}
+
+.breezy-white {
+  position: relative;
+  top: 76px;
+}
+
 .diffuser-price {
   font-size: var(--size-20);
   font-weight: 600;
@@ -1925,9 +1947,13 @@ img[src*="venmo"] {
   flex-wrap: wrap;
 }
 
-.copyright { margin-top: 6px; }
+.copyright {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px; }
 
 .developer {
+  position: relative;
   text-decoration: none;
   color: #FF4500;
 }
@@ -1953,6 +1979,14 @@ img[src*="venmo"] {
 }
 
 .tel { color: white; }
+
+img[src*="DOC"] {
+  display: initial;
+  position: relative;
+  width: 4%;
+  right: 4px;
+  bottom: 1px;
+}
 
 /* End of Footer */
 
