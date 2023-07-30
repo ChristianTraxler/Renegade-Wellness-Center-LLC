@@ -1954,16 +1954,17 @@ img[src*="venmo"] {
 
 .developer {
   position: relative;
+  right: 12px;
   text-decoration: none;
   color: #FF4500;
 }
 
 .copyright p { color: var(--white); }
 
-.footer-bottom-links {
-  margin-top: var(--size-10);
-  padding-left: 10px;
-}
+/*.footer-bottom-links {*/
+/*  margin-top: var(--size-10);*/
+/*  padding-left: 10px;*/
+/*}*/
 
 .footer-bottom-links ul li {
   display: inline-block;
