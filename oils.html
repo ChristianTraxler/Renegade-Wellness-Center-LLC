@@ -223,8 +223,10 @@
 												for muscle cramps!) Most lime oil is cold pressed, resulting in a phototoxic oil that causes skin
 												reactions in sunlight. Our lime essential oil is steam distilled and is NOT phototoxic. Use our
 												steam-distilled lime oil without concern in topical blends. Our distiller crafts this oil from
-												organically grown fruits in orchards dotting the sunny southern Italian countryside.
+												organically grown <span id="dots">...</span><span id="more">fruits in orchards dotting the sunny southern
+														Italian countryside.</span>
 											</p>
+											<button onclick="myFunction()" id="myBtn">Read more</button>
 										</div>
 									</div>
 								</div>
@@ -278,9 +280,11 @@
 												crisp (and more tart than our red mandarin oil). This bright-spirited oil inspires optimism and can
 												encourage feelings of safety when connecting to others. Clean your home with green mandarin blends,
 												especially to reduce germs that could compromise health. Our certified organic green mandarin oil has
-												a deep green color and is cold pressed from the fresh rinds of unripe mandarin fruits in Italy (as
-												opposed to the fully ripened fruits, which create red mandarin oil).
+												a deep green color and is cold pressed from the fresh rinds of unripe mandarin <span
+												id="dots2">...</span><span id="more2"> fruits in
+														Italy (as opposed to the fully ripened fruits, which create red mandarin oil).</span>
 											</p>
+											<button onclick="myFunction()" id="myBtn2">Read more</button>
 										</div>
 									</div>
 								</div>
@@ -447,12 +451,12 @@
 										</div>
 										<div class="oil-description">
 											<p>
-												Zesty, fresh, and inspiring, lemon essential oil’s aroma smells just like the fresh fruit! The dominant
-												component in lemon oil, limonene, has been well researched. It makes lemon a lively oil that brings a
-												sparkling, refreshing spirit everywhere it goes—use it to clean your home, as a single drop sends germs
-												running the other direction! Trust lemon to support the breath, muscles, and joints, too. Our organically
-												grown lemon essential oil is cold pressed from the rinds of freshly harvested fruits cultivated in sunny
-												orchards lining the mountainsides of Italy.
+												Our German chamomile from Nepal is a dark green or blue essential oil (depending on the batch),
+												with a distinctive, herbaceous, sweet, strong scent. This oil is like a lullaby for irritated
+												skin! German chamomile’s cooling presence makes it well-loved for sore, hot, tender issues. It
+												also quiets “hot” emotions—inspiring patience, hope, and forgiveness. Our organically grown German
+												chamomile essential oil is steam distilled from beautiful white flowers cultivated in Nepal.
+												Producing the oil is a labor intensive process, making German chamomile precious (and worth it!)
 											</p>
 										</div>
 									</div>
@@ -475,12 +479,12 @@
 										</div>
 										<div class="oil-description">
 											<p>
-												Lime essential oil’s refreshing, bright, sparkly aroma infuses the body with energy! Its reassuring
-												presence lifts the spirit out of melancholy and can ease emotional and physical pressure. (Try it
-												for muscle cramps!) Most lime oil is cold pressed, resulting in a phototoxic oil that causes skin
-												reactions in sunlight. Our lime essential oil is steam distilled and is NOT phototoxic. Use our
-												steam-distilled lime oil without concern in topical blends. Our distiller crafts this oil from
-												organically grown fruits in orchards dotting the sunny southern Italian countryside.
+												Sweet and floral with a hint of warm apples, Roman chamomile is one of the most well-known
+												essential oils for relaxation. It can be used to create a sense of well-being throughout the day,
+												and to calm a worried mind and encourage sleep at night. Roman chamomile’s soothing presence also
+												makes it a comforting addition to muscle blends. Roman chamomile is sometimes called “ground apple,”
+												for its apple-like scent. Our organically grown Roman chamomile essential oil is steam distilled
+												from delicate white flowers grown in the rolling English countryside.
 											</p>
 										</div>
 									</div>
@@ -937,12 +941,13 @@
 											</div>
 										</div>
 										<div class="oil-description">
-											<p>Bergamot mint is a member of the mint family. The essential oil steam distilled from the leaves is
-												fresh and minty, with hints of citrus that add a layer of warmth. Keep this oil around during a
-												stressful day to feel centered and optimistic. Bergamot mint’s talent for relaxation is also useful
-												for bedtime blends, and for sore, tight muscles. Our bergamot mint essential oil is organically
-												crafted in the Indian and English countrysides. Its natural composition closely resembles that of
-												lavender, and the two oils blend well together.
+											<p>The aroma of frankincense—fresh, balsamic, warm, and woodsy—has helped create sacred spaces
+												throughout history where peace and connection to self are possible. Frankincense oil can help
+												support clear, deep breathing—whether used in meditation, during the cold season, or to strengthen
+												the breath and chest on an ongoing basis. Frankincense is on our sustainability watch list.
+												Our distiller is a leading advocate for strict harvesting regulations. He produces this certified
+												organic frankincense essential oil from the resin of wild Boswellia carterii trees in the rural
+												landscape of Somaliland.
 											</p>
 										</div>
 									</div>
@@ -1461,24 +1466,52 @@
 		<!--Scroll Top-->
 		<a id="scrollUp" href="#pageTop"><img class="arrow" src="./assets/images/arrow.svg" alt=""></a>
 
-<!--		<script>-->
-<!--			var coll = document.getElementsByClassName("collapsible");-->
-<!--			var i;-->
+		<!--		<script>-->
+		<!--			var coll = document.getElementsByClassName("collapsible");-->
+		<!--			var i;-->
 
-<!--			for (i = 0; i < coll.length; i++) {-->
-<!--				coll[i].addEventListener("click", function() {-->
-<!--					this.classList.toggle("active");-->
-<!--					var content = this.nextElementSibling;-->
-<!--					if (content.style.display === "block") {-->
-<!--						content.style.display = "none";-->
-<!--					} else {-->
-<!--						content.style.display = "block";-->
-<!--					}-->
-<!--				});-->
-<!--			}-->
-<!--		</script>-->
+		<!--			for (i = 0; i < coll.length; i++) {-->
+		<!--				coll[i].addEventListener("click", function() {-->
+		<!--					this.classList.toggle("active");-->
+		<!--					var content = this.nextElementSibling;-->
+		<!--					if (content.style.display === "block") {-->
+		<!--						content.style.display = "none";-->
+		<!--					} else {-->
+		<!--						content.style.display = "block";-->
+		<!--					}-->
+		<!--				});-->
+		<!--			}-->
+		<!--		</script>-->
 
 		<script>
+			function myFunction() {
+				var dots = document.getElementById("dots");
+				var moreText = document.getElementById("more");
+				var btnText = document.getElementById("myBtn");
+				var dots2 = document.getElementById("dots2");
+				var moreText2 = document.getElementById("more2");
+				var btnText2 = document.getElementById("myBtn2");
+
+				if (dots.style.display === "none") {
+					dots.style.display = "inline";
+					btnText.innerHTML = "Read more";
+					moreText.style.display = "none";
+				} else {
+					dots.style.display = "none";
+					btnText.innerHTML = "Read less";
+					moreText.style.display = "inline";
+				}
+
+				if (dots2.style.display === "none") {
+					dots2.style.display = "inline";
+					btnText2.innerHTML = "Read more";
+					moreText2.style.display = "none";
+				} else {
+					dots2.style.display = "none";
+					btnText2.innerHTML = "Read less";
+					moreText2.style.display = "inline";
+				}
+			}
 
 			const nav = document.getElementById("topNav");
 			window.onscroll = function () {
