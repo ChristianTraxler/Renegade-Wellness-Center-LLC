@@ -758,6 +758,11 @@
 
   /* Start of Essential Oils page */
 
+  .essential-oils-container {
+    position: relative;
+    top: 100px;
+  }
+
   .citrus-section, .floral-section, .mint-section, .spices-section,
   .resin-section, .forest-section, .blends-section { height: initial; }
 
@@ -898,6 +903,16 @@
   /* End of Carrier Oils */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+  /* Start of EWS Beauty page */
+
+  .esw-beauty-products {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    top: 90px;
+  }
 
   /* Start of Juice Masks */
 
@@ -1046,6 +1061,8 @@
 
   .himalayan-salt-container { height: initial; }
 
+  img[src*="limited-edition"] {  width: 20%; }
+
   .lamps {
     position: relative;
     right: 3px;
@@ -1143,7 +1160,8 @@
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   /* Start of Contact page */
-  .pricing-section { padding: 100px 0 150px 0; }
+  .pricing-section { padding: 100px 0 10px 0; }
+  .pricing-section2 { padding: 100px 0 100px 0; }
 
   .contact > h3, .hours { font-size: 1rem; }
 
@@ -1584,6 +1602,10 @@
   /* End of Carrier Oils */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+  /* Start of ESW Beauty page */
+
+  .esw-beauty-products { grid-template-columns: repeat(2, 1fr); }
 
   /* Start of Juice Masks */
 

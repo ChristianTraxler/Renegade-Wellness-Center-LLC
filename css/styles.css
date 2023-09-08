@@ -794,6 +794,88 @@ img[src*="FA98204A"] {
   margin: auto;
 }
 
+.aromatics-products {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 90px;
+}
+
+.aromatics-products > h2 > a {
+  text-decoration: none;
+  color: black;
+}
+
+.button-17 {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.button-17:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+  transform: scale(1.1);
+}
+
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.button-17:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.button-17:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button-17:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
 
 /* End of Aromatics Page */
 
@@ -1012,6 +1094,8 @@ hr {
   text-decoration: underline;
 }
 
+#more, #more2 {display: none;}
+
 /* End of Essential Oils */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -1209,6 +1293,8 @@ hr {
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+/* Start of ESW Beauty page */
+
 /* Start of Juice Masks */
 
 .raw-juice-title {
@@ -1338,6 +1424,15 @@ hr {
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+/* Start of Lip Treatment section */
+
+.guava-mango { color: #EBAFBB; }
+.vanilla-almond { color: #CC864D; }
+.white-pitaya { color: #DC1857; }
+
+
+/* End of Lip Treatment section */
+
 /* Start of Facial Tools */
 
 .tools-price {
@@ -1362,9 +1457,22 @@ hr {
 
 /* End of Facial Tools */
 
+/* Start of Candles section */
+
+img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; }
+
+.pink-dream-candle { color: #E97798; }
+
+
+/* End of Candles section */
+
+
+
+/* End of ESW Beauty page */
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/* Start of The Original Salt Company */
+/* Start of Himalayan Salt Products */
 
 /* Start of Salt Lamps */
 
@@ -1399,7 +1507,7 @@ hr {
 .salt-lamp-card {
   margin: 0 auto;
   padding: 25px 0 0 0;
-  height: 430px;
+  height: 484px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   border-radius: 10px;
@@ -1408,6 +1516,20 @@ hr {
 .lamp {
   width: 50%;
   margin: auto;
+}
+
+img[src*="pumpkin-lamp"] {
+  position: relative;
+  top: 70px;
+}
+
+img[src*="limited-edition"] {
+  position: absolute;
+  width: 6%;
+  top: 40px;
+  right: 0;
+  left: 42px;
+  z-index: 1;
 }
 
 .content {
@@ -1494,6 +1616,11 @@ img[src*="white-natural"] {
   top: 20px;
 }
 
+img[src*="moon"] {
+  position: relative;
+  top: 25px;
+}
+
 img[src*="foot-dome"] {
   position: relative;
   top: 70px;
@@ -1515,7 +1642,7 @@ img[src*="moon-nightlight"] {
 }
 
 /* End of Salt Lamps */
-/* End of The Original Salt Company */
+/* End of Himalayan Salt Products */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
