@@ -462,6 +462,8 @@ section {
   margin: 0 auto;
 }
 
+.pricing-section2 { padding-top: 150px; }
+
 .block-text.pricing-header {
   text-align: center;
   padding-right: 0;
