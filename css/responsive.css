@@ -1059,7 +1059,10 @@
 
   /* Start of Hand Carved Salt Lamps */
 
-  .himalayan-salt-container { height: initial; }
+  .himalayan-salt-container {
+    height: initial;
+    padding-bottom: 80px;
+  }
 
   img[src*="limited-edition"] {  width: 20%; }
 
@@ -1160,7 +1163,7 @@
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   /* Start of Contact page */
-  .pricing-section { padding: 100px 0 10px 0; }
+  .pricing-section { padding: 100px 0 100px 0; }
   .pricing-section2 { padding: 100px 0 100px 0; }
 
   .contact > h3, .hours { font-size: 1rem; }
