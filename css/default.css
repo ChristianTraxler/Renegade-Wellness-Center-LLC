@@ -26,25 +26,60 @@
   --size-150: 9.325rem;
 }
 
-html { scroll-behavior: smooth; }
+/*html { border: 2px solid yellow; }*/
 
+/* 1. Use a more-intuitive box-sizing model. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering */
 body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: var(--size-14);
-  line-height: 1.0;
   letter-spacing: 0;
   color: var(--font-color-dark);
   margin: 0;
   padding: 0;
   background-color: #8DC7C1;
+  /*border: 2px solid red;*/
 }
 
-*,
-::after,
-::before {
-  box-sizing: border-box;
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  border-style: none;
 }
+
+/* 6. Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Create a root stacking context */
+#root, #__next {
+  isolation: isolate;
+}
+
+html { scroll-behavior: smooth; }
 
 ul {
   padding: 0;
@@ -53,22 +88,15 @@ ul {
 }
 
 a { text-decoration: none; }
-p { 
+p {
   margin-top: 0;
-  line-height: 20px; 
+  line-height: 20px;
 }
 
 h2 {
   font-size: 1.75rem;
   font-weight: 500;
   line-height: 1.2;
-}
-
-img {
-  width: 100%;
-  max-width: 100%;
-  vertical-align: middle;
-  border-style: none;
 }
 
 .container {
@@ -107,6 +135,33 @@ img {
   padding: 0.475rem 1.75rem;
   box-shadow: 0 10px 20px rgb(255 255 255 / 35%)
 }
+
+/*@media (prefers-color-scheme: dark) {*/
+/*  body {*/
+/*    color: #EEE;*/
+/*    background: #121212;*/
+/*  }*/
+
+/*  h2, h3, .email2 {*/
+/*    color: #EEE;*/
+/*  }*/
+
+/*  hr {*/
+/*    border: 1px solid white;*/
+/*  }*/
+
+/*  h5, .cabin, .price, .original-salt, .diffusers {*/
+/*    color: black;*/
+/*  }*/
+
+/*  .card, .card2 {*/
+/*    background-color: #8DC7C1 !important;*/
+/*  }*/
+
+/*  .p-pad, .panel2, .panel2-1 {*/
+/*    color: black;*/
+/*  }*/
+/*}*/
 
 @media (min-width: 768px) {
   .pricing-table, .testimonial-grid, .footer-bottom-wrapper { max-width: 720px; }
