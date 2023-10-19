@@ -1643,6 +1643,14 @@ img[src*="moon-nightlight"] {
   top: initial;
 }
 
+.out-of-stock {
+  position: absolute;
+  width: 20%;
+  top: 30px;
+  left: 36px;
+  z-index: 1;
+}
+
 /* End of Salt Lamps */
 /* End of Himalayan Salt Products */
 
@@ -1768,6 +1776,32 @@ img[src*="Breezy-White-Hero(2)"] {
 .bee3 { margin-bottom: 40px; }
 
 /* End of Portland Bee Balm section */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Conscious Coconut page */
+
+img[src*="MainTube"] { border-radius: 10px; }
+
+.spirulina2 {
+  position: absolute;
+  width: 15%;
+  top: 30px;
+  left: 48px;
+  z-index: 1;
+}
+
+.spirulina3 {
+  position: absolute;
+  width: 5%;
+  top: 85px;
+  left: 652px;
+  z-index: 1;
+}
+
+
+
+/* End of Conscious Coconut page */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
