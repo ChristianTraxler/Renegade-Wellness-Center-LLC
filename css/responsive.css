@@ -1175,13 +1175,13 @@
     left: 28px;
   }
 
-  .conscious-coconut-products {
-    display: grid;
-    grid-template-rows: repeat(1, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    position: relative;
-    top: 90px;
-  }
+  /*.conscious-coconut-products {*/
+  /*  display: grid;*/
+  /*  grid-template-rows: repeat(1, 1fr);*/
+  /*  grid-template-columns: repeat(2, 1fr);*/
+  /*  position: relative;*/
+  /*  top: 90px;*/
+  /*}*/
 
   /* End of Conscious Coconut page */
 
