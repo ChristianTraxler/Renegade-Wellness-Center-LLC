@@ -735,7 +735,7 @@
 
   .footnote {
     text-align: center;
-    top: 170px;
+    /*top: 170px;*/
   }
 
   /* End of FAQ page */
@@ -1211,7 +1211,7 @@
 
   /* Start of FAQ page */
 
-  .info-section { margin: 0 30px 0 0; }
+  /*.info-section { margin: 0 30px 0 0; }*/
 
   .accordion, .panel { width: 92%; }
 
