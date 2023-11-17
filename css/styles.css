@@ -427,6 +427,11 @@ img[src*="Holiday"] {
   padding-top: 5%;
 }
 
+.block-text > .plant-therapy-txt {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: bold;
+}
 /* End of Home page */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
