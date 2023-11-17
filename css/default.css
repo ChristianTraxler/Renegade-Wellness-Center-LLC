@@ -24,6 +24,14 @@
   --size-50: 3.125rem;
   --size-100: 6.25rem;
   --size-150: 9.325rem;
+
+  /*--container-corner-radius: 10px;*/
+  /*--angular-gradients-angular-1: conic-gradient(from 196deg at 50% 50%, rgba(66, 232, 255, 0.00) 95.00793099403381deg, rgba(255, 126, 171, 0.50) 185.5945086479187deg, #3083FF 274.88280057907104deg, #7147FF 360deg);*/
+  --button-vertical-padding: 4px;
+  --button-horizontal-padding: 12px;
+  --button-gap: 8px;
+  --button-corner-radius: 8px;
+  --gradients-red-3: linear-gradient(110deg, #FF9D3F 0.07%, #F46772 40.61%, #AF33E4 69.54%, #2F70E4 100.44%);
 }
 
 /*html { border: 2px solid yellow; }*/

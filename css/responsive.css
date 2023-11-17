@@ -727,6 +727,8 @@
 
   .valentines { width: 90%; }
 
+  img[src*="Holiday"] { width: 90%; }
+
   /* End of Home page */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -1091,6 +1093,10 @@
   }
 
   .out-of-stock { width: 24%; }
+
+  img[src*="IMG_2209"], img[src*="diffuser-sale"], img[src*="IMG_5544"], img[src*="IMG_4639"] {
+    width: 65%;
+  }
 
   /* End of Hand Carved Salt Lamps */
 

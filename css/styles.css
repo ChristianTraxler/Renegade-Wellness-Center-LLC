@@ -421,6 +421,12 @@ section {
   text-decoration: none;
 }
 
+img[src*="Holiday"] {
+  width: 30%;
+  margin: auto;
+  padding-top: 10%;
+}
+
 /* End of Home page */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -741,6 +747,20 @@ img[src*="FA98204A"] {
   bottom: 6px;
 }
 
+/*.btn-primary2 {*/
+/*  display: flex;*/
+/*  padding: var(--button-vertical-padding) var(--button-horizontal-padding);*/
+/*  align-items: center;*/
+/*  gap: var(--button-gap);*/
+/*  border-radius: var(--button-corner-radius);*/
+/*  background: var(--gradients-red-3);*/
+/*  width: 18%;*/
+/*  margin: auto;*/
+
+/*  !* Blur/20 *!*/
+/*  backdrop-filter: blur(10px);*/
+/*}*/
+
 .panel2-1 { max-height: 530px !important; }
 
 .panel2 {
@@ -798,6 +818,7 @@ img[src*="FA98204A"] {
 
 .aromatics-products {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   position: relative;
   top: 90px;
@@ -1062,6 +1083,8 @@ h3 > a { color: black; }
 .orange { color: #f58235; }
 .ravintsara { color: #23AAD7; }
 .wintergreen { color: #799E82; }
+.no-warts { color: #2BD4C9; }
+.vanilla { color: #C0A798; }
 
 .price {
   font-size: var(--size-20);
@@ -1181,6 +1204,22 @@ hr {
   text-align: center;
   font-size: 0.9em;
   padding: 1em 1em;
+}
+
+.plant-description {
+  text-align: center;
+  padding: 1em 1em;
+  /*position: relative;*/
+  /*bottom: 40px;*/
+  font-size: 0.9em;
+}
+
+.plant-description2 {
+  text-align: center;
+  padding: 1em 1em;
+  position: relative;
+  bottom: 40px;
+  font-size: 0.9em;
 }
 
 /* END OF HYDROSOLS PAGE */
@@ -1474,6 +1513,21 @@ img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+/* Start of Plant Therapy page */
+
+.blend-oils {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 90%;
+  border-radius: 2%;
+}
+
+
+/* End og Plant Therapy page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Himalayan Salt Products */
 
 /* Start of Salt Lamps */
@@ -1649,6 +1703,13 @@ img[src*="moon-nightlight"] {
   top: 30px;
   left: 36px;
   z-index: 1;
+}
+
+img[src*="IMG_2209"], img[src*="diffuser-sale"], img[src*="IMG_5544"], img[src*="IMG_4639"] {
+  width: 35%;
+  margin: auto;
+  position: relative;
+  bottom: 20px;
 }
 
 /* End of Salt Lamps */
