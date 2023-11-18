@@ -161,6 +161,7 @@ ul.breadcrumb {
   padding: 10px 16px;
   list-style: none;
   background-color: #eee;
+  justify-content: initial;
 }
 
 /* Display list items side by side */
