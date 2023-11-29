@@ -1,0 +1,2280 @@
+/* Start of Navbar */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 500;
+  transition: ease-in-out 0.3s;
+}
+
+.navbar.sticky {
+  background: var(--white);
+  box-shadow: 0 0 20px rgb(48 63 100 / 20%);
+}
+
+.navbar.sticky .navbar-toggler span, .navbar.sticky .navbar-brand, .rwc-logo2 {
+  color: var(--font-color-dark);
+  padding-bottom: var(--size-10);
+}
+
+.navbar.sticky .nav-link a { color: var(--font-color-dark); }
+
+.navbar-toggler {
+  position: absolute;
+  right: var(--size-20);
+  top: var(--size-10);
+  outline: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.navbar-toggler span {
+  color: var(--white);
+  font-size: var(--size-20);
+  cursor: pointer;
+  pointer-events: none;
+}
+
+[aria-controls="navbarDropdown"] { display: none; }
+
+.nb-logo, .nb-logo2 { height: 70px; }
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  transition: ease-in-out 0.3s;
+  margin-left: auto;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  margin-right: auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 100%;
+  transition: ease-in-out 0.3s;
+  color: var(--white);
+  text-align: left;
+}
+
+.bg-header, .video-demo {
+  background-color: var(--footer);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 20%;
+  position: relative;
+  z-index: 1;
+  padding: 3.5rem 0;
+}
+
+.bg-header {
+  background-image: url("../assets/images/FA98204A-ADB6-46EE-A58B-77C8A6C437F5.jpeg");
+}
+
+.video-demo { background-image: url("../assets/images/bg-demo.jpg");}
+
+.bg-header::before {
+  background-image: linear-gradient(
+          30deg,
+          rgba(21, 27, 38, 0.8) 0%,
+          rgba(0, 0, 0, 0.2) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  content: "";
+}
+
+.nav-link {
+  position: relative;
+  left: 25px;
+}
+
+.nav-link a {
+  display: flex;
+  color: var(--white);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: "Hind", sans-serif;
+  text-transform: uppercase;
+  margin-right: var(--size-50);
+  line-height: var(--size-20);
+}
+
+.hero-header {
+  color: var(--white);
+  text-align: center;
+}
+
+.rwc-logo {
+  display: flex;
+  position: relative;
+  margin: auto;
+  bottom: 46px;
+  height: 200px;
+}
+
+.icons1 {
+  position: relative;
+  right: 6px;
+  bottom: 2px;
+  color: white;
+  width: 18px;
+  height: 20px;
+}
+
+.icons2 {
+  position: relative;
+  right: 6px;
+  bottom: 2px;
+  width: 14px;
+}
+
+.icons3 {
+  position: relative;
+  right: 6px;
+  width: 17px;
+}
+
+.icons4 {
+  position: relative;
+  right: 6px;
+  bottom: 1px;
+  width: 17px;
+}
+
+div > .navbar-nav { top: 0; }
+
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+  justify-content: initial;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+  margin-right: initial;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+ul.breadcrumb > .not-active > a { color: gray; }
+
+/* End of Navbar */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Home page */
+.companies {
+  display: block;
+  position: relative;
+  background-image: url(../img/salt-rock.jpeg);
+  margin-bottom: 250px;
+}
+
+.title, .description {
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  align-items: center;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+}
+
+.salt--overlay {
+  background-size: cover;
+  width: 100%;
+  height: 332px;
+  margin-bottom: 200px;
+}
+
+.salt--overlay:hover { opacity: 1; }
+
+.service-grid {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 30%);
+  justify-content: center;
+  margin-top: var(--size-100);
+  position: relative;
+  top: 56px;
+}
+
+.card {
+  position: relative;
+  width: 274px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--size-25) !important;
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,.125);
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.card .content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-25);
+  font-size: var(--size-30);
+}
+
+.card .content .avatar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.card .content .avatar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .content .details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-10);
+  color: #111;
+}
+
+.card .content .details div {
+  display:  flex;
+  align-items: center;
+  gap: var(--size-10);
+}
+
+.card .content .details h3 { font-weight: 600; }
+
+.card .content .details ion-icon { font-size: 1.5em; }
+
+.details > * {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+#more-info {
+  text-decoration: none;
+  color: black;
+}
+
+section {
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px;
+}
+
+.why-me {
+  padding: var(--size-100) 0;
+  padding-bottom: 80px;
+}
+
+.why-me-wrapper div { flex: 1; }
+
+.block-text > p {
+  position: relative;
+  bottom: 38px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.why-me-wrapper .block-text {
+  max-width: 35rem;
+  margin: auto;
+}
+
+.block-text span {
+  color: var(--font-color-dark);
+  font-weight: 300;
+}
+
+.block-text h2 {
+  font-size: var(--size-40);
+  font-family: "Hinds", sans-serif;
+  font-weight: 600;
+  margin-bottom: var(--size-20);
+  line-height: 1.3;
+  margin-top: 0.5rem;
+}
+
+.price-sheet { border-radius: 10px; }
+
+.bg-price-section {
+  display: block;
+  padding: var(--size-50) 0;
+  padding-top: 0;
+  margin: 0 auto;
+  position: relative;
+  bottom: 80px;
+}
+
+.salt-therapy {
+  position: relative;
+  height: 210px;
+  bottom: 1px;
+}
+
+.giftcards2 {
+  text-align: center;
+  position: relative;
+  top: 120px;
+  margin-bottom: 100px;
+}
+
+.giftcards2 > a > button { margin-top: 20px; }
+
+.book_now:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.book_now {
+  display: inline-block;
+  justify-content: center;
+  background-color: #204068;
+  border: none;
+  color: white;
+  height: var(--size-40);
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+  line-height: 38px;
+  padding: 0 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: var(--size-14);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 8px 8px -4px #2F609D;
+  transition: 1s;
+}
+
+.book_now:hover {
+  transform: scale(1.1);
+  text-decoration: none;
+}
+
+img[src*="Holiday"] {
+  width: 30%;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.block-text > .plant-therapy-txt {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+/* End of Home page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Services */
+
+.bg-contrast {
+  background-color: var(--contrast);
+  padding: var(--size-150) 0;
+  margin: 0 auto;
+}
+
+.service-card {
+  padding: var(--size-30);
+  box-shadow: 0 0 10px rgb(48 63 100 / 15%);
+  background: white;
+  border-radius: 8px;
+}
+
+.service-card span {
+  width: 4.375rem;
+  height: 4.375rem;
+  display: block;
+  float: left;
+  margin-right: 15px;
+  border-radius: 50%;
+  background-color: var(--font-color-light);
+}
+
+/* End of Services */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Book Page */
+
+.pricing-section {
+  display: block;
+  padding: var(--size-150) 0;
+  margin: 0 auto;
+}
+
+.pricing-section2 { padding-top: 150px; }
+
+.block-text.pricing-header {
+  text-align: center;
+  padding-right: 0;
+  margin: var(--size-100) 0;
+}
+
+.pricing-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: var(--size-30);
+  margin: auto;
+  align-items: flex-start;
+}
+
+.price-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: var(--size-40) var(--size-16);
+  box-shadow: 0 10px 20px rgba(82, 179, 255, 0.2);
+}
+
+.price-card1 {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: var(--size-40) var(--size-16);
+  display: none;
+}
+
+.price-card2 {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: var(--size-40) var(--size-16);
+}
+
+.price-card > h5 { text-align: center; }
+
+.plan-btn-wrapper > h5 { margin: 20px 0 0 0; }
+
+.side-by-side1 { float: left; }
+.side-by-side2 { float: right; }
+
+.price-card .checked { color: var(--success); }
+.price-card .times {
+  color: var(--danger);
+  width: var(--size-14);
+}
+
+.price-card img, .price-card1 img, .price-card2 img {
+  border-radius: 10px;
+}
+
+.price-card1.featured, .price-card2.featured {
+  box-shadow: 0 10px 20px rgba(82, 179, 255, 0.2);
+  margin-top: -1rem;
+}
+
+.price-card h3 {
+  font-size: var(--size-18);
+  color: var(--font-color-dark);
+}
+
+.price-card1, .price-card2 h3 {
+  font-size: var(--size-18);
+  color: var(--font-color-dark);
+}
+
+.price-card hr { margin: 2rem 0 1rem; }
+
+.price-card h3, .price-card .price,
+.price-card .billed {
+  text-align: center;
+  position: relative;
+  top: 15px;
+}
+
+.price-card1 h3, .price-card2 h3, .price-card1 .price, .price-card2 .price,
+.price-card1 .billed, .price-card2 .billed { text-align: center; }
+
+.featured > h3 {
+  position: relative;
+  top: 15px;
+}
+
+.billed { line-height: 1.1rem; }
+
+.people { margin-top: 4px; }
+
+.pricing-table ul { line-height: 20px; }
+
+.price-card li { margin-bottom: var(--size-20); }
+.price-card .icon {
+  float: right;
+  font-weight: 600;
+}
+
+.plan-btn-wrapper {
+  text-align: center;
+  position: relative;
+  top: 20px;
+  margin-bottom: 6px;
+}
+.plan-btn-wrapper a { width: 100%; }
+
+/* End of Book Page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Products page */
+
+.product-container {
+  display: block;
+  padding: var(--size-150) 0;
+  margin: 0 auto;
+}
+
+/*.column1 { margin-right: initial; }*/
+/*.column2 { margin-left: initial; }*/
+
+.original-salt, .diffusers { font-size: 1em; }
+
+.original-salt {
+  font-family: 'Lumanosimo', sans-serif;
+  position: relative;
+  right: 170px;
+  width: 324px;
+  font-size: 1.46rem;
+}
+
+.diffusers {
+  font-family: 'Lumanosimo','Macondo Swash Caps', sans-serif;
+  position: relative;
+  right: 15px;
+}
+
+.aromatics { font-size: 28px; }
+.beauty { font-size: 30px; }
+
+.information {
+  text-align: center;
+  font-size: 1.2rem;
+  position: relative;
+  top: 40px;
+  padding: 0 50px 0 50px;
+  line-height: 1.5em;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container4 { margin-left: 0; }
+
+img[src*="FA98204A"] {
+  width: 329px;
+  max-width: initial;
+  height: 310px;
+  border-radius: 10px;
+  position: relative;
+  left: 80px;
+  opacity: 40%;
+}
+
+.magnum-card {
+  background: white !important;
+}
+
+/* End of Products page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Contact Page */
+
+.block-text, .contact-header, .contact { text-align: center; }
+
+.contact h3, .hours {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+.signup { text-align: center }
+
+.header-3 {
+  text-align: center;
+  font-size: var(--size-30);
+}
+
+.hours {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* End of Contact Page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of FAQ Page */
+
+.block-text.faq-header {
+  text-align: center;
+  padding-right: 0;
+}
+
+.commonly-asked {
+  display: flex;
+  justify-content: center;
+  margin: 0 25px;
+}
+
+.faqs {
+  display: block;
+  position: relative;
+  top: 30px;
+}
+
+.accordion {
+  background-color: #C5C5C5;
+  color: #000000;
+  cursor: pointer;
+  position: relative;
+  /*left: 15px;*/
+  margin-bottom: 5px;
+  padding: 18px;
+  width: 45%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.accordion2 {
+  background-color: #C5C5C5;
+  color: #000000;
+  cursor: pointer;
+  position: relative;
+  /*left: 15px;*/
+  margin-bottom: 5px;
+  padding: 18px;
+  width: 45%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover, .accordion2:hover { background-color: #ccc; }
+
+.accordion:after {
+  content: '\002B';
+  color: #000000;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.plus:after {
+  position: relative;
+  bottom: 14px;
+  content: '\002B';
+  color: #000000;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after, .active2:after { content: "\2212"; }
+
+.panel {
+  margin: auto;
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  width: 45%;
+  position: relative;
+  /*left: 15px;*/
+  bottom: 6px;
+}
+
+/*.btn-primary2 {*/
+/*  display: flex;*/
+/*  padding: var(--button-vertical-padding) var(--button-horizontal-padding);*/
+/*  align-items: center;*/
+/*  gap: var(--button-gap);*/
+/*  border-radius: var(--button-corner-radius);*/
+/*  background: var(--gradients-red-3);*/
+/*  width: 18%;*/
+/*  margin: auto;*/
+
+/*  !* Blur/20 *!*/
+/*  backdrop-filter: blur(10px);*/
+/*}*/
+
+.panel2-1 { max-height: 530px !important; }
+
+.panel2 {
+  padding-bottom: 10px;
+  line-height: 1rem;
+}
+
+.p-pad { padding-top: 10px; }
+
+.faq-cabin, .faq-infrared, .faq-products {
+  /*padding-left: 15px;*/
+  text-decoration: underline;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.infrared {
+  position: relative;
+  top: 40px;
+}
+
+.products {
+  position: relative;
+  top: 80px;
+}
+
+.info-section { display: block; }
+
+.footnote {
+  position: relative;
+  top: 140px;
+  padding: 20px;
+}
+
+/* End of FAQ Page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Aromatics Page */
+
+.service-grid2 {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 30%);
+  justify-content: center;
+  margin-top: var(--size-100);
+  position: relative;
+  top: 56px;
+}
+
+.container2 {
+  padding: 10px 20px 10px;
+  margin: auto;
+}
+
+.aromatics-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  top: 90px;
+}
+
+.aromatics-products > h2 > a {
+  text-decoration: none;
+  color: black;
+}
+
+.button-17 {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.button-17:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+  transform: scale(1.1);
+}
+
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.button-17:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.button-17:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button-17:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+
+/* End of Aromatics Page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Essential Oils */
+
+.essential-oils-wrapper {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px;
+  position: relative;
+}
+
+.essential-oils {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 35%);
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.essential {
+  display: flex;
+  justify-content: center;
+  font-size: var(--size-50);
+  text-align: center;
+}
+
+.flavors {
+  display: flex;
+  justify-content: center;
+}
+
+h3 > a { color: black; }
+
+.citrus-section {
+  display: block;
+  padding: var(--size-50) 0;
+  margin: 0 auto;
+}
+
+.floral-section {
+  display: block;
+  padding: var(--size-50) 0;
+  margin: 0 auto;
+}
+
+.mint-section, .spices-section, .forest-section, .resin-section, .blends-section {
+  padding: var(--size-50) 0;
+}
+
+#resin-oils {
+  margin: auto;
+  justify-content: center;
+  grid-template-columns: repeat(2, 35%);
+}
+
+.e-o { margin: 10px; }
+
+.essential-oils-card {
+  margin: 0 auto;
+  padding: 15px 10px 0 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  border-radius: 10px;
+  width: 87%;
+}
+
+.oils {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 20%;
+}
+
+.price-container { margin: 10px auto 0; }
+
+.oils2 { left: 24px; }
+
+.oils3 { margin-bottom: 250px; }
+
+.lemon-oil { left: 10px; }
+
+.lemon, .blood-orange, .green-mandarin, .peppermint, .lavender, .greek-lavender,
+.frankincense, .breathe-clear, .mountain_bandits, .eucalyptus, .artisan-lavender,
+.rose, .lemon-balm, .ginger { width: 30%; }
+
+.image {
+  position: relative;
+  width: 350px;
+  right: 180px;
+}
+
+.oils > * {
+  position: relative;
+  line-height: 1.5em;
+}
+
+.eucalyp > .price {
+  position: relative;
+  top: 30px
+}
+
+.image-oils {
+  display: block;
+  width: 30%;
+  margin: auto;
+  position: relative;
+  top: 26px;
+  left: 3px;
+}
+
+.image-oils2 {
+  display: block;
+  width: 30%;
+  margin: auto;
+  position: relative;
+}
+
+.image-oils4 { left: 9px; }
+
+.oils-overlay {
+  display: flex;
+  position: absolute;
+  bottom: -58px;
+  width: 351px;
+  height: 320px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+  border-radius: 10px;
+}
+
+.oils-overlay4 { left: -15px; }
+
+.oils-overlay-blur { backdrop-filter: blur(5px); }
+
+.oils-overlay > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.oils-overlay:hover { opacity: 1; }
+
+.oils-overlay:hover > * { transform: translateY(0); }
+
+.oils-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  position: relative;
+  top: 18px;
+}
+
+.basil { color: #76A882; }
+.bld-orange { color: #FE4B03; }
+.blue-tan { color: #B1C4CD; }
+.brth-clear { color: #5398C2; }
+.chamomile-german { color: #EE8842; }
+.chamomile-roman { color: #C975B6; }
+.clove-bud { color: #C56C30; }
+.eucalyp { color: #208354; }
+.eucalyptus-dives { color: #D08ABB; }
+.frank { color: #788E9F; }
+.grapefruit { color: #E887A1; }
+.gymnocephalum { color: #DA363C; }
+.italicum { color: #DA6916; }
+.lavend { color: #977BB5; }
+.lem { color: #E0B644; }
+.lemongrass { color: #54B448; }
+.lymph { color: #B52228 }
+.mandarin { color: #75B063; }
+.marjoram { color: #81BB6F; }
+.mountain { color: #7BB170; }
+.mint { color: #84ADC6; }
+.myrrh { color: #C17349; }
+.orange { color: #f58235; }
+.ravintsara { color: #23AAD7; }
+.wintergreen { color: #799E82; }
+.no-warts { color: #2BD4C9; }
+.vanilla { color: #C0A798; }
+.elderberry { color: #602E4E}
+
+.price {
+  font-size: var(--size-20);
+  font-weight: 600;
+  line-height: 60px;
+  margin-bottom: 0;
+  position: relative;
+  top: 18px;
+}
+
+.description {
+  text-align: center;
+  font-size: 0.8em;
+  padding: 1em 1em;
+}
+
+.oil-description {
+  font-size: 0.8em;
+  text-align: center;
+  padding: 1em 1em;
+}
+
+hr {
+  margin: auto;
+  width: 85%;
+  border: 1px solid black;
+}
+
+.new-items {
+  text-align: center;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+#more, #more2 {display: none;}
+
+/* End of Essential Oils */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Hydrosols */
+
+.hydrosol-title {
+  display: flex;
+  justify-content: center;
+  font-size: var(--size-50);
+}
+
+.hydrosol {
+  width: 25%;
+  margin: auto;
+}
+
+.hydro-name {
+  position: relative;
+  top: 15px;
+}
+
+.hydrosol-row3 { margin-bottom: 150px; }
+
+.hydrosol-image {
+  margin: auto;
+  width: 80%;
+}
+
+.hydrosol-card {
+  margin: 0 auto;
+  padding: 25px 0 0 0;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  border-radius: 10px;
+}
+
+.more-width { width: 28.2%; }
+
+.hydrosol-sprays {
+  display: block;
+  width: 20%;
+  margin: auto;
+  position: relative;
+}
+
+.image-hydrosol2 {
+  top: initial;
+  left: initial;
+}
+
+.hydrosols { width: 28%; }
+.hydrosols2 { width: 25%; }
+
+.hydrosol > * { line-height: 1.5em; }
+
+.hydro {
+  position: relative;
+  right: 12px;
+}
+
+.lav-bo-spear {
+  color: #A5CAA1;
+  text-align: center;
+}
+
+.pepper-hydro { height: 383px; }
+
+.rose-otto-overlay { height: 382px; }
+
+.blood-orange-hydro { color: #DE7028; }
+.rose-otto { color: #E299AE; }
+.ging { color: #D7894A; }
+.lemon-b { color: #D9A0AE; }
+.lemon-verbena { color: #4EA15A; }
+.victorian { color: #B5524E; }
+
+.hydro-description {
+  position: relative;
+  bottom: 40px;
+  text-align: center;
+  font-size: 0.9em;
+  padding: 1em 1em;
+}
+
+.plant-description {
+  text-align: center;
+  padding: 1em 1em;
+  /*position: relative;*/
+  /*bottom: 40px;*/
+  font-size: 0.9em;
+}
+
+.plant-description2 {
+  text-align: center;
+  padding: 1em 1em;
+  position: relative;
+  bottom: 40px;
+  font-size: 0.9em;
+}
+
+/* END OF HYDROSOLS PAGE */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Carrier Oils */
+
+.carrier-oils-wrapper {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px;
+  position: relative;
+}
+
+.carriers {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 35%);
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.carrier-oil {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 35%;
+}
+
+.kernel { width: 53%; }
+
+.carrier-section1 { padding-bottom: 0; }
+.carrier-section2 { padding-top: 0;}
+
+.carrier-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  font-size: 40px;
+}
+
+.carrier-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(339px, 1fr));
+}
+
+.carrier {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 80px;
+  margin: 0 0 300px 0;
+  line-height: 1.5em;
+}
+
+.carriers-oils {
+  display: flex;
+  justify-content: center;
+  width: 28%;
+}
+
+.carriers-oils2 { width: 18.5%; }
+
+.mango {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  height: 70%;
+}
+
+.image-carrier2 {
+  position: relative;
+  top: 86px;
+}
+
+.image-carrier {
+  position: relative;
+}
+
+.carrier-overlay {
+  display: flex;
+  position: absolute;
+  width: 351px;
+  height: 383px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+  border-radius: 10px;
+}
+
+.carrier-overlay-blur { backdrop-filter: blur(5px); }
+
+.carriers-overlay > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.carrier-overlay:hover { opacity: 1; }
+
+.carrier-overlay:hover > * { transform: translateY(0); }
+
+.man { color: #E5965A; }
+
+
+/* End of Carrier Oils */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of ESW Beauty page */
+
+/* Start of Juice Masks */
+
+.raw-juice-title {
+  display: flex;
+  justify-content: center;
+  font-size: var(--size-50);
+  padding: 10px;
+  text-align: center;
+}
+
+.pineapple-bliss {
+  position: relative;
+  top: 24px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.masks3 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -114px;
+  gap: 20px;
+  margin-bottom: 200px;
+}
+
+.juice-title {
+  position: relative;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 0 2px;
+  top: 24px;
+}
+
+.juice-description {
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  padding: 1em 1em;
+}
+
+.spirulina {
+  position: absolute;
+  width: 5%;
+  top: 86px;
+  right: 888px;
+  z-index: 1;
+}
+
+.apple-pear {
+  position: absolute;
+  width: 16%;
+  top: 30px;
+  left: 50px;
+  z-index: 1;
+}
+
+.pineapple-juice { color: #A0A451; }
+.pink-dream-juice { color: #CE8E99; }
+.anti-aging-juice { color: #839E2E; }
+.strawberries-juice { color: #e6b0b6; }
+.deep-detox { color: #97968E; }
+.blue-spirulina { color: #8EB9C7; }
+.red-apple { color: #AF5461; }
+
+/* End of Juice Masks */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Milk Masks */
+
+.plant-based { width: 24%; }
+
+.mask-container { margin: 0 auto 0; }
+
+.mask-container > .price-tag { top: 18px; }
+
+.milk-title {
+  position: relative;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0 2px;
+  top: 24px;
+}
+
+.milk-description {
+  text-align: center;
+  font-size: 1em;
+  padding: 1em 1em;
+}
+
+.milk-price {
+  font-size: var(--size-20);
+  font-weight: 600;
+  line-height: 60px;
+  margin-bottom: 0;
+  position: relative;
+  top: 20px;
+}
+
+.pumpkin {
+  position: absolute;
+  width: 18%;
+  top: 27px;
+  left: 50px;
+  z-index: 1;
+}
+
+.cacao {
+  position: absolute;
+  width: 18%;
+  top: 27px;
+  left: 50px;
+  z-index: 1;
+}
+
+.vanilla-milk { color: #B4C5D5; }
+.blueberry-milk { color: #8F9FB4; }
+.matcha-milk { color: #B7CB8D; }
+.avocado-milk { color: #859A62; }
+.pumpkin-spice { color: #EF9E73; }
+.cacao-powder { color: #926E5D; }
+
+/* End of Milk Masks */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Lip Treatment section */
+
+.guava-mango { color: #EBAFBB; }
+.vanilla-almond { color: #CC864D; }
+.white-pitaya { color: #DC1857; }
+
+
+/* End of Lip Treatment section */
+
+/* Start of Facial Tools */
+
+.tools-price {
+  position: relative;
+  top: 12px;
+}
+
+.title-and-description { text-align: center; }
+
+.rose-quartz {
+  padding: 0 6px;
+  color: #deb7b2;
+}
+
+.jade-roller { color: #8caa8c; }
+
+.facial-description {
+  text-align: center;
+  font-size: 1em;
+  padding: 1em 1em;
+}
+
+/* End of Facial Tools */
+
+/* Start of Candles section */
+
+img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; }
+
+.pink-dream-candle { color: #E97798; }
+
+
+/* End of Candles section */
+
+
+
+/* End of ESW Beauty page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Plant Therapy page */
+
+.blend-oils {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 90%;
+  border-radius: 2%;
+}
+
+
+/* End og Plant Therapy page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Himalayan Salt Products */
+
+/* Start of Salt Lamps */
+
+.block-text > .salt-products-header { font-family: 'Lumanosimo', sans-serif; }
+
+.salt-wrapper {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px;
+  position: relative;
+}
+
+.salt-lamps {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.salt-lamp-container {
+  position: relative;
+  top: 80px;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  height: 66%;
+}
+
+.salt-lamp-card {
+  margin: 0 auto;
+  padding: 25px 0 0 0;
+  height: 484px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  border-radius: 10px;
+}
+
+.lamp {
+  width: 50%;
+  margin: auto;
+}
+
+img[src*="pumpkin-lamp"] {
+  position: relative;
+  top: 70px;
+}
+
+img[src*="limited-edition"] {
+  position: absolute;
+  width: 6%;
+  top: 40px;
+  right: 0;
+  left: 42px;
+  z-index: 1;
+}
+
+.content {
+  display: grid;
+  border-radius: 10px;
+}
+
+.content > h1 {
+  margin-top: 15px;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Lumanosimo', sans-serif;
+}
+
+.price-days {
+  margin: 10px auto 40px;
+  text-align: center;
+}
+
+.price > h1 {
+  font-size: var(--size-25);
+}
+
+.price > p {
+  margin: 6px 0 0 4px;
+  font-size: 15px;
+  color: hsl(215, 51%, 70%);
+}
+
+.price, .time {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.price > h1 > sup { font-size: 14px; }
+
+.angel { margin: 0 auto; }
+
+.price-tag {
+  margin: 0 auto 0;
+  position: relative;
+  bottom: 22px;
+  top: 0;
+}
+
+.salt-lamp-name {
+  position: relative;
+  top: 15px;
+}
+
+.salt-lamp-name-2 {
+  position: relative;
+  top: 42px;
+}
+
+.salt-lamp-name-3 {
+  position: relative;
+  bottom: 7px;
+}
+
+.salt-lamp-name-4 {
+  position: relative;
+  top: 12px;
+}
+
+img[src*="cross"] {
+  position: relative;
+  top: 20px;
+}
+
+img[src*="soccer"] {
+  position: relative;
+  top: 40px;
+}
+
+.soccer-ball {
+  position: relative;
+  top: 83px;
+}
+
+img[src*="white-natural"] {
+  position: relative;
+  top: 20px;
+}
+
+img[src*="moon"] {
+  position: relative;
+  top: 25px;
+}
+
+img[src*="foot-dome"] {
+  position: relative;
+  top: 70px;
+}
+
+.foot-dome {
+  position: relative;
+  top: 133px;
+}
+
+img[src*="nightlight"] {
+  position: relative;
+  top: 40px;
+}
+
+img[src*="moon-nightlight"] {
+  position: relative;
+  top: initial;
+}
+
+.out-of-stock {
+  position: absolute;
+  width: 20%;
+  top: 30px;
+  left: 36px;
+  z-index: 1;
+}
+
+img[src*="IMG_2209"], img[src*="diffuser-sale"], img[src*="IMG_5544"], img[src*="IMG_4639"] {
+  width: 35%;
+  margin: auto;
+  position: relative;
+  bottom: 20px;
+}
+
+/* End of Salt Lamps */
+/* End of Himalayan Salt Products */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Diffusers section */
+
+.diffuser {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.diffuser-lamps {
+  display: block;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  border-radius: 10px;
+}
+
+.diffuse {
+  position: relative;
+  left: 3px;
+}
+
+.diffusers1 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 80px;
+  gap: 20px;
+  margin-bottom: 62px;
+}
+
+.diffusers2 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 80px;
+  gap: 20px;
+  margin-bottom: 62px;
+}
+
+.diffusers3 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 80px;
+  gap: 20px;
+  margin-bottom: 142px;
+}
+
+.diffusers4 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  gap: 20px;
+  margin-bottom: 244px;
+}
+
+img[src*="MoonGlow-Hero(2)"] {
+  position: relative;
+  top: 70px;
+  width: 60%;
+}
+
+.moon {
+  position: relative;
+  top: 86px;
+}
+
+img[src*="Breezy-White-Hero(2)"] {
+  position: relative;
+  top: 46px;
+  width: 60%;
+}
+
+.breezy-white {
+  position: relative;
+  top: 76px;
+}
+
+.diffuser-price {
+  font-size: var(--size-20);
+  font-weight: 600;
+  line-height: 60px;
+  margin-bottom: 0;
+  position: relative;
+  top: 0;
+  text-align: center;
+}
+
+.moon-glow { width: 80%; }
+.marble { width: 38%; }
+.leah { width: 52%; }
+
+.daisy {
+  width: 82%;
+  top: 8px;
+}
+
+.kate { width: 37%; }
+.meadow { width: 53%; }
+.blizzard { width: 65%; }
+.breezy { width: 75%; }
+
+
+/* End of Diffusers section */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Portland Bee Balm section */
+
+.balm { width: 30%; }
+
+.bee-balm {
+  width: 30%;
+  position: relative;
+  left: 315px;
+}
+
+.bee3 { margin-bottom: 40px; }
+
+/* End of Portland Bee Balm section */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Conscious Coconut page */
+
+img[src*="MainTube"] { border-radius: 10px; }
+
+.spirulina2 {
+  position: absolute;
+  width: 15%;
+  top: 30px;
+  left: 48px;
+  z-index: 1;
+}
+
+.spirulina3 {
+  position: absolute;
+  width: 5%;
+  top: 85px;
+  left: 652px;
+  z-index: 1;
+}
+
+
+
+/* End of Conscious Coconut page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Mindfully Made page */
+
+/*.mindfully-title { padding-top: 150px; }*/
+
+.mindfully-made-section {
+  display: block;
+  /*padding: var(--size-150) 0;*/
+  margin: 0 auto;
+}
+
+.mindfully-product-section { padding: var(--size-50) 0; }
+
+.mindfully-made-syrup {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(1, 35%);
+  justify-content: center;
+  /*padding-top: 60px;*/
+}
+
+/* End of Mindfully Made page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Testimonials */
+
+.testimonials { margin: var(--size-100) 0; }
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  gap: var(--size-20);
+  margin: 0 auto;
+}
+
+.testimonials .block-text {
+  padding-right: 0;
+  text-align: center;
+  margin: var(--size-100) 0;
+}
+
+.testimonial-card {
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  padding: var(--size-30);
+}
+
+.testimonial-card.lg {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+}
+
+.testimonial-card .quote {
+  width: 4.375rem;
+  float: right;
+  margin-top: var(--size-16);
+}
+
+.testimonial-card.md .bottom p { font-size: var(--size-14);}
+
+.testimonial-card .top {
+  display: flex;
+  align-items: center;
+  padding-bottom: var(--size-10);
+}
+
+.testimonial-card img.profile {
+  width: 4.375rem;
+  border-radius: 50%;
+  margin-right: var(--size-20);
+}
+
+.testimonial-card.lg img.profile { width: 5rem; }
+
+.top h4 {
+  margin-top: 0;
+  margin-bottom: var(--size-10);
+  font-weight: 600;
+  font-size: var(--size-18);
+}
+
+.bottom p {
+  margin: 0;
+  font-size: var(--size-16);
+  line-height: 1.6;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--size-50);
+  padding: var(--size-100) 0;
+}
+
+/* End of Testimonials */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Footer */
+
+footer.bg-footer { background-color: var(--footer); }
+
+footer .footer-bottom { background-color: var(--footer-base); }
+
+footer .footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--size-50);
+  padding: var(--size-100) 0;
+  padding-top: 60px;
+}
+
+footer .footer-col {
+  justify-self: center;
+  max-width: 269px;
+}
+
+.footer-top h4 {
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: var(--size-16);
+  font-size: var(--size-18);
+}
+
+.footer-top h5 {
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: var(--size-16);
+  font-size: var(--size-14);
+}
+
+.inside {
+  position: relative;
+  left: 30px;
+}
+
+.contact-info li {
+  color: var(--white);
+  margin-bottom: var(--size-14);
+}
+
+.contact-info li i { padding-right: var(--size-10); }
+
+.social-icons ul li {
+  display: inline-block;
+  width: 20px;
+  height: 30px;
+  margin: 13px;
+}
+
+.icons {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding-right: var(--size-10);
+}
+
+.phone {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.payments {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 30%);
+  position: relative;
+  bottom: 60px;
+}
+
+.pay, .pay2 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pay2 {
+  position: relative;
+  left: 2px;
+}
+
+.payment {
+  height: var(--size-40);
+  width: var(--size-40);
+}
+
+.payment2 {
+  width: 50px;
+  height: 50px;
+}
+
+.cash {
+  position: relative;
+  bottom: 10px;
+}
+
+.checks {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  bottom: 8px;
+}
+
+img[src*="check-book"], img[src*="contactless_payment"] {
+  position: relative;
+  top: initial;
+  bottom: 8px;
+}
+
+.visa {
+  width: 50px;
+  height: 31px;
+}
+
+.credit-card {
+  height: 30px;
+  width: 50px;
+}
+
+.ccard {
+  height: 48px;
+  width: 47px;
+}
+
+.discover {
+  position: relative;
+  height: 34px;
+  width: 47px;
+  top: 9px;
+  left: 1px;
+}
+
+.contactless {
+  position: relative;
+  top: 3px;
+}
+
+.apple {
+  position: relative;
+  top: 7px;
+  left: 4px;
+  height: 39px;
+  width: 47px;
+}
+
+.gpay {
+  position: relative;
+  left: 5px;
+}
+
+/*.cash-app {*/
+/*  position: relative;*/
+/*  height: 51px;*/
+/*  width: 62px;*/
+/*  bottom: 10px;*/
+/*}*/
+
+.jcb {
+  position: relative;
+  width: 60px;
+  height: 64px;
+  bottom: 10px;
+  left: 0;
+}
+
+img[src*="Cash-App2"], img[src*="JCB2"] {
+  position: relative;
+  right: 1px;
+}
+
+img[src*="venmo"] {
+  position: relative;
+  right: 1px;
+  width: 49px;
+}
+
+.venmo {
+  position: relative;
+  height: 26px;
+  width: 38px;
+  top: 11px;
+}
+
+.services-wrapper p {
+  color: #858497;
+  line-height: var(--size-20);
+}
+
+.services-wrapper h5 { margin-bottom: 5px; }
+
+.recent-posts {
+  display: flex;
+  margin-bottom: var(--size-16);
+}
+
+.recent-posts .post-img-wrapper {
+  width: var(--size-100);
+  margin-right: var(--size-10);
+}
+
+.post-inner h6 {
+  margin: 0;
+  line-height: var(--size-20);
+}
+
+.post-inner h6 a {
+  color: var(--white);
+  font-weight: 600;
+  margin-right: -9.375rem;
+  font-size: 0.75rem;
+  line-height: var(--size-16);
+}
+
+.post-inner span {
+  color: var(--font-color-light);
+  font-size: var(--size-10);
+}
+
+.footer-bottom {
+  padding: var(--size-16) 0;
+  text-align: center;
+}
+
+.footer-bottom-wrapper {
+  justify-content: space-around;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px; }
+
+.developer {
+  position: relative;
+  right: 12px;
+  text-decoration: none;
+  color: #FF4500;
+}
+
+.copyright p { color: var(--white); }
+
+/*.footer-bottom-links {*/
+/*  margin-top: var(--size-10);*/
+/*  padding-left: 10px;*/
+/*}*/
+
+.footer-bottom-links ul li {
+  display: inline-block;
+  margin-right: var(--size-10);
+  color: var(--white);
+}
+
+.footer-bottom-links ul li a { color: var(--white); }
+
+.email {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.tel { color: white; }
+
+img[src*="DOC"] {
+  display: initial;
+  position: relative;
+  width: 4%;
+  right: 4px;
+  bottom: 1px;
+}
+
+/* End of Footer */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Start of Scroll-top section */
+
+.arrow {
+  display: inline-block;
+  width: 70%;
+}
+
+#scrollUp {
+  background-color: transparent;
+  background-image: linear-gradient(
+          90deg, #9ccdfe 0%, #94aafd 100%);
+  color: var(--white);
+  font-size: var(--size-20);
+  height: var(--size-30);
+  width: var(--size-30);
+  line-height: var(--size-25);
+  position: fixed;
+  bottom: var(--size-18);
+  right: var(--size-30);
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* End of Scroll-Top section */
