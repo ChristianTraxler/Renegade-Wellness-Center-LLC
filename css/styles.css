@@ -1901,6 +1901,16 @@ img[src*="MainTube"] { border-radius: 10px; }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+/* Start of Two Tree Soap page */
+
+.text-container { padding-bottom: 30px; }
+
+
+
+/* End of Two Tree Soap page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Testimonials */
 
 .testimonials { margin: var(--size-100) 0; }
