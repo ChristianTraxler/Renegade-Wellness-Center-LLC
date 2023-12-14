@@ -384,7 +384,7 @@
 
   /* Start of Essential Oils */
 
-  .essential-oils { grid-template-columns: repeat(2, 50%); }
+  .essential-oils, .soaps { grid-template-columns: repeat(2, 50%); }
 
   .section2 { height: 4838px; }
   .section3 { height: 6466px; }
@@ -770,7 +770,7 @@
 
   .essential-oils-wrapper { padding: 0 0; }
 
-  .essential-oils, #resin-oils { grid-template-columns: initial; }
+  .essential-oils, #resin-oils, .soaps { grid-template-columns: initial; }
 
   .oils > * { }
 
