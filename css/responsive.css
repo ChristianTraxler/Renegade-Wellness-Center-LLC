@@ -910,6 +910,17 @@
 
   /* Start of EWS Beauty page */
 
+  .sale-20-off {
+    width: 26%;
+    top: 55px;
+    right: 315px;
+  }
+
+  .sale-20-off\(2\) {
+    top: -4px;
+    right: 319px;
+  }
+
   .esw-beauty-products {
     display: grid;
     grid-template-rows: repeat(1, 1fr);
@@ -1205,6 +1216,25 @@
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+  /* Start of Plant Therapy page */
+
+  .sale-20-off\(4\) {
+    position: absolute;
+    width: 24%;
+    top: -4px;
+    right: 300px;
+    z-index: 1;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  }
+
+
+
+
+
+  /* End of Plant Therapy page */
+
+  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
   /* Start of Contact page */
   .pricing-section { padding: 100px 0 100px 0; }
   .pricing-section2 { padding: 100px 0 100px 0; }
@@ -1410,6 +1440,19 @@
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+  /* Start of ESW Beauty page */
+
+  .sale-20-off {
+    top: 57px;
+    right: 286px;
+  }
+
+  .sale-20-off\(2\) {
+    width: 25%;
+    top: -3px;
+    right: 289px;
+  }
+
   /* Start of Juice Masks */
 
   .juices { top: 0; }
@@ -1585,6 +1628,24 @@
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+  /* Start of Plant Therapy page */
+
+  .sale-20-off\(4\) {
+    position: absolute;
+    width: 24%;
+    top: -2px;
+    right: 276px;
+    z-index: 1;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  }
+
+
+
+
+
+  /* End of Plant Therapy page */
+
+
   /* Start of Footer */
 
   .copyright {
@@ -1664,6 +1725,13 @@
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   /* Start of ESW Beauty page */
+
+  .sale-20-off { right: 272px; }
+
+  .sale-20-off\(2\) {
+    top: -2px;
+    right: 275px;
+  }
 
   .esw-beauty-products { grid-template-columns: repeat(2, 1fr); }
 
@@ -1793,6 +1861,23 @@
   /* End of Portland Bee Balm */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+  /* Start of Plant Therapy page */
+
+  .sale-20-off\(4\) {
+    position: absolute;
+    width: 24%;
+    top: -1px;
+    right: 262px;
+    z-index: 1;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  }
+
+
+
+
+
+  /* End of Plant Therapy page */
 
   /* Start of Footer */
 

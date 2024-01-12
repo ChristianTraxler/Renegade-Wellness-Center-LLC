@@ -1353,6 +1353,41 @@ hr {
 
 /* Start of ESW Beauty page */
 
+.sale-20-off {
+     position: absolute;
+     width: 8%;
+     top: 58px;
+     right: 873px;
+     z-index: 1;
+     /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
+   }
+
+.sale-20-off\(2\) {
+  position: absolute;
+  width: 24%;
+  top: -2px;
+  right: 273px;
+  z-index: 1;
+}
+
+.sale-20-off\(3\) {
+  position: absolute;
+  width: 8%;
+  top: 58px;
+  right: 859px;
+  z-index: 1;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+
+.sale-20-off\(4\) {
+  position: absolute;
+  width: 24%;
+  top: -3px;
+  right: 260px;
+  z-index: 1;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+
 /* Start of Juice Masks */
 
 .raw-juice-title {
