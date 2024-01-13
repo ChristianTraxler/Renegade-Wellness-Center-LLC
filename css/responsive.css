@@ -929,6 +929,8 @@
     top: 90px;
   }
 
+  .sale2 { top: -1px; }
+
   /* Start of Juice Masks */
 
   .raw-juice-title { font-size: var(--size-40); }
