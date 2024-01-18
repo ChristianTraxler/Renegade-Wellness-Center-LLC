@@ -43,7 +43,7 @@
   /* End of Juice Masks */
 }
 
-/* iPads and Tablets - portrait */
+/*~~~~~~~ iPads and Tablets - portrait ~~~~~~~*/
 
 @media screen and (max-width: 1024px) {
   /* Start of Home page */
@@ -622,8 +622,9 @@
   #resin-oils { grid-template-columns: repeat(2, 60%); }
 }
 
-/* Mobile Screens */
+/*~~~~~~~ Mobile Screens ~~~~~~~*/
 
+/* iPhone 15 Pro Max screen size 430px */
 @media screen and (max-width: 599px) {
 
   /* Start of Navbar */
@@ -1311,6 +1312,8 @@
 
   /* End of Footer */
 }
+
+/* iPhone 14 Pro screen size 393px */
 
 @media screen and (max-width: 400px) {
 
