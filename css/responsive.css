@@ -773,7 +773,7 @@
 
   .essential-oils-wrapper { padding: 0 0; }
 
-  .essential-oils, #resin-oils, .soaps { grid-template-columns: initial; }
+  .essential-oils, #resin-oils, .soaps, .clay-mask-container { grid-template-columns: initial; }
 
   .oils > * { }
 

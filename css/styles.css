@@ -1127,7 +1127,7 @@ hr {
 .new-items {
   text-align: center;
   font-weight: 600;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 
 #more, #more2 {display: none;}
@@ -1561,6 +1561,8 @@ img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; 
 
 /* Start of Plant Therapy page */
 
+.sets-container { grid-template-columns: repeat(1, 35%); }
+
 .blend-oils {
   display: flex;
   justify-content: center;
@@ -1908,7 +1910,7 @@ img[src*="Airburst-waterless"] { width: 60%; }
   top: 33px;
 }
 
-img[src*="Cool-Mist-plug-in"] { width: 30%; }
+img[src*="Cool-Mist-plug-in"] { width: 30%; }ƒ
 
 
 /* End of Diffusers section */
@@ -1994,6 +1996,14 @@ img[src*="MainTube"] { border-radius: 10px; }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Start of Two Tree Soap page */
+
+.clay-mask-container {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 35%);
+  justify-content: center;
+  padding-top: 60px;
+}
 
 .text-container { padding-bottom: 30px; }
 
