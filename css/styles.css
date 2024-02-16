@@ -1803,6 +1803,11 @@ img[src*="nightlight"] {
   top: 40px;
 }
 
+img[src*="heart"] {
+  position: relative;
+  left: 18px;
+}
+
 img[src*="moon-nightlight"] {
   position: relative;
   top: initial;
