@@ -1803,7 +1803,7 @@ img[src*="nightlight"] {
   top: 40px;
 }
 
-img[src*="heart"] {
+img[src*="heart-night-light"] {
   position: relative;
   left: 18px;
 }
