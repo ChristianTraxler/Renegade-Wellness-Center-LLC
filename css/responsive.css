@@ -771,7 +771,7 @@
   .citrus-section, .floral-section, .mint-section, .spices-section,
   .resin-section, .forest-section, .blends-section { height: initial; }
 
-  .essential-oils-wrapper { padding: 0 0; }
+  .essential-oils-wrapper, .carrier-oils-wrapper { padding: 0 0; }
 
   .essential-oils, #resin-oils, .soaps, .clay-mask-container { grid-template-columns: initial; }
 
