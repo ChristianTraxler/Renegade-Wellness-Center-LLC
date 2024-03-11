@@ -999,7 +999,7 @@ h3 > a { color: black; }
   grid-template-columns: repeat(2, 35%);
 }
 
-.e-o { margin: 10px; }
+.e-o { margin: 8px; }
 
 .essential-oils-card {
   margin: 0 auto;
