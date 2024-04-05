@@ -757,6 +757,12 @@
 
   /*.column1 { margin-right: auto; }*/
 
+  .aromatics-products {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+  }
+
   /* End of Aromatics Products */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

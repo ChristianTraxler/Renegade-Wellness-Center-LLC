@@ -2126,7 +2126,9 @@ img[src*="MainTube"] { border-radius: 10px; }
   padding-top: 60px;
 }
 
-
+.soap-sale {
+  text-align: center;
+}
 
 /* End of Two Tree Soap page */
 
