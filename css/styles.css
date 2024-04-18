@@ -2021,7 +2021,15 @@ img[src*="Airburst-waterless"] { width: 60%; }
   top: 33px;
 }
 
-img[src*="Cool-Mist-plug-in"] { width: 30%; }ƒ
+img[src*="Cool-Mist-plug-in"] { width: 30%; }
+
+.daisy-out {
+  position: absolute;
+  width: 22%;
+  top: 28px;
+  left: 30px;
+  z-index: 1;
+}
 
 
 /* End of Diffusers section */
