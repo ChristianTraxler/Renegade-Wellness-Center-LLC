@@ -2001,7 +2001,7 @@ img[src*="Breezy-White-Hero(2)"] {
   text-align: center;
 }
 
-.moon-glow { width: 80%; }
+.moon-glow, .willow { width: 80%; }
 .marble { width: 38%; }
 .leah { width: 52%; }
 
