@@ -1639,6 +1639,42 @@ img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; 
   font-weight: 700;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 320px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 25px 25px;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 
 /* End og Plant Therapy page */
 
@@ -1735,7 +1771,17 @@ img[src*="limited-edition"] {
   font-size: var(--size-25);
 }
 
+.price2 > h1 {
+  font-size: var(--size-25);
+}
+
 .price > p {
+  margin: 6px 0 0 4px;
+  font-size: 15px;
+  color: hsl(215, 51%, 70%);
+}
+
+.price2 > p {
   margin: 6px 0 0 4px;
   font-size: 15px;
   color: hsl(215, 51%, 70%);
@@ -1748,6 +1794,7 @@ img[src*="limited-edition"] {
 }
 
 .price > h1 > sup { font-size: 14px; }
+.price2 > h1 > sup { font-size: 14px; }
 
 .angel { margin: 0 auto; }
 
@@ -1756,6 +1803,12 @@ img[src*="limited-edition"] {
   position: relative;
   bottom: 22px;
   top: 0;
+}
+
+.price2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .salt-lamp-name {

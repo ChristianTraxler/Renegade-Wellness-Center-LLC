@@ -1090,10 +1090,18 @@
     padding-bottom: 80px;
   }
 
+  .himalayan-salt-products {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+  }
+
   .himalayan-salt-container > section > div > h2 {
     width: 80%;
     margin: auto;
   }
+
+  .salt-lamp-card { height: 507px; }
 
   img[src*="limited-edition"] {  width: 20%; }
 
@@ -1853,6 +1861,8 @@
   /* Start of Hand Carved Salt Lamps */
 
   .himalayan-salt-container > section > div > h2 { width: 90%; }
+
+  .salt-lamp-card { height: 484px; }
 
   .lamps { left: 10px; }
 
