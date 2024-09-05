@@ -1750,6 +1750,11 @@ img[src*="pumpkin-lamp"] {
   top: 70px;
 }
 
+img[src*="plain-pumpkin"] {
+  position: relative;
+  top: 80px;
+}
+
 img[src*="limited-edition"] {
   position: absolute;
   width: 6%;
