@@ -1648,6 +1648,11 @@ img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; 
   border-radius: 2%;
 }
 
+.eye-pricing {
+  position: relative;
+  left: 16px;
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
