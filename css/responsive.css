@@ -919,6 +919,11 @@
 
   .button-17 { width: 84%; }
 
+  .patches {
+    font-size: 14px;
+    padding: 5px;
+  }
+
   .sale-20-off {
     width: 26%;
     top: 54px;
