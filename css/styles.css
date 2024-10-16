@@ -2214,6 +2214,19 @@ img[src*="MainTube"] { border-radius: 10px; }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+/* Start of The Good Patch page */
+
+img[src*="thegoodpatch"] {
+  width: 75%;
+  margin: auto;
+}
+
+sub {
+  position: relative;
+  bottom: 3px;
+  font-size: 12px;
+}
+
 /* Start of Testimonials */
 
 .testimonials { margin: var(--size-100) 0; }
