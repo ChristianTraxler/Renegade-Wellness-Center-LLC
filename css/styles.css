@@ -1900,6 +1900,10 @@ img[src*="tear-drop(pink)"] {
   width: 74%;
 }
 
+img[src*="tear-drop(white)"] {
+  width: 48%;
+}
+
 img[src*="flower(white)"], img[src*="angel"] {
   position: relative;
   bottom: 25px;
