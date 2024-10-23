@@ -1830,6 +1830,11 @@ img[src*="limited-edition"] {
   align-items: center;
 }
 
+.angel-lamp-name {
+  position: relative;
+  bottom: 80px;
+}
+
 .salt-lamp-name {
   position: relative;
   top: 15px;
@@ -1848,6 +1853,11 @@ img[src*="limited-edition"] {
 .salt-lamp-name-4 {
   position: relative;
   top: 12px;
+}
+
+.flower-lamp-name {
+  position: relative;
+  bottom: 46px;
 }
 
 img[src*="cross"] {
@@ -1886,6 +1896,16 @@ img[src*="swan"], img[src*="turtle"], img[src*="tropical-fish"] {
   top: 82px;
 }
 
+img[src*="tear-drop(pink)"] {
+  width: 74%;
+}
+
+img[src*="flower(white)"], img[src*="angel"] {
+  position: relative;
+  bottom: 25px;
+  width: 74%;
+}
+
 .fish-lamp-name {
   position: relative;
   top: 98px;
@@ -1911,9 +1931,20 @@ img[src*="heart-night-light"] {
   left: 18px;
 }
 
+img[src*="moon(pink)"] {
+  position: relative;
+  top: 0;
+  bottom: 20px;
+  width: 40%;
+}
+
 img[src*="moon-nightlight"] {
   position: relative;
   top: initial;
+}
+
+img[src*="aromatherapy-nl"] {
+  width: 32%;
 }
 
 .out-of-stock {

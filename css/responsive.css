@@ -1125,6 +1125,8 @@
     gap: initial;
   }
 
+  .flower-lamp-name { top: 0; }
+
   .salt-cards { left: initial; }
 
   img[src*="white"] { top: 4px; }
@@ -1133,6 +1135,8 @@
     position: relative;
     top: 65px;
   }
+
+  .soccer-ball-mobile { top: 140px; }
 
   .out-of-stock { width: 24%; }
 
