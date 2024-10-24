@@ -1128,6 +1128,7 @@ h3 > a { color: black; }
 .vanilla { color: #C0A798; }
 .elderberry { color: #602E4E; }
 .lions-mane { color: #E6E3A1; }
+.frost-dream { color: #A2D1D6; }
 
 .price {
   font-size: var(--size-20);
@@ -1265,7 +1266,7 @@ hr {
   font-size: 0.9em;
 }
 
-/* END OF HYDROSOLS PAGE */
+/* END of Hydrosols page */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
