@@ -1300,6 +1300,11 @@
     left: 8px;
   }
 
+  .ctct-inline-form {
+    width: 85%;
+    margin: auto;
+  }
+
   /* End of Contact page */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

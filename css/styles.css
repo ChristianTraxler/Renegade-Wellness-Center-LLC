@@ -667,6 +667,13 @@ img[src*="FA98204A"] {
   font-weight: bold;
 }
 
+.ctct-inline-form {
+  width: 65%;
+  margin: auto;
+}
+
+.g-recaptcha { display: none; }
+
 /* End of Contact Page */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
