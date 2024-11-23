@@ -947,12 +947,16 @@ img[src*="FA98204A"] {
   max-width: 1200px;
 }
 
+.sale-30-off {
+  position: absolute;
+  width: 12%;
+  top: 18px;
+  right: 310px;
+  z-index: 1;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
 
-/* End of Aromatics Page */
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/* Start of Essential Oils */
+/* Start of Essential Oils section */
 
 .essential-oils-wrapper {
   margin: auto;
@@ -1167,16 +1171,13 @@ hr {
 .new-items {
   text-align: center;
   font-weight: 600;
-  /*text-decoration: underline;*/
 }
 
 #more, #more2 {display: none;}
 
-/* End of Essential Oils */
+/* End of Essential Oils section */
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/* Start of Hydrosols */
+/* Start of Hydrosols section */
 
 .hydrosol-title {
   display: flex;
@@ -1273,11 +1274,9 @@ hr {
   font-size: 0.9em;
 }
 
-/* END of Hydrosols page */
+/* END of Hydrosols section */
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/* Start of Carrier Oils */
+/* Start of Carrier Oils section */
 
 .carrier-oils-wrapper {
   margin: auto;
@@ -1381,7 +1380,9 @@ hr {
 .man { color: #E5965A; }
 
 
-/* End of Carrier Oils */
+/* End of Carrier Oils section */
+
+/* End of Aromatics Page */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 

@@ -751,7 +751,7 @@
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-  /* Start of Aromatics Products */
+  /* Start of Aromatics page */
 
   .oil-sale { width: 60%; }
 
@@ -763,11 +763,9 @@
     justify-items: center;
   }
 
-  /* End of Aromatics Products */
+  .sale-30-off { right: 340px; }
 
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-  /* Start of Essential Oils page */
+  /* Start of Essential Oils section */
 
   .essential-oils-container {
     position: relative;
@@ -792,11 +790,10 @@
     font-size: 0.8em;
   }
 
-  /* End of Essential Oils page */
+  /* End of Essential Oils section */
 
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-  /* Start of Hydrosols */
+  /* Start of Hydrosols section */
 
   .sprays { top: 653px; }
 
@@ -894,11 +891,9 @@
     height: 94%;
   }
 
-  /* End of Hydrosol */
+  /* End of Hydrosol section */
 
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-  /* Start of Carrier Oils */
+  /* Start of Carrier Oils section */
 
   .carriers { grid-template-columns: initial; }
 
@@ -911,7 +906,9 @@
 
   .carrier-overlay { height: 400px; }
 
-  /* End of Carrier Oils */
+  /* End of Carrier Oils section */
+
+  /* End of Aromatics page */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -945,7 +942,7 @@
 
   .sale2 { top: -1px; }
 
-  /* Start of Juice Masks */
+  /* Start of Juice Masks section */
 
   .raw-juice-title { font-size: var(--size-40); }
 
@@ -997,11 +994,9 @@
 
   .apple-pear { left: 26px; }
 
-  /* End of Juice Masks */
+  /* End of Juice Masks section */
 
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-  /* Start of Milk Mask */
+  /* Start of Milk Mask section */
 
   .plant-based {
     position: relative;
@@ -1035,11 +1030,9 @@
 
   .cacao { left: 26px; }
 
-  /* End of Milk Mask */
+  /* End of Milk Mask section */
 
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-  /* Start of Facial Tools */
+  /* Start of Facial Tools section */
 
   .tools {
     position: relative;
@@ -1082,11 +1075,13 @@
   .rose-quartz-price, .jade-roller-price { top: 20px; }
 
 
-  /* End of Facial Tools */
+  /* End of Facial Tools section */
+
+  /* End of EWS Beauty page */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-  /* Start of Himalayan Salt Products Section */
+  /* Start of Himalayan Salt Products page */
 
   /* Start of Hand Carved Salt Lamps */
 
@@ -1146,7 +1141,7 @@
 
   /* End of Hand Carved Salt Lamps */
 
-  /* End of Himalayan Salt Products Section */
+  /* End of Himalayan Salt Products page */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -1491,6 +1486,8 @@
 
   /* End of Carrier Oils */
 
+  .sale-30-off { right: 310px; }
+
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   /* Start of ESW Beauty page */
@@ -1713,6 +1710,8 @@
 
 @media screen and (max-width: 375px) {
 
+  /* Start of Aromatics International page */
+
   /* Start of Essential Oils */
 
   .group2 { top: 48px; }
@@ -1776,6 +1775,10 @@
   .carrier-overlay { width: 365px; }
 
   /* End of Carrier Oils */
+
+  .sale-30-off { right: 290px; }
+
+  /* End of Aromatics International page */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
