@@ -1026,9 +1026,7 @@
 
   .description2 { font-size: 1em; }
 
-  .pumpkin { left: 26px; }
-
-  .cacao { left: 26px; }
+  .pumpkin, .cacao { left: 322px; }
 
   /* End of Milk Mask section */
 
@@ -1073,6 +1071,17 @@
   .facial-description { font-size: 1em; }
 
   .rose-quartz-price, .jade-roller-price { top: 20px; }
+
+  .sale-35-off {
+    width: 14%;
+    /*top: 94px;*/
+    right: 348px;
+  }
+
+  .sale-20-off\(5\) {
+    top: -4px;
+    right: 314px;
+  }
 
 
   /* End of Facial Tools section */
@@ -1194,6 +1203,8 @@
   }
 
   .diffuser-price { top: 0; }
+
+  .sale-10-off { right: 288px; }
 
   /* End of Diffusers section */
 
@@ -1599,6 +1610,13 @@
 
   /* End of Facial Tools */
 
+  /* Start of Candles section */
+
+  .sale-35-off { right: 293px; }
+
+  /* End of Candles section */
+
+  /* End of ESW Beauty page */
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   /* Start of Himalayan Salt Products Section */
@@ -1634,6 +1652,11 @@
     top: 0;
   }
 
+  .sale-20-off\(6\) {
+    top: 1px;
+    right: 238px;
+  }
+
   /* End of Hand Carved Salt Lamps */
 
   /* End of Himalayan Salt Products Section */
@@ -1661,6 +1684,15 @@
   .diffusers2 { top: 143px; }
   .diffusers3 { top: 195px; }
   .diffusers4 { top: 219px; }
+
+  .sale-10-off {
+    position: absolute;
+    width: 14%;
+    top: 18px;
+    right: 250px;
+    z-index: 1;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  }
 
   /* End of Diffusers section */
 
@@ -1869,7 +1901,19 @@
 
   .facial-description { font-size: 0.9em; }
 
+  .sale-35-off {
+    position: absolute;
+    width: 14%;
+    /*top: 33px;*/
+    right: 280px;
+    z-index: 1;
+  }
+
+  .sale-20-off\(5\) { right: 268px; }
+
   /* End of Facial Tools */
+
+  /* End of ESW Beauty page */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -1884,6 +1928,12 @@
   .lamps { left: 10px; }
 
   .salt-row-3 { margin-bottom: 450px; }
+
+  .sale-20-off\(6\) {
+    width: 28%;
+    top: -1px;
+    right: 211px;
+  }
 
   /* End of Hand Carved Salt Lamps */
 
@@ -1911,6 +1961,16 @@
   .kate-card { width: 104% }
   .meadow-card { top: 74px; }
   .breezy-card { top: 180px; }
+
+  /*.sale-35-off\(2\) {*/
+  /*  position: absolute;*/
+  /*  width: 14%;*/
+  /*  !*top: 94px;*!*/
+  /*  right: 280px;*/
+  /*  z-index: 1;*/
+  /*}*/
+
+  .sale-10-off { right: 234px; }
 
   /* End of Diffuser page */
 

@@ -1389,19 +1389,19 @@ hr {
 /* Start of ESW Beauty page */
 
 .sale-20-off {
-     position: absolute;
-     width: 8%;
-     top: 58px;
-     right: 897px;
-     z-index: 1;
-     /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
-   }
+  position: absolute;
+  width: 4%;
+  top: 77px;
+  right: 919px;
+  z-index: 1;
+  /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
+}
 
 .sale-20-off\(2\) {
   position: absolute;
-  width: 24%;
-  top: -2px;
-  right: 297px;
+  width: 12%;
+  /* top: -2px; */
+  right: 319px;
   z-index: 1;
 }
 
@@ -1419,6 +1419,15 @@ hr {
   width: 24%;
   top: -3px;
   right: 260px;
+  z-index: 1;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+
+.sale-20-off\(5\) {
+  position: absolute;
+  width: 24%;
+  top: -2px;
+  right: 287px;
   z-index: 1;
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
@@ -1529,7 +1538,7 @@ hr {
   position: absolute;
   width: 18%;
   top: 27px;
-  left: 50px;
+  left: 300px;
   z-index: 1;
 }
 
@@ -1537,7 +1546,7 @@ hr {
   position: absolute;
   width: 18%;
   top: 27px;
-  left: 50px;
+  left: 300px;
   z-index: 1;
 }
 
@@ -1590,6 +1599,14 @@ hr {
 img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; }
 
 .pink-dream-candle { color: #E97798; }
+
+.sale-35-off {
+  position: absolute;
+  width: 12%;
+  /* top: -2px; */
+  right: 308px;
+  z-index: 1;
+}
 
 
 /* End of Candles section */
@@ -2023,6 +2040,15 @@ img[src*="salt-pillow"] {
   top: 65px;
 }
 
+.sale-20-off\(6\) {
+  position: absolute;
+  width: 24%;
+  top: -2px;
+  right: 274px;
+  z-index: 1;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+
 /* End of Salt Lamps */
 /* End of Himalayan Salt Products */
 
@@ -2145,6 +2171,15 @@ img[src*="Cool-Mist-plug-in"] { width: 30%; }
   top: 28px;
   left: 30px;
   z-index: 1;
+}
+
+.sale-10-off {
+  position: absolute;
+  width: 12%;
+  top: 18px;
+  right: 300px;
+  z-index: 1;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 
