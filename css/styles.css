@@ -245,7 +245,26 @@ ul.breadcrumb > .not-active > a { color: gray; }
   border-radius: var(--size-25) !important;
   box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  /*border-top: 1px solid rgba(255, 255, 255, 0.25);*/
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,.125);
+}
+
+.card2 {
+  position: relative;
+  width: 274px;
+  height: 220px;
+  background-color: white;
+  /*background: rgba(255, 255, 255, 0.1);*/
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--size-25) !important;
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /*border-top: 1px solid rgba(255, 255, 255, 0.25);*/
   transition: 1s;
   display: flex;
   justify-content: center;
@@ -305,7 +324,7 @@ ul.breadcrumb > .not-active > a { color: gray; }
   gap: var(--size-10);
 }
 
-.card .content .details h3 { font-weight: 600; }
+/*.card .content .details h3 { font-weight: 600; }*/
 
 .card .content .details ion-icon { font-size: 1.5em; }
 
@@ -613,6 +632,9 @@ img[src*="Holiday"] {
 .aromatics { font-size: 28px; }
 .beauty { font-size: 30px; }
 
+.eo-a-card { font-size: smaller }
+.eo-a-card2 { font-size: 30px; }
+
 .information {
   text-align: center;
   font-size: 1.2rem;
@@ -636,8 +658,11 @@ img[src*="FA98204A"] {
   opacity: 40%;
 }
 
-.magnum-card {
-  background: white !important;
+.magnum-card { background: white !important; }
+
+.coming-soon {
+  margin: auto;
+  width: 76%;
 }
 
 /* End of Products page */
@@ -984,6 +1009,7 @@ img[src*="FA98204A"] {
 .flavors {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 h3 > a { color: black; }
@@ -1025,8 +1051,10 @@ h3 > a { color: black; }
   display: flex;
   justify-content: center;
   margin: auto;
-  width: 20%;
+  width: 37%;
 }
+
+.content > .product-title { margin-top: 0; }
 
 .price-container { margin: 10px auto 0; }
 
@@ -1258,12 +1286,27 @@ hr {
   padding: 1em 1em;
 }
 
+.product-description {
+  text-align: center;
+  padding: 1em 1em;
+  /*position: relative;*/
+  /*bottom: 40px;*/
+  font-size: 1em;
+}
+
+.product-description2 {
+  text-align: center;
+  padding: 1em 1em;
+  /*position: relative;*/
+  font-size: 1em;
+}
+
 .plant-description {
   text-align: center;
   padding: 1em 1em;
   /*position: relative;*/
   /*bottom: 40px;*/
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 .plant-description2 {
@@ -2268,7 +2311,7 @@ img[src*="MainTube"] { border-radius: 10px; }
   grid-template-rows: repeat(1, 1fr);
   grid-template-columns: repeat(1, 35%);
   justify-content: center;
-  /*padding-top: 60px;*/
+  padding-top: 60px;
 }
 
 /* End of Mindfully Made page */
