@@ -841,6 +841,18 @@ img[src*="FA98204A"] {
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+/* Start of Body Care Page */
+
+img[src*="moonlit"] {
+  position: relative !important;
+  top: 0 !important;
+
+}
+
+/* Start of Body Care Page */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /* Start of Aromatics Page */
 
 /*.essential-oils-container {*/
