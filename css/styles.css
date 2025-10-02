@@ -1831,6 +1831,15 @@ img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; 
   margin: auto;
 }
 
+.egg {
+  position: relative;
+  top: 50px;
+}
+
+img[src*="cylinder"] {
+  width: 31%;
+}
+
 img[src*="pumpkin-lamp"] {
   position: relative;
   top: 70px;
@@ -1913,7 +1922,7 @@ img[src*="limited-edition"] {
 
 .angel-lamp-name {
   position: relative;
-  bottom: 80px;
+  bottom: 58px;
 }
 
 .salt-lamp-name {
@@ -1940,6 +1949,13 @@ img[src*="limited-edition"] {
   position: relative;
   bottom: 46px;
 }
+
+.circle {
+  position: relative;
+  top: 45px;
+}
+
+.white-natural-night { width: 40%; }
 
 img[src*="cross"] {
   position: relative;
