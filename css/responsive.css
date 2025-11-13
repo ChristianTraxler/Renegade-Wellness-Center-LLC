@@ -1298,6 +1298,16 @@
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+  /* Start of Non-Toxic Candles page */
+
+  .candles-page { position: initial; }
+
+
+
+  /* End of Non-Toxic Candles page */
+
+  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
   /* Start of Contact page */
   .pricing-section { padding: 100px 0 100px 0; }
   .pricing-section2 { padding: 100px 0 100px 0; }
