@@ -699,6 +699,18 @@ img[src*="FA98204A"] {
 
 .g-recaptcha { display: none; }
 
+.get-social {
+  text-align: center;
+  font-size: 23px;
+  padding-bottom: 2%;
+}
+
+.instagram1 {
+  position: relative;
+  margin: auto;
+  width: 5%;
+}
+
 /* End of Contact Page */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -2544,6 +2556,13 @@ footer .footer-col {
 .phone {
   text-decoration: none;
   color: var(--white);
+}
+
+.instagram2 {
+  position: relative;
+  margin: 0;
+  width: 13%;
+  right: 1%;
 }
 
 .payments {
