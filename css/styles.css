@@ -1741,6 +1741,8 @@ img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; 
   border-radius: 2%;
 }
 
+.ash { width: initial; }
+
 .eye-pricing {
   position: relative;
   left: 16px;
