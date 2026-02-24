@@ -1,0 +1,12 @@
+# Robots.txt for Renegade Wellness Center
+# https://www.renegadewellnesscenter.com
+
+User-agent: *
+Allow: /
+
+# Block non-content directories
+Disallow: /assets/images/payments/
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://www.renegadewellnesscenter.com/sitemap.xml

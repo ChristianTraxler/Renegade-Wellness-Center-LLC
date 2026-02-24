@@ -6,11 +6,13 @@
 		<title>Products | Renegade Wellness Center, LLC</title>
 		<meta name="description" content="Browse all natural wellness products at Renegade Wellness Center — supplements, candles, CBD, essential oils, body care, and more.">
 		<meta name="keywords" content="wellness products, supplements, candles, CBD products, essential oils, body care, skin care, Himalayan salt, natural products, Renegade Wellness Center">
-		<meta name="robots" content="index, follow">
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 		<meta name="zipcode" content="28658">
 		<meta name="city" content="Newton">
 		<meta name="state" content="NC">
 		<meta name="geo.position" content="35.683503475867724, -81.22759879550881">
+		<meta name="geo.placename" content="Newton, NC">
+		<meta name="geo.region" content="US-NC">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,8 +20,6 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,6 +53,7 @@
 		<meta property="og:description" content="Browse all natural wellness products at Renegade Wellness Center — supplements, candles, CBD, essential oils, body care, and more.">
 		<meta property="og:url" content="https://www.renegadewellnesscenter.com/products.html">
 		<meta property="og:type" content="website">
+		<meta property="og:locale" content="en_US">
 		<meta property="og:site_name" content="Renegade Wellness Center">
 		<meta property="og:image" content="https://www.renegadewellnesscenter.com/assets/images/og-homepage.jpg">
 		<meta property="og:image:width" content="1200">
@@ -65,10 +66,15 @@
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "WebPage",
-			"name": "Products",
-			"description": "Browse all natural wellness products at Renegade Wellness Center.",
+			"@type": "CollectionPage",
+			"name": "Natural Wellness Products",
+			"description": "Browse all natural wellness products at Renegade Wellness Center — supplements, candles, CBD, essential oils, body care, and more.",
 			"url": "https://www.renegadewellnesscenter.com/products.html",
+			"isPartOf": {
+				"@type": "WebSite",
+				"name": "Renegade Wellness Center",
+				"url": "https://www.renegadewellnesscenter.com"
+			},
 			"breadcrumb": {
 				"@type": "BreadcrumbList",
 				"itemListElement": [
@@ -83,6 +89,49 @@
 						"position": 2,
 						"name": "Products",
 						"item": "https://www.renegadewellnesscenter.com/products.html"
+					}
+				]
+			},
+			"mainEntity": {
+				"@type": "ItemList",
+				"name": "Product Collections",
+				"numberOfItems": 6,
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Essential Oils & Aromatherapy",
+						"url": "https://www.renegadewellnesscenter.com/essential-oils-&-aromatherapy.html"
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Supplements",
+						"url": "https://www.renegadewellnesscenter.com/supplements.html"
+					},
+					{
+						"@type": "ListItem",
+						"position": 3,
+						"name": "Body & Skin Care",
+						"url": "https://www.renegadewellnesscenter.com/body-skin-care.html"
+					},
+					{
+						"@type": "ListItem",
+						"position": 4,
+						"name": "CBD Products",
+						"url": "https://www.renegadewellnesscenter.com/cbd-products.html"
+					},
+					{
+						"@type": "ListItem",
+						"position": 5,
+						"name": "Himalayan Salt Lamps & Products",
+						"url": "https://www.renegadewellnesscenter.com/himalayan-salt-products.html"
+					},
+					{
+						"@type": "ListItem",
+						"position": 6,
+						"name": "Non-Toxic Candles",
+						"url": "https://www.renegadewellnesscenter.com/candles.html"
 					}
 				]
 			}
@@ -326,7 +375,7 @@
 						</li>
 						<li>
 							<img src="./assets/images/instagram-brands-solid-full.svg" alt="" class="footer-icon">
-							<span><a href="https://www.instagram.com/renegadewellnesscenter" target="_blank">@renegadewellnesscenter</a></span>
+							<span><a href="https://www.instagram.com/renegadewellnesscenter" target="_blank" rel="noopener noreferrer">@renegadewellnesscenter</a></span>
 						</li>
 					</ul>
 				</div>
@@ -361,9 +410,9 @@
 			<div class="footer-bottom">
 				<p class="footer-credit">Built by
 					<img src="./assets/images/DOC_logo_3_logo_only_transparent-BG.gif" alt="Developer Of Code, LLC logo">
-					<a href="https://developerofcode.com" target="_blank">Developer Of Code, LLC</a>
+					<a href="https://developerofcode.com" target="_blank" rel="noopener noreferrer">Developer Of Code, LLC</a>
 				</p>
-				<p>&copy; 2025 Renegade Wellness Center</p>
+				<p>&copy; 2026 Renegade Wellness Center</p>
 			</div>
 		</footer>
 

@@ -679,7 +679,7 @@
   }
 
   .v2-map {
-    border-radius: 0 0 12px 12px;
+    border-radius: 12px;
     min-height: 300px;
   }
 
@@ -1556,7 +1556,7 @@
 
   .ctct-inline-form {
     width: auto;
-    margin: auto;
+    margin: 0 16px;
   }
 
   .instagram1 { width: 10%; }
@@ -1564,6 +1564,11 @@
   /* Contact V2 — center on mobile */
   .v2-container {
     max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .v2-map {
+    margin: 0;
   }
 
   .v2-info {

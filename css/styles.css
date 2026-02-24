@@ -4782,7 +4782,7 @@ a.v2-item:hover .v2-icon { background: #2a9d8f; color: #fff; }
 }
 
 .v2-map {
-  border-radius: 0 12px 12px 0;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.08);
 }
