@@ -44,6 +44,20 @@
 }
 
 /*~~~~~~~ iPads and Tablets - portrait ~~~~~~~*/
+@media screen and (min-width: 1032px) {
+  .grid-gap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .single-card-grid.grid-gap {
+    grid-template-columns: minmax(300px, 360px);
+  }
+
+
+  .services-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 @media screen and (max-width: 1024px) {
   /* Start of Home page */
@@ -335,6 +349,19 @@
 
   /* End of Portland Bee Balm */
 
+
+  /* Home V2 tablet layout */
+  .home-v2 .hv2-services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 760px;
+  }
+
+  /* Featured card spans full on 2-col */
+  .home-v2 .hv2-card--featured {
+    grid-column: 1 / -1;
+    max-width: 360px;
+    justify-self: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -360,11 +387,32 @@
 
   .nav-link a { margin-right: 20px; }
 
-  footer .footer-col:nth-child(3) { grid-column: 1 / 3; }
+  /* Footer: 2 columns at tablet */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-payments {
+    grid-column: 1 / -1;
+  }
+
+  .footer-payments-grid {
+    justify-content: center;
+  }
 
    /* End of Navbar and Footer */
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+  /* Filter panel - allow full height on mobile */
+  .filter-panel.open {
+    max-height: 500px;
+  }
+
+  /* Force single column for sections with few cards */
+  .centered-few-cards {
+    grid-template-columns: 1fr !important;
+  }
 
   /* Start of Aromatics Products */
 
@@ -384,7 +432,7 @@
 
   /* Start of Essential Oils */
 
-  .essential-oils, .soaps { grid-template-columns: repeat(2, 50%); }
+  .product-items, .product-grid { grid-template-columns: repeat(2, 50%); }
 
   .section2 { height: 4838px; }
   .section3 { height: 6466px; }
@@ -613,13 +661,47 @@
   .balm { width: 100%; }
 
   /* End of Portland Bee Balm */
+
+  /* Cards grid responsive */
+  .cards-grid { grid-template-columns: 1fr; }
+
+  /* Contact page responsive */
+  .v1-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .v2-container {
+    grid-template-columns: 1fr;
+  }
+
+  .v2-info {
+    padding: 30px 20px;
+  }
+
+  .v2-map {
+    border-radius: 0 0 12px 12px;
+    min-height: 300px;
+  }
+
+  .v2-map iframe {
+    min-height: 300px;
+  }
 }
 
 @media screen and (max-width: 740px) {
 
-  .essential-oils { grid-template-columns: repeat(2, 60%); }
+  .product-items { grid-template-columns: repeat(2, 60%); }
 
   #resin-oils { grid-template-columns: repeat(2, 60%); }
+}
+
+@media screen and (max-width: 640px) {
+  /* Product card grid mobile */
+  .pcard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+  }
 }
 
 /*~~~~~~~ Mobile Screens ~~~~~~~*/
@@ -631,32 +713,150 @@
 
   [aria-controls="navbarDropdown"] { display: block; }
 
-  [aria-expanded="false"] ~ ul { display: none; }
+  /* Collapsed — hidden */
+  [aria-expanded="false"] ~ ul {
+    display: none;
+  }
 
+  /* Expanded — slide down */
   [aria-expanded="true"] ~ ul {
     position: absolute;
     right: 0;
-    top: 40px;
-    background-color: transparent;
-  }
-
-  [aria-expanded="true"] ~ ul li a {
-    color: var(--white);
-    margin-right: var(--size-20);
-  }
-
-  .navbar-nav {
+    left: 0;
+    top: 100%;
     display: flex;
-    justify-content: center;
-    padding: 10px;
-    background-color: transparent;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 0 12px;
+    background-color: var(--white);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    animation: menuOpen 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
-  .navbar-nav.sticky { background-color: var(--white); }
+  /* Closing state — played via JS before hiding */
+  [aria-expanded="true"] ~ ul.menu-closing {
+    animation: menuClose 0.2s ease forwards;
+  }
+
+  @keyframes menuOpen {
+    from { opacity: 0; clip-path: inset(0 0 100% 0); }
+    to   { opacity: 1; clip-path: inset(0 0 0 0); }
+  }
+
+  @keyframes menuClose {
+    from { opacity: 1; clip-path: inset(0 0 0 0); }
+    to   { opacity: 0; clip-path: inset(0 0 100% 0); }
+  }
+
+  /* Nav link items — full-width vertical stack */
+  .nav-link {
+    position: initial;
+    width: 100%;
+  }
+
+  .nav-link a {
+    display: flex;
+    align-items: center;
+    padding: 14px 28px;
+    margin-right: 0;
+    color: var(--font-color-dark);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    border-left: 3px solid transparent;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .nav-link a:hover,
+  .nav-link a:active {
+    background-color: rgba(141, 199, 193, 0.08);
+    border-left-color: #8DC7C1;
+  }
+
+  /* Subtle separator between links */
+  .nav-link + .nav-link {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  /* Dark mode — mobile menu */
+  body.dark-mode [aria-expanded="true"] ~ ul {
+    background-color: #16213e;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  }
+
+  body.dark-mode .nav-link a {
+    color: #e0e0e0;
+  }
+
+  body.dark-mode .nav-link a:hover,
+  body.dark-mode .nav-link a:active {
+    background-color: rgba(141, 199, 193, 0.08);
+    border-left-color: #5a9e97;
+  }
+
+  body.dark-mode .nav-link + .nav-link {
+    border-top-color: rgba(255, 255, 255, 0.06);
+  }
+
+  /* Match navbar transitions to menu timing */
+  .navbar {
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .navbar-brand,
+  .navbar.sticky .navbar-brand {
+    transition: color 0s;
+  }
+
+  .hamburger-icon .bar,
+  .navbar.sticky .hamburger-icon .bar {
+    transition: transform 0.3s ease, background-color 0s;
+  }
+
+  /* Navbar matches menu background when expanded */
+  .navbar:has([aria-expanded="true"]) {
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .navbar:has([aria-expanded="true"]) .navbar-brand {
+    color: var(--font-color-dark);
+  }
+
+  .navbar:has([aria-expanded="true"]) .hamburger-icon .bar {
+    background-color: var(--font-color-dark);
+  }
+
+  body.dark-mode .navbar:has([aria-expanded="true"]) {
+    background-color: #16213e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  body.dark-mode .navbar:has([aria-expanded="true"]) .navbar-brand {
+    color: #e0e0e0;
+  }
+
+  body.dark-mode .navbar:has([aria-expanded="true"]) .hamburger-icon .bar {
+    background-color: #e0e0e0;
+  }
+
+  /* Dark mode toggle — sits at bottom of menu */
+  .navbar-nav .theme-switch {
+    --container-width: 4.63em;
+    --container-height: 1.8em;
+    align-self: flex-start;
+    padding: 10px 28px 4px;
+    margin-top: 4px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+  }
+
+  body.dark-mode .navbar-nav .theme-switch {
+    border-top-color: rgba(255, 255, 255, 0.06);
+  }
 
   .container { padding-bottom: 24px; }
-
-  .nav-link { position: initial; }
 
   .rwc-logo1.sticky { display: none; }
 
@@ -681,9 +881,9 @@
 
   .why-me { padding-bottom: 80px; }
 
-  .block-text { left: 0; }
+  .section-header { left: 0; }
 
-  .block-text h2 { font-size: var(--size-30); }
+  .section-header h2 { font-size: var(--size-30); }
 
   .container2 {
     margin-right: auto;
@@ -738,7 +938,16 @@
 
   .footnote {
     text-align: center;
-    /*top: 170px;*/
+    top: 40px;
+  }
+
+  .accordion {
+    padding: 18px 48px 18px 20px;
+    font-size: 0.9rem;
+  }
+
+  .panel {
+    padding: 0 20px;
   }
 
   /* End of FAQ page */
@@ -767,17 +976,27 @@
 
   /* Start of Essential Oils section */
 
-  .essential-oils-container {
+  .products-container {
     position: relative;
     top: 100px;
   }
 
-  .citrus-section, .floral-section, .mint-section, .spices-section,
+  .citrus-section, .floral-section, .mint-section, .product-subsection,
   .resin-section, .forest-section, .blends-section { height: initial; }
 
-  .essential-oils-wrapper, .carrier-oils-wrapper { padding: 0 0; }
+  .product-wrapper, .carrier-oils-wrapper { padding: 0 0; }
 
-  .essential-oils, #resin-oils, .soaps, .clay-mask-container, .coconut-oil-products { grid-template-columns: initial; }
+  .product-items, #resin-oils, .product-grid, .clay-mask-container, .coconut-oil-products { grid-template-columns: initial; }
+
+  .softgels-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .pets-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
 
   .oils > * { }
 
@@ -1099,6 +1318,15 @@
     padding-bottom: 80px;
   }
 
+  .salt-wrapper {
+    padding: 0;
+    margin: 0;
+  }
+
+  .himalayan-salt-container .product-section {
+    margin: 0;
+  }
+
   .himalayan-salt-products {
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -1133,7 +1361,7 @@
 
   .salt-cards { left: initial; }
 
-  img[src*="white"] { top: 4px; }
+  img[src*="white"] { top: 0px; }
 
   .soccer-ball {
     position: relative;
@@ -1142,7 +1370,7 @@
 
   .soccer-ball-mobile { top: 140px; }
 
-  .out-of-stock { width: 24%; }
+  .out-of-stock { width: 27%; }
 
   img[src*="IMG_2209"], img[src*="diffuser-sale"], img[src*="IMG_5544"], img[src*="IMG_4639"] {
     width: 65%;
@@ -1309,8 +1537,8 @@
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   /* Start of Contact page */
-  .pricing-section { padding: 100px 0 100px 0; }
-  .pricing-section2 { padding: 100px 0 100px 0; }
+  .product-section { padding: 100px 0 100px 0; }
+  .product-section2 { padding: 100px 0 100px 0; }
 
   .contact > h3, .hours { font-size: 1rem; }
 
@@ -1327,11 +1555,33 @@
   }
 
   .ctct-inline-form {
-    width: 85%;
+    width: auto;
     margin: auto;
   }
 
   .instagram1 { width: 10%; }
+
+  /* Contact V2 — center on mobile */
+  .v2-container {
+    max-width: 100%;
+  }
+
+  .v2-info {
+    align-items: center;
+    text-align: center;
+    padding: 30px 16px;
+  }
+
+  .v2-heading {
+    text-align: center;
+  }
+
+  .v2-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
 
   /* End of Contact page */
 
@@ -1341,7 +1591,16 @@
 
   /*.info-section { margin: 0 30px 0 0; }*/
 
-  .accordion, .panel { width: 92%; }
+  .container:has(.faqs) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .accordion, .panel { width: 100%; }
+
+  .faqs { max-width: 100%; padding: 0 10px; }
+
+  .faq-search { width: 90% }
 
   /* End of FAQ page */
 
@@ -1349,31 +1608,212 @@
 
   /* Start of Footer */
 
-  .footer-bottom-wrapper { text-align: center }
-
-  .footer-bottom-links {
-    padding: 10px 0 0 0;
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+    padding: 40px 20px 30px;
   }
 
-  .payments {
-    grid-template-rows: repeat(2, 40%);
-    grid-template-columns: repeat(1, 90%);
+  .footer-contact li {
+    justify-content: center;
   }
 
-  img[src*="check-book(white)"], img[src*="contactless_payment"] {
-     top: initial;
+  .footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 20px;
   }
 
-  .cash {
-    right: initial;
-    bottom: 10px;
+  .footer-payments-grid {
+    justify-content: center;
   }
 
-  img[src*="DOC"] { width: 6%; }
+  .footer-grid h4 {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 14px;
+  }
 
-  /*.developer { right: 10px; }*/
+  .footer-divider {
+    display: block;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 0;
+    width: 60%;
+    margin-inline: auto;
+  }
 
   /* End of Footer */
+
+  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+  /* Flip Card Testing */
+
+  .grid-gap {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+  }
+
+  .flip-card {
+    margin: auto;
+    width: 90%;
+  }
+
+  #sunscreen .mindfully-made-syrup,
+  #pain .mindfully-made-syrup {
+    grid-template-columns: repeat(1, 100%);
+    justify-content: center;
+  }
+
+  #sunscreen .essential-oils-card,
+  #pain .essential-oils-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #bar-soaps .product-grid {
+    grid-template-columns: repeat(1, 100%);
+    justify-content: center;
+  }
+
+  #clay .product-grid,
+  #eye .product-grid,
+  #facial .product-grid,
+  #bag .product-grid {
+    grid-template-columns: repeat(1, 100%);
+    max-width: 100%;
+  }
+
+  .scrollable-container::-webkit-scrollbar {
+    -webkit-appearance: none; /* Helps ensure custom styles are applied */
+    width: 8px; /* Set the width of the vertical scrollbar */
+    height: 8px; /* Set the height of the horizontal scrollbar */
+  }
+
+  .scrollable-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5); /* Color of the draggable part */
+    border-radius: 4px; /* Rounds the scrollbar thumb */
+  }
+
+  .scrollable-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color of the scrollbar track */
+  }
+
+  .hydrosol-image img { width: 100%; }
+
+
+  /* Home V2 mobile layout */
+  .home-v2 .hv2-hero__logo {
+    height: 130px;
+    max-width: 260px;
+  }
+
+  .home-v2 .hv2-hero__tagline {
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+  }
+
+  .home-v2 .hv2-hero__scroll {
+    margin-top: 40px;
+  }
+
+  .home-v2 .hv2-wave {
+    margin-top: -60px;
+  }
+
+  .home-v2 .hv2-wave svg {
+    height: 80px;
+  }
+
+  .home-v2 .hv2-intro {
+    padding: 60px 20px 80px;
+  }
+
+  .home-v2 .hv2-intro__text {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .home-v2 .hv2-services {
+    padding: 0 16px 32px;
+  }
+
+  .home-v2 .hv2-services__title {
+    font-size: 1.6rem;
+  }
+
+  .home-v2 .hv2-services__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    gap: 24px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .home-v2 .hv2-card--featured {
+    max-width: none;
+  }
+
+  .home-v2 .hv2-card__img-wrap {
+    height: 200px;
+  }
+
+  .home-v2 .hv2-card__body {
+    padding: 24px 20px 28px;
+  }
+
+  /* Remove gap between salt cabin prices */
+  .home-v2 .hv2-card__price-sub {
+    margin-top: -4px;
+  }
+
+
+  /* V2 Page mobile layout */
+  .v2-page .hv2-hero__logo {
+    height: 130px;
+    max-width: 260px;
+  }
+
+  .v2-page .hv2-hero__tagline {
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+  }
+
+  .v2-page .hv2-hero__scroll {
+    margin-top: 40px;
+  }
+
+  .v2-page .hv2-wave {
+    margin-top: -60px;
+  }
+
+  .v2-page .hv2-wave svg {
+    height: 80px;
+  }
+
+  .v2-page .hv2-intro {
+    padding: 60px 20px 80px;
+  }
+
+  .v2-page .hv2-intro__text {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .v2-page .v2-content {
+    padding: 0 16px 80px;
+  }
+
+  .products-v2 .pv2-products {
+    padding: 0 16px 80px;
+  }
+
+  .products-v2 .pv2-products__title {
+    font-size: 1.6rem;
+  }
 }
 
 /* iPhone 14 Pro screen size 393px */
@@ -1388,9 +1828,9 @@
   /* Start of Home page */
   .why-me { padding-top: 50px; }
 
-  .block-text > p { top: 12px; }
+  .section-header > p { top: 12px; }
 
-  .block-text > a {
+  .section-header > a {
     position: relative;
     top: 25px;
   }
@@ -1400,6 +1840,11 @@
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   /* Start of Essential Oils */
+
+  .chocolate-truffle-card .warm-image .warm-oil {
+    transform: scale(1.15);
+    object-fit: cover;
+  }
 
   .essential { font-size: var(--size-40); }
 
@@ -1763,14 +2208,7 @@
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-  /* Start of Footer */
-
-  .copyright {
-    right: 3px;
-    left: initial;
-  }
-
-  /* End of Footer */
+  /* Footer: no special overrides needed at 400px */
 }
 
 @media screen and (max-width: 375px) {
@@ -2034,12 +2472,35 @@
 
   /* End of Plant Therapy page */
 
-  /* Start of Footer */
+  /* Footer: no special overrides needed at 375px */
 
-  .copyright {
-    right: 8px;
-    left: initial;
+
+  /* Home V2 small phones */
+  .home-v2 .hv2-hero__logo {
+    height: 110px;
+    max-width: 220px;
   }
 
+  .home-v2 .hv2-hero__tagline {
+    font-size: 0.72rem;
+  }
+
+  .home-v2 .hv2-services__title {
+    font-size: 1.4rem;
+  }
+
+  /* V2 Page small phones */
+  .v2-page .hv2-hero__logo {
+    height: 110px;
+    max-width: 220px;
+  }
+
+  .v2-page .hv2-hero__tagline {
+    font-size: 0.72rem;
+  }
+
+  .products-v2 .pv2-products__title {
+    font-size: 1.4rem;
+  }
   /* End of Footer */
 }
