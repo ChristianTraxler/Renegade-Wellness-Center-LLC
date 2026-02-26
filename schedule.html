@@ -207,8 +207,12 @@
 				font-family: "Hind", sans-serif;
 				font-size: 1.15rem;
 				font-weight: 600;
-				color: #2d3748;
+				color: #000;
 				margin-bottom: 6px;
+			}
+
+			body.dark-mode .sched-card__name {
+				color: #000;
 			}
 
 			.sched-card__desc {
@@ -1197,9 +1201,40 @@
 
 			document.getElementById('btn-to-2').addEventListener('click', () => goToStep(2));
 			document.getElementById('btn-to-3').addEventListener('click', () => goToStep(3));
-			document.getElementById('btn-to-4').addEventListener('click', () => goToStep(4));
+			document.getElementById('btn-to-4').addEventListener('click', () => {
+				saveBookingToStorage();
+				goToStep(4);
+			});
 			document.getElementById('btn-back-1').addEventListener('click', () => goToStep(1));
 			document.getElementById('btn-back-2').addEventListener('click', () => goToStep(2));
+
+			/* --- Save Booking to localStorage --- */
+			function saveBookingToStorage() {
+				try {
+					const booking = {
+						id: Date.now(),
+						first: document.getElementById('fname').value.trim() || 'Guest',
+						last: document.getElementById('lname').value.trim() || '',
+						email: document.getElementById('email').value.trim() || '',
+						phone: document.getElementById('phone').value.trim() || '',
+						service: state.serviceName,
+						date: formatDate(state.date),
+						time: state.time,
+						price: state.price,
+						guests: document.getElementById('guests').value,
+						notes: document.getElementById('notes').value.trim(),
+						status: 'pending',
+						createdAt: new Date().toISOString()
+					};
+
+					const bookings = JSON.parse(localStorage.getItem('rwc_bookings') || '[]');
+					bookings.push(booking);
+					localStorage.setItem('rwc_bookings', JSON.stringify(bookings));
+
+				} catch (e) {
+					console.error('Failed to save booking:', e);
+				}
+			}
 
 			/* --- Calendar --- */
 			const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];

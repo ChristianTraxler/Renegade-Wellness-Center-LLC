@@ -1108,40 +1108,40 @@
 				<div class="form-row-2">
 					<div class="field">
 						<label>First Name</label>
-						<input type="text" placeholder="Jane"/>
+						<input type="text" id="modalFirst" placeholder="Jane"/>
 					</div>
 					<div class="field">
 						<label>Last Name</label>
-						<input type="text" placeholder="Smith"/>
+						<input type="text" id="modalLast" placeholder="Smith"/>
 					</div>
 				</div>
 				<div class="form-row-2">
 					<div class="field">
 						<label>Email</label>
-						<input type="email" placeholder="jane@email.com"/>
+						<input type="email" id="modalEmail" placeholder="jane@email.com"/>
 					</div>
 					<div class="field">
 						<label>Phone</label>
-						<input type="tel" placeholder="(555) 000-0000"/>
+						<input type="tel" id="modalPhone" placeholder="(555) 000-0000"/>
 					</div>
 				</div>
 				<div class="field">
 					<label>Service</label>
-					<select>
+					<select id="modalService">
 						<option value="">Select a service…</option>
-						<option>Salt Cabin</option>
-						<option>Infrared Therapy</option>
-						<option>Salt Cabin & Infrared Therapy Combo</option>
+						<option value="Salt Cabin">Salt Cabin</option>
+						<option value="Infrared Therapy">Infrared Therapy</option>
+						<option value="Salt + Infrared Combo">Salt + Infrared Combo</option>
 					</select>
 				</div>
 				<div class="form-row-2">
 					<div class="field">
 						<label>Date</label>
-						<input type="date"/>
+						<input type="date" id="modalDate"/>
 					</div>
 					<div class="field">
 						<label>Time</label>
-						<select>
+						<select id="modalTime">
 							<option>9:00 AM</option>
 							<option>10:00 AM</option>
 							<option selected>11:00 AM</option>
@@ -1157,7 +1157,7 @@
 				<div class="form-row-2">
 					<div class="field">
 						<label>Duration</label>
-						<select>
+						<select id="modalDuration">
 							<option>30 minutes</option>
 							<option selected>45 minutes</option>
 							<option>60 minutes</option>
@@ -1166,15 +1166,15 @@
 					</div>
 					<div class="field">
 						<label>Status</label>
-						<select>
-							<option>Confirmed</option>
-							<option>Pending</option>
+						<select id="modalStatus">
+							<option value="confirmed">Confirmed</option>
+							<option value="pending">Pending</option>
 						</select>
 					</div>
 				</div>
 				<div class="field">
 					<label>Notes</label>
-					<textarea placeholder="Any special requests or health notes…"></textarea>
+					<textarea id="modalNotes" placeholder="Any special requests or health notes…"></textarea>
 				</div>
 			</div>
 			<div class="modal-footer">
@@ -1196,27 +1196,40 @@
 	</div>
 
 	<script>
-		// Sample data
-		const appointments = [
-			{ id:1, first:'Sarah', last:'Thompson', email:'sarah.t@email.com', service:'Salt Cabin', date:'Feb 24, 2026', time:'9:00 AM', status:'confirmed' },
-			{ id:2, first:'Michael', last:'Rivera', email:'m.rivera@email.com', service:'Infrared Therapy', date:'Feb 24, 2026', time:'11:00 AM', status:'confirmed' },
-			{ id:3, first:'Emily', last:'Chen', email:'echen@email.com', service:'Salt Cabin & Infrared Therapy Combo', date:'Feb 24, 2026', time:'2:00 PM', status:'pending' },
-			{ id:4, first:'James', last:'Walker', email:'jwalker@email.com', service:'Salt Cabin', date:'Feb 25, 2026', time:'10:00 AM', status:'confirmed' },
-			{ id:5, first:'Olivia', last:'Martinez', email:'o.martinez@email.com', service:'Infrared Therapy', date:'Feb 25, 2026', time:'1:00 PM', status:'pending' },
-			{ id:6, first:'David', last:'Kim', email:'d.kim@email.com', service:'Salt Cabin & Infrared Therapy Combo', date:'Feb 26, 2026', time:'3:00 PM', status:'confirmed' },
-			{ id:7, first:'Ava', last:'Johnson', email:'avaj@email.com', service:'Salt Cabin', date:'Feb 23, 2026', time:'11:00 AM', status:'cancelled' },
-			{ id:8, first:'Noah', last:'Davis', email:'noah.d@email.com', service:'Infrared Therapy', date:'Feb 27, 2026', time:'4:00 PM', status:'pending' },
-		];
+		// Load bookings from localStorage (submitted from schedule.html)
+		function loadBookings() {
+			return JSON.parse(localStorage.getItem('rwc_bookings') || '[]');
+		}
+
+		function saveBookingsToStorage() {
+			localStorage.setItem('rwc_bookings', JSON.stringify(appointments));
+		}
+
+		// Build appointments array from localStorage
+		const appointments = loadBookings();
 
 		let currentFilter = 'all';
 
 		function initials(first, last) {
-			return (first[0] + last[0]).toUpperCase();
+			const f = first ? first[0] : '?';
+			const l = last ? last[0] : '?';
+			return (f + l).toUpperCase();
+		}
+
+		function escapeHtml(str) {
+			const div = document.createElement('div');
+			div.textContent = str;
+			return div.innerHTML;
 		}
 
 		function renderTable(filter) {
 			const tbody = document.getElementById('apptBody');
 			const data = filter === 'all' ? appointments : appointments.filter(a => a.status === filter);
+
+			if (data.length === 0) {
+				tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px 24px;color:var(--text-muted);font-size:0.9rem;">No appointments yet. Bookings from the <a href="schedule.html" style="color:var(--teal-dark);text-decoration:underline;">schedule page</a> will appear here.</td></tr>';
+				return;
+			}
 
 			tbody.innerHTML = data.map(a => `
 			<tr>
@@ -1224,26 +1237,50 @@
 					<div class="client-cell">
 						<div class="avatar-sm">${initials(a.first, a.last)}</div>
 						<div>
-							<div class="client-name">${a.first} ${a.last}</div>
-							<div class="client-email">${a.email}</div>
+							<div class="client-name">${escapeHtml(a.first)} ${escapeHtml(a.last)}</div>
+							<div class="client-email">${escapeHtml(a.email)}</div>
 						</div>
 					</div>
 				</td>
-				<td>${a.service}</td>
-				<td>${a.date}<br><span style="font-size:0.74rem;color:var(--text-muted)">${a.time}</span></td>
+				<td>${escapeHtml(a.service)}</td>
+				<td>${escapeHtml(a.date)}<br><span style="font-size:0.74rem;color:var(--text-muted)">${escapeHtml(a.time)}</span></td>
 				<td><span class="badge badge-${a.status}">${a.status.charAt(0).toUpperCase()+a.status.slice(1)}</span></td>
 				<td>
 					<div class="action-btns">
-						<button class="icon-btn" title="Edit" onclick="openModal()">
-							<svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-						</button>
-						<button class="icon-btn" title="Delete" onclick="deleteRow(${a.id}, this)">
+						${a.status === 'pending' ? `
+						<button class="icon-btn" title="Confirm" onclick="confirmRow(${a.id})" style="border-color:var(--success);color:var(--success);">
+							<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+						</button>` : ''}
+						<button class="icon-btn" title="Delete" onclick="deleteRow(${a.id})">
 							<svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
 						</button>
 					</div>
 				</td>
 			</tr>
 		`).join('');
+		}
+
+		function updateStats() {
+			const today = new Date().toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+			const total = appointments.length;
+			const confirmed = appointments.filter(a => a.status === 'confirmed').length;
+			const pending = appointments.filter(a => a.status === 'pending').length;
+
+			// Update stat cards
+			const statValues = document.querySelectorAll('.stat-value');
+			const statSubs = document.querySelectorAll('.stat-sub');
+			statValues[0].textContent = total;
+			statSubs[0].textContent = pending + ' pending review';
+			statValues[1].textContent = total;
+			statSubs[1].textContent = 'Total bookings';
+			statValues[2].textContent = confirmed;
+			statSubs[2].textContent = total > 0 ? Math.round((confirmed / total) * 100) + '% confirmation rate' : 'No bookings yet';
+			statValues[3].textContent = pending;
+			statSubs[3].textContent = 'Awaiting confirmation';
+
+			// Update nav badge
+			const badge = document.querySelector('.nav-badge');
+			if (badge) badge.textContent = total;
 		}
 
 		function filterTab(el, filter) {
@@ -1253,39 +1290,97 @@
 			renderTable(filter);
 		}
 
-		function deleteRow(id, btn) {
+		function confirmRow(id) {
+			const appt = appointments.find(a => a.id === id);
+			if (appt) {
+				appt.status = 'confirmed';
+				saveBookingsToStorage();
+				renderTable(currentFilter);
+				updateStats();
+				showToast('Appointment confirmed!');
+			}
+		}
+
+		function deleteRow(id) {
 			const idx = appointments.findIndex(a => a.id === id);
 			if (idx > -1) appointments.splice(idx, 1);
+			saveBookingsToStorage();
 			renderTable(currentFilter);
+			updateStats();
 			showToast('Appointment removed.');
 		}
 
 		// Calendar
 		function buildCalendar() {
-			const days = [
-				[1,2,3,4,5,6,7],
-				[8,9,10,11,12,13,14],
-				[15,16,17,18,19,20,21],
-				[22,23,24,25,26,27,28]
-			];
-			const hasEvents = [5,10,12,17,19,24,25,26,27];
-			const today = 24;
-			const selected = 24;
+			const now = new Date();
+			const year = now.getFullYear();
+			const month = now.getMonth();
+			const firstDay = new Date(year, month, 1).getDay();
+			const daysInMonth = new Date(year, month + 1, 0).getDate();
+			const todayDate = now.getDate();
+
+			// Find which days have bookings this month
+			const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+			const shortMonths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+			// Update calendar header
+			const calHeader = document.querySelector('.card-title:last-of-type') || document.querySelectorAll('.card-title')[1];
+			if (calHeader) calHeader.textContent = monthNames[month] + ' ' + year;
+
+			// Build weeks
+			const weeks = [];
+			let currentWeek = [];
+
+			for (let i = 0; i < firstDay; i++) {
+				currentWeek.push(null);
+			}
+
+			for (let d = 1; d <= daysInMonth; d++) {
+				currentWeek.push(d);
+				if (currentWeek.length === 7) {
+					weeks.push(currentWeek);
+					currentWeek = [];
+				}
+			}
+			if (currentWeek.length > 0) {
+				while (currentWeek.length < 7) currentWeek.push(null);
+				weeks.push(currentWeek);
+			}
+
+			// Check which days have events
+			const eventDays = new Set();
+			appointments.forEach(a => {
+				// Try to extract day from the date string
+				const dateStr = a.date || '';
+				// Match patterns like "February 26, 2026" or "Wednesday, February 26, 2026"
+				const match = dateStr.match(/(\w+)\s+(\d+),?\s+(\d{4})/);
+				if (match) {
+					const mName = match[1];
+					const day = parseInt(match[2]);
+					const yr = parseInt(match[3]);
+					const mIdx = monthNames.indexOf(mName);
+					if (mIdx === month && yr === year) {
+						eventDays.add(day);
+					}
+				}
+			});
 
 			const tbody = document.getElementById('calBody');
-			tbody.innerHTML = days.map(week => `
-			<tr>${week.map(d => `
-				<td><div class="cal-day ${d === today ? 'today' : ''} ${d === selected && d !== today ? 'selected' : ''} ${hasEvents.includes(d) && d !== today ? 'has-event' : ''}">${d}</div></td>
-			`).join('')}</tr>
+			tbody.innerHTML = weeks.map(week => `
+			<tr>${week.map(d => {
+				if (d === null) return '<td><div class="cal-day other-month"></div></td>';
+				const isToday = d === todayDate;
+				const hasEvent = eventDays.has(d);
+				return `<td><div class="cal-day ${isToday ? 'today' : ''} ${hasEvent && !isToday ? 'has-event' : ''}">${d}</div></td>`;
+			}).join('')}</tr>
 		`).join('');
 		}
 
 		// Modal
 		function openModal() {
 			document.getElementById('modalOverlay').classList.add('open');
-			// set today's date as default
 			const today = new Date().toISOString().split('T')[0];
-			document.querySelector('input[type="date"]').value = today;
+			document.querySelector('#modalDate').value = today;
 		}
 
 		function closeModal() {
@@ -1293,8 +1388,56 @@
 		}
 
 		function saveAppointment() {
+			const first = document.getElementById('modalFirst').value.trim();
+			const last = document.getElementById('modalLast').value.trim();
+			const email = document.getElementById('modalEmail').value.trim();
+			const phone = document.getElementById('modalPhone').value.trim();
+			const service = document.getElementById('modalService').value;
+			const date = document.getElementById('modalDate').value;
+			const time = document.getElementById('modalTime').value;
+			const status = document.getElementById('modalStatus').value;
+			const notes = document.getElementById('modalNotes').value.trim();
+
+			if (!first || !service || !date || !time) {
+				showToast('Please fill in required fields.');
+				return;
+			}
+
+			// Format date nicely
+			const dateObj = new Date(date + 'T12:00:00');
+			const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+			const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+			const formattedDate = days[dateObj.getDay()] + ', ' + months[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear();
+
+			const booking = {
+				id: Date.now(),
+				first: first,
+				last: last,
+				email: email,
+				phone: phone,
+				service: service,
+				date: formattedDate,
+				time: time,
+				status: status,
+				notes: notes,
+				createdAt: new Date().toISOString()
+			};
+
+			appointments.push(booking);
+			saveBookingsToStorage();
+			renderTable(currentFilter);
+			updateStats();
+			buildCalendar();
 			closeModal();
 			showToast('Appointment booked successfully!');
+
+			// Clear form
+			document.getElementById('modalFirst').value = '';
+			document.getElementById('modalLast').value = '';
+			document.getElementById('modalEmail').value = '';
+			document.getElementById('modalPhone').value = '';
+			document.getElementById('modalService').value = '';
+			document.getElementById('modalNotes').value = '';
 		}
 
 		// Toast
@@ -1332,9 +1475,37 @@
 		const now = new Date();
 		document.getElementById('todayDate').textContent = now.toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
 
+		// Refresh data when switching back to this tab (picks up bookings from schedule page)
+		function refreshFromStorage() {
+			const fresh = JSON.parse(localStorage.getItem('rwc_bookings') || '[]');
+			// Only update if data has changed
+			if (JSON.stringify(fresh) !== JSON.stringify(appointments)) {
+				appointments.length = 0;
+				fresh.forEach(a => appointments.push(a));
+				renderTable(currentFilter);
+				updateStats();
+				buildCalendar();
+				console.log('Bookings refreshed from localStorage:', appointments.length, 'total');
+			}
+		}
+
+		// Auto-refresh when tab gets focus (user switches from schedule page)
+		document.addEventListener('visibilitychange', () => {
+			if (!document.hidden) refreshFromStorage();
+		});
+		window.addEventListener('focus', refreshFromStorage);
+
+		// Listen for cross-tab localStorage changes (fires when another tab writes)
+		window.addEventListener('storage', (e) => {
+			if (e.key === 'rwc_bookings') refreshFromStorage();
+		});
+
 		// Init
+
 		renderTable('all');
+		updateStats();
 		buildCalendar();
+
 	</script>
 	</body>
 </html>
