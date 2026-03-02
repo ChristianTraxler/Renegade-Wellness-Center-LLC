@@ -1,0 +1,83 @@
+SQUARE BOOKINGS API INTEGRATION NOTES
+======================================
+Created: Feb 26, 2026
+Status: Deferred — refer back when ready to go live
+
+
+CURRENT STATE
+-------------
+- schedule.html: Client-facing 4-step booking flow (service > date/time > info > confirm)
+- booking-system.html: Admin dashboard with table, stats, calendar, confirm/delete actions
+- Data stored in browser localStorage (key: rwc_bookings)
+- Both pages must be served from the same origin (same server/port) to share data
+- This setup works for prototyping but is NOT production-ready
+
+
+WHY A BACKEND IS NEEDED
+------------------------
+- Square API keys must stay secret (cannot be in browser code)
+- localStorage only works on one computer's browser — not shared across devices
+- Need real persistence so bookings don't disappear if browser data is cleared
+- Need to sync with Square's existing booking data
+
+
+TWO APPROACHES
+--------------
+
+1. USE SQUARE AS THE BACKEND (Recommended)
+   - Square Bookings API handles everything: availability, appointments, customers
+   - Syncs with the client's existing Square dashboard
+   - No separate database needed — Square IS the database
+   - New bookings from schedule.html go to Square via your server
+   - booking-system.html pulls appointments from Square via your server
+   - Handles payments if needed later
+   - Tied to Square ecosystem
+
+2. BUILD YOUR OWN SYSTEM + ONE-TIME IMPORT FROM SQUARE
+   - Full control and custom features
+   - Use Firebase or Supabase as the database
+   - Import existing Square bookings once via API
+   - More work to build and maintain
+   - Still need Square API for the initial data migration
+
+
+WHAT YOU'D NEED TO BUILD
+-------------------------
+- A small backend: Node.js/Express, Python/Flask, or serverless functions
+  (Cloudflare Workers, Vercel Functions, or Netlify Functions)
+- Square Developer account (https://developer.squareup.com)
+- Square Bookings API access
+- Environment variables for API keys (never commit these to code)
+
+
+SQUARE API ENDPOINTS YOU'D USE
+-------------------------------
+- ListBookings — pull existing appointments into your dashboard
+- CreateBooking — push new bookings from schedule.html
+- SearchAvailability — show real open slots on the calendar
+- RetrieveBooking / UpdateBooking — for confirm/cancel actions
+- ListCustomers — import customer data
+
+Square API Docs: https://developer.squareup.com/reference/square/bookings-api
+
+
+MIGRATION STEPS (WHEN READY)
+------------------------------
+1. Set up Square Developer account, get API credentials
+2. Build a small backend server or serverless functions
+3. Create an import script to pull existing Square bookings
+4. Wire schedule.html form submission to backend -> Square API
+5. Wire booking-system.html to read from backend -> Square API
+6. Replace localStorage with real API calls
+7. Test with Square Sandbox environment before going live
+8. Frontend (schedule.html, booking-system.html) stays mostly the same —
+   just swap localStorage calls for fetch() calls to your backend
+
+
+ESTIMATED SCOPE
+----------------
+- Backend setup + Square auth: ~1 day
+- Import existing bookings: ~1 day
+- Connect schedule.html to real API: ~1 day
+- Connect booking-system.html to real API: ~1-2 days
+- Testing with Square Sandbox: ~1 day
