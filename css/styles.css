@@ -1177,6 +1177,16 @@ ul.breadcrumb > .not-active > a { color: gray; }
   font-size: 12px;
 }
 
+#sunscreen .product-info {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+}
+
+#sunscreen .price-option {
+  margin-top: auto;
+}
+
 #lip-smoothies .product-info,
 #sheet-masks .product-info {
   display: flex;
