@@ -59,7 +59,7 @@ body {
   color: var(--font-color-dark);
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   background-color: #69B5AD;
   /*border: 2px solid red;*/
 }
@@ -90,7 +90,9 @@ p, h1, h2, h3, h4, h5, h6 {
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 ul {

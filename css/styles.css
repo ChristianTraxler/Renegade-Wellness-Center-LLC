@@ -542,6 +542,7 @@ ul.breadcrumb > .not-active > a { color: gray; }
 }
 
 /*.cbd-tall-card .warm-oil { max-height: 100%; }*/
+#sunscreen .product-grid,
 #sugar-scrubs .product-grid,
 #clay .product-grid,
 #eye .product-grid,
@@ -3927,6 +3928,15 @@ img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; 
   object-fit: contain;
 }
 
+.candle-pumpkin .warm-image {
+  background-color: #E96841 !important;
+}
+.candle-pumpkin .warm-image .warm-oil {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
 
 .candle-cinnamon .flip-card-front .click-hint,
 .candle-lavender .flip-card-front .click-hint,
@@ -5401,6 +5411,7 @@ a.v3-row:hover .v3-circle { background: #2a9d8f; color: #fff; }
   z-index: 2;
   background: #f4f7f6;
   padding: 80px 24px 100px;
+  overflow: hidden;
 }
 
 #cbd-page .hv2-intro {
@@ -5464,6 +5475,7 @@ a.v3-row:hover .v3-circle { background: #2a9d8f; color: #fff; }
 .products-v2 .pv2-products {
   background: #f4f7f6;
   padding: 0 24px 120px;
+  overflow: hidden;
 }
 
 .products-v2 .pv2-products__header {
