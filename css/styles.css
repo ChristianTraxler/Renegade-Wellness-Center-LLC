@@ -812,6 +812,50 @@ ul.breadcrumb > .not-active > a { color: gray; }
   opacity: 0.7;
 }
 
+/* Sale Ribbon
+.sale-ribbon {
+  position: absolute;
+  top: 18px;
+  left: -34px;
+  width: 140px;
+  text-align: center;
+  transform: rotate(-45deg);
+  background: #2d2d2d;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  z-index: 10;
+}
+
+.sale-ribbon span {
+  display: block;
+}
+*/
+
+/* Sale Price Treatment
+.price-option:has(.sale-price) {
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.product-price.original-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.sale-price {
+  color: #2d2d2d;
+  font-weight: 700;
+  font-size: 22px;
+}
+*/
+
 .product-info { padding: 20px; }
 
 .product-name {
@@ -3957,6 +4001,7 @@ img[src*="pumpkin-spice"], img[src*="pink-dream-candle"] { border-radius: 10px; 
 .candle-latte .flip-card-front .click-hint,
 .candle-wildflower .flip-card-front .click-hint { padding-top: 40px; }
 
+.candles-v2 .price-option { margin-top: 30px; }
 
 /* ============ HIMALAYAN SALT PRODUCTS PAGE ============ */
 .himalayan-salt-products {

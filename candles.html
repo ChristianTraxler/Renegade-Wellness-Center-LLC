@@ -97,10 +97,68 @@
 			}
 		}
 		</script>
+		<!--
+		<style>
+			.promo-banner {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 600;
+				background: #e8d5f5;
+				color: #4a3060;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 10px 0;
+				font-size: 14px;
+				font-weight: 600;
+				letter-spacing: 0.5px;
+			}
+
+			body.v2-page .navbar {
+				top: 38px;
+			}
+
+			.promo-banner-track {
+				display: inline-flex;
+				animation: promoScroll 35s linear infinite;
+			}
+
+			.promo-banner-text {
+				padding: 0 60px;
+				flex-shrink: 0;
+			}
+
+			@keyframes promoScroll {
+				0% { transform: translateX(0); }
+				100% { transform: translateX(-50%); }
+			}
+
+			@media (max-width: 768px) {
+				.promo-banner-track {
+					animation-duration: 35s;
+				}
+			}
+		</style>
+		-->
 	</head>
-	<body class="v2-page subpage-v2">
+	<body class="v2-page subpage-v2 candles-v2">
 	<script>if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")</script>
 		<div id="pageTop"></div>
+
+		<!-- Easter Sale Banner
+		<div class="promo-banner">
+			<div class="promo-banner-track">
+				<span class="promo-banner-text">🐰 Easter Sale — 15% Off All Candles! April 5th–12th 🐰</span>
+				<span class="promo-banner-text">🐰 Easter Sale — 15% Off All Candles! April 5th–12th 🐰</span>
+				<span class="promo-banner-text">🐰 Easter Sale — 15% Off All Candles! April 5th–12th 🐰</span>
+				<span class="promo-banner-text">🐰 Easter Sale — 15% Off All Candles! April 5th–12th 🐰</span>
+				<span class="promo-banner-text">🐰 Easter Sale — 15% Off All Candles! April 5th–12th 🐰</span>
+				<span class="promo-banner-text">🐰 Easter Sale — 15% Off All Candles! April 5th–12th 🐰</span>
+			</div>
+		</div>
+		-->
+
 		<nav id="topNav" class="navbar nav">
 			<div class="container">
 				<button class="navbar-toggler" aria-expanded="false" aria-controls="navbarDropdown">
@@ -221,6 +279,7 @@
 									<div class="warm-image">
 										<img fetchpriority="high" decoding="async"
 												 src="./assets/images/Candles/web-0-Fontana_Candle_Company_r2_9930.webp" class="warm-oil" alt="cinnamon orange and clove scented candle">
+										<!-- <div class="sale-ribbon"><span>15% OFF</span></div> -->
 									</div>
 									<div class="stock-badge in-stock">
 										<div class="icon-circle"></div>
@@ -230,6 +289,10 @@
 										<div class="product-name clove-bud">Cinnamon Orange Clove</div>
 										<div class="price-option">
 											<span class="product-price">$25.99</span>
+											<!-- Sale price: uncomment below and add original-price class to price above
+											<span class="product-price original-price">$25.99</span>
+											<span class="product-price sale-price">$22.09</span>
+											-->
 										</div>
 										<!--
 										<div class="product-meta">
