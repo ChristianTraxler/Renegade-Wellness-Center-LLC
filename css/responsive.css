@@ -686,6 +686,11 @@
   .v2-map iframe {
     min-height: 300px;
   }
+
+  #sugar-scrubs .product-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 740px) {

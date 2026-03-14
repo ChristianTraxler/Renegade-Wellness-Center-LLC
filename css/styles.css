@@ -544,13 +544,28 @@ ul.breadcrumb > .not-active > a { color: gray; }
 /*.cbd-tall-card .warm-oil { max-height: 100%; }*/
 #sunscreen .product-grid,
 #sugar-scrubs .product-grid,
-#clay .product-grid,
 #eye .product-grid,
 #facial .product-grid,
 #bag .product-grid {
   grid-template-columns: repeat(2, 1fr);
   max-width: 66%;
   margin: 0 auto;
+}
+
+#clay .product-grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#clay .product-info {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+}
+
+#clay .price-option {
+  margin-top: auto;
 }
 
 #sugar-scrubs .product-image { background-color: #ffffff; }
