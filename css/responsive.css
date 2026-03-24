@@ -60,6 +60,39 @@
 }
 
 @media screen and (max-width: 1024px) {
+
+  /* 13" iPad Pro portrait — 2-column product grid */
+  .grid-gap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .single-card-grid.grid-gap {
+    grid-template-columns: calc(50% - 20px);
+    justify-content: center;
+  }
+
+  /* Sections with 3 or fewer products — match standard 2-column grid */
+  #sunscreen .product-grid,
+  #sugar-scrubs .product-grid,
+  #pain .product-grid,
+  #clay .product-grid,
+  #eye .product-grid,
+  #facial .product-grid,
+  #bag .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+  /* Single-card section — centered, same width as one card in 2-column grid */
+  #pain .mindfully-made-syrup {
+    display: flex;
+    justify-content: center;
+  }
+
+  #pain .mindfully-made-syrup .flip-card {
+    width: calc(50% - 20px);
+  }
+
   /* Start of Home page */
 
   .bg-header { padding: 0; }
@@ -1673,8 +1706,22 @@
 
   #sunscreen .mindfully-made-syrup,
   #pain .mindfully-made-syrup {
+    display: block;
     grid-template-columns: repeat(1, 100%);
     justify-content: center;
+  }
+
+  #pain .mindfully-made-syrup .flip-card {
+    width: 90%;
+  }
+
+  .single-card-grid.grid-gap {
+    grid-template-columns: 1fr;
+  }
+
+  .single-card-grid .flip-card {
+    width: 90%;
+    margin: auto;
   }
 
   #sunscreen .essential-oils-card,

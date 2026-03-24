@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25f1545c-2a08-460c-9147-3d12f0dc1e8f" name="Default Changelist" comment="" />
+    <list default="true" id="25f1545c-2a08-460c-9147-3d12f0dc1e8f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/responsive.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +66,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;NewWatcherDialog.advanced.open&quot;: &quot;true&quot;,
     &quot;Project.color&quot;: &quot;473140&quot;,
     &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
@@ -210,6 +214,8 @@
       <workItem from="1771558729711" duration="595000" />
       <workItem from="1772079136370" duration="473000" />
       <workItem from="1772123632301" duration="5924000" />
+      <workItem from="1773702628333" duration="593000" />
+      <workItem from="1773704671278" duration="1107000" />
     </task>
     <servers />
   </component>

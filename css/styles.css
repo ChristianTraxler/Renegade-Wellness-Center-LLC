@@ -542,7 +542,6 @@ ul.breadcrumb > .not-active > a { color: gray; }
 }
 
 /*.cbd-tall-card .warm-oil { max-height: 100%; }*/
-#sunscreen .product-grid,
 #sugar-scrubs .product-grid,
 #eye .product-grid,
 #facial .product-grid,
@@ -552,10 +551,40 @@ ul.breadcrumb > .not-active > a { color: gray; }
   margin: 0 auto;
 }
 
+#sunscreen .product-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 66%;
+  margin: 0 auto;
+}
+
 #clay .product-grid {
   grid-template-columns: repeat(3, 1fr);
   max-width: 100%;
   margin: 0 auto;
+}
+
+#sunscreen .flip-card-front,
+.sunscreen-price-card .flip-card-front {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#sunscreen .product-info,
+.sunscreen-price-card .product-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.sunscreen-price {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.sunscreen-hint {
+  padding-top: 0;
+  padding-bottom: 10px;
 }
 
 #clay .product-info {
@@ -1536,21 +1565,35 @@ footer.bg-footer {
 }
 
 #scrollUp {
-  background-color: transparent;
-  background-image: linear-gradient(
-          90deg, #9ccdfe 0%, #94aafd 100%);
-  color: var(--white);
-  font-size: var(--size-20);
-  height: var(--size-30);
-  width: var(--size-30);
-  line-height: var(--size-25);
   position: fixed;
-  bottom: var(--size-18);
-  right: var(--size-30);
-  text-align: center;
-  border-radius: 8px;
-  cursor: pointer;
+  bottom: 28px;
+  right: 28px;
   z-index: 100;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #8DC7C1;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+#scrollUp.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+#scrollUp:hover {
+  background: #6aada6;
+}
+#scrollUp .arrow {
+  width: 22px;
+  height: 22px;
 }
 
 
@@ -6146,9 +6189,9 @@ body.dark-mode .bg-footer {
   background: #0f0f1a;
 }
 
-/* Scroll-top in dark mode */
+/* Scroll-top in dark mode — keep same teal as light mode */
 body.dark-mode #scrollUp {
-  background: #16213e;
+  background: #8DC7C1;
 }
 
 /* Hamburger bars in dark mode when sticky */
