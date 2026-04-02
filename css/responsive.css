@@ -83,6 +83,10 @@
     max-width: 100%;
   }
 
+  #gummies .product-grid {
+    max-width: 100%;
+  }
+
   /* Single-card section — centered, same width as one card in 2-column grid */
   #pain .mindfully-made-syrup {
     display: flex;
@@ -398,6 +402,11 @@
 }
 
 @media screen and (max-width: 768px) {
+
+  #gummies .product-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
 
   /* Start of Navbar and Footer */
 

@@ -551,7 +551,8 @@ ul.breadcrumb > .not-active > a { color: gray; }
   margin: 0 auto;
 }
 
-#sunscreen .product-grid {
+#sunscreen .product-grid,
+#gummies .product-grid {
   grid-template-columns: repeat(2, 1fr);
   max-width: 66%;
   margin: 0 auto;
