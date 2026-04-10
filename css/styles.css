@@ -454,6 +454,11 @@ ul.breadcrumb > .not-active > a { color: gray; }
   object-fit: cover;
 }
 
+.kids-babies-img {
+  position: relative;
+  top: -15px;
+}
+
 #bar-soaps .product-image img {
   max-width: 100%;
   max-height: 100%;
@@ -551,7 +556,12 @@ ul.breadcrumb > .not-active > a { color: gray; }
   margin: 0 auto;
 }
 
-#sunscreen .product-grid,
+#sunscreen .product-grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 #gummies .product-grid {
   grid-template-columns: repeat(2, 1fr);
   max-width: 66%;
@@ -617,6 +627,23 @@ ul.breadcrumb > .not-active > a { color: gray; }
   height: 100%;
   object-fit: contain;
   filter: none;
+}
+
+#hair .mindfully-made-syrup .flip-card {
+  width: 100%;
+}
+
+#hair .product-image {
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+#hair .product-image img {
+  filter: none;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform: scale(1.25);
 }
 
 .flip-card-back .product-description ul {
@@ -1057,6 +1084,7 @@ ul.breadcrumb > .not-active > a { color: gray; }
 .strawberries-juice-back .card-back-header { background: #e6b0b6; }
 .vanilla-almond-back .card-back-header { background: #CC864D; }
 .vanilla-back .card-back-header { background: #C0A798; }
+.beet-root-back .card-back-header { background: #993e50; }
 .white-pitaya-back .card-back-header { background: #DC1857; }
 .wintergreen-back .card-back-header { background: #799E82; }
 
@@ -3291,6 +3319,7 @@ h3 > a { color: black; }
 .wintergreen { color: #799E82; }
 .no-warts { color: #2BD4C9; }
 .vanilla { color: #C0A798; }
+.beet-root { color: #993e50; }
 .elderberry { color: #602E4E; }
 .lions-mane { color: #E6E3A1; }
 .frost-dream { color: #A2D1D6; }

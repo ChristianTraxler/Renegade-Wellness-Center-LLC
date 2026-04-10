@@ -1714,14 +1714,20 @@
   }
 
   #sunscreen .mindfully-made-syrup,
-  #pain .mindfully-made-syrup {
+  #pain .mindfully-made-syrup,
+  #hair .mindfully-made-syrup {
     display: block;
     grid-template-columns: repeat(1, 100%);
     justify-content: center;
   }
 
-  #pain .mindfully-made-syrup .flip-card {
+  #pain .mindfully-made-syrup .flip-card,
+  #hair .mindfully-made-syrup .flip-card {
     width: 90%;
+  }
+
+  #hair .product-image img {
+    transform: scale(1.25);
   }
 
   .single-card-grid.grid-gap {
