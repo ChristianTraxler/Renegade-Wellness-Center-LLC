@@ -563,8 +563,8 @@ ul.breadcrumb > .not-active > a { color: gray; }
 }
 
 #gummies .product-grid {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 66%;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 100%;
   margin: 0 auto;
 }
 
