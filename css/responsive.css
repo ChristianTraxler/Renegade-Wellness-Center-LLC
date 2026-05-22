@@ -408,6 +408,10 @@
     max-width: 100%;
   }
 
+  #softgels .pets-grid {
+    grid-template-columns: minmax(300px, 360px);
+  }
+
   /* Start of Navbar and Footer */
 
   [aria-expanded="true"] ~ ul {
