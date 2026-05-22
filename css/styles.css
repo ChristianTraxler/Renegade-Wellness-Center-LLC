@@ -563,9 +563,18 @@ ul.breadcrumb > .not-active > a { color: gray; }
 }
 
 #gummies .product-grid {
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 100%;
+  grid-template-columns: repeat(2, 35%);
   margin: 0 auto;
+}
+
+#gummies .warm-oil {
+  width: 88%;
+  margin: 0 auto;
+}
+
+
+#softgels .pets-grid {
+  grid-template-columns: repeat(2, minmax(300px, 360px));
 }
 
 #clay .product-grid {
@@ -1099,15 +1108,15 @@ ul.breadcrumb > .not-active > a { color: gray; }
 .candle-wildflower .card-back-header { background: #D08ABB; }
 
 /* CBD card colors */
-.cbd-strawberry .warm-image { background-color: #F5BDB3; }
+.cbd-strawberry .warm-image { background-color: #FBC9C3; }
 .cbd-strawberry .product-name { color: #F5BDB3; }
 .cbd-strawberry .card-back-header { background: #F5BDB3; }
 
-.cbd-raspberry .warm-image { background-color: #F0ADBE; }
+.cbd-raspberry .warm-image { background-color: #FBC4D6; }
 .cbd-raspberry .product-name { color: #F0ADBE; }
 .cbd-raspberry .card-back-header { background: #F0ADBE; }
 
-.cbd-sleep .warm-image { background-color: #B9A1CC; }
+.cbd-sleep .warm-image { background-color: #C8B7D9; }
 .cbd-sleep .product-name { color: #B9A1CC; }
 .cbd-sleep .card-back-header { background: #B9A1CC; }
 
