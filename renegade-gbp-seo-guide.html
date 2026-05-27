@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Business Profile Setup Guide — Renegade Wellness Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #8DC7C1;
+    --teal-dark: #5fa39c;
+    --teal-light: #b8deda;
+    --teal-xlight: #e8f5f4;
+    --navy: #204068;
+    --navy-dark: #162c48;
+    --navy-light: #2d5494;
+    --cream: #faf8f5;
+    --warm-white: #ffffff;
+    --text-primary: #1a2a3a;
+    --text-secondary: #4a5a6a;
+    --text-muted: #8a9aaa;
+    --border: #dde8e7;
+    --shadow-sm: 0 2px 8px rgba(32,64,104,0.08);
+    --shadow-md: 0 8px 32px rgba(32,64,104,0.12);
+    --shadow-lg: 0 20px 60px rgba(32,64,104,0.16);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-primary);
+    line-height: 1.7;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #1e4a7a 100%);
+    padding: 64px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(141,199,193,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 20%, rgba(141,199,193,0.10) 0%, transparent 50%);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 60px;
+    background: var(--cream);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(141,199,193,0.2);
+    border: 1px solid rgba(141,199,193,0.35);
+    color: var(--teal-light);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .hero-badge::before { content: '●'; font-size: 8px; color: var(--teal); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--teal); }
+  .hero-sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 15px; font-weight: 300;
+    max-width: 520px; margin: 0 auto 32px;
+  }
+  .hero-meta {
+    display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    display: flex; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.55); font-size: 13px;
+  }
+  .hero-meta-item svg { color: var(--teal); flex-shrink: 0; }
+
+  /* ─── LAYOUT ─── */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  /* ─── TABLE OF CONTENTS ─── */
+  .toc {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin: 48px auto;
+    max-width: 900px;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; color: var(--navy);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .toc-title svg { color: var(--teal-dark); }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 8px;
+  }
+  .toc-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px; font-weight: 500;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+  }
+  .toc-item:hover {
+    background: var(--teal-xlight);
+    border-color: var(--teal-light);
+    color: var(--navy);
+    transform: translateX(3px);
+  }
+  .toc-num {
+    width: 24px; height: 24px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ─── SECTION ─── */
+  .section {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s;
+  }
+  .section:hover { box-shadow: var(--shadow-md); }
+  .section-header {
+    display: flex; align-items: center; gap: 16px;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-header::after {
+    content: '';
+    position: absolute; right: -20px; top: 50%;
+    transform: translateY(-50%);
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(141,199,193,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .step-badge {
+    width: 48px; height: 48px; flex-shrink: 0;
+    background: var(--teal);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700; color: var(--navy-dark);
+    position: relative; z-index: 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .section-title-wrap { position: relative; z-index: 1; }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--teal-light); opacity: 0.8;
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 600; color: #fff;
+    line-height: 1.2;
+  }
+  .section-body { padding: 28px; }
+
+  /* ─── STEPS (sub) ─── */
+  .steps { display: flex; flex-direction: column; gap: 16px; }
+  .step {
+    display: flex; gap: 16px;
+    padding: 18px 20px;
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .step::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; border-radius: 3px 0 0 3px;
+    background: var(--teal);
+  }
+  .step-dot {
+    width: 28px; height: 28px; flex-shrink: 0;
+    background: var(--navy);
+    color: #fff; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500;
+    margin-top: 1px;
+  }
+  .step-content h4 {
+    font-size: 14px; font-weight: 600; color: var(--navy);
+    margin-bottom: 5px;
+  }
+  .step-content p {
+    font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+  }
+  .step-content p strong { color: var(--navy); }
+
+  /* ─── CALLOUTS ─── */
+  .callout {
+    display: flex; gap: 14px;
+    padding: 16px 20px;
+    border-radius: var(--radius-sm);
+    margin-top: 16px;
+    font-size: 14px; line-height: 1.6;
+  }
+  .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .callout-text { color: var(--text-secondary); }
+  .callout-text strong { color: var(--text-primary); }
+  .callout.tip { background: #e8f5f4; border-left: 3px solid var(--teal-dark); }
+  .callout.warning { background: #fff8e6; border-left: 3px solid #f59e0b; }
+  .callout.important { background: #eef2ff; border-left: 3px solid #6366f1; }
+  .callout.success { background: #f0fdf4; border-left: 3px solid #22c55e; }
+
+  /* ─── KEYWORD BOXES ─── */
+  .keyword-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .keyword-tag {
+    padding: 10px 14px;
+    background: var(--teal-xlight);
+    border: 1px solid var(--teal-light);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .keyword-tag::before { content: '🔍'; font-size: 12px; }
+
+  /* ─── CHECKLIST ─── */
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+  .checklist li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14px; color: var(--text-secondary);
+    padding: 8px 12px;
+    background: var(--cream);
+    border-radius: 8px;
+  }
+  .checklist li::before {
+    content: '□';
+    font-size: 16px; color: var(--teal-dark);
+    flex-shrink: 0; margin-top: -1px;
+  }
+  .checklist li strong { color: var(--navy); }
+
+  /* ─── SERVICE TAGS ─── */
+  .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .service-tag {
+    padding: 6px 14px;
+    background: var(--navy);
+    color: var(--teal-light);
+    border-radius: 100px;
+    font-size: 13px; font-weight: 500;
+  }
+
+  /* ─── PRIORITY TABLE ─── */
+  .priority-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin-top: 16px;
+  }
+  .priority-card {
+    padding: 18px;
+    border-radius: var(--radius-sm);
+    border: 1px solid;
+    text-align: center;
+  }
+  .priority-card.high { background: #fff1f2; border-color: #fecdd3; }
+  .priority-card.medium { background: #fff8e6; border-color: #fde68a; }
+  .priority-card.low { background: #f0fdf4; border-color: #bbf7d0; }
+  .priority-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .priority-card.high .priority-label { color: #e11d48; }
+  .priority-card.medium .priority-label { color: #d97706; }
+  .priority-card.low .priority-label { color: #16a34a; }
+  .priority-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+  /* ─── PHOTO GRID ─── */
+  .photo-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px; margin-top: 16px;
+  }
+  .photo-cat {
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+    color: #fff;
+    font-size: 13px; font-weight: 500;
+  }
+  .photo-cat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; color: var(--teal-light); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    text-align: center;
+    padding: 48px 24px 60px;
+    color: var(--text-muted); font-size: 13px;
+  }
+  .footer strong { color: var(--navy); }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .footer-logo span { color: var(--teal-dark); }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    height: 1px; background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* ─── TIMELINE ─── */
+  .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 16px; }
+  .timeline-item {
+    display: flex; gap: 16px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  .timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute; left: 15px; top: 32px; bottom: 0;
+    width: 2px; background: var(--border);
+  }
+  .timeline-dot {
+    width: 32px; height: 32px; flex-shrink: 0;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; position: relative; z-index: 1;
+  }
+  .timeline-dot.week1 { background: var(--teal-xlight); }
+  .timeline-dot.week2 { background: #eef2ff; }
+  .timeline-dot.month1 { background: #fff8e6; }
+  .timeline-dot.ongoing { background: #f0fdf4; }
+  .timeline-content h4 { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .timeline-content p { font-size: 13px; color: var(--text-secondary); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    .priority-grid { grid-template-columns: 1fr; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .section-body { padding: 20px; }
+    .photo-categories { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Local SEO Setup Guide</div>
+    <h1>Google Business Profile<br><span>Setup Guide</span></h1>
+    <p class="hero-sub">A complete step-by-step playbook to rank higher in Newton, NC and surrounding areas for Renegade Wellness Center.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Newton, NC &amp; Surrounding Areas
+      </div>
+      <div class="hero-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        10 Steps to Follow
+      </div>
+      <div class="hero-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        ~2–3 Hours to Complete
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc-title">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      What's Covered
+    </div>
+    <div class="toc-grid">
+      <a href="#s1" class="toc-item"><span class="toc-num">1</span> Claim &amp; Verify Your Profile</a>
+      <a href="#s2" class="toc-item"><span class="toc-num">2</span> Complete Every Info Field</a>
+      <a href="#s3" class="toc-item"><span class="toc-num">3</span> Choose the Right Categories</a>
+      <a href="#s4" class="toc-item"><span class="toc-num">4</span> Write a Keyword-Rich Description</a>
+      <a href="#s5" class="toc-item"><span class="toc-num">5</span> Add Photos &amp; Videos</a>
+      <a href="#s6" class="toc-item"><span class="toc-num">6</span> Add Services &amp; Products</a>
+      <a href="#s7" class="toc-item"><span class="toc-num">7</span> Get &amp; Respond to Reviews</a>
+      <a href="#s8" class="toc-item"><span class="toc-num">8</span> Post Regular Updates</a>
+      <a href="#s9" class="toc-item"><span class="toc-num">9</span> Build Local Citations</a>
+      <a href="#s10" class="toc-item"><span class="toc-num">10</span> Track &amp; Maintain Performance</a>
+    </div>
+  </div>
+
+  <!-- ─── STEP 1 ─── -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="step-badge">1</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Step One</div>
+        <div class="section-title">Claim &amp; Verify Your Google Business Profile</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">1</div>
+          <div class="step-content">
+            <h4>Go to Google Business Profile</h4>
+            <p>Visit <strong>business.google.com</strong> and sign in with the Google account you want associated with the business (ideally a dedicated business Gmail account).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">2</div>
+          <div class="step-content">
+            <h4>Search for Your Business</h4>
+            <p>Type <strong>"Renegade Wellness Center"</strong> in the search bar. If it appears, click <em>Claim this business</em>. If it doesn't exist yet, click <em>Add your business to Google</em>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">3</div>
+          <div class="step-content">
+            <h4>Choose Your Verification Method</h4>
+            <p>Google will offer one or more options: <strong>Postcard by mail</strong> (most common — arrives in 5–14 days), <strong>Phone call</strong>, <strong>Email</strong>, or <strong>Video call</strong>. Postcard is the most reliable for brick-and-mortar businesses.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">4</div>
+          <div class="step-content">
+            <h4>Enter the Verification Code</h4>
+            <p>Once you receive your postcard, log back in to <strong>business.google.com</strong>, navigate to your profile, and enter the 5-digit code. Your profile is now verified and trusted by Google.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout warning">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-text"><strong>Don't make major changes</strong> while waiting for verification. Significant edits can reset the verification process and require starting over.</div>
+      </div>
+      <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div class="callout-text"><strong>Already claimed?</strong> Check if someone else (maybe a prior owner or Google itself) has already claimed the listing. If so, click <em>Request Access</em> and Google will email the current owner to transfer ownership.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 2 ─── -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="step-badge">2</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Step Two</div>
+        <div class="section-title">Complete Every Business Info Field</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Google rewards completeness. The more fields you fill out, the higher your local ranking signals. Go to your dashboard and fill in all of the following:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">📍</div>
+          <div class="step-content">
+            <h4>Business Name</h4>
+            <p>Use your exact legal name: <strong>Renegade Wellness Center</strong>. Do NOT add keywords to your business name (e.g., "Renegade Wellness Center Salt Therapy Newton NC") — Google may suspend your listing for this.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🏠</div>
+          <div class="step-content">
+            <h4>Address</h4>
+            <p>Enter your full Newton, NC address exactly as it appears on your website and other directories. Consistency across the web is critical for local SEO trust signals.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">📞</div>
+          <div class="step-content">
+            <h4>Phone Number</h4>
+            <p>Use a <strong>local Newton, NC phone number</strong> (not a toll-free number). This confirms to Google that you are truly a local business. Make sure this number matches your website exactly.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🌐</div>
+          <div class="step-content">
+            <h4>Website URL</h4>
+            <p>Link directly to <strong>renegadewellnesscenter.com</strong>. Make sure the URL you enter is your homepage URL exactly as it appears (with or without trailing slash, consistently).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🕐</div>
+          <div class="step-content">
+            <h4>Business Hours</h4>
+            <p>Set accurate regular hours AND use the <em>Special Hours</em> feature for holidays and events. Customers who see outdated hours leave bad reviews. Enable <strong>More hours</strong> to also add appointment-only hours if applicable.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">📅</div>
+          <div class="step-content">
+            <h4>Appointment Link</h4>
+            <p>Add your booking URL under <em>Booking</em> in the profile. This adds a visible <strong>"Book"</strong> button on your Google listing — huge for converting searchers into clients.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout important">
+        <div class="callout-icon">📌</div>
+        <div class="callout-text"><strong>NAP Consistency is critical.</strong> Your Name, Address, and Phone number must be <em>identical</em> across Google, your website, Facebook, Yelp, and every other directory. Even small differences (St. vs Street, Suite vs Ste.) can hurt your ranking.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 3 ─── -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="step-badge">3</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Step Three</div>
+        <div class="section-title">Choose the Right Categories</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Categories tell Google what your business does and directly impact which searches you show up in. You get one <strong>Primary Category</strong> and up to 9 additional categories.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">★</div>
+          <div class="step-content">
+            <h4>Recommended Primary Category</h4>
+            <p><strong>"Wellness Center"</strong> — This is the broadest, most accurate match for Renegade Wellness Center and signals your core service to Google.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">+</div>
+          <div class="step-content">
+            <h4>Recommended Additional Categories</h4>
+            <p>Add as many relevant secondary categories as apply. These expand your search visibility:</p>
+            <div class="service-tags" style="margin-top:10px;">
+              <span class="service-tag">Spa</span>
+              <span class="service-tag">Alternative Medicine Practitioner</span>
+              <span class="service-tag">Health Consultant</span>
+              <span class="service-tag">Massage Therapist</span>
+              <span class="service-tag">Sauna</span>
+              <span class="service-tag">Physical Therapist</span>
+              <span class="service-tag">Holistic Medicine Practitioner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div class="callout-text"><strong>Pro tip:</strong> Search each category name in Google and look at the local results. If your competitors are appearing there, it's likely the right category for you to use too.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 4 ─── -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="step-badge">4</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Step Four</div>
+        <div class="section-title">Write a Keyword-Rich Business Description</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Your description (up to 750 characters) is read by Google and potential customers. It should naturally include location keywords and your core services.</p>
+
+      <div class="step" style="margin-bottom:16px;">
+        <div class="step-dot">✍</div>
+        <div class="step-content">
+          <h4>Sample Description (customize as needed)</h4>
+          <p style="background:var(--cream);padding:14px;border-radius:8px;border:1px solid var(--border);margin-top:8px;font-style:italic;line-height:1.7;">
+            "Renegade Wellness Center is Newton, NC's premier destination for holistic health and relaxation. We offer salt cabin therapy, infrared therapy, and wellness packages designed to help you detox, de-stress, and restore balance. Serving Newton, Conover, Hickory, Catawba County, and surrounding areas. Book your session today and experience the healing power of halotherapy and infrared light therapy."
+          </p>
+        </div>
+      </div>
+
+      <p style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:10px;">Target keywords to weave in naturally:</p>
+      <div class="keyword-grid">
+        <div class="keyword-tag">Salt therapy Newton NC</div>
+        <div class="keyword-tag">Infrared therapy Hickory NC</div>
+        <div class="keyword-tag">Wellness center Catawba County</div>
+        <div class="keyword-tag">Halotherapy near me</div>
+        <div class="keyword-tag">Salt cabin therapy NC</div>
+        <div class="keyword-tag">Infrared sauna Newton NC</div>
+        <div class="keyword-tag">Holistic wellness Conover NC</div>
+        <div class="keyword-tag">Relaxation spa Newton NC</div>
+      </div>
+      <div class="callout warning">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-text"><strong>Avoid keyword stuffing.</strong> Write for humans first. Google's algorithm detects unnatural phrasing and it can harm your ranking instead of helping.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 5 ─── -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="step-badge">5</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Step Five</div>
+        <div class="section-title">Add High-Quality Photos &amp; Videos</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Businesses with photos get <strong>42% more requests for directions</strong> and <strong>35% more website clicks</strong>. Google favors profiles with regular, recent photo uploads.</p>
+
+      <div class="photo-categories">
+        <div class="photo-cat">
+          <div class="photo-cat-label">Required</div>
+          Cover Photo
+        </div>
+        <div class="photo-cat">
+          <div class="photo-cat-label">Required</div>
+          Logo / Profile Photo
+        </div>
+        <div class="photo-cat">
+          <div class="photo-cat-label">Interior</div>
+          Salt Cabin Room
+        </div>
+        <div class="photo-cat">
+          <div class="photo-cat-label">Interior</div>
+          Infrared Therapy Room
+        </div>
+        <div class="photo-cat">
+          <div class="photo-cat-label">Exterior</div>
+          Front of Building
+        </div>
+        <div class="photo-cat">
+          <div class="photo-cat-label">Products</div>
+          Retail Products
+        </div>
+        <div class="photo-cat">
+          <div class="photo-cat-label">Atmosphere</div>
+          Waiting Area / Lobby
+        </div>
+        <div class="photo-cat">
+          <div class="photo-cat-label">Team</div>
+          Staff Photos
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">📸</div>
+          <div class="step-content">
+            <h4>Photo Quality Requirements</h4>
+            <p>Use high-resolution images (minimum <strong>720px wide</strong>). JPG or PNG format. Well-lit, professional-looking shots. Avoid stock photos — Google and customers prefer authentic images.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🎥</div>
+          <div class="step-content">
+            <h4>Add a Short Video</h4>
+            <p>A 30–90 second walkthrough video of the salt cabin or infrared room dramatically increases engagement. Upload it directly to your GBP — Google prominently displays videos in the profile.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🔄</div>
+          <div class="step-content">
+            <h4>Upload Regularly</h4>
+            <p>Aim to add at least <strong>2–4 new photos per month</strong>. Google notices recent activity and it's a signal of an active, trustworthy business. New seasonal décor, events, product arrivals — all count.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 6 ─── -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="step-badge">6</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Step Six</div>
+        <div class="section-title">Add Services &amp; Products</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">The <strong>Services</strong> and <strong>Products</strong> sections appear directly on your Google listing and help match your profile to more specific searches.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">🧘</div>
+          <div class="step-content">
+            <h4>Add Your Core Services</h4>
+            <p>Under <em>Edit Profile → Services</em>, add each service with a name, description, and price. Include:</p>
+            <div class="service-tags" style="margin-top:8px;">
+              <span class="service-tag">Salt Cabin Session</span>
+              <span class="service-tag">Infrared Therapy Session</span>
+              <span class="service-tag">Salt Cabin + Infrared Combo</span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🛍️</div>
+          <div class="step-content">
+            <h4>Add Retail Products (Optional but Helpful)</h4>
+            <p>Under <em>Edit Profile → Products</em>, list your main product categories with photos and descriptions. Google can surface individual products in search results: <strong>Essential Oils, Supplements, CBD Products, Himalayan Salt Products, Candles,</strong> etc.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">📝</div>
+          <div class="step-content">
+            <h4>Write Detailed Service Descriptions</h4>
+            <p>For each service, write 2–3 sentences describing what it is, the benefits, and who it's for. Example for Salt Cabin: <em>"Experience the healing benefits of halotherapy in our private salt cabin. Ideal for respiratory support, skin conditions, stress relief, and relaxation. Sessions available for 1–2 guests."</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 7 ─── -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="step-badge">7</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Step Seven</div>
+        <div class="section-title">Get Reviews &amp; Respond to Every Single One</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Reviews are one of the <strong>top 3 ranking factors</strong> for local SEO. Both the quantity and quality of reviews — and whether you respond — affect your ranking.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">🔗</div>
+          <div class="step-content">
+            <h4>Get Your Review Link</h4>
+            <p>In your GBP dashboard, click <em>Ask for Reviews</em>. Copy your unique review link. This takes customers directly to the review form — no hunting required.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">📲</div>
+          <div class="step-content">
+            <h4>Ask After Every Session</h4>
+            <p>Train yourself (or staff) to verbally ask happy clients to leave a review as they check out. Send a follow-up text or email with the link. The best time to ask is when the client is most excited — right after their session.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🖨️</div>
+          <div class="step-content">
+            <h4>Create a QR Code Card</h4>
+            <p>Use a free tool like <strong>qr-code-generator.com</strong> to make a QR code from your review link. Print small cards and place them at the front desk, in the salt cabin, or hand them to clients at checkout.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">💬</div>
+          <div class="step-content">
+            <h4>Respond to EVERY Review</h4>
+            <p>Google rewards businesses that engage with reviewers. <strong>For 5-star reviews:</strong> Thank them warmly, mention a specific detail from their review, invite them back. <strong>For negative reviews:</strong> Respond calmly, apologize for their experience, offer to resolve it offline — never argue publicly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="priority-grid">
+        <div class="priority-card high">
+          <div class="priority-label">🚨 Don't Do This</div>
+          <p>Never offer discounts or incentives in exchange for reviews. Google will remove them and may penalize your account.</p>
+        </div>
+        <div class="priority-card medium">
+          <div class="priority-label">🎯 Target</div>
+          <p>Aim for at least 10–15 reviews in your first 90 days. Then 2–4 new reviews per month to stay active.</p>
+        </div>
+        <div class="priority-card low">
+          <div class="priority-label">✅ Quick Win</div>
+          <p>Ask 5 long-time loyal clients right away. Early reviews build a strong foundation fast.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 8 ─── -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="step-badge">8</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Step Eight</div>
+        <div class="section-title">Post Regular Google Business Updates</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Google Posts appear on your listing and show that your business is active. They also give you another opportunity to rank for keywords and drive clicks.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">📢</div>
+          <div class="step-content">
+            <h4>Post Types to Use</h4>
+            <p><strong>What's New</strong> — Share general updates about the business. <strong>Offer</strong> — Promote a sale or special package deal. <strong>Event</strong> — Promote wellness events, open houses, or seasonal specials. <strong>Product</strong> — Highlight a specific product or service.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">📅</div>
+          <div class="step-content">
+            <h4>Post Frequency</h4>
+            <p>Aim for <strong>at least 1–2 posts per week</strong>. Google Posts expire after 7 days (except Events and Offers), so regular posting is needed to keep your listing looking active.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">💡</div>
+          <div class="step-content">
+            <h4>Post Ideas for Renegade Wellness Center</h4>
+            <p>Holiday Salt Cabin specials • Infrared therapy benefits tips • New product arrivals • Customer testimonials (with permission) • Seasonal wellness reminders • "Book this week and save" offers • Himalayan salt product highlights.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🔘</div>
+          <div class="step-content">
+            <h4>Always Include a Call-to-Action Button</h4>
+            <p>Every post lets you add a button: <strong>Book, Order Online, Learn More, Sign Up, Call Now.</strong> Always add one — it directly drives conversions from your Google listing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 9 ─── -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="step-badge">9</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Step Nine</div>
+        <div class="section-title">Build Local Citations &amp; Consistency</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">A <strong>citation</strong> is any online mention of your business name, address, and phone number. The more consistent citations you have across trusted directories, the more Google trusts your location data.</p>
+
+      <p style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:10px;">Top directories to get listed on:</p>
+      <ul class="checklist">
+        <li><strong>Yelp</strong> — yelp.com/biz/add</li>
+        <li><strong>Bing Places</strong> — bingplaces.com (Microsoft's version of GBP)</li>
+        <li><strong>Apple Maps</strong> — mapsconnect.apple.com</li>
+        <li><strong>Facebook Business Page</strong> — facebook.com/business</li>
+        <li><strong>Nextdoor</strong> — nextdoor.com/business (hyperlocal — great for Newton)</li>
+        <li><strong>Foursquare</strong> — foursquare.com/add-place</li>
+        <li><strong>Yellow Pages</strong> — yp.com</li>
+        <li><strong>Better Business Bureau</strong> — bbb.org</li>
+        <li><strong>Chamber of Commerce</strong> — Newton/Catawba County Chamber listing</li>
+        <li><strong>Thumbtack / Alignable</strong> — Good for local business networking</li>
+      </ul>
+
+      <div class="callout important">
+        <div class="callout-icon">📌</div>
+        <div class="callout-text"><strong>Critical:</strong> Use the <em>exact same</em> business name, address, and phone number on every single directory. Even minor formatting differences can dilute your local SEO signals.</div>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div class="callout-text"><strong>Use a spreadsheet</strong> to track which directories you've been listed on, your login credentials, and when you last updated each one. This will save you a lot of time down the road.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 10 ─── -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <div class="step-badge">10</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Step Ten</div>
+        <div class="section-title">Track Performance &amp; Keep the Profile Maintained</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Setting up your profile is the beginning, not the end. Ongoing maintenance and monitoring is what keeps you ranking above competitors over time.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">📊</div>
+          <div class="step-content">
+            <h4>Monitor GBP Insights Weekly</h4>
+            <p>Your GBP dashboard shows: <strong>how many people found you</strong>, what search terms they used, how many clicked for directions, how many called, and how many visited your website. Check this weekly.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🔍</div>
+          <div class="step-content">
+            <h4>Set Up Google Search Console</h4>
+            <p>Go to <strong>search.google.com/search-console</strong> and verify your website. This shows you which Google search queries are bringing people to your site — invaluable for knowing what people in Newton/Hickory are searching for.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🧹</div>
+          <div class="step-content">
+            <h4>Check for Unauthorized Edits</h4>
+            <p>Google allows users and even Google itself to suggest edits to your listing. Check your profile monthly and review any pending edits. Incorrect hours, wrong addresses, or wrong categories can all hurt you.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🗓️</div>
+          <div class="step-content">
+            <h4>Keep Hours Updated</h4>
+            <p>Update holiday hours before every major holiday. A customer who shows up during closed hours because Google showed wrong hours = a likely 1-star review. Use the <em>Special Hours</em> feature proactively.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:14px;">Recommended Maintenance Schedule:</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot week1">📅</div>
+          <div class="timeline-content">
+            <h4>Weekly</h4>
+            <p>Add 1–2 Google Posts. Respond to any new reviews. Check for new questions in the Q&amp;A section.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot week2">📸</div>
+          <div class="timeline-content">
+            <h4>Bi-Weekly</h4>
+            <p>Upload 2–4 new photos. Review GBP Insights for trends in search queries and user actions.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot month1">🔎</div>
+          <div class="timeline-content">
+            <h4>Monthly</h4>
+            <p>Review and verify all business info is accurate. Check for unauthorized edits. Review citation directories for inconsistencies.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot ongoing">🏆</div>
+          <div class="timeline-content">
+            <h4>Quarterly</h4>
+            <p>Audit your full GBP profile for completeness. Update photos seasonally. Review competitor profiles and look for category or service gaps you can fill.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── BONUS SECTION ─── -->
+  <div class="section">
+    <div class="section-header" style="background:linear-gradient(135deg, #0f4c3a 0%, #1a6b52 100%);">
+      <div class="step-badge" style="background:var(--teal-light);color:#0f4c3a;">★</div>
+      <div class="section-title-wrap">
+        <div class="section-label">Bonus Tips</div>
+        <div class="section-title">Extra Local SEO Wins for Newton, NC</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">🌍</div>
+          <div class="step-content">
+            <h4>Add Location Pages to Your Website</h4>
+            <p>Create a page on your website titled something like <strong>"Wellness Center Serving Newton, Conover, Hickory &amp; Catawba County"</strong>. This page should mention each city naturally and link to your GBP. Google uses website content to reinforce location relevance.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">❓</div>
+          <div class="step-content">
+            <h4>Answer Questions in the Q&amp;A Section</h4>
+            <p>Anyone can ask questions on your GBP listing. <em>You</em> should be the one answering them — and you can even post your own frequently asked questions and answer them yourself. This content is indexed by Google.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🏷️</div>
+          <div class="step-content">
+            <h4>Use "Near Me" Keywords on Your Website</h4>
+            <p>On your website's homepage and service pages, naturally include phrases like <em>"salt therapy near Newton NC"</em>, <em>"infrared therapy near Hickory NC"</em>, and <em>"wellness center near me in Catawba County"</em>. This reinforces your GBP signals.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">🔗</div>
+          <div class="step-content">
+            <h4>Embed a Google Map on Your Website</h4>
+            <p>Go to <strong>maps.google.com</strong>, search your business, click Share → Embed a map, and paste the code into your website's contact page. This creates a direct link signal between your website and your GBP listing.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot">📰</div>
+          <div class="step-content">
+            <h4>Get a Local News or Community Mention</h4>
+            <p>Reach out to local Newton/Catawba County news sites, community Facebook groups, or the local Chamber of Commerce for a feature or mention. These backlinks from local authoritative sources are gold for local SEO.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">Renegade <span>Wellness Center</span></div>
+  <p>Google Business Profile SEO Guide — Newton, NC</p>
+  <p style="margin-top:8px;">Questions or updates? Reach out to your web developer to keep <strong>renegadewellnesscenter.com</strong> in sync with your GBP.</p>
+</div>
+
+</body>
+</html>
