@@ -531,7 +531,7 @@
 							<button class="accordion">What type of payments do you take?</button>
 							<div class="panel">
 								<p class="p-pad">Renegade Wellness Center takes payment in the form of cash, check, credit card,
-									Apple Pay, G Pay, Cash App, and Venmo.</p>
+									Apple Pay, G Pay, Cash App, Venmo and Bitcoin.</p>
 							</div>
 
 							<button class="accordion">Do you offer gift cards?</button>
@@ -643,6 +643,7 @@
 						<img src="./assets/images/payments/Google-Pay2.png" alt="Google Pay">
 						<img src="./assets/images/payments/Cash-App2.png" alt="Cash App">
 						<img src="./assets/images/payments/venmo.png" alt="Venmo">
+						<img src="./assets/images/payments/bitcoin.svg" alt="Bitcoin">
 					</div>
 				</div>
 			</div>
@@ -656,7 +657,7 @@
 		</footer>
 
 		<!--Scroll Top-->
-		<a id="scrollUp" href="#pageTop"><img loading="lazy" decoding="async" class="arrow" src="./assets/images/arrow.svg" alt=""></a>
+		<a id="scrollUp" href="#pageTop" onclick="event.preventDefault();document.documentElement.style.scrollBehavior='auto';window.scrollTo({top:0,behavior:'smooth'});setTimeout(function(){document.documentElement.style.scrollBehavior=''},50)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></a>
 
 		<script>
 
@@ -666,6 +667,14 @@
 					nav.classList.add("sticky");
 				} else {
 					nav.classList.remove("sticky");
+				}
+				var scrollBtn = document.getElementById('scrollUp');
+				if (scrollBtn) {
+					if (window.pageYOffset > 300) {
+						scrollBtn.classList.add('visible');
+					} else {
+						scrollBtn.classList.remove('visible');
+					}
 				}
 			}
 
