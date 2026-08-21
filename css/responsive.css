@@ -433,6 +433,11 @@
 
   .nav-link a { margin-right: 20px; }
 
+  /* Fall pumpkin badge — match the tighter tablet nav rhythm */
+  .nav-pumpkin__link { margin-right: 20px; }
+
+  .nav-pumpkin__svg { width: 42px; }
+
   /* Footer: 2 columns at tablet */
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -828,6 +833,35 @@
   .nav-link + .nav-link {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
+
+  /* Fall pumpkin badge — sits as a full-width row like the other links */
+  .nav-pumpkin {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 8px 28px;
+    border-left: 3px solid transparent;
+  }
+
+  /* Qualified with .nav-pumpkin to reach (0,2,0). Unqualified, this rule is
+     (0,1,0) and loses to `.nav-link a` (0,1,1), so the link silently picked up
+     that rule's 28px padding and 3px border and got indented a SECOND time on
+     top of the li's own padding - pushing the badge 31px right of the text.
+     The hover indicator border lives on the li here, so the link needs none. */
+  .nav-pumpkin .nav-pumpkin__link {
+    margin-right: 0;
+    padding: 0;
+    border-left: 0;
+    /* The artwork carries transparent space inside its own viewBox - the body
+       starts about 9 units into a 60-unit box, so at width:44px the pumpkin
+       reads ~4.5px right of its layout box. Pull that back so the badge's
+       visible left edge lines up with the text of the rows above it, rather
+       than its box lining up and the pumpkin looking indented. Recalculate if
+       .nav-pumpkin__svg width changes at this breakpoint. */
+    margin-left: -4.5px;
+  }
+
+  .nav-pumpkin__svg { width: 44px; }
 
   /* Dark mode — mobile menu */
   body.dark-mode [aria-expanded="true"] ~ ul {

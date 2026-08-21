@@ -1,0 +1,461 @@
+/* ============================================================
+   SEASONAL THEME — featured.html
+   ============================================================
+   Loaded ONLY by featured.html, so nothing here can affect the
+   rest of the site. Everything is scoped to a season class on
+   <body> (currently .season-fall).
+
+   ADDING A NEW SEASON
+   -------------------
+   1. Add a token block below, e.g. `.season-winter { ... }`,
+      overriding the same --sl-* variables.
+   2. Add its dark-mode counterpart, `body.dark-mode.season-winter`.
+   3. Add its particle shapes/colors to js/seasonal-leaves.js.
+   4. Swap the class + data-season on <body> in featured.html.
+
+   Everything from "SHARED SEASONAL LAYOUT" down is season-agnostic
+   and reads only from the tokens, so it needs no changes.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   FALL — light
+   ------------------------------------------------------------ */
+.season-fall {
+	--sl-bg:            #FAF4EA;  /* warm cream, replaces the site's #f4f7f6 */
+	--sl-bg-deep:       #F2E6D4;
+	--sl-accent:        #C4571F;  /* burnt orange, replaces the site's teal #69B5AD */
+	--sl-accent-soft:   #D98324;
+	--sl-accent-deep:   #8C3A12;
+	--sl-heading:       #3E2D1F;
+	--sl-text:          #55432F;
+	--sl-rule:          #C4571F;
+
+	/* Leaf pile: the packed under-mass showing between individual leaves.
+	   Reads as shadow deep in the pile, so it stays dark and low-chroma. */
+	--sl-pile-mass-top:    #6B4A28;
+	--sl-pile-mass-bottom: #3E2A14;
+	--sl-pile-leaf-filter: none;
+}
+
+/* ------------------------------------------------------------
+   FALL — dark
+   Deeper, warmer, lower-chroma. The site's dark mode is a cool
+   #1a1a2e; the fall page runs a warm near-black instead so the
+   season still reads with the toggle on.
+   ------------------------------------------------------------ */
+body.dark-mode.season-fall {
+	--sl-bg:            #1E1611;
+	--sl-bg-deep:       #17100C;
+	--sl-accent:        #E08B4C;
+	--sl-accent-soft:   #E8A661;
+	--sl-accent-deep:   #B4652A;
+	--sl-heading:       #EFE2D0;
+	--sl-text:          #BFAE9B;
+	--sl-rule:          #E08B4C;
+
+	--sl-pile-mass-top:    #3B2814;
+	--sl-pile-mass-bottom: #22150A;
+	--sl-pile-leaf-filter: brightness(.72) saturate(.9);
+}
+
+
+/* ============================================================
+   SHARED SEASONAL LAYOUT — reads tokens only
+   ============================================================ */
+
+/* ---------- PAGE GROUND ----------
+   default.css paints <body> the site teal (#69B5AD). On this page that teal
+   flashes on rubber-band overscroll — jarring above a fall page, and very
+   visible on iOS. Repaint it to the footer colour so the bottom overscroll,
+   where it shows most, is seamless. Scoped to the season class, so no other
+   page is affected. */
+.season-fall {
+	background-color: var(--footer, #34314B);
+}
+
+/* ---------- HERO ---------- */
+/* Warm the hero overlay so the (unchanged) hero photo reads autumnal */
+.season-fall .hv2-hero__overlay {
+	background: linear-gradient(
+		160deg,
+		rgba(26, 13, 5, 0.84) 0%,
+		rgba(58, 26, 8, 0.72) 48%,
+		rgba(122, 62, 18, 0.56) 100%
+	);
+}
+
+/* Dark hero overlay rides on ::after with an opacity transition,
+   matching how the rest of the site handles it. */
+.season-fall .hv2-hero__overlay::after {
+	background: linear-gradient(
+		160deg,
+		rgba(14, 9, 5, 0.88) 0%,
+		rgba(46, 24, 10, 0.74) 50%,
+		rgba(120, 66, 22, 0.42) 100%
+	);
+}
+
+/* ---------- WAVE ---------- */
+/* The wave must match whatever sits directly beneath it */
+.season-fall .hv2-wave svg path,
+body.dark-mode.season-fall .hv2-wave svg path {
+	fill: var(--sl-bg);
+}
+
+/* ---------- SECTION BACKGROUNDS ---------- */
+.season-fall .hv2-intro,
+.season-fall .v2-content,
+body.dark-mode.season-fall .hv2-intro,
+body.dark-mode.season-fall .v2-content {
+	background: var(--sl-bg);
+}
+
+/* Subtle warmth behind the intro so it isn't a flat wash */
+.season-fall .hv2-intro {
+	background-image: radial-gradient(
+		ellipse 70% 100% at 50% 0%,
+		var(--sl-bg-deep) 0%,
+		transparent 70%
+	);
+}
+
+/* ---------- TYPE ---------- */
+.season-fall .hv2-intro__label,
+body.dark-mode.season-fall .hv2-intro__label {
+	color: var(--sl-accent);
+}
+
+.season-fall .hv2-intro__label::before,
+.season-fall .hv2-intro__label::after,
+body.dark-mode.season-fall .hv2-intro__label::before,
+body.dark-mode.season-fall .hv2-intro__label::after {
+	background: var(--sl-rule);
+}
+
+.season-fall .hv2-intro__text,
+body.dark-mode.season-fall .hv2-intro__text {
+	color: var(--sl-text);
+}
+
+.season-fall .section-header h1,
+.season-fall .section-header h2,
+body.dark-mode.season-fall .section-header h1,
+body.dark-mode.season-fall .section-header h2 {
+	color: var(--sl-heading);
+}
+
+/* Small line under each category heading naming the brand(s) in that
+   section. Sits between the <h2> and the card grid on featured.html. */
+.fv2-section-kicker {
+	margin: 6px 0 0;
+	text-align: center;
+	font-size: 0.95rem;
+	font-weight: 400;
+	letter-spacing: 0.02em;
+	color: var(--sl-text, #55432F);
+	opacity: 0.75;
+}
+
+/* ---------- CARD IMAGES: .fv2-fill ----------
+   OPT-IN ONLY. Add .fv2-fill to a .flip-card and its photo fills the card's
+   300px image well edge to edge instead of floating inset inside it.
+
+   This is on exactly the ten products shot on Plant Therapy / Wild Roots
+   seasonal backdrops — square lifestyle photos that are meant to bleed to
+   the edge and that crop harmlessly. Every other card on the page is left
+   alone on purpose: the catalog shots on white (Maple Bar, Peanut Butter
+   BonBon, the sugar scrub) need the whitespace around them, and `cover`
+   clips the bottoms off those bottles. Do not promote this to a page-wide
+   rule.
+
+   Cards reach the photo two different ways depending on which product page
+   the markup came from, so both paths are listed.
+
+   NOTE: this rule is duplicated in css/styles.css under a .v2-page scope, so
+   that seasonal cards copied onto a product sub-page (which never loads this
+   file) still fill. Keep the two declaration blocks in sync. */
+.featured-v2 .fv2-fill .product-image img,
+.featured-v2 .fv2-fill .warm-image .warm-oil {
+	width: 100% !important;
+	height: 100% !important;
+	max-width: 100% !important;
+	max-height: 100% !important;
+	object-fit: cover !important;
+	filter: none !important;
+}
+
+/* ---------- SHORT ROWS ----------
+   A section holding only two cards would leave them hard left against an empty
+   third column. This centres the pair instead, mirroring the site's existing
+   .single-card-grid and borrowing its minmax(300px, 360px) track so the cards
+   stay close to the size they are everywhere else on the page.
+
+   Matched with :has() — "a grid with a 2nd card but no 3rd" — rather than a
+   class in the markup, on purpose. It means the layout is driven entirely by
+   how many cards a section actually contains: add a third card and the section
+   returns to the standard three-column grid on its own, with nothing to
+   remember. The earlier class-based version needed featured.html and
+   seasonal.css to be in sync, and a browser holding a cached copy of one but
+   not the other rendered the pair off-centre.
+
+   Desktop only. At 1024px and below the grid is already two columns, so the
+   pair fills the row on its own and matching the other sections there means
+   leaving it alone. */
+@media screen and (min-width: 1032px) {
+	.featured-v2 .product-grid.grid-gap:has(> .flip-card:nth-child(2)):not(:has(> .flip-card:nth-child(3))) {
+		grid-template-columns: repeat(2, minmax(300px, 360px));
+		justify-content: center;
+	}
+}
+
+/* Each category owns its own vertical rhythm so the sections read as
+   separate groups rather than one long wall of cards. */
+.featured-v2 .product-section + .product-section {
+	margin-top: 70px;
+}
+
+@media screen and (max-width: 768px) {
+	.featured-v2 .product-section + .product-section {
+		margin-top: 45px;
+	}
+	.fv2-section-kicker { font-size: 0.875rem; }
+}
+
+/* Scroll-top button picks up the season instead of the site teal.
+   #scrollUp is an ID, so the season class has to ride alongside it. */
+.season-fall #scrollUp,
+body.dark-mode.season-fall #scrollUp {
+	background: var(--sl-accent);
+}
+
+
+/* ============================================================
+   FALLING LEAVES
+   ============================================================
+   Layering: content sits at z-index 1–3, #scrollUp at 100, the
+   navbar at 500. Leaves at 50 drift in front of the content but
+   never over the nav or the scroll button, and pointer-events:none
+   keeps them from swallowing clicks on the product cards.
+
+   Motion is pure CSS keyframes driven by per-leaf custom properties
+   set once at spawn — no rAF loop, so it stays on the compositor
+   and costs almost nothing on a phone.
+   ============================================================ */
+
+/* DOCUMENT-ANCHORED, NOT SCREEN-ANCHORED.
+   This is absolute rather than fixed on purpose. Fixed pins the leaves to the
+   window, so the whole flurry slides down the page with you as you scroll and
+   reads as if the leaves were stuck to the glass. Absolute anchors them to the
+   page instead: a leaf holds its place in the document and you scroll past it,
+   exactly like the text. Do not change this back to fixed.
+
+   With no positioned ancestor this resolves against the initial containing
+   block, so top:0 is the top of the DOCUMENT. Height is set in px by
+   js/seasonal-leaves.js — it must not be a percentage, which would resolve
+   against the viewport rather than the page. */
+.sl-fall {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	overflow: hidden;
+	pointer-events: none;
+	contain: layout paint style;
+}
+
+/* The overlay ends at the pile's crest, so leaves stop there rather than
+   carrying on behind the footer. This mask dissolves each leaf over the last
+   stretch of its travel, so it settles into the pile instead of being sliced
+   off against a hard edge. */
+.sl-fall--lands {
+	-webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 72px), transparent 100%);
+	        mask-image: linear-gradient(to bottom, #000 calc(100% - 72px), transparent 100%);
+}
+
+/* Three nested elements because each carries its own transform animation
+   and a single element can only run one transform at a time: the outer
+   falls, the middle sways, the SVG tumbles. Deliberately no will-change —
+   CSS transform animations are auto-promoted to the compositor, and
+   declaring it here would pin ~48 permanent layers for no gain. */
+/* `top` is a page coordinate, set by js/seasonal-leaves.js. A leaf only ever
+   has it changed while it is invisible, so a visible leaf never moves relative
+   to the page. slLeafFade runs on the same duration and delay as slFall, which
+   is what makes each leaf invisible at its own loop boundary. */
+.sl-leaf {
+	position: absolute;
+	top: 0;
+	left: var(--sl-x);
+	width: var(--sl-size);
+	height: var(--sl-size);
+	perspective: 600px;
+	animation: slFall var(--sl-dur) linear var(--sl-delay) infinite,
+	           slLeafFade var(--sl-dur) linear var(--sl-delay) infinite;
+}
+
+/* Fades a leaf in as it enters its run and out as it finishes. Two jobs: it
+   softens each leaf's arrival and departure, and it guarantees opacity is 0 at
+   the exact moment the fall animation loops — which is when the leaf gets
+   repositioned, so the reposition can never be seen. */
+@keyframes slLeafFade {
+	0%, 100%  { opacity: 0; }
+	9%, 86%   { opacity: 1; }
+}
+
+.sl-leaf__sway {
+	width: 100%;
+	height: 100%;
+	animation: slSway var(--sl-sway-dur) ease-in-out var(--sl-delay) infinite alternate;
+}
+
+.sl-leaf__spin {
+	display: block;
+	width: 100%;
+	height: 100%;
+	opacity: var(--sl-opacity);
+	animation: slSpin var(--sl-spin-dur) linear var(--sl-delay) infinite;
+	filter: drop-shadow(0 2px 3px rgba(60, 30, 8, 0.18));
+}
+
+/* Vertical travel, in PAGE pixels rather than viewport units — one leaf makes a
+   single long drift from the top of the page down into the pile, and every leaf
+   travels the same full path. That matters: because they all share one path and
+   are only separated by a negative delay, a leaf that reaches the pile restarts
+   at the top of the document, which is far off-screen, so the loop is never
+   seen. Per-leaf distance is set by js/seasonal-leaves.js. */
+@keyframes slFall {
+	from { transform: translate3d(0, 0, 0); }
+	to   { transform: translate3d(0, var(--sl-travel), 0); }
+}
+
+/* Side-to-side drift, alternating so it eases at each extreme */
+@keyframes slSway {
+	from { transform: translate3d(calc(var(--sl-sway) * -1), 0, 0); }
+	to   { transform: translate3d(var(--sl-sway), 0, 0); }
+}
+
+/* Tumble. Rotating around a per-leaf 3D axis reads as a leaf flipping
+   over in the air rather than a flat sticker spinning. */
+@keyframes slSpin {
+	from { transform: rotate3d(var(--sl-rx), var(--sl-ry), 0.35, 0deg); }
+	to   { transform: rotate3d(var(--sl-rx), var(--sl-ry), 0.35, 360deg); }
+}
+
+/* Freeze everything while the tab is in the background */
+.sl-fall.sl-paused .sl-leaf,
+.sl-fall.sl-paused .sl-leaf__sway,
+.sl-fall.sl-paused .sl-leaf__spin {
+	animation-play-state: paused;
+}
+
+
+/* ============================================================
+   LEAF PILE
+   ============================================================ */
+
+.sl-pile {
+	position: relative;
+	z-index: 3;
+	background: var(--sl-bg);
+	line-height: 0;
+	margin-bottom: -1px;
+	overflow: hidden;
+}
+
+/* SIZING — read this before changing the height.
+   The pile's viewBox is 2160x230 with preserveAspectRatio="xMidYMax slice",
+   and 2160 is deliberately wider than any viewport. "slice" scales to COVER,
+   so whichever of (width / 2160) and (height / 230) is larger wins:
+
+     * height wins  -> the pile is sized by its height and crops off the
+                       SIDES, which is what we want
+     * width wins   -> the pile scales UP to cover the width and crops off
+                       its own TOP, beheading the crest
+
+   With height:auto the element's aspect ratio matches the viewBox exactly, so
+   neither wins and nothing is ever cropped. Below the breakpoint a fixed
+   height is used instead, small enough that the height term still wins.
+
+   A pinned height that is too TALL for the viewport width is the failure mode:
+   at 1920px a 210px height cropped 97px off the top of the pile. */
+.sl-pile__svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* 1220px is where height:auto naturally equals 130px (1220 * 230/2160), so the
+   two rules meet without a visible jump at the breakpoint. */
+@media screen and (max-width: 1220px) {
+	.sl-pile__svg { height: 130px; }
+}
+
+/* Gradient stops for the under-mass. Set here rather than as SVG
+   presentation attributes so dark mode can retint them. */
+.sl-stop--mass-top    { stop-color: var(--sl-pile-mass-top); }
+.sl-stop--mass-bottom { stop-color: var(--sl-pile-mass-bottom); }
+
+/* Individual pile leaves keep their authored fills; dark mode just
+   dims them so they don't glow against the near-black background. */
+.sl-pile__band,
+.sl-settle {
+	filter: var(--sl-pile-leaf-filter);
+}
+
+/* Leaves that have come to rest on the crest, added one at a time by
+   js/seasonal-leaves.js. The wrapping <g> is what gets animated — it
+   carries no transform attribute of its own, so a CSS transform here has
+   nothing to clobber. Never animate the <use> directly: a CSS transform
+   would replace its transform attribute and fling it out of position. */
+.sl-settled {
+	animation: slSettleIn 900ms cubic-bezier(0.22, 0.68, 0.32, 1) both;
+}
+
+@keyframes slSettleIn {
+	from {
+		opacity: 0;
+		transform: translateY(-16px) rotate(-4deg);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) rotate(0deg);
+	}
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================
+   Drop the falling leaves entirely and still the pile. The page
+   keeps its full fall identity through color and the pile itself.
+   js/seasonal-leaves.js checks the same query and skips spawning,
+   so this is a belt-and-braces guard.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+	.sl-fall {
+		display: none;
+	}
+
+	/* The pile itself stays — it's the falling that's the motion. Settled
+	   leaves appear without their drop-in animation. */
+	.sl-settled {
+		animation: none;
+	}
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Phones — a shorter pile. These heights stay well under (width / 2160) * 230,
+   so the height term still wins the slice and the crop stays horizontal.
+   Raising them past that ratio would start cutting the crest off again. */
+@media screen and (max-width: 640px) {
+	.sl-pile__svg { height: 104px; }
+}
+
+@media screen and (max-width: 400px) {
+	.sl-pile__svg { height: 88px; }
+}
