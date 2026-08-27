@@ -55,18 +55,24 @@ jobs:
           echo "DEPLOY_URL=$url" >> "$GITHUB_ENV"
           echo "Deployed: $url" >> "$GITHUB_STEP_SUMMARY"
 
-      # A green workflow with a blocked deployment is still a failure, so the
-      # final state is checked explicitly rather than assumed from exit code.
+      # A green workflow over a blocked deployment is still a failed release,
+      # so the final state is asserted. The API is used rather than parsing
+      # "vercel inspect", whose human-readable output prints "● Ready".
+      # A green workflow over a blocked deployment is still a failed release,
+      # so the final state is asserted. The API is used rather than parsing
+      # "vercel inspect", whose human-readable output prints a bulleted "Ready".
       - name: Verify the deployment is READY
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
         run: |
           set -euo pipefail
           host="${DEPLOY_URL#https://}"
-          state=$(vercel inspect "$host" --token="$VERCEL_TOKEN" 2>&1 \
-                  | grep -Eo 'status[[:space:]]+[A-Z]+' | awk '{print $2}' | head -1)
-          echo "deployment state: ${state:-unknown}"
+          api="https://api.vercel.com/v13/deployments/${host}?teamId=${VERCEL_ORG_ID}"
+          state=$(curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" "$api" | jq -r '.readyState // "unknown"')
+          echo "deployment state: $state"
+          echo "Deployment state: $state" >> "$GITHUB_STEP_SUMMARY"
           if [ "$state" != "READY" ]; then
-            echo "::error::Deployment is ${state:-unknown}, expected READY"
+            echo "::error::Deployment is $state, expected READY"
             exit 1
           fi
