@@ -1342,22 +1342,24 @@ ul.breadcrumb > .not-active > a { color: gray; }
    or a title that wraps, so a shared padding-top can never line them up. The
    13px bottom offset sits on top of .product-info's own 20px padding, which
    puts the hint at the same height as a plain .click-hint card. */
-.products-container .flip-card.hint-bottom .flip-card-front {
+.flip-card.hint-bottom .flip-card-front {
   display: flex;
   flex-direction: column;
 }
 
-.products-container .flip-card.hint-bottom .flip-card-front .product-image { flex: 0 0 300px; }
+/* Both image wells are 300px tall; pin them so only .product-info flexes. */
+.flip-card.hint-bottom .flip-card-front .product-image,
+.flip-card.hint-bottom .flip-card-front .warm-image { flex: 0 0 300px; }
 
-.products-container .flip-card.hint-bottom .flip-card-front .product-info {
+.flip-card.hint-bottom .flip-card-front .product-info {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
 }
 
-.products-container .flip-card.hint-bottom .flip-card-front .click-hint,
-.products-container .flip-card.hint-bottom .flip-card-front .click-hint-alt,
-.products-container .flip-card.hint-bottom .flip-card-front .click-hint-hemp-seed {
+.flip-card.hint-bottom .flip-card-front .click-hint,
+.flip-card.hint-bottom .flip-card-front .click-hint-alt,
+.flip-card.hint-bottom .flip-card-front .click-hint-hemp-seed {
   margin-top: auto;
   padding: 0 20px 13px 20px;
 }
@@ -1368,15 +1370,15 @@ ul.breadcrumb > .not-active > a { color: gray; }
    the price otherwise sits tight under the title while a two-row card fills
    it. The auto margins take over pinning the hint, so its own margin-top
    goes back to 0 — the hint itself does not move. */
-.products-container .flip-card.hint-bottom.price-center .flip-card-front .product-info > .price-option,
-.products-container .flip-card.hint-bottom.price-center .flip-card-front .product-info > .product-price-options {
+.flip-card.hint-bottom.price-center .flip-card-front .product-info > .price-option,
+.flip-card.hint-bottom.price-center .flip-card-front .product-info > .product-price-options {
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.products-container .flip-card.hint-bottom.price-center .flip-card-front .click-hint,
-.products-container .flip-card.hint-bottom.price-center .flip-card-front .click-hint-alt,
-.products-container .flip-card.hint-bottom.price-center .flip-card-front .click-hint-hemp-seed {
+.flip-card.hint-bottom.price-center .flip-card-front .click-hint,
+.flip-card.hint-bottom.price-center .flip-card-front .click-hint-alt,
+.flip-card.hint-bottom.price-center .flip-card-front .click-hint-hemp-seed {
   margin-top: 0;
 }
 
