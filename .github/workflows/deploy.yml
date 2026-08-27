@@ -1,0 +1,72 @@
+name: Deploy to Vercel
+
+# The Vercel project has no Git integration, so a push does not deploy on its
+# own. This workflow is what connects the two.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Never let two production deploys race each other.
+concurrency:
+  group: vercel-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Install the Vercel CLI
+        run: npm install --global vercel@latest
+
+      # The account behind this project has no Git connection. A deployment
+      # that carries commit metadata gets rejected there with "commit email
+      # could not be matched to a GitHub account", so the upload is made from
+      # a copy with no .git directory. The project is identified by writing
+      # .vercel/project.json instead of by linking the checkout.
+      - name: Stage a git-free copy of the site
+        env:
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/site/.vercel"
+          rsync -a --exclude='.git' --exclude='.github' ./ "$RUNNER_TEMP/site/"
+          printf '{"projectId":"%s","orgId":"%s"}\n' \
+            "$VERCEL_PROJECT_ID" "$VERCEL_ORG_ID" \
+            > "$RUNNER_TEMP/site/.vercel/project.json"
+          echo "staged $(find "$RUNNER_TEMP/site" -type f | wc -l) files"
+
+      - name: Deploy
+        working-directory: ${{ runner.temp }}/site
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          set -euo pipefail
+          vercel deploy --prod --yes --token="$VERCEL_TOKEN" > deploy.txt 2>&1 || {
+            cat deploy.txt; exit 1;
+          }
+          cat deploy.txt
+          url=$(grep -Eo 'https://[a-z0-9.-]+\.vercel\.app' deploy.txt | tail -1)
+          echo "DEPLOY_URL=$url" >> "$GITHUB_ENV"
+          echo "Deployed: $url" >> "$GITHUB_STEP_SUMMARY"
+
+      # A green workflow with a blocked deployment is still a failure, so the
+      # final state is checked explicitly rather than assumed from exit code.
+      - name: Verify the deployment is READY
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          set -euo pipefail
+          host="${DEPLOY_URL#https://}"
+          state=$(vercel inspect "$host" --token="$VERCEL_TOKEN" 2>&1 \
+                  | grep -Eo 'status[[:space:]]+[A-Z]+' | awk '{print $2}' | head -1)
+          echo "deployment state: ${state:-unknown}"
+          if [ "$state" != "READY" ]; then
+            echo "::error::Deployment is ${state:-unknown}, expected READY"
+            exit 1
+          fi
