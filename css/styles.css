@@ -1362,6 +1362,24 @@ ul.breadcrumb > .not-active > a { color: gray; }
   padding: 0 20px 13px 20px;
 }
 
+/* ---------- .price-center (pairs with .hint-bottom) ----------
+   Vertically centres the price block in the space between the product name
+   and the pinned hint. A card with one price row leaves a big gap there, so
+   the price otherwise sits tight under the title while a two-row card fills
+   it. The auto margins take over pinning the hint, so its own margin-top
+   goes back to 0 — the hint itself does not move. */
+.products-container .flip-card.hint-bottom.price-center .flip-card-front .product-info > .price-option,
+.products-container .flip-card.hint-bottom.price-center .flip-card-front .product-info > .product-price-options {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.products-container .flip-card.hint-bottom.price-center .flip-card-front .click-hint,
+.products-container .flip-card.hint-bottom.price-center .flip-card-front .click-hint-alt,
+.products-container .flip-card.hint-bottom.price-center .flip-card-front .click-hint-hemp-seed {
+  margin-top: 0;
+}
+
 #sunscreen .product-info {
   display: flex;
   flex-direction: column;
