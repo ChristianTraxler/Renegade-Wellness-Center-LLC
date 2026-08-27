@@ -1501,7 +1501,9 @@
 
 			/* ── ANALYTICS VIEW ── */
 			#view-analytics {
-				padding: 8px 20px 40px;
+				/* 6px nudges the title to match pages whose header carries a
+				   right-side control (Clients/Inventory/Trash sit at y=102). */
+				padding: 6px 0 40px;
 			}
 			#view-analytics .chart-card {
 				margin-bottom: 24px;
@@ -1709,10 +1711,10 @@
 				.chart-card-body { padding: 18px; }
 				.analytics-two-col { gap: 16px; margin-bottom: 16px; }
 				.status-grid { grid-template-columns: 1fr; }
-				#view-analytics { padding: 8px 12px 40px; }
+				#view-analytics { padding: 0 0 40px; }
 			}
 			@media (max-width: 480px) {
-				#view-analytics { padding: 8px 8px 32px; }
+				#view-analytics { padding: 0 0 32px; }
 				.analytics-big-stat { padding: 14px 12px; }
 				.analytics-big-stat .stat-value { font-size: 1.5rem; }
 				.analytics-big-stat .stat-label { font-size: 0.65rem; }
@@ -2438,6 +2440,7 @@
 			.inv-subsection-row td {
 				background: var(--teal-pale);
 				padding: 10px 24px;
+				padding-right: 220px;
 				font-family: 'Cormorant Garamond', serif;
 				font-size: 1.05rem;
 				font-weight: 600;
@@ -2451,11 +2454,19 @@
 				color: var(--teal);
 			}
 			/* ── Subheader Add Product Button ── */
-			.inv-subheader-add-btn {
+			/* Holds the add/delete buttons so they lay out side by side instead of
+			   being individually positioned on top of one another. */
+			.inv-subheader-actions {
 				position: absolute;
 				right: 24px;
 				top: 50%;
 				transform: translateY(-50%);
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+			.inv-subheader-add-btn {
+				flex: 0 0 auto;
 				font-family: 'Inter', sans-serif;
 				font-size: 0.75rem;
 				font-weight: 600;
@@ -2481,6 +2492,92 @@
 				background: var(--teal);
 				color: #fff;
 			}
+
+			/* ── Delete Subcategory Button (user-created, empty sections only) ── */
+			.inv-subheader-del-btn {
+				flex: 0 0 auto;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 26px;
+				height: 26px;
+				line-height: 1;
+				font-size: 1rem;
+				font-weight: 600;
+				border: 1px solid var(--border);
+				border-radius: 6px;
+				background: transparent;
+				color: var(--text-muted);
+				cursor: pointer;
+				transition: background 0.2s, color 0.2s, border-color 0.2s;
+			}
+			.inv-subheader-del-btn:hover {
+				background: #e5484d;
+				border-color: #e5484d;
+				color: #fff;
+			}
+			/* ── Empty Subcategory Placeholder ── */
+			.inv-subsection-empty td {
+				padding: 14px 24px;
+				font-size: 0.85rem;
+				font-style: italic;
+				color: var(--text-muted);
+				background: transparent;
+				border-bottom: 1px solid var(--border);
+			}
+			body.dark-mode .inv-subsection-empty td {
+				color: var(--text-muted);
+			}
+
+			/* ── New Subcategory Modal ── */
+			.modal.modal-narrow {
+				max-width: 440px;
+			}
+			.subcat-modal-hint {
+				margin: 12px 0 0;
+				font-size: 0.8rem;
+				line-height: 1.5;
+				color: var(--text-muted);
+			}
+
+			/* ── Duplicate Row Warning ── */
+			.inv-dup-warning {
+				margin: 0 0 16px;
+				padding: 14px 18px;
+				border: 1px solid #f0c36d;
+				border-left: 4px solid #e5a83b;
+				border-radius: 10px;
+				background: #fdf6e6;
+				color: #7a5a12;
+				font-size: 0.86rem;
+				line-height: 1.55;
+			}
+			.inv-dup-warning strong { color: #6b4d0d; }
+			.inv-dup-conflict { display: inline-block; margin-top: 6px; color: #8a5a2b; }
+			.inv-dup-btn {
+				display: block;
+				margin-top: 12px;
+				font-family: 'Inter', sans-serif;
+				font-size: 0.78rem;
+				font-weight: 600;
+				padding: 7px 14px;
+				border: 1px solid #e5a83b;
+				border-radius: 7px;
+				background: transparent;
+				color: #7a5a12;
+				cursor: pointer;
+				transition: background 0.2s, color 0.2s;
+			}
+			.inv-dup-btn:hover { background: #e5a83b; color: #fff; }
+			body.dark-mode .inv-dup-warning {
+				background: rgba(229,168,59,0.10);
+				border-color: rgba(229,168,59,0.45);
+				color: #e8c98a;
+			}
+			body.dark-mode .inv-dup-warning strong { color: #f3dcae; }
+			body.dark-mode .inv-dup-conflict { color: #e0b578; }
+			body.dark-mode .inv-dup-btn { color: #e8c98a; border-color: rgba(229,168,59,0.55); }
+			body.dark-mode .inv-dup-btn:hover { background: #e5a83b; color: #2a2118; }
 
 			/* ── Inventory Drag & Drop ── */
 			.inv-product-row {
