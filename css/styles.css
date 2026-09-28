@@ -528,11 +528,13 @@ ul.breadcrumb > .not-active > a { color: gray; }
 /* CBD Products page */
 #gummies .product-image,
 #softgels .product-image,
+#tincture .product-image,
 #topicals .product-image,
 #pets .product-image { background-color: #ffffff; }
 
 #gummies .product-image img,
 #softgels .product-image img,
+#tincture .product-image img,
 #topicals .product-image img,
 #pets .product-image img {
   filter: none;
@@ -541,11 +543,13 @@ ul.breadcrumb > .not-active > a { color: gray; }
 
 #gummies .product-name,
 #softgels .product-name,
+#tincture .product-name,
 #topicals .product-name,
 #pets .product-name { font-size: 18px; }
 
 #gummies .product-info,
 #softgels .product-info,
+#tincture .product-info,
 #topicals .product-info,
 #pets .product-info {
   display: flex;
@@ -555,6 +559,7 @@ ul.breadcrumb > .not-active > a { color: gray; }
 
 #gummies .price-option,
 #softgels .price-option,
+#tincture .price-option,
 #topicals .price-option,
 #pets .price-option {
   margin-top: auto;
@@ -605,7 +610,8 @@ ul.breadcrumb > .not-active > a { color: gray; }
 }
 
 
-#softgels .pets-grid {
+#softgels .pets-grid,
+#tincture .pets-grid {
   grid-template-columns: repeat(2, minmax(300px, 360px));
 }
 
@@ -1159,6 +1165,18 @@ ul.breadcrumb > .not-active > a { color: gray; }
 .cbd-softgels-full .warm-image { background-color: #ABA8CC; }
 .cbd-softgels-full .product-name { color: #ABA8CC; }
 .cbd-softgels-full .card-back-header { background: #ABA8CC; }
+
+.cbd-capsules .warm-image { background-color: #E3E0D0; }
+.cbd-capsules .product-name { color: #C9B77E; }
+.cbd-capsules .card-back-header { background: #C9B77E; }
+
+.cbd-tincture-tropical .warm-image { background-color: #F3D5C8; }
+.cbd-tincture-tropical .product-name { color: #E3A08E; }
+.cbd-tincture-tropical .card-back-header { background: #E3A08E; }
+
+.cbd-tincture-lime .warm-image { background-color: #CFE0B4; }
+.cbd-tincture-lime .product-name { color: #A9C48A; }
+.cbd-tincture-lime .card-back-header { background: #A9C48A; }
 
 .cbd-cream .warm-image { background-color: #8e9fb6; }
 .cbd-cream .product-name { color: #8e9fb6; }

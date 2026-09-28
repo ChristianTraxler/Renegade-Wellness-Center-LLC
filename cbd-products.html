@@ -22,8 +22,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="./css/default.css">
-		<link rel="stylesheet" href="./css/styles.css?v=20260827d">
-		<link rel="stylesheet" href="./css/responsive.css?v=20260821i">
+		<link rel="stylesheet" href="./css/styles.css?v=20260928e">
+		<link rel="stylesheet" href="./css/responsive.css?v=20260928e">
 		<link rel="shortcut icon" type="image/png" href="assets/images/RWC-logo(w:background-color).png"/>
 		<link rel="apple-touch-icon" href="assets/images/maskable_icon_x48.png" sizes="48x48">
 		<link rel="apple-touch-icon" href="assets/images/RWC-logo(w:background-color).png" sizes="57x57">
@@ -273,7 +273,8 @@
 			<div class="aromatics-products conscious-coconut-products">
 <!--				<button class="button-17 e-o" role="button" onclick="window.location.href='#tinctures'">Tinctures</button>-->
 				<button class="button-17 e-o" role="button" onclick="window.location.href='#gummies'">Gummies</button>
-				<button class="button-17 e-o" role="button" onclick="window.location.href='#softgels'">Softgels</button>
+				<button class="button-17 e-o" role="button" onclick="window.location.href='#softgels'">Capsules / Softgels</button>
+				<button class="button-17 e-o" role="button" onclick="window.location.href='#tincture'">Tinctures</button>
 				<button class="button-17 e-o" role="button" onclick="window.location.href='#topicals'">Topicals</button>
 				<button class="button-17 e-o" role="button" onclick="window.location.href='#pets'">Pets</button>
 				<!--				<button class="button-17 e-o" role="button" onclick="window.location.href='#wipes'">Wipes</button>-->
@@ -525,15 +526,12 @@
 
 				<section id="softgels" class="product-section">
 					<div class="section-header contact-header">
-						<h2>Softgels</h2>
+						<h2>Capsules / Softgels</h2>
 					</div>
 
 					<section class="product-subsection">
 						<div class="product-wrapper">
-							<!-- Only one card left in this section (Broad Spectrum is commented out), so
-							     the grid uses .single-card-grid to centre it. Restoring Broad Spectrum
-							     means putting this back to <div class="pets-grid">. -->
-							<div class="single-card-grid grid-gap">
+							<div class="pets-grid">
 
 								<!-- Broad Spectrum CBD Softgels -->
 								<!-- <div class="flip-card cbd-tall-card cbd-softgels-broad" onclick="this.classList.toggle('flipped')">
@@ -575,6 +573,49 @@
 										</div>
 									</div>
 								</div> -->
+
+								<!-- Broad Spectrum CBD Capsules (THC-Free) -->
+								<div class="flip-card cbd-tall-card cbd-capsules" onclick="this.classList.toggle('flipped')">
+									<div class="flip-card-inner">
+										<!-- Front -->
+										<div class="flip-card-front">
+											<div class="warm-image">
+												<img loading="lazy" decoding="async" src="./assets/images/CBD-Products/Joy-Organics/CBD_Capsule_T.webp?v=20260928d" class="warm-oil" alt="Joy Organics organic broad spectrum CBD capsules, THC-free">
+											</div>
+											<div class="stock-badge in-stock">
+												<div class="icon-circle"></div>
+												<span>In Stock</span>
+											</div>
+											<div class="product-info">
+												<div class="product-name">Broad Spectrum CBD Capsules</div>
+												<div class="price-option">
+													<span class="product-price">$59.95</span>
+												</div>
+												<div class="click-hint">Click for product description<span class="flip-icon">↻</span></div>
+											</div>
+										</div>
+
+										<!-- Back -->
+										<div class="flip-card-back">
+											<div class="card-back-header">
+												<div class="back-title">Broad Spectrum CBD Capsules</div>
+												<div class="back-price">Capsules</div>
+											</div>
+											<div class="card-back-content">
+												<div class="description-label">Product Description</div>
+												<div class="description-details">Scroll down for more information <span class="scroll-arrow">&#8595;</span></div>
+												<div class="product-description scrollable-container">
+													<p>CBD made easy! Each USDA-certified organic capsule delivers 25mg of broad spectrum CBD, with 30 capsules per bottle—perfect for a month of wellness. The water-soluble formula means faster absorption, and with zero THC, you get all the good stuff without the buzz.</p>
+													<div class="desc-section-sm">
+														<strong class="desc-heading">Price:</strong>
+														<p class="desc-detail">• $59.95</p>
+													</div>
+												</div>
+												<div class="click-hint">Click to flip back <span class="flip-icon">↻</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
 
 								<!-- Full Spectrum CBD Softgels -->
 								<div class="flip-card cbd-tall-card cbd-softgels-full" onclick="this.classList.toggle('flipped')">
@@ -659,6 +700,108 @@
 <!--										</div>-->
 <!--									</div>-->
 <!--								</div>-->
+
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<hr>
+
+				<section id="tincture" class="product-section">
+					<div class="section-header contact-header">
+						<h2>Tinctures</h2>
+					</div>
+
+					<section class="product-subsection">
+						<div class="product-wrapper">
+							<div class="pets-grid">
+
+								<!-- Full Spectrum CBD Oil Tincture 900mg (Fresh Lime) -->
+								<div class="flip-card cbd-tall-card cbd-tincture-lime" onclick="this.classList.toggle('flipped')">
+									<div class="flip-card-inner">
+										<!-- Front -->
+										<div class="flip-card-front">
+											<div class="warm-image">
+												<img loading="lazy" decoding="async" src="./assets/images/CBD-Products/Joy-Organics/CBD-Tincture-Lime.webp?v=20260928b" class="warm-oil" alt="Joy Organics organic full spectrum CBD oil tincture, fresh lime flavor">
+											</div>
+											<div class="stock-badge in-stock">
+												<div class="icon-circle"></div>
+												<span>In Stock</span>
+											</div>
+											<div class="product-info">
+												<div class="product-name">Full Spectrum CBD Oil Tincture 900mg (Fresh Lime)</div>
+												<div class="price-option">
+													<span class="product-price">$49.95</span>
+												</div>
+												<div class="click-hint">Click for product description<span class="flip-icon">↻</span></div>
+											</div>
+										</div>
+
+										<!-- Back -->
+										<div class="flip-card-back">
+											<div class="card-back-header">
+												<div class="back-title">Full Spectrum CBD Oil Tincture 900mg (Fresh Lime)</div>
+												<div class="back-price">Tincture</div>
+											</div>
+											<div class="card-back-content">
+												<div class="description-label">Product Description</div>
+												<div class="description-details">Scroll down for more information <span class="scroll-arrow">&#8595;</span></div>
+												<div class="product-description scrollable-container">
+													<p>Get ready for a fresh twist on wellness! Joy Organics Fresh Lime CBD Tincture has just four organic ingredients: CBD, MCT oil, key lime oil, and stevia. This 1oz bottle packs 30 servings of all-natural goodness. No fluff, just pure, clean CBD vibes!</p>
+													<div class="desc-section-sm">
+														<strong class="desc-heading">Price:</strong>
+														<p class="desc-detail">• $49.95</p>
+													</div>
+												</div>
+												<div class="click-hint">Click to flip back <span class="flip-icon">↻</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Full Spectrum CBD Oil Tincture 2250mg (Tropical Sunrise) -->
+								<div class="flip-card cbd-tall-card cbd-tincture-tropical" onclick="this.classList.toggle('flipped')">
+									<div class="flip-card-inner">
+										<!-- Front -->
+										<div class="flip-card-front">
+											<div class="warm-image">
+												<img loading="lazy" decoding="async" src="./assets/images/CBD-Products/Joy-Organics/Tincture-Tropical-Sunrise.webp?v=20260928e" class="warm-oil" alt="Joy Organics organic full spectrum CBD oil tincture, tropical sunrise flavor">
+											</div>
+											<div class="stock-badge in-stock">
+												<div class="icon-circle"></div>
+												<span>In Stock</span>
+											</div>
+											<div class="product-info">
+												<div class="product-name">Full Spectrum CBD Oil Tincture 2250mg (Tropical Sunrise)</div>
+												<div class="price-option">
+													<span class="product-price">$89.95</span>
+												</div>
+												<div class="click-hint">Click for product description<span class="flip-icon">↻</span></div>
+											</div>
+										</div>
+
+										<!-- Back -->
+										<div class="flip-card-back">
+											<div class="card-back-header">
+												<div class="back-title">Full Spectrum CBD Oil Tincture 2250mg (Tropical Sunrise)</div>
+												<div class="back-price">Tincture</div>
+											</div>
+											<div class="card-back-content">
+												<div class="description-label">Product Description</div>
+												<div class="description-details">Scroll down for more information <span class="scroll-arrow">&#8595;</span></div>
+												<div class="product-description scrollable-container">
+													<p>Ready to escape to the tropics? Joy Organics' Tropical Sunrise Full Spectrum CBD Tincture is a blend of coconut, pineapple, and full spectrum hemp extract that’ll take your taste buds on a mini vacation.</p>
+													<div class="desc-section-sm">
+														<strong class="desc-heading">Price:</strong>
+														<p class="desc-detail">• $89.95</p>
+													</div>
+												</div>
+												<div class="click-hint">Click to flip back <span class="flip-icon">↻</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
 
 							</div>
 						</div>
@@ -936,20 +1079,20 @@
 						<div class="product-wrapper">
 							<div class="pets-grid">
 
-								<!-- CBD Dog Treats -->
+								<!-- CBD Dog Chews -->
 								<div class="flip-card cbd-tall-card cbd-dog" onclick="this.classList.toggle('flipped')">
 									<div class="flip-card-inner">
 										<!-- Front -->
 										<div class="flip-card-front">
 											<div class="warm-image">
-												<img loading="lazy" decoding="async" src="./assets/images/CBD-Products/Joy-Organics/cbd_dog_treats_01_740x680_d7741ba0-f1c6-4828-8f48-7497810a23f6.webp" class="warm-oil" alt="CBD dog treats">
+												<img loading="lazy" decoding="async" src="./assets/images/CBD-Products/Joy-Organics/cbd_dog_treats_01_740x680_d7741ba0-f1c6-4828-8f48-7497810a23f6.webp" class="warm-oil" alt="CBD dog chews">
 											</div>
 											<div class="stock-badge in-stock">
 												<div class="icon-circle"></div>
 												<span>In Stock</span>
 											</div>
 											<div class="product-info">
-												<div class="product-name">CBD Dog Treats</div>
+												<div class="product-name">CBD Dog Chews</div>
 												<div class="price-option">
 													<span class="product-price">$34.95</span>
 												</div>
@@ -967,14 +1110,14 @@
 										<!-- Back -->
 										<div class="flip-card-back">
 											<div class="card-back-header">
-												<div class="back-title">CBD Dog Treats</div>
+												<div class="back-title">CBD Dog Chews</div>
 												<div class="back-price">Pet Products</div>
 											</div>
 											<div class="card-back-content">
 												<div class="description-label">Product Description</div>
 												<div class="description-details">Scroll down for more information <span class="scroll-arrow">&#8595;</span></div>
 												<div class="product-description scrollable-container">
-													<p>Give your furry friend the benefits of phytocannabinoid-rich hemp oil. Our beef flavored CBD Dog Treats are formulated with water-soluble CBD powder and other premium ingredients, providing superior results in tasty, dog-approved soft chews. Each treat contains 2mg of THC-free CBD.</p>
+													<p>Give your furry friend the benefits of phytocannabinoid-rich hemp oil. Our beef flavored CBD Dog Chews are formulated with water-soluble CBD powder and other premium ingredients, providing superior results in tasty, dog-approved soft chews. Each treat contains 2mg of THC-free CBD.</p>
 													<!--
 													<div class="desc-section-sm">
 														<strong class="desc-heading">Key Benefits:</strong>
@@ -1051,9 +1194,6 @@
 						<img src="./assets/images/payments/contactless_payment(white).svg" alt="Contactless">
 						<img src="./assets/images/payments/Apple-Pay2.png" alt="Apple Pay">
 						<img src="./assets/images/payments/Google-Pay2.png" alt="Google Pay">
-						<img src="./assets/images/payments/Cash-App2.png" alt="Cash App">
-						<img src="./assets/images/payments/venmo.png" alt="Venmo">
-						<img src="./assets/images/payments/bitcoin.svg" alt="Bitcoin">
 					</div>
 				</div>
 			</div>

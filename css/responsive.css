@@ -408,7 +408,8 @@
     max-width: 100%;
   }
 
-  #softgels .pets-grid {
+  #softgels .pets-grid,
+  #tincture .pets-grid {
     grid-template-columns: minmax(300px, 360px);
   }
 
