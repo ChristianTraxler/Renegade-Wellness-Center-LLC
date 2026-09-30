@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/schedule.html", "destination": "/booking.html", "permanent": true },
+    { "source": "/schedule", "destination": "/booking.html", "permanent": true }
+  ]
+}

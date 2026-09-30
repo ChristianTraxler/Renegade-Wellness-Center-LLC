@@ -6,7 +6,7 @@ Status: Deferred — refer back when ready to go live
 
 CURRENT STATE
 -------------
-- schedule.html: Client-facing 4-step booking flow (service > date/time > info > confirm)
+- booking.html: Client-facing 4-step booking flow (service > date/time > info > confirm)
 - booking-system.html: Admin dashboard with table, stats, calendar, confirm/delete actions
 - Data stored in browser localStorage (key: rwc_bookings)
 - Both pages must be served from the same origin (same server/port) to share data
@@ -28,7 +28,7 @@ TWO APPROACHES
    - Square Bookings API handles everything: availability, appointments, customers
    - Syncs with the client's existing Square dashboard
    - No separate database needed — Square IS the database
-   - New bookings from schedule.html go to Square via your server
+   - New bookings from booking.html go to Square via your server
    - booking-system.html pulls appointments from Square via your server
    - Handles payments if needed later
    - Tied to Square ecosystem
@@ -53,7 +53,7 @@ WHAT YOU'D NEED TO BUILD
 SQUARE API ENDPOINTS YOU'D USE
 -------------------------------
 - ListBookings — pull existing appointments into your dashboard
-- CreateBooking — push new bookings from schedule.html
+- CreateBooking — push new bookings from booking.html
 - SearchAvailability — show real open slots on the calendar
 - RetrieveBooking / UpdateBooking — for confirm/cancel actions
 - ListCustomers — import customer data
@@ -66,11 +66,11 @@ MIGRATION STEPS (WHEN READY)
 1. Set up Square Developer account, get API credentials
 2. Build a small backend server or serverless functions
 3. Create an import script to pull existing Square bookings
-4. Wire schedule.html form submission to backend -> Square API
+4. Wire booking.html form submission to backend -> Square API
 5. Wire booking-system.html to read from backend -> Square API
 6. Replace localStorage with real API calls
 7. Test with Square Sandbox environment before going live
-8. Frontend (schedule.html, booking-system.html) stays mostly the same —
+8. Frontend (booking.html, booking-system.html) stays mostly the same —
    just swap localStorage calls for fetch() calls to your backend
 
 
@@ -78,6 +78,6 @@ ESTIMATED SCOPE
 ----------------
 - Backend setup + Square auth: ~1 day
 - Import existing bookings: ~1 day
-- Connect schedule.html to real API: ~1 day
+- Connect booking.html to real API: ~1 day
 - Connect booking-system.html to real API: ~1-2 days
 - Testing with Square Sandbox: ~1 day
