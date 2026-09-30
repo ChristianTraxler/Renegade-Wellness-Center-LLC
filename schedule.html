@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Book a Session | Renegade Wellness Center, Newton, NC</title>
+		<meta name="description" content="Book your salt therapy, infrared therapy, or combo session at Renegade Wellness Center in Newton, NC.">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<!-- Not linked from the site yet; keep it out of search results until it is. -->
+	<meta name="robots" content="noindex, nofollow">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./css/default.css">
+		<link rel="stylesheet" href="./css/styles.css?v=20260928e">
+		<link rel="stylesheet" href="./css/responsive.css?v=20260928e">
+		<link rel="shortcut icon" type="image/png" href="assets/images/RWC-logo(w:background-color).png"/>
+		<style>
+			/* ============ SCHEDULING PAGE STYLES ============ */
+
+			/* ---------- PROGRESS STEPPER ---------- */
+			.sched-stepper {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 0;
+				margin: 0 auto 56px;
+				max-width: 520px;
+				/* The wave divider above (z-index 3) overlaps the top few pixels
+				   of the stepper; without this it clips the circles and cuts the
+				   active circle's glow into a flat-topped shadow. */
+				position: relative;
+				z-index: 4;
+			}
+
+			.sched-step {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+				flex: 1;
+			}
+
+			.sched-step__circle {
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+				background: #dce5e3;
+				color: #8a9e99;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: "Hind", sans-serif;
+				font-weight: 600;
+				font-size: 1rem;
+				transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				position: relative;
+				z-index: 2;
+			}
+
+			.sched-step.active .sched-step__circle {
+				background: #69B5AD;
+				color: #fff;
+				box-shadow: 0 4px 20px rgba(105, 181, 173, 0.4);
+			}
+
+			.sched-step.completed .sched-step__circle {
+				background: #69B5AD;
+				color: #fff;
+			}
+
+			/* A finished step can be clicked to jump back to it. */
+			.sched-step.completed {
+				cursor: pointer;
+			}
+
+			.sched-step.completed:hover .sched-step__circle {
+				background: #5aa39b;
+				transform: scale(1.06);
+			}
+
+			.sched-step:focus-visible {
+				outline: none;
+			}
+
+			.sched-step:focus-visible .sched-step__circle {
+				box-shadow: 0 0 0 3px #f4f7f6, 0 0 0 5px #69B5AD;
+			}
+
+			/* Moving forward, the line fills first and the next circle lights up
+			   when it arrives, so progress travels from one dot to the next. */
+			.sched-stepper.is-forward .sched-step.active .sched-step__circle,
+			.sched-stepper.is-forward .sched-step.active .sched-step__label {
+				transition-delay: 0.4s;
+			}
+
+			.sched-step__label {
+				margin-top: 10px;
+				font-family: "Hind", sans-serif;
+				font-size: 0.72rem;
+				font-weight: 600;
+				letter-spacing: 1.5px;
+				text-transform: uppercase;
+				color: #a0b3ae;
+				transition: color 0.3s ease;
+			}
+
+			.sched-step.active .sched-step__label,
+			.sched-step.completed .sched-step__label {
+				color: #4a5568;
+			}
+
+			.sched-step__line {
+				position: absolute;
+				top: 22px;
+				left: calc(50% + 22px);
+				width: calc(100% - 44px);
+				height: 2px;
+				background: #dce5e3;
+				z-index: 1;
+				overflow: hidden;
+			}
+
+			.sched-step__line::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: #69B5AD;
+				transform: scaleX(0);
+				transform-origin: left center;
+				transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			.sched-step__line.filled::after {
+				transform: scaleX(1);
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				.sched-step__circle,
+				.sched-step__label,
+				.sched-step__line::after {
+					transition: none !important;
+				}
+			}
+
+			.sched-step:last-child .sched-step__line { display: none; }
+
+			/* ---------- PANELS ---------- */
+			/* Each step's box is grown to hold its own shadows. When a step is
+			   hidden, Safari repaints the step's box but not any shadow hanging
+			   outside it, so the Continue button's glow was left behind on the
+			   next step. The padding takes the box out to the page gutter and
+			   well past the lowest shadow, and the matching negative margin
+			   cancels it, so nothing on the page moves. */
+			.sched-panel {
+				display: none;
+				margin: 0 -24px -64px;
+				padding: 0 24px 64px;
+				animation: schedFadeIn 0.5s ease-out;
+			}
+
+			@media (max-width: 599px) {
+				.sched-panel {
+					margin: 0 -16px -64px;
+					padding: 0 16px 64px;
+				}
+			}
+
+			.sched-panel.active { display: block; }
+
+			@keyframes schedFadeIn {
+				from { opacity: 0; transform: translateY(16px); }
+				to   { opacity: 1; transform: translateY(0); }
+			}
+
+			/* ---------- SERVICE CARDS ---------- */
+			.sched-services {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 24px;
+				max-width: 900px;
+				margin: 0 auto;
+			}
+
+			.sched-card {
+				background: #fff;
+				border-radius: 16px;
+				padding: 0;
+				cursor: pointer;
+				transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+				border: 2px solid transparent;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.sched-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 12px 40px rgba(105, 181, 173, 0.18);
+			}
+
+			.sched-card.selected {
+				border-color: #69B5AD;
+				box-shadow: 0 8px 32px rgba(105, 181, 173, 0.25);
+			}
+
+			.sched-card.selected .sched-card__check {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+			.sched-card__check {
+				position: absolute;
+				top: 16px;
+				right: 16px;
+				width: 28px;
+				height: 28px;
+				background: #69B5AD;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0;
+				transform: scale(0.5);
+				transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+				z-index: 2;
+			}
+
+			.sched-card__check svg {
+				width: 14px;
+				height: 14px;
+			}
+
+			.sched-card__icon {
+				height: 160px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.sched-card__icon::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				opacity: 0.08;
+			}
+
+			.sched-card:nth-child(1) .sched-card__icon { background: linear-gradient(135deg, #e8f4f2 0%, #d4ede9 100%); }
+			.sched-card:nth-child(2) .sched-card__icon { background: linear-gradient(135deg, #f0e8e4 0%, #e4d8d0 100%); }
+			.sched-card:nth-child(3) .sched-card__icon { background: linear-gradient(135deg, #e4eff4 0%, #d4e4ed 100%); }
+
+			.sched-card__icon-svg {
+				width: 72px;
+				height: 72px;
+				opacity: 0.7;
+				transition: all 0.35s ease;
+			}
+
+			.sched-card:hover .sched-card__icon-svg,
+			.sched-card.selected .sched-card__icon-svg {
+				opacity: 1;
+				transform: scale(1.05);
+			}
+
+			.sched-card__body {
+				padding: 28px 24px 32px;
+				text-align: center;
+			}
+
+			.sched-card__name {
+				font-family: "Hind", sans-serif;
+				font-size: 1.15rem;
+				font-weight: 600;
+				color: #000;
+				margin-bottom: 6px;
+			}
+
+			body.dark-mode .sched-card__name {
+				color: #000;
+			}
+
+			.sched-card__desc {
+				font-size: 0.85rem;
+				color: #718096;
+				line-height: 1.55;
+				margin-bottom: 16px;
+			}
+
+			.sched-card__price {
+				font-family: "Hind", sans-serif;
+				font-size: 1.6rem;
+				font-weight: 700;
+				color: #69B5AD;
+			}
+
+			.sched-card__price span {
+				font-size: 0.82rem;
+				font-weight: 400;
+				color: #a0aec0;
+			}
+
+			.sched-card__sub-price {
+				font-size: 0.82rem;
+				color: #a0aec0;
+				margin-top: 2px;
+			}
+
+			/* ---------- CALENDAR ---------- */
+			.sched-calendar-wrap {
+				max-width: 480px;
+				margin: 0 auto;
+				background: #fff;
+				border-radius: 20px;
+				padding: 32px;
+				box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+			}
+
+			.sched-cal-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 28px;
+			}
+
+			.sched-cal-header h3 {
+				font-family: "Hind", sans-serif;
+				font-weight: 600;
+				font-size: 1.2rem;
+				color: #2d3748;
+			}
+
+			.sched-cal-nav {
+				display: flex;
+				gap: 8px;
+			}
+
+			.sched-cal-btn {
+				width: 36px;
+				height: 36px;
+				border-radius: 10px;
+				border: 1px solid #e2e8f0;
+				background: #fff;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.2s ease;
+				color: #4a5568;
+			}
+
+			.sched-cal-btn:hover {
+				background: #f7faf9;
+				border-color: #69B5AD;
+				color: #69B5AD;
+			}
+
+			.sched-cal-btn svg {
+				width: 16px;
+				height: 16px;
+			}
+
+			.sched-cal-days {
+				display: grid;
+				grid-template-columns: repeat(7, 1fr);
+				gap: 4px;
+				text-align: center;
+			}
+
+			.sched-cal-day-label {
+				font-family: "Hind", sans-serif;
+				font-size: 0.7rem;
+				font-weight: 600;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				color: #a0aec0;
+				padding: 8px 0 12px;
+			}
+
+			.sched-cal-day {
+				width: 100%;
+				aspect-ratio: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 12px;
+				font-family: "Open Sans", sans-serif;
+				font-size: 0.9rem;
+				font-weight: 500;
+				color: #4a5568;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				border: none;
+				background: transparent;
+			}
+
+			.sched-cal-day:hover:not(.disabled):not(.empty) {
+				background: #e8f4f2;
+				color: #69B5AD;
+			}
+
+			.sched-cal-day.selected {
+				background: #69B5AD;
+				color: #fff;
+				font-weight: 700;
+				box-shadow: 0 4px 14px rgba(105, 181, 173, 0.35);
+			}
+
+			.sched-cal-day.today {
+				border: 2px solid #69B5AD;
+				font-weight: 700;
+				color: #69B5AD;
+			}
+
+			.sched-cal-day.today.selected {
+				color: #fff;
+			}
+
+			.sched-cal-day.disabled {
+				color: #cbd5e0;
+				cursor: default;
+			}
+
+			.sched-cal-day.empty {
+				cursor: default;
+			}
+
+			/* ---------- TIME SLOTS ---------- */
+			.sched-times-wrap {
+				max-width: 480px;
+				margin: 32px auto 0;
+				background: #fff;
+				border-radius: 20px;
+				padding: 32px;
+				box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+			}
+
+			.sched-times-wrap h3 {
+				font-family: "Hind", sans-serif;
+				font-weight: 600;
+				font-size: 1.1rem;
+				color: #2d3748;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+
+			.sched-times {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 10px;
+			}
+
+			.sched-time {
+				padding: 14px 8px;
+				border-radius: 12px;
+				border: 1.5px solid #e2e8f0;
+				background: #fff;
+				font-family: "Open Sans", sans-serif;
+				font-size: 0.88rem;
+				font-weight: 600;
+				color: #4a5568;
+				cursor: pointer;
+				text-align: center;
+				transition: all 0.2s ease;
+			}
+
+			.sched-time:hover {
+				border-color: #69B5AD;
+				color: #69B5AD;
+				background: #f7faf9;
+			}
+
+			.sched-time.selected {
+				background: #69B5AD;
+				border-color: #69B5AD;
+				color: #fff;
+				box-shadow: 0 4px 14px rgba(105, 181, 173, 0.3);
+			}
+
+			.sched-time.unavailable {
+				color: #cbd5e0;
+				border-color: #edf2f7;
+				cursor: default;
+				text-decoration: line-through;
+			}
+
+			/* ---------- BOOKING FORM ---------- */
+			.sched-form-wrap {
+				max-width: 540px;
+				margin: 0 auto;
+			}
+
+			.sched-summary {
+				background: #fff;
+				border-radius: 20px;
+				padding: 32px;
+				box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+				margin-bottom: 28px;
+			}
+
+			.sched-summary h3 {
+				font-family: "Hind", sans-serif;
+				font-weight: 600;
+				font-size: 1.1rem;
+				color: #2d3748;
+				margin-bottom: 20px;
+			}
+
+			.sched-summary-row {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 12px 0;
+				border-bottom: 1px solid #f0f4f3;
+			}
+
+			.sched-summary-row:last-child {
+				border-bottom: none;
+				padding-bottom: 0;
+			}
+
+			.sched-summary-label {
+				font-size: 0.85rem;
+				color: #718096;
+			}
+
+			.sched-summary-value {
+				font-weight: 600;
+				color: #2d3748;
+				font-size: 0.92rem;
+			}
+
+			.sched-summary-total {
+				font-size: 1.15rem;
+				color: #69B5AD;
+				font-weight: 700;
+			}
+
+			.sched-form {
+				background: #fff;
+				border-radius: 20px;
+				padding: 32px;
+				box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+			}
+
+			.sched-form h3 {
+				font-family: "Hind", sans-serif;
+				font-weight: 600;
+				font-size: 1.1rem;
+				color: #2d3748;
+				margin-bottom: 24px;
+			}
+
+			.sched-field {
+				margin-bottom: 20px;
+			}
+
+			/* The additional-guest field slides open instead of popping in.
+			   visibility is transitioned with a delay so the input is not
+			   tabbable or announced while it is collapsed. */
+			.sched-field-collapse {
+				overflow: hidden;
+				max-height: 0;
+				opacity: 0;
+				margin-bottom: 0;
+				visibility: hidden;
+				transition: max-height .35s ease, opacity .25s ease,
+				            margin-bottom .35s ease, visibility 0s linear .35s;
+			}
+
+			.sched-field-collapse.sched-field-open {
+				max-height: 120px;
+				opacity: 1;
+				margin-bottom: 20px;
+				visibility: visible;
+				transition: max-height .35s ease, opacity .25s ease .1s,
+				            margin-bottom .35s ease, visibility 0s;
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				.sched-field-collapse,
+				.sched-field-collapse.sched-field-open {
+					transition: none;
+				}
+			}
+
+			.sched-field label {
+				display: block;
+				font-family: "Hind", sans-serif;
+				font-size: 0.78rem;
+				font-weight: 600;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				color: #718096;
+				margin-bottom: 8px;
+			}
+
+			.sched-field input,
+			.sched-field select,
+			.sched-field textarea {
+				width: 100%;
+				padding: 14px 18px;
+				border-radius: 12px;
+				border: 1.5px solid #e2e8f0;
+				font-family: "Open Sans", sans-serif;
+				font-size: 16px;
+				color: #2d3748;
+				background: #fff;
+				transition: all 0.2s ease;
+				outline: none;
+			}
+
+			.sched-field input:focus,
+			.sched-field select:focus,
+			.sched-field textarea:focus {
+				border-color: #69B5AD;
+				box-shadow: 0 0 0 3px rgba(105, 181, 173, 0.12);
+			}
+
+			.sched-field textarea {
+				resize: vertical;
+				min-height: 90px;
+			}
+
+			.sched-field.sched-invalid input {
+				border-color: #c53030;
+				background: #fffafa;
+			}
+
+			.sched-field.sched-invalid input:focus {
+				border-color: #c53030;
+				box-shadow: 0 0 0 3px rgba(197, 48, 48, 0.12);
+			}
+
+			.sched-field-error {
+				display: none;
+				margin-top: 7px;
+				font-family: "Open Sans", sans-serif;
+				font-size: 0.82rem;
+				line-height: 1.4;
+				color: #c53030;
+			}
+
+			.sched-field.sched-invalid .sched-field-error { display: block; }
+
+			.sched-req {
+				color: #69B5AD;
+				font-weight: 700;
+				margin-left: 3px;
+			}
+
+			.sched-req-note {
+				font-family: "Open Sans", sans-serif;
+				font-size: 0.82rem;
+				color: #718096;
+				margin: -8px 0 18px;
+			}
+
+			.sched-field-row {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 16px;
+			}
+
+			/* ---------- BUTTONS ---------- */
+			.sched-actions {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				max-width: 900px;
+				margin: 40px auto 0;
+			}
+
+			.sched-btn {
+				font-family: "Hind", sans-serif;
+				font-weight: 600;
+				font-size: 0.88rem;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				padding: 16px 40px;
+				border-radius: 50px;
+				border: none;
+				cursor: pointer;
+				transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			.sched-btn-primary {
+				background: #69B5AD;
+				color: #fff;
+				box-shadow: 0 4px 20px rgba(105, 181, 173, 0.35);
+			}
+
+			.sched-btn-primary:hover {
+				background: #5aa39b;
+				box-shadow: 0 6px 28px rgba(105, 181, 173, 0.45);
+				transform: translateY(-2px);
+			}
+
+			.sched-btn-secondary {
+				background: transparent;
+				color: #69B5AD;
+				border: 2px solid #69B5AD;
+			}
+
+			.sched-btn-secondary:hover {
+				background: rgba(105, 181, 173, 0.06);
+			}
+
+			.sched-btn:disabled {
+				opacity: 0.4;
+				cursor: default;
+				transform: none !important;
+				box-shadow: none !important;
+			}
+
+			/* Shown when a booking could not be saved; the customer stays on this step. */
+			.sched-save-error {
+				max-width: 900px;
+				margin: 28px auto 0;
+				padding: 14px 18px;
+				border: 1px solid #f1c4c4;
+				border-radius: 12px;
+				background: #fffafa;
+				font-family: "Open Sans", sans-serif;
+				font-size: 0.9rem;
+				line-height: 1.5;
+				color: #9b2c2c;
+				/* The script focuses this box so it is read out and brought into view. These
+				   margins stop that scroll from leaving it under the fixed nav bar or under
+				   the scroll-to-top button in the bottom-right corner of a phone screen. */
+				scroll-margin: 96px 0;
+			}
+
+			.sched-save-error[hidden] { display: none; }
+
+			.sched-save-error a {
+				color: inherit;
+				font-weight: 600;
+				/* Keeps the number in one piece instead of breaking it at the hyphen. */
+				white-space: nowrap;
+			}
+
+			.sched-save-error:focus-visible {
+				outline: 2px solid #c53030;
+				outline-offset: 2px;
+			}
+
+			/* ---------- CONFIRMATION ---------- */
+			.sched-confirm {
+				text-align: center;
+				max-width: 500px;
+				margin: 0 auto;
+				padding: 60px 0 20px;
+			}
+
+			.sched-confirm__icon {
+				width: 88px;
+				height: 88px;
+				background: #69B5AD;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 28px;
+				box-shadow: 0 8px 32px rgba(105, 181, 173, 0.3);
+				animation: schedPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+			}
+
+			@keyframes schedPop {
+				from { transform: scale(0); opacity: 0; }
+				to   { transform: scale(1); opacity: 1; }
+			}
+
+			.sched-confirm__icon svg {
+				width: 40px;
+				height: 40px;
+			}
+
+			.sched-confirm h2 {
+				font-family: "Hind", sans-serif;
+				font-weight: 600;
+				font-size: 1.8rem;
+				color: #2d3748;
+				margin-bottom: 12px;
+			}
+
+			.sched-confirm p {
+				font-size: 1rem;
+				color: #718096;
+				line-height: 1.7;
+				margin-bottom: 32px;
+			}
+
+			/* ---------- SECTION HEADING ---------- */
+			.sched-section-title {
+				text-align: center;
+				margin-bottom: 40px;
+			}
+
+			.sched-section-title h2 {
+				font-family: "Hind", sans-serif;
+				font-weight: 600;
+				font-size: 1.5rem;
+				color: #2d3748;
+				margin-bottom: 8px;
+			}
+
+			.sched-section-title p {
+				font-size: 0.95rem;
+				color: #718096;
+			}
+
+			/* ---------- RESPONSIVE ---------- */
+			@media (max-width: 768px) {
+				.sched-services {
+					grid-template-columns: 1fr;
+					max-width: 380px;
+				}
+
+				.sched-times {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.sched-field-row {
+					grid-template-columns: 1fr;
+				}
+
+				.sched-actions {
+					flex-direction: column-reverse;
+					gap: 12px;
+				}
+
+				.sched-btn {
+					width: 100%;
+					text-align: center;
+				}
+
+				.sched-stepper {
+					max-width: 100%;
+				}
+
+				.sched-step__label {
+					font-size: 0.62rem;
+					letter-spacing: 0.5px;
+				}
+			}
+		</style>
+		<script src="js/supabase-config.js?v=20260930a"></script>
+</head>
+	<body class="v2-page schedule-v2">
+	<script>if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")</script>
+		<div id="pageTop"></div>
+		<nav id="topNav" class="navbar nav">
+			<div class="container">
+				<button class="navbar-toggler" aria-expanded="false" aria-controls="navbarDropdown">
+					<div class="hamburger-icon">
+						<span class="bar bar1"></span>
+						<span class="bar bar2"></span>
+						<span class="bar bar3"></span>
+					</div>
+				</button>
+				<a class="navbar-brand" href="index.html">Renegade Wellness Center, LLC</a>
+				<ul class="navbar-nav">
+					<li class="nav-link nav-pumpkin">
+						<a class="nav-pumpkin__link" href="featured.html" aria-label="Fall — featured seasonal products">
+							<svg class="nav-pumpkin__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 52" width="48" height="41.6" aria-hidden="true" focusable="false">
+								<!-- Stem and tendril: drawn first so their base tucks behind the body, and animated as one piece. -->
+								<g class="nav-pumpkin__stem">
+									<path d="M30 15.5C29 9.8 30.6 5.6 34.6 4.4" fill="none" stroke="#6B4A28" stroke-width="4.2" stroke-linecap="round"/>
+									<path d="M30.4 14.2C29.7 10.2 30.9 7.2 33.6 5.9" fill="none" stroke="#8A6236" stroke-width="1.5" stroke-linecap="round"/>
+									<path d="M32 8.8c3.4-1.2 6 .6 5.4 2.9-.5 1.9-3 1.9-3.4.2" fill="none" stroke="#7A9B4F" stroke-width="1.3" stroke-linecap="round"/>
+								</g>
+								<!-- Six leaves behind the body, so the pumpkin sits down IN the pile.
+								     Shapes and veins are the same ones css/../tools/genpile.py draws in
+								     the featured.html leaf pile, so the two read as the same artwork. -->
+								<g transform="translate(11 37.5) rotate(265) scale(0.105) translate(-50 -50)"><path d="M50 3 C73 27 85 53 51 90 L51 99 L49 99 L49 90 C15 53 27 27 50 3 Z" fill="#8E3A20" stroke="rgba(28,14,4,.55)" stroke-width="3.4" stroke-linejoin="round"/><path d="M50 97 L50 8 M50 26 L36 19 M50 26 L64 19 M50 44 L33 36 M50 44 L67 36 M50 62 L37 55 M50 62 L63 55 M50 78 L42 73 M50 78 L58 73" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.9" stroke-linecap="round"/></g>
+								<g transform="translate(49 37) rotate(95) scale(0.100) translate(-50 -50)"><path d="M50 5 C68 12 84 27 84 46 C84 65 69 82 52 89 L52 99 L48 99 L48 89 C31 82 16 65 16 46 C16 27 32 12 50 5 Z" fill="#A8442A" stroke="rgba(28,14,4,.55)" stroke-width="3.6" stroke-linejoin="round"/><path d="M50 96 L50 12 M50 30 L34 23 M50 30 L66 23 M50 50 L30 43 M50 50 L70 43 M50 68 L37 62 M50 68 L63 62" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="3.0" stroke-linecap="round"/></g>
+								<!-- Flank leaves: the body curves away sharply below its widest point,
+								     which left a wedge of background on each side. These sit behind it
+								     and fill that wedge without covering the pumpkin. -->
+								<g transform="translate(9.5 40.5) rotate(268) scale(0.115) translate(-50 -50)"><path d="M50 6 L55 25 L69 16 L66 36 L84 32 L73 50 L90 58 L71 64 L77 80 L59 75 L55 87 L52 79 L52 99 L48 99 L48 79 L45 87 L41 75 L23 80 L29 64 L10 58 L27 50 L16 32 L34 36 L31 16 L45 25 Z" fill="#B24A26" stroke="rgba(28,14,4,.55)" stroke-width="3.1" stroke-linejoin="round"/><path d="M50 96 L50 30 M50 44 L31 34 M50 44 L69 34 M50 58 L28 52 M50 58 L72 52 M50 72 L40 68 M50 72 L60 68" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.6" stroke-linecap="round"/></g>
+								<g transform="translate(13.2 38.2) rotate(250) scale(0.105) translate(-50 -50)"><path d="M50 5 C56 11 59 17 58 24 C65 20 73 22 75 30 C77 38 71 43 63 43 C71 47 77 53 75 61 C73 69 65 71 58 67 C59 74 55 82 52 90 L52 99 L48 99 L48 90 C45 82 41 74 42 67 C35 71 27 69 25 61 C23 53 29 47 37 43 C29 43 23 38 25 30 C27 22 35 20 42 24 C41 17 44 11 50 5 Z" fill="#9C3D22" stroke="rgba(28,14,4,.55)" stroke-width="3.4" stroke-linejoin="round"/><path d="M50 96 L50 14 M50 32 L34 26 M50 32 L66 26 M50 52 L32 46 M50 52 L68 46 M50 70 L38 65 M50 70 L62 65" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.9" stroke-linecap="round"/></g>
+								<g transform="translate(50.5 40.3) rotate(92) scale(0.115) translate(-50 -50)"><path d="M50 6 L55 25 L69 16 L66 36 L84 32 L73 50 L90 58 L71 64 L77 80 L59 75 L55 87 L52 79 L52 99 L48 99 L48 79 L45 87 L41 75 L23 80 L29 64 L10 58 L27 50 L16 32 L34 36 L31 16 L45 25 Z" fill="#A8442A" stroke="rgba(28,14,4,.55)" stroke-width="3.1" stroke-linejoin="round"/><path d="M50 96 L50 30 M50 44 L31 34 M50 44 L69 34 M50 58 L28 52 M50 58 L72 52 M50 72 L40 68 M50 72 L60 68" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.6" stroke-linecap="round"/></g>
+								<g transform="translate(46.8 38) rotate(110) scale(0.105) translate(-50 -50)"><path d="M50 5 C56 11 59 17 58 24 C65 20 73 22 75 30 C77 38 71 43 63 43 C71 47 77 53 75 61 C73 69 65 71 58 67 C59 74 55 82 52 90 L52 99 L48 99 L48 90 C45 82 41 74 42 67 C35 71 27 69 25 61 C23 53 29 47 37 43 C29 43 23 38 25 30 C27 22 35 20 42 24 C41 17 44 11 50 5 Z" fill="#B87E2C" stroke="rgba(28,14,4,.55)" stroke-width="3.4" stroke-linejoin="round"/><path d="M50 96 L50 14 M50 32 L34 26 M50 32 L66 26 M50 52 L32 46 M50 52 L68 46 M50 70 L38 65 M50 70 L62 65" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.9" stroke-linecap="round"/></g>
+								<!-- Body: five lobes, outer darkest, centre brightest. Every lobe is
+				     stroked, which does two jobs at once - the outer strokes form the
+				     silhouette, and where lobes overlap they read as the rib grooves.
+				     Matches the leaf-pile pumpkins on featured.html. -->
+								<ellipse cx="17.5" cy="27.5" rx="8.6" ry="12.6" fill="#C4571F" stroke="#8C3A12" stroke-width="1.2"/>
+								<ellipse cx="42.5" cy="27.5" rx="8.6" ry="12.6" fill="#C4571F" stroke="#8C3A12" stroke-width="1.2"/>
+								<ellipse cx="23" cy="27.5" rx="9.4" ry="13.8" fill="#E06A1E" stroke="#8C3A12" stroke-width="1.2"/>
+								<ellipse cx="37" cy="27.5" rx="9.4" ry="13.8" fill="#E06A1E" stroke="#8C3A12" stroke-width="1.2"/>
+								<ellipse cx="30" cy="27.5" rx="10.4" ry="14.4" fill="#F5811F" stroke="#8C3A12" stroke-width="1.2"/>
+								<text class="nav-pumpkin__text" x="30" y="32" text-anchor="middle" fill="#fff" font-family="Hind, sans-serif" font-size="12" font-weight="700" style="text-transform:none">Fall</text>
+								<!-- Leaves piled at the base. Static by design — only the stem moves.
+								     Back row smaller and more muted than the front so the pile has depth.
+								     stroke-width is divided by each leaf's scale so the outline and veins
+								     stay a constant weight no matter how big the leaf is. -->
+								<!-- Corner leaves: spread the pile out past the body on both sides.
+								     Drawn before the rest of the pile so the inner leaves layer on top. -->
+								<g transform="translate(7 44.8) rotate(288) scale(0.105) translate(-50 -50)"><path d="M50 6 L55 25 L69 16 L66 36 L84 32 L73 50 L90 58 L71 64 L77 80 L59 75 L55 87 L52 79 L52 99 L48 99 L48 79 L45 87 L41 75 L23 80 L29 64 L10 58 L27 50 L16 32 L34 36 L31 16 L45 25 Z" fill="#A8442A" stroke="rgba(28,14,4,.55)" stroke-width="3.4" stroke-linejoin="round"/><path d="M50 96 L50 30 M50 44 L31 34 M50 44 L69 34 M50 58 L28 52 M50 58 L72 52 M50 72 L40 68 M50 72 L60 68" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.9" stroke-linecap="round"/></g>
+								<g transform="translate(11.2 47.2) rotate(255) scale(0.095) translate(-50 -50)"><path d="M50 3 C73 27 85 53 51 90 L51 99 L49 99 L49 90 C15 53 27 27 50 3 Z" fill="#C0431A" stroke="rgba(28,14,4,.55)" stroke-width="3.8" stroke-linejoin="round"/><path d="M50 97 L50 8 M50 26 L36 19 M50 26 L64 19 M50 44 L33 36 M50 44 L67 36 M50 62 L37 55 M50 62 L63 55 M50 78 L42 73 M50 78 L58 73" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="3.2" stroke-linecap="round"/></g>
+								<g transform="translate(53 44.6) rotate(72) scale(0.105) translate(-50 -50)"><path d="M50 6 L55 25 L69 16 L66 36 L84 32 L73 50 L90 58 L71 64 L77 80 L59 75 L55 87 L52 79 L52 99 L48 99 L48 79 L45 87 L41 75 L23 80 L29 64 L10 58 L27 50 L16 32 L34 36 L31 16 L45 25 Z" fill="#B24A26" stroke="rgba(28,14,4,.55)" stroke-width="3.4" stroke-linejoin="round"/><path d="M50 96 L50 30 M50 44 L31 34 M50 44 L69 34 M50 58 L28 52 M50 58 L72 52 M50 72 L40 68 M50 72 L60 68" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.9" stroke-linecap="round"/></g>
+								<g transform="translate(48.8 47.2) rotate(105) scale(0.095) translate(-50 -50)"><path d="M50 5 C68 12 84 27 84 46 C84 65 69 82 52 89 L52 99 L48 99 L48 89 C31 82 16 65 16 46 C16 27 32 12 50 5 Z" fill="#D9752A" stroke="rgba(28,14,4,.55)" stroke-width="3.8" stroke-linejoin="round"/><path d="M50 96 L50 12 M50 30 L34 23 M50 30 L66 23 M50 50 L30 43 M50 50 L70 43 M50 68 L37 62 M50 68 L63 62" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="3.2" stroke-linecap="round"/></g>
+								<g transform="translate(13.5 42.9) rotate(285) scale(0.108) translate(-50 -50)"><path d="M50 6 L55 25 L69 16 L66 36 L84 32 L73 50 L90 58 L71 64 L77 80 L59 75 L55 87 L52 79 L52 99 L48 99 L48 79 L45 87 L41 75 L23 80 L29 64 L10 58 L27 50 L16 32 L34 36 L31 16 L45 25 Z" fill="#A8442A" stroke="rgba(28,14,4,.55)" stroke-width="3.3" stroke-linejoin="round"/><path d="M50 96 L50 30 M50 44 L31 34 M50 44 L69 34 M50 58 L28 52 M50 58 L72 52 M50 72 L40 68 M50 72 L60 68" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.8" stroke-linecap="round"/></g>
+								<g transform="translate(21.5 42.3) rotate(250) scale(0.100) translate(-50 -50)"><path d="M50 3 C73 27 85 53 51 90 L51 99 L49 99 L49 90 C15 53 27 27 50 3 Z" fill="#B87E2C" stroke="rgba(28,14,4,.55)" stroke-width="3.6" stroke-linejoin="round"/><path d="M50 97 L50 8 M50 26 L36 19 M50 26 L64 19 M50 44 L33 36 M50 44 L67 36 M50 62 L37 55 M50 62 L63 55 M50 78 L42 73 M50 78 L58 73" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="3.0" stroke-linecap="round"/></g>
+								<g transform="translate(30 42.5) rotate(20) scale(0.098) translate(-50 -50)"><path d="M50 5 C68 12 84 27 84 46 C84 65 69 82 52 89 L52 99 L48 99 L48 89 C31 82 16 65 16 46 C16 27 32 12 50 5 Z" fill="#8E3A20" stroke="rgba(28,14,4,.55)" stroke-width="3.7" stroke-linejoin="round"/><path d="M50 96 L50 12 M50 30 L34 23 M50 30 L66 23 M50 50 L30 43 M50 50 L70 43 M50 68 L37 62 M50 68 L63 62" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="3.1" stroke-linecap="round"/></g>
+								<g transform="translate(38.5 42.4) rotate(115) scale(0.105) translate(-50 -50)"><path d="M50 6 L55 25 L69 16 L66 36 L84 32 L73 50 L90 58 L71 64 L77 80 L59 75 L55 87 L52 79 L52 99 L48 99 L48 79 L45 87 L41 75 L23 80 L29 64 L10 58 L27 50 L16 32 L34 36 L31 16 L45 25 Z" fill="#B24A26" stroke="rgba(28,14,4,.55)" stroke-width="3.4" stroke-linejoin="round"/><path d="M50 96 L50 30 M50 44 L31 34 M50 44 L69 34 M50 58 L28 52 M50 58 L72 52 M50 72 L40 68 M50 72 L60 68" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.9" stroke-linecap="round"/></g>
+								<g transform="translate(46.5 43) rotate(80) scale(0.100) translate(-50 -50)"><path d="M50 3 C73 27 85 53 51 90 L51 99 L49 99 L49 90 C15 53 27 27 50 3 Z" fill="#9C3D22" stroke="rgba(28,14,4,.55)" stroke-width="3.6" stroke-linejoin="round"/><path d="M50 97 L50 8 M50 26 L36 19 M50 26 L64 19 M50 44 L33 36 M50 44 L67 36 M50 62 L37 55 M50 62 L63 55 M50 78 L42 73 M50 78 L58 73" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="3.0" stroke-linecap="round"/></g>
+								<g transform="translate(17 45.5) rotate(275) scale(0.120) translate(-50 -50)"><path d="M50 6 L55 25 L69 16 L66 36 L84 32 L73 50 L90 58 L71 64 L77 80 L59 75 L55 87 L52 79 L52 99 L48 99 L48 79 L45 87 L41 75 L23 80 L29 64 L10 58 L27 50 L16 32 L34 36 L31 16 L45 25 Z" fill="#C0431A" stroke="rgba(28,14,4,.55)" stroke-width="3.0" stroke-linejoin="round"/><path d="M50 96 L50 30 M50 44 L31 34 M50 44 L69 34 M50 58 L28 52 M50 58 L72 52 M50 72 L40 68 M50 72 L60 68" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.5" stroke-linecap="round"/></g>
+								<g transform="translate(25.5 46.2) rotate(300) scale(0.115) translate(-50 -50)"><path d="M50 5 C68 12 84 27 84 46 C84 65 69 82 52 89 L52 99 L48 99 L48 89 C31 82 16 65 16 46 C16 27 32 12 50 5 Z" fill="#E8A33D" stroke="rgba(28,14,4,.55)" stroke-width="3.1" stroke-linejoin="round"/><path d="M50 96 L50 12 M50 30 L34 23 M50 30 L66 23 M50 50 L30 43 M50 50 L70 43 M50 68 L37 62 M50 68 L63 62" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.6" stroke-linecap="round"/></g>
+								<g transform="translate(34.5 46) rotate(65) scale(0.118) translate(-50 -50)"><path d="M50 5 C56 11 59 17 58 24 C65 20 73 22 75 30 C77 38 71 43 63 43 C71 47 77 53 75 61 C73 69 65 71 58 67 C59 74 55 82 52 90 L52 99 L48 99 L48 90 C45 82 41 74 42 67 C35 71 27 69 25 61 C23 53 29 47 37 43 C29 43 23 38 25 30 C27 22 35 20 42 24 C41 17 44 11 50 5 Z" fill="#9C5A21" stroke="rgba(28,14,4,.55)" stroke-width="3.1" stroke-linejoin="round"/><path d="M50 96 L50 14 M50 32 L34 26 M50 32 L66 26 M50 52 L32 46 M50 52 L68 46 M50 70 L38 65 M50 70 L62 65" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.5" stroke-linecap="round"/></g>
+								<g transform="translate(43 45.3) rotate(100) scale(0.110) translate(-50 -50)"><path d="M50 6 L55 25 L69 16 L66 36 L84 32 L73 50 L90 58 L71 64 L77 80 L59 75 L55 87 L52 79 L52 99 L48 99 L48 79 L45 87 L41 75 L23 80 L29 64 L10 58 L27 50 L16 32 L34 36 L31 16 L45 25 Z" fill="#D9752A" stroke="rgba(28,14,4,.55)" stroke-width="3.3" stroke-linejoin="round"/><path d="M50 96 L50 30 M50 44 L31 34 M50 44 L69 34 M50 58 L28 52 M50 58 L72 52 M50 72 L40 68 M50 72 L60 68" fill="none" stroke="rgba(28,14,4,.32)" stroke-width="2.7" stroke-linecap="round"/></g>
+							</svg>
+						</a>
+					</li>
+					<li class="nav-link">
+						<a href="index.html">Home</a>
+					</li>
+					<li class="nav-link">
+						<a href="products.html">Products</a>
+					</li>
+					<li class="nav-link">
+						<a href="contact.html">Contact</a>
+					</li>
+					<li class="nav-link">
+						<a href="faq.html">FAQ</a>
+					</li>
+				<label class="theme-switch" aria-label="Toggle dark mode">
+					<input type="checkbox" class="theme-switch__checkbox">
+					<span class="theme-switch__slider">
+						<span class="theme-switch__clouds">
+							<span class="day-cloud day-cloud--1"></span>
+							<span class="day-cloud day-cloud--2"></span>
+							<span class="day-cloud day-cloud--3"></span>
+							<span class="day-cloud day-cloud--4"></span>
+							<span class="day-cloud day-cloud--5"></span>
+						</span>
+						<span class="theme-switch__stars">
+							<span class="falling-star falling-star--1"></span>
+							<span class="falling-star falling-star--2"></span>
+							<span class="falling-star falling-star--3"></span>
+							<span class="falling-star falling-star--4"></span>
+							<span class="falling-star falling-star--5"></span>
+							<span class="falling-star falling-star--6"></span>
+							<span class="falling-star falling-star--7"></span>
+							<span class="falling-star falling-star--8"></span>
+							<span class="night-cloud night-cloud--1"></span>
+							<span class="night-cloud night-cloud--2"></span>
+							<span class="night-cloud night-cloud--3"></span>
+							<span class="night-cloud night-cloud--4"></span>
+							<span class="night-cloud night-cloud--5"></span>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M135.831 3.00688C135.055 3.85027 134.111 4.29946 133 4.35447C134.111 4.40947 135.055 4.85867 135.831 5.70205C136.607 6.54544 136.996 7.55245 137 8.00147C136.996 7.55245 136.607 6.54544 135.831 5.70205C135.055 4.85867 134.111 4.40947 133 4.35447C134.111 4.29946 135.055 3.85027 135.831 3.00688ZM135.831 3.00688C136.607 2.16348 136.996 1.15647 137 0.00146484C136.996 1.15647 136.607 2.16348 135.831 3.00688ZM116.5 10.4015C116.336 10.5765 116.127 10.6498 115.87 10.6217C115.985 10.6467 116.084 10.6985 116.166 10.7772C116.332 10.9395 116.424 11.1617 116.424 11.3929C116.416 11.1677 116.332 10.9517 116.166 10.7772C116.084 10.6985 115.985 10.6467 115.87 10.6217C116.127 10.6498 116.336 10.5765 116.5 10.4015ZM116.5 10.4015C116.664 10.2265 116.744 10.0092 116.742 9.74972C116.744 10.0092 116.664 10.2265 116.5 10.4015ZM124 17.1217C123.616 17.5765 123.088 17.8197 122.415 17.8512C123.088 17.8822 123.616 18.1265 124 18.5765C124.384 19.0277 124.576 19.5765 124.578 20.2217C124.576 19.5765 124.384 19.0277 124 18.5765C123.616 18.1265 123.088 17.8822 122.415 17.8512C123.088 17.8197 123.616 17.5765 124 17.1217ZM124 17.1217C124.384 16.6717 124.576 16.1217 124.578 15.4717C124.576 16.1217 124.384 16.6717 124 17.1217ZM131.831 12.0069C131.055 12.8503 130.111 13.2995 129 13.3545C130.111 13.4095 131.055 13.8587 131.831 14.7021C132.607 15.5454 132.996 16.5765 133 17.8015C132.996 16.5765 132.607 15.5454 131.831 14.7021C131.055 13.8587 130.111 13.4095 129 13.3545C130.111 13.2995 131.055 12.8503 131.831 12.0069ZM131.831 12.0069C132.607 11.1635 132.996 10.1565 133 8.93147C132.996 10.1565 132.607 11.1635 131.831 12.0069ZM116.5 36.4015C116.336 36.5765 116.127 36.6498 115.87 36.6217C115.985 36.6467 116.084 36.6985 116.166 36.7772C116.332 36.9395 116.424 37.1617 116.424 37.3929C116.416 37.1677 116.332 36.9517 116.166 36.7772C116.084 36.6985 115.985 36.6467 115.87 36.6217C116.127 36.6498 116.336 36.5765 116.5 36.4015ZM116.5 36.4015C116.664 36.2265 116.744 36.0092 116.742 35.7497C116.744 36.0092 116.664 36.2265 116.5 36.4015ZM99 25.1217C98.616 25.5765 98.088 25.8197 97.415 25.8512C98.088 25.8822 98.616 26.1265 99 26.5765C99.384 27.0277 99.576 27.5765 99.578 28.2217C99.576 27.5765 99.384 27.0277 99 26.5765C98.616 26.1265 98.088 25.8822 97.415 25.8512C98.088 25.8197 98.616 25.5765 99 25.1217ZM99 25.1217C99.384 24.6717 99.576 24.1217 99.578 23.4717C99.576 24.1217 99.384 24.6717 99 25.1217Z" fill="currentColor"/>
+							</svg>
+						</span>
+						<span class="theme-switch__circle">
+							<span class="theme-switch__sun-icon"></span>
+							<span class="theme-switch__moon-spots">
+								<span class="theme-switch__spot theme-switch__spot--1"></span>
+								<span class="theme-switch__spot theme-switch__spot--2"></span>
+								<span class="theme-switch__spot theme-switch__spot--3"></span>
+								<span class="theme-switch__spot theme-switch__spot--4"></span>
+							</span>
+						</span>
+					</span>
+				</label>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- HERO -->
+		<header class="hv2-hero">
+			<div class="hv2-hero__overlay"></div>
+			<div class="hv2-hero__content">
+				<h1 class="sr-only">Book a Session at Renegade Wellness Center</h1>
+				<img fetchpriority="high" decoding="async"
+					 src="./assets/images/RWC-logo(white).svg"
+					 alt="Renegade Wellness Center Logo"
+					 class="hv2-hero__logo">
+				<p class="hv2-hero__tagline">Book Your Session</p>
+			</div>
+		</header>
+
+		<!-- WAVE DIVIDER -->
+		<div class="hv2-wave">
+			<svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+				<path d="M0,50 C300,10 500,100 750,60 C1000,20 1200,90 1440,45 L1440,150 L0,150 Z" fill="#f4f7f6">
+					<animate attributeName="d" dur="6s" repeatCount="indefinite" values="
+						M0,50 C300,10 500,100 750,60 C1000,20 1200,90 1440,45 L1440,150 L0,150 Z;
+						M0,70 C250,30 450,85 700,45 C950,5 1150,80 1440,65 L1440,150 L0,150 Z;
+						M0,40 C350,20 550,95 800,55 C1050,15 1250,85 1440,35 L1440,150 L0,150 Z;
+						M0,50 C300,10 500,100 750,60 C1000,20 1200,90 1440,45 L1440,150 L0,150 Z
+					"/>
+				</path>
+			</svg>
+		</div>
+
+		<!-- CONTENT -->
+		<div class="v2-content" id="v2-content">
+			<!-- STEPPER -->
+			<div class="sched-stepper">
+				<div class="sched-step active" data-step="1">
+					<div class="sched-step__circle">1</div>
+					<span class="sched-step__label">Service</span>
+					<div class="sched-step__line"></div>
+				</div>
+				<div class="sched-step" data-step="2">
+					<div class="sched-step__circle">2</div>
+					<span class="sched-step__label">Date & Time</span>
+					<div class="sched-step__line"></div>
+				</div>
+				<div class="sched-step" data-step="3">
+					<div class="sched-step__circle">3</div>
+					<span class="sched-step__label">Your Info</span>
+					<div class="sched-step__line"></div>
+				</div>
+				<div class="sched-step" data-step="4">
+					<div class="sched-step__circle">4</div>
+					<span class="sched-step__label">Confirm</span>
+				</div>
+			</div>
+
+			<!-- PANEL 1: SERVICE SELECTION -->
+			<div class="sched-panel active" id="panel-1">
+				<div class="sched-section-title">
+					<h2>Choose Your Therapy</h2>
+					<p>Select the session that's right for you</p>
+				</div>
+
+				<div class="sched-services">
+					<!-- Salt Cabin -->
+					<div class="sched-card" data-service="salt" data-price="25">
+						<div class="sched-card__check">
+							<svg fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+						</div>
+						<div class="sched-card__icon">
+							<svg class="sched-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="18" y="20" width="44" height="48" rx="6" stroke="#69B5AD" stroke-width="2.5" fill="none"/>
+								<path d="M18 32h44" stroke="#69B5AD" stroke-width="2"/>
+								<circle cx="40" cy="24" r="2" fill="#69B5AD"/>
+								<rect x="22" y="16" width="36" height="6" rx="3" stroke="#69B5AD" stroke-width="2" fill="none"/>
+								<path d="M30 44c2-3 5-4 10-4s8 1 10 4" stroke="#69B5AD" stroke-width="2" stroke-linecap="round"/>
+								<circle cx="32" cy="52" r="2" fill="#69B5AD" opacity="0.5"/>
+								<circle cx="40" cy="56" r="1.5" fill="#69B5AD" opacity="0.4"/>
+								<circle cx="48" cy="51" r="2.5" fill="#69B5AD" opacity="0.3"/>
+								<circle cx="36" cy="58" r="1" fill="#69B5AD" opacity="0.5"/>
+								<circle cx="44" cy="60" r="1.5" fill="#69B5AD" opacity="0.35"/>
+							</svg>
+						</div>
+						<div class="sched-card__body">
+							<h3 class="sched-card__name">Salt Cabin</h3>
+							<p class="sched-card__desc">Halotherapy for sinuses, lungs, and skin in a private salt room</p>
+							<div class="sched-card__price">$25 <span>/ person</span></div>
+							<div class="sched-card__price">$40 <span>/ for two people</span></div>
+						</div>
+					</div>
+
+					<!-- Infrared Therapy -->
+					<div class="sched-card" data-service="infrared" data-price="40">
+						<div class="sched-card__check">
+							<svg fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+						</div>
+						<div class="sched-card__icon">
+							<svg class="sched-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="12" y="30" width="56" height="32" rx="8" stroke="#c4956a" stroke-width="2.5" fill="none"/>
+								<path d="M12 38h56" stroke="#c4956a" stroke-width="1.5" opacity="0.5"/>
+								<ellipse cx="40" cy="46" rx="16" ry="8" stroke="#c4956a" stroke-width="2" fill="none" opacity="0.6"/>
+								<path d="M28 22c2 4 4 6 4 8" stroke="#e8a065" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+								<path d="M40 18c0 5 0 8 0 12" stroke="#e8a065" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+								<path d="M52 22c-2 4-4 6-4 8" stroke="#e8a065" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+								<path d="M33 16c1 3 2 4 2 6" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+								<path d="M47 16c-1 3-2 4-2 6" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+							</svg>
+						</div>
+						<div class="sched-card__body">
+							<h3 class="sched-card__name">Infrared Therapy</h3>
+							<p class="sched-card__desc">Far infrared sauna bed for pain relief, detox, and muscle recovery</p>
+							<div class="sched-card__price">$40 <span>/ session</span></div>
+						</div>
+					</div>
+
+					<!-- Combo -->
+					<div class="sched-card" data-service="combo" data-price="55">
+						<div class="sched-card__check">
+							<svg fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+						</div>
+						<div class="sched-card__icon">
+							<svg class="sched-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="8" y="28" width="30" height="32" rx="5" stroke="#69B5AD" stroke-width="2" fill="none"/>
+								<circle cx="23" cy="48" r="2" fill="#69B5AD" opacity="0.4"/>
+								<circle cx="18" cy="52" r="1.5" fill="#69B5AD" opacity="0.3"/>
+								<rect x="42" y="28" width="30" height="32" rx="5" stroke="#c4956a" stroke-width="2" fill="none"/>
+								<path d="M50 20c1 3 2 5 2 8" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+								<path d="M57 18c0 4 0 6 0 10" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+								<path d="M64 20c-1 3-2 5-2 8" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+								<path d="M36 40l8 0" stroke="#69B5AD" stroke-width="2" stroke-linecap="round"/>
+								<path d="M36 46l8 0" stroke="#c4956a" stroke-width="2" stroke-linecap="round"/>
+								<rect x="32" y="64" width="16" height="6" rx="3" fill="#69B5AD" opacity="0.15"/>
+								<text x="40" y="69" text-anchor="middle" font-size="5" font-weight="700" fill="#69B5AD" font-family="Hind, sans-serif">SAVE $10</text>
+							</svg>
+						</div>
+						<div class="sched-card__body">
+							<h3 class="sched-card__name">Salt + Infrared Combo</h3>
+							<p class="sched-card__desc">Both therapies in one visit for whole body wellness</p>
+							<div class="sched-card__price">$55 <span>/ total</span></div>
+							<div class="sched-card__sub-price">Save $10</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="sched-actions">
+					<div></div>
+					<button class="sched-btn sched-btn-primary" id="btn-to-2" disabled>Continue</button>
+				</div>
+			</div>
+
+			<!-- PANEL 2: DATE & TIME -->
+			<div class="sched-panel" id="panel-2">
+				<div class="sched-section-title">
+					<h2>Pick a Date & Time</h2>
+					<p>Select your preferred appointment slot</p>
+				</div>
+
+				<div class="sched-calendar-wrap">
+					<div class="sched-cal-header">
+						<button class="sched-cal-btn" id="cal-prev">
+							<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+						</button>
+						<h3 id="cal-month-year">March 2026</h3>
+						<button class="sched-cal-btn" id="cal-next">
+							<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+						</button>
+					</div>
+					<div class="sched-cal-days" id="cal-grid">
+						<!-- Generated by JS -->
+					</div>
+				</div>
+
+				<div class="sched-times-wrap" id="times-wrap" style="display: none;">
+					<h3 id="times-heading">Available Times</h3>
+					<div class="sched-times" id="times-grid">
+						<!-- Generated by JS -->
+					</div>
+				</div>
+
+				<div class="sched-actions">
+					<button class="sched-btn sched-btn-secondary" id="btn-back-1">Back</button>
+					<button class="sched-btn sched-btn-primary" id="btn-to-3" disabled>Continue</button>
+				</div>
+			</div>
+
+			<!-- PANEL 3: YOUR INFO -->
+			<div class="sched-panel" id="panel-3">
+				<div class="sched-section-title">
+					<h2>Your Information</h2>
+					<p>Tell us a little about yourself</p>
+				</div>
+
+				<div class="sched-form-wrap">
+					<div class="sched-summary">
+						<h3>Appointment Summary</h3>
+						<div class="sched-summary-row">
+							<span class="sched-summary-label">Service</span>
+							<span class="sched-summary-value" id="sum-service">--</span>
+						</div>
+						<div class="sched-summary-row">
+							<span class="sched-summary-label">Date</span>
+							<span class="sched-summary-value" id="sum-date">--</span>
+						</div>
+						<div class="sched-summary-row">
+							<span class="sched-summary-label">Time</span>
+							<span class="sched-summary-value" id="sum-time">--</span>
+						</div>
+						<div class="sched-summary-row">
+							<span class="sched-summary-label">Total</span>
+							<span class="sched-summary-value sched-summary-total" id="sum-price">--</span>
+						</div>
+					</div>
+
+					<div class="sched-form">
+						<h3>Contact Details</h3>
+						<p class="sched-req-note"><span class="sched-req" aria-hidden="true">*</span> Required — we use these to confirm your appointment.</p>
+						<div class="sched-field-row">
+							<div class="sched-field" id="field-fname">
+								<label for="fname">First Name<span class="sched-req" aria-hidden="true">*</span></label>
+								<input type="text" id="fname" placeholder="Jane" autocomplete="given-name" aria-describedby="err-fname">
+								<div class="sched-field-error" id="err-fname">Please enter your first name.</div>
+							</div>
+							<div class="sched-field" id="field-lname">
+								<label for="lname">Last Name<span class="sched-req" aria-hidden="true">*</span></label>
+								<input type="text" id="lname" placeholder="Doe" autocomplete="family-name" aria-describedby="err-lname">
+								<div class="sched-field-error" id="err-lname">Please enter your last name.</div>
+							</div>
+						</div>
+						<div class="sched-field" id="field-email">
+							<label for="email">Email <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+							<input type="email" id="email" placeholder="jane@example.com" autocomplete="email" aria-describedby="err-email">
+							<div class="sched-field-error" id="err-email">Please enter a valid email address.</div>
+						</div>
+						<div class="sched-field" id="field-phone">
+							<label for="phone">Phone<span class="sched-req" aria-hidden="true">*</span></label>
+							<input type="tel" id="phone" placeholder="(828) 555-0123" autocomplete="tel" aria-describedby="err-phone">
+							<div class="sched-field-error" id="err-phone">Please enter a phone number with at least 10 digits.</div>
+						</div>
+						<!-- Salt Cabin only; infrared and combo are always one person. -->
+						<div class="sched-field" id="field-guests">
+							<label for="guests">Number of Guests</label>
+							<select id="guests">
+								<option value="1">1 person</option>
+								<option value="2">2 people</option>
+							</select>
+						</div>
+						<!-- Only relevant for a 2-person booking, so it stays out of the
+						     way until the visitor actually picks 2. -->
+						<div class="sched-field sched-field-collapse" id="field-guest2">
+							<label for="guest2">Additional Guest</label>
+							<input type="text" id="guest2" placeholder="Their name">
+						</div>
+						<div class="sched-field">
+							<label for="notes">Notes <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+							<textarea id="notes" placeholder="First visit, allergies, preferences..."></textarea>
+						</div>
+					</div>
+
+					<div class="sched-save-error" id="booking-error" role="alert" tabindex="-1" hidden>
+						We couldn't confirm your booking. Please try again, or call us at
+						<a href="tel:+18285149276">(828) 514-9276</a> and we'll book it for you.
+					</div>
+
+					<div class="sched-actions">
+						<button class="sched-btn sched-btn-secondary" id="btn-back-2">Back</button>
+						<button class="sched-btn sched-btn-primary" id="btn-to-4">Request Appointment</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- PANEL 4: CONFIRMATION -->
+			<div class="sched-panel" id="panel-4">
+				<div class="sched-confirm">
+					<div class="sched-confirm__icon">
+						<svg fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+					</div>
+					<h2>Appointment Pending</h2>
+					<p>You will receive a text once your appointment has been confirmed.</p>
+
+					<div class="sched-summary" style="text-align: left; margin-top: 32px;">
+						<h3>Booking Details</h3>
+						<div class="sched-summary-row">
+							<span class="sched-summary-label">Service</span>
+							<span class="sched-summary-value" id="conf-service">--</span>
+						</div>
+						<div class="sched-summary-row">
+							<span class="sched-summary-label">Date</span>
+							<span class="sched-summary-value" id="conf-date">--</span>
+						</div>
+						<div class="sched-summary-row">
+							<span class="sched-summary-label">Time</span>
+							<span class="sched-summary-value" id="conf-time">--</span>
+						</div>
+						<div class="sched-summary-row">
+							<span class="sched-summary-label">Total</span>
+							<span class="sched-summary-value sched-summary-total" id="conf-price">--</span>
+						</div>
+					</div>
+
+					<a href="index.html" class="sched-btn sched-btn-primary" style="display:inline-block; margin-top:24px; text-decoration:none;">Back to Home</a>
+				</div>
+			</div>
+
+		</div><!-- /.v2-content -->
+
+		<!--Footer-->
+		<footer class="bg-footer">
+			<div class="footer-grid">
+				<div class="footer-contact">
+					<h4>Contact Us</h4>
+					<ul>
+						<li>
+							<img src="./assets/images/map-pin.svg" alt="" class="footer-icon">
+							<span>630 W 21st St Newton, NC<span class="footer-sub">Inside Reaves Chiropractic</span></span>
+						</li>
+						<li>
+							<img src="./assets/images/mobile.svg" alt="" class="footer-icon">
+							<span><a href="tel:+18285149276">(+1) 828-514-9276</a><span class="footer-sub">Call / text</span></span>
+						</li>
+						<li>
+							<img src="./assets/images/mail.svg" alt="" class="footer-icon">
+							<span><a href="mailto:renegadewellnesscenter@gmail.com">renegadewellnesscenter@gmail.com</a></span>
+						</li>
+						<li>
+							<img src="./assets/images/instagram-brands-solid-full.svg" alt="" class="footer-icon">
+							<span><a href="https://www.instagram.com/renegadewellnesscenter" target="_blank" rel="noopener noreferrer">@renegadewellnesscenter</a></span>
+						</li>
+					</ul>
+				</div>
+				<hr class="footer-divider">
+				<div class="footer-links">
+					<h4>Quick Links</h4>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="products.html">Products</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+					</ul>
+				</div>
+				<hr class="footer-divider">
+				<div class="footer-payments">
+					<h4>We Accept</h4>
+					<div class="footer-payments-grid">
+						<img src="./assets/images/payments/cash.svg" alt="Cash">
+						<img src="./assets/images/payments/check-book(white).svg" alt="Check">
+						<img src="./assets/images/payments/Visa2.png" alt="Visa">
+						<img src="./assets/images/payments/Mastercard2.png" alt="Mastercard">
+						<img src="./assets/images/payments/Amex2.png" alt="American Express">
+						<img src="./assets/images/payments/Discover2.png" alt="Discover">
+						<img src="./assets/images/payments/contactless_payment(white).svg" alt="Contactless">
+						<img src="./assets/images/payments/Apple-Pay2.png" alt="Apple Pay">
+						<img src="./assets/images/payments/Google-Pay2.png" alt="Google Pay">
+						<img src="./assets/images/payments/Samsung-Pay.png?v=3" alt="Samsung Pay">
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p class="footer-credit">Built by
+					<img src="./assets/images/DOC_logo_3_logo_only_transparent-BG.gif" alt="Developer Of Code, LLC logo">
+					<a href="https://developerofcode.com" target="_blank" rel="noopener noreferrer">Developer Of Code, LLC</a>
+				</p>
+				<p>&copy; 2026 Renegade Wellness Center</p>
+			</div>
+		</footer>
+
+		<!--Scroll Top-->
+		<a id="scrollUp" href="#pageTop" onclick="event.preventDefault();document.documentElement.style.scrollBehavior='auto';window.scrollTo({top:0,behavior:'smooth'});setTimeout(function(){document.documentElement.style.scrollBehavior=''},50)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></a>
+
+		<script>
+			/* ============ NAVBAR / DARK MODE (shared) ============ */
+			const nav = document.getElementById("topNav");
+			window.onscroll = function () {
+				if (window.pageYOffset > 100) {
+					nav.classList.add("sticky");
+				} else {
+					nav.classList.remove("sticky");
+				}
+				var scrollBtn = document.getElementById('scrollUp');
+				if (scrollBtn) {
+					if (window.pageYOffset > 300) {
+						scrollBtn.classList.add('visible');
+					} else {
+						scrollBtn.classList.remove('visible');
+					}
+				}
+			}
+
+			const navButton = document.querySelector('button[aria-expanded]');
+			const navMenu = document.querySelector('.navbar-nav');
+
+			navButton.addEventListener('click', function () {
+				const expanded = navButton.getAttribute('aria-expanded') === 'true';
+				if (expanded) {
+					navMenu.classList.add('menu-closing');
+					navMenu.addEventListener('animationend', function handler() {
+						navMenu.classList.remove('menu-closing');
+						navButton.setAttribute('aria-expanded', 'false');
+						navMenu.removeEventListener('animationend', handler);
+					});
+				} else {
+					navButton.setAttribute('aria-expanded', 'true');
+				}
+			});
+
+			const themeCheckbox = document.querySelector('.theme-switch__checkbox');
+			if (localStorage.getItem('darkMode') === 'true') {
+				themeCheckbox.checked = true;
+			}
+			themeCheckbox.addEventListener('change', () => {
+				document.body.classList.toggle('dark-mode', themeCheckbox.checked);
+				localStorage.setItem('darkMode', themeCheckbox.checked);
+			});
+
+			/* ============ SUPABASE ============ */
+			// Live or test project, picked by js/supabase-config.js from the page's address.
+			const SUPABASE_URL = window.RWC_SUPABASE.url;
+			const SUPABASE_KEY = window.RWC_SUPABASE.key;
+
+			async function supabaseRequest(table, method, body, queryParams) {
+				const url = SUPABASE_URL + '/rest/v1/' + table + (queryParams || '');
+				const opts = {
+					method: method,
+					headers: {
+						'apikey': SUPABASE_KEY,
+						'Authorization': 'Bearer ' + SUPABASE_KEY,
+						'Content-Type': 'application/json',
+						'Prefer': method === 'POST' ? 'return=representation' : ''
+					}
+				};
+				if (body) opts.body = JSON.stringify(body);
+				const res = await fetch(url, opts);
+				if (!res.ok) throw new Error(res.status + ' ' + (await res.text()));
+				const text = await res.text();
+				return text ? JSON.parse(text) : null;
+			}
+
+			function bookingToRow(b) {
+				return {
+					id: b.id,
+					first_name: b.first || '',
+					last_name: b.last || '',
+					email: b.email || '',
+					phone: b.phone || '',
+					service: b.service || '',
+					booking_date: b.date || '',
+					booking_time: b.time || '',
+					duration: b.duration || null,
+					price: b.price || null,
+					guests: b.guests || '',
+					notes: b.notes || '',
+					status: b.status || 'pending',
+					created_at: b.createdAt || new Date().toISOString()
+				};
+			}
+
+			// Booked slots for the availability check: date, time, duration and service only.
+			// get_booked_slots() never returns names, phones or emails. This used to read the
+			// whole bookings table into every visitor's browser.
+			const BOOKED_SLOTS_KEY = 'rwc_booked_slots';
+
+			function loadBookedSlots() {
+				try {
+					const slots = JSON.parse(localStorage.getItem(BOOKED_SLOTS_KEY) || '[]');
+					return Array.isArray(slots) ? slots : [];
+				} catch (e) {
+					return [];
+				}
+			}
+
+			function rememberBookedSlot(b) {
+				const slots = loadBookedSlots();
+				slots.push({ date: b.date, time: b.time, duration: b.duration, service: b.service });
+				try {
+					localStorage.setItem(BOOKED_SLOTS_KEY, JSON.stringify(slots));
+				} catch (e) { /* storage full or unavailable */ }
+			}
+
+			async function syncBookingsForAvailability() {
+				try {
+					const rows = await supabaseRequest('rpc/get_booked_slots', 'POST', {});
+					if (!rows || !Array.isArray(rows)) return;
+					const slots = rows.map(r => ({
+						date: r.booking_date || '',
+						time: r.booking_time || '',
+						duration: r.duration,
+						service: r.service || ''
+					}));
+					localStorage.setItem(BOOKED_SLOTS_KEY, JSON.stringify(slots));
+				} catch (e) {
+					console.error('Schedule: booked slots sync failed, using the last copy:', e);
+				}
+			}
+
+			/* Old versions of this page cached every booking, names and phone numbers
+			   included, under rwc_bookings. Remove it, except where the admin dashboard
+			   has run: on the shop's own devices that key is the dashboard's cache and
+			   may hold a booking not uploaded yet. The dashboard writes rwc_settings when it
+			   loads its settings or profile row from Supabase and when either is saved, so
+			   that key is how this page recognizes such a device. */
+			try {
+				if (!localStorage.getItem('rwc_settings')) localStorage.removeItem('rwc_bookings');
+			} catch (e) { /* storage unavailable */ }
+
+			// Sync blocked dates from Supabase. Resolves true when the stored copy changed.
+			async function syncBlockedDates() {
+				try {
+					const rows = await supabaseRequest('inventory', 'GET', null,
+						'?product_name=eq._blocked_dates&category=eq._system&select=notes');
+					if (rows && rows.length > 0) {
+						const dates = JSON.stringify(JSON.parse(rows[0].notes || '[]'));
+						if (localStorage.getItem('rwc_blocked_dates') !== dates) {
+							localStorage.setItem('rwc_blocked_dates', dates);
+							return true;
+						}
+					}
+				} catch (e) {
+					console.error('Schedule: blocked dates sync failed:', e);
+				}
+				return false;
+			}
+
+			// Sync business hours from Supabase. Resolves true when the stored copy changed.
+			async function syncBusinessHours() {
+				try {
+					const rows = await supabaseRequest('inventory', 'GET', null,
+						'?product_name=eq._business_hours&category=eq._system&select=notes');
+					if (rows && rows.length > 0) {
+						const hours = JSON.parse(rows[0].notes || 'null');
+						if (hours) {
+							const json = JSON.stringify(hours);
+							if (localStorage.getItem('rwc_hours') !== json) {
+								localStorage.setItem('rwc_hours', json);
+								return true;
+							}
+						}
+					}
+				} catch (e) {
+					console.error('Schedule: business hours sync failed:', e);
+				}
+				return false;
+			}
+
+			// Sync on page load. A visitor can reach the calendar before these answer,
+			// and it is then drawn from built-in fallback hours, so redraw it as soon
+			// as the real hours or blocked dates turn out to differ. Each answer
+			// redraws on its own, so a slow one never holds back the other.
+			syncBookingsForAvailability();
+			syncBlockedDates().then(changed => { if (changed) refreshCalendar(); });
+			syncBusinessHours().then(changed => { if (changed) refreshCalendar(); });
+
+			// Auto-refresh every 10 seconds
+			setInterval(async () => {
+				await syncBookingsForAvailability();
+				const blockedChanged = await syncBlockedDates();
+				const hoursChanged = await syncBusinessHours();
+
+				// Only redraw when blocked dates or hours actually changed. Comparing
+				// before and after this tick missed changes stored between ticks.
+				if (blockedChanged || hoursChanged) await refreshCalendar();
+
+				if (state.date && state.step === 2) {
+					// Check if the currently selected date just got blocked
+					const blockedDates = JSON.parse(localStorage.getItem('rwc_blocked_dates') || '[]');
+					const dateKey = state.date.getFullYear() + '-' + String(state.date.getMonth() + 1).padStart(2, '0') + '-' + String(state.date.getDate()).padStart(2, '0');
+					const isBlocked = blockedDates.some(b => b.date === dateKey && !isPartialBlock(b));
+					if (isBlocked) {
+						// Date just got blocked — hide time slots
+						const wrap = document.getElementById('times-wrap');
+						if (wrap) wrap.style.display = 'none';
+						state.date = null;
+						state.time = null;
+						document.getElementById('btn-to-3').disabled = true;
+						return;
+					}
+
+					const grid = document.getElementById('times-grid');
+					if (!grid || grid.style.display === 'none') return;
+
+					// Re-check the 60-minute cutoff on each refresh
+					const now = new Date();
+					const isToday = state.date.getFullYear() === now.getFullYear() && state.date.getMonth() === now.getMonth() && state.date.getDate() === now.getDate();
+
+					const buttons = grid.querySelectorAll('.sched-time');
+					buttons.forEach(btn => {
+						const slot = btn.textContent;
+						const wasUnavailable = btn.classList.contains('unavailable');
+
+						// Check both booking conflicts AND the 60-minute cutoff
+						let tooSoon = false;
+						if (isToday) {
+							const slotMins = time12ToMinutes(slot);
+							const nowMins = now.getHours() * 60 + now.getMinutes();
+							tooSoon = (slotMins - nowMins) < 61;
+						}
+						const isNowUnavailable = tooSoon || isSlotUnavailable(state.date, slot, state.serviceName);
+
+						if (wasUnavailable && !isNowUnavailable) {
+							btn.classList.remove('unavailable');
+							btn.style.textDecoration = 'none';
+							btn.style.cursor = 'pointer';
+							btn.onclick = () => selectTime(slot, btn);
+						} else if (!wasUnavailable && isNowUnavailable && !btn.classList.contains('selected')) {
+							btn.classList.add('unavailable');
+							btn.onclick = null;
+						}
+					});
+				}
+			}, 10000);
+
+			/* ============ SCHEDULING LOGIC ============ */
+			const state = {
+				service: null,
+				serviceName: '',
+				price: 0,
+				date: null,
+				time: null,
+				step: 1,
+				calMonth: new Date().getMonth(),
+				calYear: new Date().getFullYear()
+			};
+
+			const serviceNames = {
+				salt: 'Salt Cabin',
+				infrared: 'Infrared Therapy',
+				combo: 'Salt + Infrared Combo'
+			};
+
+			/* --- Time Slot Helpers --- */
+			function timeToMinutes(t) {
+				const [h, m] = t.split(':').map(Number);
+				return h * 60 + m;
+			}
+
+			function time12ToMinutes(t) {
+				const match = t.match(/(\d+):(\d+)\s*(AM|PM)/i);
+				if (!match) return 0;
+				let h = parseInt(match[1]);
+				const m = parseInt(match[2]);
+				const ampm = match[3].toUpperCase();
+				if (ampm === 'PM' && h !== 12) h += 12;
+				if (ampm === 'AM' && h === 12) h = 0;
+				return h * 60 + m;
+			}
+
+			function minutesToTime12(mins) {
+				let h = Math.floor(mins / 60);
+				const m = mins % 60;
+				const ampm = h >= 12 ? 'PM' : 'AM';
+				if (h === 0) h = 12;
+				else if (h > 12) h -= 12;
+				return h + ':' + String(m).padStart(2, '0') + ' ' + ampm;
+			}
+
+			function getSchedulingConfig() {
+				return JSON.parse(localStorage.getItem('rwc_scheduling') || 'null') || {
+					services: {
+						'Couples Infrared/Salt Combo': { duration: 75, buffer: 15, price: 100 },
+						'Couples Salt':               { duration: 20, buffer: 10, price: 0 },
+						'Infrared Therapy':           { duration: 45, buffer: 15, price: 40 },
+						'Infrared Therapy - 2 People': { duration: 105, buffer: 15, price: 80 },
+						'Infrared Therapy - Child':   { duration: 20, buffer: 10, price: 0 },
+						'Salt Cabin - 1 Person':      { duration: 20, buffer: 10, price: 25 },
+						'Salt Cabin - 2 People':      { duration: 20, buffer: 10, price: 40 },
+						'Salt Cabin - 3 People':      { duration: 45, buffer: 15, price: 60 },
+						'Salt Cabin - 4 People':      { duration: 45, buffer: 15, price: 70 },
+						'Salt Cabin - Infrared Package Add On': { duration: 20, buffer: 10, price: 20 },
+						'Salt Cabin - Prepaid':       { duration: 20, buffer: 10, price: 0 },
+						'Salt Cabin - Shared':        { duration: 20, buffer: 10, price: 20 },
+						'Salt Cabin':                 { duration: 20, buffer: 10, price: 25 },
+						'Salt + Infrared Combo':      { duration: 75, buffer: 15, price: 55 }
+					},
+					bufferMinutes: 10,
+					slotInterval: 30
+				};
+			}
+
+			function generateTimeSlots(date, serviceName) {
+				const defaultHrs = [
+					{ day: 'Monday', open: '09:00', close: '17:00', closed: false },
+					{ day: 'Tuesday', open: '09:00', close: '17:00', closed: false },
+					{ day: 'Wednesday', open: '09:00', close: '17:00', closed: false },
+					{ day: 'Thursday', open: '09:00', close: '17:00', closed: false },
+					{ day: 'Friday', open: '09:00', close: '17:00', closed: false },
+					{ day: 'Saturday', open: '10:00', close: '15:00', closed: false },
+					{ day: 'Sunday', open: '', close: '', closed: true }
+				];
+				const hours = JSON.parse(localStorage.getItem('rwc_hours') || 'null') || defaultHrs;
+				const config = getSchedulingConfig();
+				const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+				const dayName = dayNames[date.getDay()];
+				const dayHours = hours.find(h => h.day === dayName);
+
+				if (!dayHours || dayHours.closed) return [];
+
+				const openMins = timeToMinutes(dayHours.open);
+				const closeMins = timeToMinutes(dayHours.close);
+				const interval = 30;
+				const svcConfig = config.services[serviceName] || { duration: 20, buffer: 10 };
+				const duration = svcConfig.duration;
+				const buffer = svcConfig.buffer !== undefined ? svcConfig.buffer : (config.bufferMinutes || 10);
+				const totalBlock = duration + buffer;
+
+				// Determine slot pattern based on service type
+				const resources = getServiceResources(serviceName);
+				const isInfraredOnly = resources.length === 1 && resources[0] === 'infrared';
+				const isCombo = resources.length === 2;
+
+				const slots = [];
+				if (isInfraredOnly || isCombo) {
+					// Infrared and combo slots at :15 and :45 (infrared goes first in combo)
+					// Last slot cutoff uses session duration only (no buffer) so e.g. 4:45 is allowed with 6pm close
+					const hourStart = openMins - (openMins % 60);
+					for (let hr = hourStart; hr < closeMins; hr += 60) {
+						[15, 45].forEach(offset => {
+							const t = hr + offset;
+							if (t >= openMins && t + duration <= closeMins) {
+								slots.push(minutesToTime12(t));
+							}
+						});
+					}
+				} else {
+					// Salt-only at :00/:30
+					// Last slot cutoff uses session duration only (no buffer)
+					for (let t = openMins; t + duration <= closeMins; t += interval) {
+						slots.push(minutesToTime12(t));
+					}
+				}
+				return slots;
+			}
+
+			// A blocked entry's windows, normalised. windows[] is current; a bare
+			// from/to pair is the older single-window shape; neither has always
+			// meant the whole day — so an empty list is "all day", not "nothing".
+			function blockWindows(b) {
+				if (!b) return [];
+				if (Array.isArray(b.windows) && b.windows.length) {
+					return b.windows.filter(w => w && w.from && w.to);
+				}
+				if (b.from && b.to) return [{ from: b.from, to: b.to }];
+				return [];
+			}
+
+			function isPartialBlock(b) {
+				return blockWindows(b).length > 0;
+			}
+
+			function blockHitsRange(b, startMins, endMins) {
+				const windows = blockWindows(b);
+				if (!windows.length) return true;
+				return windows.some(w => startMins < timeToMinutes(w.to) && endMins > timeToMinutes(w.from));
+			}
+
+			function getBlockForDate(date) {
+				const blockedDates = JSON.parse(localStorage.getItem('rwc_blocked_dates') || '[]');
+				const key = date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+				return blockedDates.find(b => b.date === key) || null;
+			}
+
+			// Returns which resources a service uses: 'salt-cabin', 'infrared', or both
+			function getServiceResources(name) {
+				const n = (name || '').toLowerCase();
+				const hasSalt = n.includes('salt') || n.includes('cabin');
+				const hasInfrared = n.includes('infrared');
+				const isCombo = n.includes('combo') || n.includes('package') || (hasSalt && hasInfrared);
+				if (isCombo) return ['salt-cabin', 'infrared'];
+				if (hasInfrared) return ['infrared'];
+				return ['salt-cabin'];
+			}
+
+			// How much of each room one booking actually occupies, in minutes from
+			// midnight. The admin calendar draws its blocks from the same numbers,
+			// so a gap on that calendar is always a slot this page will accept.
+			//
+			// A stored duration already includes its buffer, so it is used as-is.
+			// A combo has no single span: infrared runs first, then salt. The guest
+			// walks into salt as soon as the infrared session ends, while the bed
+			// stays reserved through its cleaning buffer.
+			//
+			// js/admin-dashboard.js carries an identical copy;
+			// tools/test-booking-spans.js checks the two still behave the same.
+			function bookingRoomSpans(b, config) {
+				const resources = getServiceResources(b.service);
+				const start = time12ToMinutes(b.time);
+				const spans = {};
+				if (resources.length === 2) {
+					const irCfg = config.services['Infrared Therapy'] || { duration: 45, buffer: 15 };
+					const saltCfg = config.services['Salt Cabin'] || { duration: 20, buffer: 10 };
+					const irBlock = irCfg.duration + (irCfg.buffer !== undefined ? irCfg.buffer : 15);
+					const saltBlock = saltCfg.duration + (saltCfg.buffer !== undefined ? saltCfg.buffer : 10);
+					spans.infrared = { start: start, end: start + irBlock };
+					spans.salt = { start: start + irCfg.duration, end: start + irCfg.duration + saltBlock };
+				} else {
+					const end = start + (parseInt(b.duration) || 30);
+					if (resources.includes('infrared')) spans.infrared = { start: start, end: end };
+					else spans.salt = { start: start, end: end };
+				}
+				return spans;
+			}
+
+			function isSlotUnavailable(date, slotTime, serviceName) {
+				const config = getSchedulingConfig();
+				const svcConfig = config.services[serviceName] || { duration: 20, buffer: 10 };
+				const buffer = svcConfig.buffer !== undefined ? svcConfig.buffer : (config.bufferMinutes || 10);
+				const slotStart = time12ToMinutes(slotTime);
+				const slotResources = getServiceResources(serviceName);
+				const slotIsCombo = slotResources.length === 2;
+
+				// Per-resource configs for combo splitting
+				const saltCfg = config.services['Salt Cabin'] || { duration: 20, buffer: 10 };
+				const saltBlock = saltCfg.duration + (saltCfg.buffer !== undefined ? saltCfg.buffer : 10);
+				const irCfg = config.services['Infrared Therapy'] || { duration: 45, buffer: 15 };
+				const irBlock = irCfg.duration + (irCfg.buffer !== undefined ? irCfg.buffer : 15);
+
+				// New slot's per-resource time ranges
+				let slotSaltStart, slotSaltEnd, slotIrStart, slotIrEnd;
+				if (slotIsCombo) {
+					// Combo: Infrared first, then Salt back-to-back
+					slotIrStart = slotStart;
+					slotIrEnd = slotStart + irBlock;
+					slotSaltStart = slotStart + irCfg.duration;
+					slotSaltEnd = slotSaltStart + saltBlock;
+				} else if (slotResources.includes('infrared')) {
+					slotIrStart = slotStart;
+					slotIrEnd = slotStart + svcConfig.duration + buffer;
+				} else {
+					slotSaltStart = slotStart;
+					slotSaltEnd = slotStart + svcConfig.duration + buffer;
+				}
+
+				// Hours the owner blocked off kill any slot that runs into them.
+				const blockedEntry = getBlockForDate(date);
+				if (blockedEntry) {
+					const spanEnd = Math.max(slotSaltEnd || 0, slotIrEnd || 0);
+					if (blockHitsRange(blockedEntry, slotStart, spanEnd)) return true;
+				}
+
+				const bookings = loadBookedSlots();
+				const dateStr = formatDate(date);
+
+				return bookings.some(b => {
+					if (b.date !== dateStr) return false;
+					if (b.status === 'cancelled' || b.status === 'deleted' || b.status === 'trashed') return false;
+
+					const bSpans = bookingRoomSpans(b, config);
+					const bSaltStart = bSpans.salt && bSpans.salt.start;
+					const bSaltEnd = bSpans.salt && bSpans.salt.end;
+					const bIrStart = bSpans.infrared && bSpans.infrared.start;
+					const bIrEnd = bSpans.infrared && bSpans.infrared.end;
+
+					// Bidirectional overlap: two ranges overlap if start1 < end2 AND end1 > start2
+					if (slotSaltStart !== undefined && bSaltStart !== undefined) {
+						if (slotSaltStart < bSaltEnd && slotSaltEnd > bSaltStart) return true;
+					}
+					if (slotIrStart !== undefined && bIrStart !== undefined) {
+						if (slotIrStart < bIrEnd && slotIrEnd > bIrStart) return true;
+					}
+					return false;
+				});
+			}
+
+			/* --- Step Navigation --- */
+			/* Every step gets its own browser history entry, so the browser's back and
+			   forward buttons move between steps instead of leaving the booking page. */
+			let historyReady = false;
+			try {
+				history.replaceState({ schedStep: 1 }, '');
+				historyReady = true;
+			} catch (e) { /* no history API - the in-page Back buttons still work */ }
+
+			/* What the form currently asks to book: the service, day and time, plus the
+			   contact details a repeat request is told apart by. */
+			function bookingKey() {
+				return [
+					state.serviceName,
+					formatDate(state.date),
+					state.time,
+					document.getElementById('email').value.trim(),
+					document.getElementById('phone').value.trim()
+				].join('|');
+			}
+
+			/* The key of the last booking Supabase confirmed, or null. Back from the
+			   confirmation now returns to step 3, so only send a request the visitor has
+			   actually changed, never the same one twice. The history handling reads it
+			   too, so it is declared here with the rest of the navigation state. */
+			let lastSubmittedKey = null;
+
+			/* A reload keeps the history entries but wipes the in-page state, so never
+			   restore a step the visitor has not actually filled in. Step 4 is the
+			   confirmation, so it is reachable only while the form still matches the last
+			   booking Supabase confirmed. Otherwise an old step 4 history entry, reached
+			   with the browser's Forward or Back button, would confirm a booking that was
+			   never saved. */
+			function furthestReachableStep() {
+				if (!state.service) return 1;
+				if (!state.date || !state.time) return 2;
+				return bookingKey() === lastSubmittedKey ? 4 : 3;
+			}
+
+			/* True while a booking is being sent to Supabase. The customer has to stay on
+			   step 3 until the answer is in, so the confirmation that follows matches the
+			   form they filled in. Declared here because the popstate handler reads it. */
+			let bookingSaving = false;
+
+			window.addEventListener('popstate', e => {
+				/* The browser has already moved to another entry, so put the step 3 entry
+				   back and stay on the form. pushState never fires popstate, so this
+				   cannot loop. Without a save in flight nothing here changes. */
+				if (bookingSaving) {
+					try { history.pushState({ schedStep: state.step }, ''); } catch (err) { /* ignore */ }
+					return;
+				}
+				const requested = (e.state && e.state.schedStep) || 1;
+				goToStep(Math.min(requested, furthestReachableStep()), true);
+			});
+
+			function goToStep(n, fromHistory) {
+				const prev = state.step;
+				state.step = n;
+				/* The "could not confirm" message describes the last attempt on step 3. Once
+				   the customer leaves the step it is hidden, so it never greets a form that
+				   nothing has been sent for yet. */
+				if (n !== 3) showBookingError(false);
+				document.querySelectorAll('.sched-panel').forEach(p => p.classList.remove('active'));
+				document.getElementById('panel-' + n).classList.add('active');
+
+				document.querySelector('.sched-stepper').classList.toggle('is-forward', n > prev);
+				document.querySelectorAll('.sched-step').forEach(s => {
+					const sn = parseInt(s.dataset.step);
+					s.classList.remove('active', 'completed');
+					if (sn === n) s.classList.add('active');
+					if (sn < n) s.classList.add('completed');
+					/* Only finished steps are clickable; the rest stay out of the tab order. */
+					if (sn < n) {
+						s.setAttribute('role', 'button');
+						s.setAttribute('tabindex', '0');
+						s.setAttribute('aria-label', 'Go back to step ' + sn + ': ' + s.querySelector('.sched-step__label').textContent);
+					} else {
+						s.removeAttribute('role');
+						s.removeAttribute('tabindex');
+						s.removeAttribute('aria-label');
+					}
+					if (sn === n) s.setAttribute('aria-current', 'step');
+					else s.removeAttribute('aria-current');
+
+					const line = s.querySelector('.sched-step__line');
+					if (line) {
+						line.classList.toggle('filled', sn < n);
+					}
+				});
+
+				if (n === 2) {
+					renderCalendar();
+					// Always regenerate time slots if a date was already selected
+					if (state.date) {
+						state.time = null;
+						document.getElementById('btn-to-3').disabled = true;
+						// Small delay to ensure panel is visible before rendering
+						setTimeout(() => showTimeSlots(), 50);
+					}
+				}
+				if (n === 3) updateSummary();
+				if (n === 4) updateConfirmation();
+
+				/* Stop with the stepper just below the fixed nav. Scrolling the content
+				   to the very top tucked the circles under the nav, leaving only the
+				   active circle's glow showing as a stray shadow under its edge. */
+				const nav = document.getElementById('topNav');
+				const stepper = document.querySelector('.sched-stepper');
+				const navHeight = nav ? nav.getBoundingClientRect().height : 0;
+				const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+				window.scrollTo({
+					top: stepper.getBoundingClientRect().top + window.scrollY - navHeight - 24,
+					behavior: reduceMotion ? 'auto' : 'smooth'
+				});
+
+				if (historyReady && !fromHistory && n > prev) {
+					try { history.pushState({ schedStep: n }, ''); } catch (e) { /* ignore */ }
+				}
+			}
+
+			/* --- Service Selection --- */
+			document.querySelectorAll('.sched-card').forEach(card => {
+				card.addEventListener('click', () => {
+					document.querySelectorAll('.sched-card').forEach(c => c.classList.remove('selected'));
+					card.classList.add('selected');
+					state.service = card.dataset.service;
+					state.serviceName = serviceNames[state.service];
+					state.price = parseInt(card.dataset.price);
+					document.getElementById('btn-to-2').disabled = false;
+					syncGuestsField();
+				});
+			});
+
+			/* --- Additional guest name (only for a 2-person booking) --- */
+			const guestsSel = document.getElementById('guests');
+			const guest2Field = document.getElementById('field-guest2');
+			const guest2Input = document.getElementById('guest2');
+			function syncGuest2() {
+				const show = guestsSel.value === '2';
+				guest2Field.classList.toggle('sched-field-open', show);
+				/* Drop a name typed before switching back to 1, so it can't ride
+				   along on a single-person booking. */
+				if (!show) guest2Input.value = '';
+			}
+			guestsSel.addEventListener('change', syncGuest2);
+			syncGuest2();
+
+			/* Only the Salt Cabin takes a second guest. Any other service resets
+			   to 1 person so a choice made on salt can't carry over. */
+			function syncGuestsField() {
+				const isSalt = state.service === 'salt';
+				document.getElementById('field-guests').hidden = !isSalt;
+				if (!isSalt) {
+					guestsSel.value = '1';
+					syncGuest2();
+				}
+			}
+			syncGuestsField();
+
+			document.getElementById('btn-to-2').addEventListener('click', () => goToStep(2));
+			document.getElementById('btn-to-3').addEventListener('click', () => goToStep(3));
+			/* --- Step 3 validation ---
+			   Nothing on this step used to be required, so a visitor could tap
+			   straight through an empty form and land in the books as "Guest"
+			   with no way to contact them. Email is optional - the phone number
+			   is enough to reach them - but a typo'd address still fails, since
+			   a malformed one would never attach to their Clients record. */
+			const CONTACT_RULES = [
+				{ id: 'fname', test: v => v.trim().length > 0 },
+				{ id: 'lname', test: v => v.trim().length > 0 },
+				{ id: 'email', test: v => !v.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) },
+				{ id: 'phone', test: v => v.replace(/\D/g, '').length >= 10 }
+			];
+
+			function setFieldValid(id, ok) {
+				const wrap = document.getElementById('field-' + id);
+				if (wrap) wrap.classList.toggle('sched-invalid', !ok);
+				const input = document.getElementById(id);
+				if (input) input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+			}
+
+			/* Returns the first field that fails, or null when all pass. */
+			function validateContact() {
+				let firstBad = null;
+				CONTACT_RULES.forEach(r => {
+					const el = document.getElementById(r.id);
+					const ok = r.test(el ? el.value : '');
+					setFieldValid(r.id, ok);
+					if (!ok && !firstBad) firstBad = el;
+				});
+				return firstBad;
+			}
+
+			CONTACT_RULES.forEach(r => {
+				const el = document.getElementById(r.id);
+				if (!el) return;
+				/* Only ever clear an error the visitor can already see - don't
+				   scold them for a half-typed email they're still working on. */
+				el.addEventListener('input', () => {
+					const wrap = document.getElementById('field-' + r.id);
+					if (wrap && wrap.classList.contains('sched-invalid')) setFieldValid(r.id, r.test(el.value));
+				});
+				el.addEventListener('blur', () => {
+					if (el.value.trim()) setFieldValid(r.id, r.test(el.value));
+				});
+			});
+
+			/* --- Saving the booking ---
+			   The confirmation step appears only for a booking Supabase has: right after
+			   a confirmed save, or while the form still matches the last confirmed one
+			   (Back from the confirmation and resubmit, or the browser's Forward button).
+			   It used to show "Appointment Pending" straight away, with a failed save
+			   logged only to the browser console, so a customer could leave believing
+			   they were booked when nothing was saved. */
+			const BOOKING_SAVE_TIMEOUT_MS = 15000;
+			const bookingBtn = document.getElementById('btn-to-4');
+			const bookingBackBtn = document.getElementById('btn-back-2');
+			const bookingError = document.getElementById('booking-error');
+			/* One id per submission. A retry with the same details reuses it, so when an
+			   earlier attempt did land and only its answer was lost, the retry hits the
+			   primary key (409, bookings_pkey) instead of booking the slot twice. */
+			let pendingBooking = null;
+
+			function buildBooking(id) {
+				const schedConfig = getSchedulingConfig();
+				const svcCfg = schedConfig.services[state.serviceName] || { duration: 20, buffer: 10 };
+				const buffer = svcCfg.buffer !== undefined ? svcCfg.buffer : (schedConfig.bufferMinutes || 10);
+				return {
+					id: id,
+					first: document.getElementById('fname').value.trim() || 'Guest',
+					last: document.getElementById('lname').value.trim() || '',
+					email: document.getElementById('email').value.trim() || '',
+					phone: document.getElementById('phone').value.trim() || '',
+					service: state.serviceName,
+					date: formatDate(state.date),
+					time: state.time,
+					duration: svcCfg.duration + buffer,
+					price: state.price,
+					guests: document.getElementById('guests').value,
+					/* The bookings table has no column for a second name, so it
+					   rides in the notes where the dashboard already shows it. */
+					notes: [
+						guest2Input.value.trim() && guest2Field.classList.contains('sched-field-open')
+							? 'Additional guest: ' + guest2Input.value.trim()
+							: '',
+						document.getElementById('notes').value.trim()
+					].filter(Boolean).join('\n'),
+					status: 'pending',
+					createdAt: new Date().toISOString()
+				};
+			}
+
+			/* Resolves true only when Supabase has the row. return=minimal because the
+			   public cannot read bookings back once row level security is on. */
+			async function insertBooking(row) {
+				const controller = new AbortController();
+				const timer = setTimeout(() => controller.abort(), BOOKING_SAVE_TIMEOUT_MS);
+				try {
+					const res = await fetch(SUPABASE_URL + '/rest/v1/bookings', {
+						method: 'POST',
+						headers: {
+							'apikey': SUPABASE_KEY,
+							'Authorization': 'Bearer ' + SUPABASE_KEY,
+							'Content-Type': 'application/json',
+							'Prefer': 'return=minimal'
+						},
+						body: JSON.stringify(row),
+						signal: controller.signal
+					});
+					if (res.ok) return true;
+					const text = await res.text();
+					if (res.status === 409 && text.includes('bookings_pkey')) return true;
+					console.error('Booking insert failed:', res.status, text);
+					return false;
+				} catch (e) {
+					console.error('Booking insert failed:', e);
+					return false;
+				} finally {
+					clearTimeout(timer);
+				}
+			}
+
+			function setBookingSaving(on) {
+				bookingSaving = on;
+				bookingBtn.disabled = on;
+				bookingBackBtn.disabled = on;
+				bookingBtn.setAttribute('aria-busy', on ? 'true' : 'false');
+				bookingBtn.textContent = on ? 'Booking...' : 'Request Appointment';
+			}
+
+			function showBookingError(show) {
+				bookingError.hidden = !show;
+				if (show) bookingError.focus();
+			}
+
+			bookingBtn.addEventListener('click', async () => {
+				if (bookingSaving) return;
+				const firstBad = validateContact();
+				if (firstBad) {
+					const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+					firstBad.scrollIntoView({ block: 'center', behavior: smooth ? 'smooth' : 'auto' });
+					firstBad.focus({ preventScroll: true });
+					return;
+				}
+				const key = bookingKey();
+				if (key === lastSubmittedKey) {
+					goToStep(4);
+					return;
+				}
+				if (!pendingBooking || pendingBooking.key !== key) pendingBooking = { key: key, id: Date.now() };
+				showBookingError(false);
+				setBookingSaving(true);
+				let booking = null;
+				let saved = false;
+				try {
+					booking = buildBooking(pendingBooking.id);
+					saved = await insertBooking(bookingToRow(booking));
+				} catch (e) {
+					/* insertBooking reports its own failures as false, so this is something
+					   unexpected before the request could go out. The booking is not saved. */
+					console.error('Booking could not be sent:', e);
+				} finally {
+					/* Always hand the page back. A flag left on would keep the button
+					   disabled and trap the browser's Back button. */
+					setBookingSaving(false);
+				}
+				if (!saved) {
+					showBookingError(true);
+					return;
+				}
+				rememberBookedSlot(booking);
+				lastSubmittedKey = key;
+				pendingBooking = null;
+				goToStep(4);
+			});
+			document.getElementById('btn-back-1').addEventListener('click', () => stepBack(1));
+			document.getElementById('btn-back-2').addEventListener('click', () => stepBack(2));
+
+			/* Walk the real history when we can, so the in-page Back button and the
+			   browser's own back button stay on the same history entry. */
+			function stepBack(target) {
+				if (historyReady && history.state && history.state.schedStep === state.step) {
+					history.go(target - state.step);
+				} else {
+					goToStep(target);
+				}
+			}
+
+			/* Clicking a finished step in the progress bar jumps back to it. */
+			document.querySelectorAll('.sched-step').forEach(s => {
+				const jump = () => {
+					/* Not while a booking is being saved: the customer has to still be on
+					   step 3 when the confirmation appears. Click and keyboard both land here. */
+					if (bookingSaving) return;
+					const sn = parseInt(s.dataset.step);
+					if (sn < state.step) stepBack(sn);
+				};
+				s.addEventListener('click', jump);
+				s.addEventListener('keydown', e => {
+					if ((e.key === 'Enter' || e.key === ' ') && s.classList.contains('completed')) {
+						e.preventDefault();
+						jump();
+					}
+				});
+			});
+
+			/* --- Calendar --- */
+			const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+			const daysOfWeek = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+			function renderCalendar() {
+				const grid = document.getElementById('cal-grid');
+				const header = document.getElementById('cal-month-year');
+				header.textContent = months[state.calMonth] + ' ' + state.calYear;
+
+				grid.innerHTML = '';
+
+				daysOfWeek.forEach(d => {
+					const label = document.createElement('div');
+					label.className = 'sched-cal-day-label';
+					label.textContent = d;
+					grid.appendChild(label);
+				});
+
+				const firstDay = new Date(state.calYear, state.calMonth, 1).getDay();
+				const daysInMonth = new Date(state.calYear, state.calMonth + 1, 0).getDate();
+				const today = new Date();
+
+				for (let i = 0; i < firstDay; i++) {
+					const empty = document.createElement('div');
+					empty.className = 'sched-cal-day empty';
+					grid.appendChild(empty);
+				}
+
+				const defaultHrs = [
+					{ day: 'Monday', closed: false }, { day: 'Tuesday', closed: false },
+					{ day: 'Wednesday', closed: false }, { day: 'Thursday', closed: false },
+					{ day: 'Friday', closed: false }, { day: 'Saturday', closed: false },
+					{ day: 'Sunday', closed: true }
+				];
+				const bizHours = JSON.parse(localStorage.getItem('rwc_hours') || 'null') || defaultHrs;
+				const calDayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+				for (let d = 1; d <= daysInMonth; d++) {
+					const btn = document.createElement('button');
+					btn.className = 'sched-cal-day';
+					btn.textContent = d;
+
+					const thisDate = new Date(state.calYear, state.calMonth, d);
+					const dayOfWeek = thisDate.getDay();
+
+					const isPast = thisDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+					const dayName = calDayNames[dayOfWeek];
+					const dayHrs = bizHours.find(h => h.day === dayName);
+					const isClosed = dayHrs ? dayHrs.closed : false;
+
+					// Check if this specific date is blocked
+					const blockedDates = JSON.parse(localStorage.getItem('rwc_blocked_dates') || '[]');
+					const dateKey = state.calYear + '-' + String(state.calMonth + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+					const isBlocked = blockedDates.some(b => b.date === dateKey && !isPartialBlock(b));
+
+					// 2-month booking limit for clients
+					const maxDate = new Date(today.getFullYear(), today.getMonth() + 2, today.getDate());
+					const isTooFarOut = thisDate > maxDate;
+
+					if (isPast || isClosed || isBlocked || isTooFarOut) {
+						btn.classList.add('disabled');
+					} else {
+						btn.addEventListener('click', () => selectDate(d, btn));
+					}
+
+					if (d === today.getDate() && state.calMonth === today.getMonth() && state.calYear === today.getFullYear()) {
+						btn.classList.add('today');
+					}
+
+					if (state.date && state.date.getDate() === d && state.date.getMonth() === state.calMonth && state.date.getFullYear() === state.calYear) {
+						btn.classList.add('selected');
+					}
+
+					grid.appendChild(btn);
+				}
+			}
+
+			/* Redraws step 2 after the hours or blocked dates changed. The chosen time is
+			   checked again by reloadTimes, since a closed or blocked day or moved hours
+			   can take it away. */
+			async function refreshCalendar() {
+				if (state.step !== 2) return;
+				renderCalendar();
+				if (!state.date) return;
+				await reloadTimes();
+			}
+
+			/* Loads the times of the chosen day. A time that is no longer offered must never
+			   be carried into step 3: Continue stays off while the times load and comes back
+			   only if the chosen time is still offered, otherwise the time is dropped. */
+			async function reloadTimes() {
+				const continueBtn = document.getElementById('btn-to-3');
+				continueBtn.disabled = true;
+				await showTimeSlots();
+				// The visitor already moved on, so never change their time behind them.
+				if (state.step !== 2) return;
+				const offered = Array.from(document.querySelectorAll('#times-grid .sched-time:not(.unavailable)')).map(b => b.textContent);
+				if (state.time && offered.includes(state.time)) {
+					continueBtn.disabled = false;
+				} else {
+					state.time = null;
+					continueBtn.disabled = true;
+					document.querySelectorAll('.sched-time').forEach(t => t.classList.remove('selected'));
+				}
+			}
+
+			function selectDate(day, btn) {
+				document.querySelectorAll('.sched-cal-day').forEach(d => d.classList.remove('selected'));
+				btn.classList.add('selected');
+				state.date = new Date(state.calYear, state.calMonth, day);
+				reloadTimes();
+			}
+
+			document.getElementById('cal-prev').addEventListener('click', () => {
+				state.calMonth--;
+				if (state.calMonth < 0) { state.calMonth = 11; state.calYear--; }
+				renderCalendar();
+			});
+
+			document.getElementById('cal-next').addEventListener('click', () => {
+				state.calMonth++;
+				if (state.calMonth > 11) { state.calMonth = 0; state.calYear++; }
+				renderCalendar();
+			});
+
+			/* --- Time Slots --- */
+			async function showTimeSlots() {
+				const wrap = document.getElementById('times-wrap');
+				const grid = document.getElementById('times-grid');
+				const heading = document.getElementById('times-heading');
+
+				wrap.style.display = 'block';
+				heading.textContent = 'Available Times for ' + months[state.date.getMonth()] + ' ' + state.date.getDate();
+				grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#8a9e99;padding:20px;">Loading...</p>';
+
+				// Fresh sync from Supabase so cancelled/deleted slots show as available
+				await syncBookingsForAvailability();
+
+				const slots = generateTimeSlots(state.date, state.serviceName);
+				grid.innerHTML = '';
+
+				if (slots.length === 0) {
+					grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#8a9e99;padding:20px;">No available times for this day</p>';
+					return;
+				}
+
+				const now = new Date();
+				const isToday = state.date.getFullYear() === now.getFullYear() && state.date.getMonth() === now.getMonth() && state.date.getDate() === now.getDate();
+
+				slots.forEach(slot => {
+					const btn = document.createElement('button');
+					btn.className = 'sched-time';
+					btn.textContent = slot;
+
+					// 60-minute cutoff: block slots less than 61 minutes away (client-side only)
+					let tooSoon = false;
+					if (isToday) {
+						const slotMins = time12ToMinutes(slot);
+						const nowMins = now.getHours() * 60 + now.getMinutes();
+						tooSoon = (slotMins - nowMins) < 61;
+					}
+
+					if (tooSoon || isSlotUnavailable(state.date, slot, state.serviceName)) {
+						btn.classList.add('unavailable');
+					} else {
+						btn.addEventListener('click', () => selectTime(slot, btn));
+					}
+
+					if (state.time === slot) {
+						btn.classList.add('selected');
+					}
+
+					grid.appendChild(btn);
+				});
+			}
+
+			function selectTime(time, btn) {
+				document.querySelectorAll('.sched-time').forEach(t => t.classList.remove('selected'));
+				btn.classList.add('selected');
+				state.time = time;
+				document.getElementById('btn-to-3').disabled = false;
+			}
+
+			/* --- Summary --- */
+			function updateSummary() {
+				document.getElementById('sum-service').textContent = state.serviceName;
+				document.getElementById('sum-date').textContent = formatDate(state.date);
+				document.getElementById('sum-time').textContent = state.time;
+				document.getElementById('sum-price').textContent = '$' + state.price;
+			}
+
+			function updateConfirmation() {
+				document.getElementById('conf-service').textContent = state.serviceName;
+				document.getElementById('conf-date').textContent = formatDate(state.date);
+				document.getElementById('conf-time').textContent = state.time;
+				document.getElementById('conf-price').textContent = '$' + state.price;
+			}
+
+			function formatDate(d) {
+				if (!d) return '--';
+				const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+				return days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+			}
+		</script>
+	</body>
+</html>
