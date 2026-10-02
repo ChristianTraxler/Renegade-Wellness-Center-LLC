@@ -512,6 +512,27 @@ ul.breadcrumb > .not-active > a { color: gray; }
   object-fit: cover;
 }
 
+/* SmartSweets eye patches: inset the pouch shot on a tint of its own pouch
+   color. The photos have a solid white backdrop, so multiply lets the tint
+   show through instead of leaving a white box. */
+#eye .ss-eye .product-image img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* Some eye patch names wrap to two lines; reserve that height on every card
+   so the price and click hint sit at the same level across the row. */
+#eye .product-name {
+  min-height: 66px;
+  min-height: 2lh;
+}
+
+.ss-sweet-fish .product-image { background-color: #d3eff3; }
+.ss-peach-rings .product-image { background-color: #d2efe4; }
+.ss-sourmelon .product-image { background-color: #fbdbeb; }
+
 #lip-balm .product-image { background-color: #ffffff; }
 
 #lip-balm .product-image img {
@@ -585,7 +606,6 @@ ul.breadcrumb > .not-active > a { color: gray; }
 
 /*.cbd-tall-card .warm-oil { max-height: 100%; }*/
 #sugar-scrubs .product-grid,
-#eye .product-grid,
 #facial .product-grid,
 #bag .product-grid {
   grid-template-columns: repeat(2, 1fr);
@@ -593,7 +613,8 @@ ul.breadcrumb > .not-active > a { color: gray; }
   margin: 0 auto;
 }
 
-#sunscreen .product-grid {
+#sunscreen .product-grid,
+#eye .product-grid {
   grid-template-columns: repeat(3, 1fr);
   max-width: 100%;
   margin: 0 auto;
