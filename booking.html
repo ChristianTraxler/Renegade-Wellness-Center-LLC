@@ -1143,17 +1143,13 @@
 					</div>
 				</div>
 
-				<div class="sched-actions">
-					<div></div>
-					<button class="sched-btn sched-btn-primary" id="btn-to-2" disabled>Continue</button>
-				</div>
 			</div>
 
 			<!-- PANEL 2: DATE & TIME -->
 			<div class="sched-panel" id="panel-2">
 				<div class="sched-section-title">
 					<h2>Pick a Date & Time</h2>
-					<p>Select your preferred appointment slot</p>
+					<p id="slot-prompt">Select your preferred appointment slot</p>
 				</div>
 
 				<div class="sched-calendar-wrap">
@@ -1620,6 +1616,9 @@
 				calYear: new Date().getFullYear()
 			};
 
+			/* True when the homepage already chose the service (?service=...), so step 1 is skipped. */
+			let skipService = false;
+
 			const serviceNames = {
 				salt: 'Salt Cabin',
 				infrared: 'Infrared Therapy',
@@ -1914,7 +1913,7 @@
 					return;
 				}
 				const requested = (e.state && e.state.schedStep) || 1;
-				goToStep(Math.min(requested, furthestReachableStep()), true);
+				goToStep(Math.max(skipService ? 2 : 1, Math.min(requested, furthestReachableStep())), true);
 			});
 
 			function goToStep(n, fromHistory) {
@@ -1953,6 +1952,7 @@
 				});
 
 				if (n === 2) {
+					document.getElementById('slot-prompt').textContent = 'Select your preferred appointment slot for ' + state.serviceName;
 					renderCalendar();
 					// Always regenerate time slots if a date was already selected
 					if (state.date) {
@@ -1990,8 +1990,10 @@
 					state.service = card.dataset.service;
 					state.serviceName = serviceNames[state.service];
 					state.price = parseInt(card.dataset.price);
-					document.getElementById('btn-to-2').disabled = false;
-					syncGuestsField();
+										syncGuestsField();
+					/* Picking a service is the whole step, so move on without a Continue click.
+					   A homepage link preselects it in code and handles its own jump. */
+					if (!skipService) goToStep(2);
 				});
 			});
 
@@ -2027,7 +2029,6 @@
 			}
 			syncGuestsField();
 
-			document.getElementById('btn-to-2').addEventListener('click', () => goToStep(2));
 			document.getElementById('btn-to-3').addEventListener('click', () => goToStep(3));
 			/* --- Step 3 validation ---
 			   Nothing on this step used to be required, so a visitor could tap
@@ -2203,7 +2204,15 @@
 				pendingBooking = null;
 				goToStep(4);
 			});
-			document.getElementById('btn-back-1').addEventListener('click', () => stepBack(1));
+			document.getElementById('btn-back-1').addEventListener('click', () => {
+				/* Arrived from a homepage Book Now button: Back returns to the homepage
+				   services, where they can choose a different one. */
+				if (skipService) {
+					location.href = 'index.html#hv2-services';
+					return;
+				}
+				stepBack(1);
+			});
 			document.getElementById('btn-back-2').addEventListener('click', () => stepBack(2));
 
 			/* Walk the real history when we can, so the in-page Back button and the
@@ -2437,6 +2446,26 @@
 				const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 				return days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
 			}
+
+			/* --- Service chosen on the homepage ---
+			   booking.html?service=salt|infrared|combo|combo2 preselects that service
+			   and starts at Date & Time. The Service step is hidden and the remaining
+			   steps renumber. With no (or an unknown) service the full flow shows. */
+			(function () {
+				const wanted = new URLSearchParams(location.search).get('service');
+				const card = wanted && document.querySelector('.sched-card[data-service="' + wanted + '"]');
+				if (!card) return;
+				skipService = true;
+				card.click();
+				const first = document.querySelector('.sched-step[data-step="1"]');
+				first.style.display = 'none';
+				document.querySelectorAll('.sched-step').forEach(s => {
+					const n = parseInt(s.dataset.step);
+					if (n > 1) s.querySelector('.sched-step__circle').textContent = n - 1;
+				});
+				goToStep(2, true);
+				try { history.replaceState({ schedStep: 2 }, ''); } catch (e) { /* ignore */ }
+			})();
 		</script>
 	</body>
 </html>
