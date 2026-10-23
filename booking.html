@@ -177,15 +177,38 @@
 			/* ---------- SERVICE CARDS ---------- */
 			.sched-services {
 				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: 24px;
-				max-width: 1160px;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 32px;
+				max-width: 1140px;
 				margin: 0 auto;
 			}
 
+			/* ---------- SERVICE CARDS, same look as the home page ---------- */
+			.sched-services { grid-template-rows: auto auto auto auto 1fr auto auto auto; gap: 0 32px; }
+			.sched-services .hv2-card { grid-row: span 8; display: grid; grid-template-rows: subgrid; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+			.sched-services .hv2-card:hover { transform: translateY(-8px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+			.sched-services .hv2-card--featured { box-shadow: 0 4px 24px rgba(105,181,173,0.18); }
+			.sched-services .hv2-card.selected { border-color: #69B5AD; box-shadow: 0 8px 32px rgba(105,181,173,0.25); }
+			.sched-services .hv2-card__img-wrap { grid-row: 1; position: relative; overflow: hidden; height: 240px; background-color: #1a1a2e; }
+			.sched-services .hv2-card__img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 0.6s ease; }
+			.sched-services .hv2-card:hover .hv2-card__img { transform: scale(1.07); }
+			.sched-services .hv2-card__body { grid-row: 2 / -1; padding: 28px 28px 32px; display: grid; grid-template-rows: subgrid; text-align: center; }
+			.sched-services .hv2-card__name { grid-row: 1; font-family: "Hind", sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: 0.5px; text-transform: uppercase; color: #2f4f4f; margin-bottom: 12px; }
+			.sched-services .hv2-card__price, .sched-services .hv2-card__price-sub { font-family: "Hind", sans-serif; font-size: 1.65rem; font-weight: 700; color: #3a8a84; margin-bottom: 4px; }
+			.sched-services .hv2-card__price { grid-row: 2; }
+			.sched-services .hv2-card__price-sub { grid-row: 3; }
+			.sched-services .hv2-card__price span, .sched-services .hv2-card__price-sub span { font-size: 0.85rem; font-weight: 400; color: #718096; }
+			.sched-services .hv2-card__benefits-title { grid-row: 5; align-self: end; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #718096; margin: 0; padding-top: 20px; text-align: center; }
+			.sched-services .hv2-card__benefits { grid-row: 6; list-style: none; padding: 8px 0 0; margin: 0; text-align: left; }
+			.sched-services .hv2-card__benefits li { position: relative; padding-left: 22px; font-size: 0.92rem; line-height: 1.6; color: #4a5568; margin-bottom: 8px; }
+			.sched-services .hv2-card__benefits a { color: #5a9aae; text-decoration: underline; }
+			.sched-services .hv2-card__benefits li::before { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #A1ECFF, #69B5AD); }
+			.sched-services .hv2-btn { grid-row: 7; margin-top: 24px; justify-self: center; align-self: start; display: inline-block; font-family: "Hind", sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 1.2px; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, #69B5AD 0%, #7DBCFF 100%); padding: 13px 36px; border-radius: 40px; box-shadow: 0 4px 20px rgba(105,181,173,0.35); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+			.sched-card:hover .hv2-btn { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(105,181,173,0.45); }
+
 			.sched-card {
 				background: #fff;
-				border-radius: 16px;
+				border-radius: 20px;
 				padding: 0;
 				cursor: pointer;
 				transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -232,7 +255,7 @@
 			}
 
 			.sched-card__icon {
-				height: 160px;
+				height: 240px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -249,8 +272,21 @@
 
 			.sched-card:nth-child(1) .sched-card__icon { background: linear-gradient(135deg, #e8f4f2 0%, #d4ede9 100%); }
 			.sched-card:nth-child(2) .sched-card__icon { background: linear-gradient(135deg, #f0e8e4 0%, #e4d8d0 100%); }
-			.sched-card:nth-child(3) .sched-card__icon,
-			.sched-card:nth-child(4) .sched-card__icon { background: linear-gradient(135deg, #e4eff4 0%, #d4e4ed 100%); }
+			.sched-card:nth-child(3) .sched-card__icon { background: linear-gradient(135deg, #e4eff4 0%, #d4e4ed 100%); }
+
+			.sched-card__img {
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.35s ease;
+			}
+
+			.sched-card:hover .sched-card__img,
+			.sched-card.selected .sched-card__img {
+				transform: scale(1.05);
+			}
 
 			.sched-card__icon-svg {
 				width: 72px;
@@ -818,13 +854,19 @@
 					grid-template-columns: repeat(2, 1fr);
 					max-width: 760px;
 				}
+				.sched-services .hv2-card--featured { grid-column: 1 / -1; max-width: 360px; justify-self: center; }
 			}
 
 			@media (max-width: 768px) {
 				.sched-services {
 					grid-template-columns: 1fr;
+					grid-template-rows: auto;
+					gap: 24px;
 					max-width: 380px;
 				}
+				.sched-services .hv2-card--featured { max-width: none; }
+				.sched-services .hv2-card__img-wrap { height: 200px; }
+				.sched-services .hv2-card__body { padding: 24px 20px 28px; }
 
 				.sched-times {
 					grid-template-columns: repeat(2, 1fr);
@@ -1038,109 +1080,66 @@
 				</div>
 
 				<div class="sched-services">
-					<!-- Salt Cabin -->
-					<div class="sched-card" data-service="salt" data-price="25">
+					<article class="sched-card hv2-card" data-service="salt" data-price="25">
 						<div class="sched-card__check">
 							<svg fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
 						</div>
-						<div class="sched-card__icon">
-							<svg class="sched-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<rect x="18" y="20" width="44" height="48" rx="6" stroke="#69B5AD" stroke-width="2.5" fill="none"/>
-								<path d="M18 32h44" stroke="#69B5AD" stroke-width="2"/>
-								<circle cx="40" cy="24" r="2" fill="#69B5AD"/>
-								<rect x="22" y="16" width="36" height="6" rx="3" stroke="#69B5AD" stroke-width="2" fill="none"/>
-								<path d="M30 44c2-3 5-4 10-4s8 1 10 4" stroke="#69B5AD" stroke-width="2" stroke-linecap="round"/>
-								<circle cx="32" cy="52" r="2" fill="#69B5AD" opacity="0.5"/>
-								<circle cx="40" cy="56" r="1.5" fill="#69B5AD" opacity="0.4"/>
-								<circle cx="48" cy="51" r="2.5" fill="#69B5AD" opacity="0.3"/>
-								<circle cx="36" cy="58" r="1" fill="#69B5AD" opacity="0.5"/>
-								<circle cx="44" cy="60" r="1.5" fill="#69B5AD" opacity="0.35"/>
-							</svg>
+						<div class="hv2-card__img-wrap">
+							<img loading="lazy" decoding="async" src="assets/images/salt-cabin.png" alt="Salt cabin therapy session at Renegade Wellness Center in Newton NC" class="hv2-card__img">
 						</div>
-						<div class="sched-card__body">
-							<h3 class="sched-card__name">Salt Cabin</h3>
-							<p class="sched-card__desc">Halotherapy for sinuses, lungs, and skin in a private salt room</p>
-							<div class="sched-card__price">$25 <span>/ person</span></div>
-							<div class="sched-card__price">$40 <span>/ for two people</span></div>
+						<div class="hv2-card__body">
+							<h3 class="hv2-card__name">Salt Cabin</h3>
+							<div class="hv2-card__price">$25 <span>one person</span></div>
+							<div class="hv2-card__price-sub">$40 <span>two people</span></div>
+							<h4 class="hv2-card__benefits-title">Benefits</h4>
+							<ul class="hv2-card__benefits">
+								<li>Sinus &amp; allergy relief</li>
+								<li>Better lung function</li>
+								<li>Improved skin health, <a href="faq.html" target="_blank" rel="noopener">and more</a></li>
+							</ul>
+							<span class="hv2-btn">Book Now</span>
 						</div>
-					</div>
+					</article>
 
-					<!-- Infrared Therapy -->
-					<div class="sched-card" data-service="infrared" data-price="40">
+					<article class="sched-card hv2-card" data-service="infrared" data-price="40">
 						<div class="sched-card__check">
 							<svg fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
 						</div>
-						<div class="sched-card__icon">
-							<svg class="sched-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<rect x="12" y="30" width="56" height="32" rx="8" stroke="#c4956a" stroke-width="2.5" fill="none"/>
-								<path d="M12 38h56" stroke="#c4956a" stroke-width="1.5" opacity="0.5"/>
-								<ellipse cx="40" cy="46" rx="16" ry="8" stroke="#c4956a" stroke-width="2" fill="none" opacity="0.6"/>
-								<path d="M28 22c2 4 4 6 4 8" stroke="#e8a065" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-								<path d="M40 18c0 5 0 8 0 12" stroke="#e8a065" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-								<path d="M52 22c-2 4-4 6-4 8" stroke="#e8a065" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-								<path d="M33 16c1 3 2 4 2 6" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-								<path d="M47 16c-1 3-2 4-2 6" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-							</svg>
+						<div class="hv2-card__img-wrap">
+							<img loading="lazy" decoding="async" src="assets/images/Infrared.png" alt="Infrared therapy sauna bed at Renegade Wellness Center in Newton NC" class="hv2-card__img">
 						</div>
-						<div class="sched-card__body">
-							<h3 class="sched-card__name">Infrared Therapy</h3>
-							<p class="sched-card__desc">Far infrared sauna bed for pain relief, detox, and muscle recovery</p>
-							<div class="sched-card__price">$40 <span>/ session</span></div>
+						<div class="hv2-card__body">
+							<h3 class="hv2-card__name">Infrared Therapy</h3>
+							<div class="hv2-card__price">$40 <span>per session</span></div>
+							<h4 class="hv2-card__benefits-title">Benefits</h4>
+							<ul class="hv2-card__benefits">
+								<li>Pain &amp; stiff muscle relief</li>
+								<li>Gentle detox</li>
+								<li>Improved sleep, <a href="faq.html" target="_blank" rel="noopener">and more</a></li>
+							</ul>
+							<span class="hv2-btn">Book Now</span>
 						</div>
-					</div>
+					</article>
 
-					<!-- Combo -->
-					<div class="sched-card" data-service="combo" data-price="55">
+					<article class="sched-card hv2-card hv2-card--featured" data-service="combo" data-price="55">
 						<div class="sched-card__check">
 							<svg fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
 						</div>
-						<div class="sched-card__icon">
-							<svg class="sched-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<rect x="8" y="28" width="30" height="32" rx="5" stroke="#69B5AD" stroke-width="2" fill="none"/>
-								<circle cx="23" cy="48" r="2" fill="#69B5AD" opacity="0.4"/>
-								<circle cx="18" cy="52" r="1.5" fill="#69B5AD" opacity="0.3"/>
-								<rect x="42" y="28" width="30" height="32" rx="5" stroke="#c4956a" stroke-width="2" fill="none"/>
-								<path d="M50 20c1 3 2 5 2 8" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-								<path d="M57 18c0 4 0 6 0 10" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-								<path d="M64 20c-1 3-2 5-2 8" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-								<path d="M36 40l8 0" stroke="#69B5AD" stroke-width="2" stroke-linecap="round"/>
-								<path d="M36 46l8 0" stroke="#c4956a" stroke-width="2" stroke-linecap="round"/>
-								<rect x="32" y="64" width="16" height="6" rx="3" fill="#69B5AD" opacity="0.15"/>
-								<text x="40" y="69" text-anchor="middle" font-size="5" font-weight="700" fill="#69B5AD" font-family="Hind, sans-serif">SAVE $10</text>
-							</svg>
+						<div class="hv2-card__img-wrap">
+							<img loading="lazy" decoding="async" src="assets/images/salt-therapy.png" alt="Salt cabin and infrared therapy combo at Renegade Wellness Center in Newton NC" class="hv2-card__img">
 						</div>
-						<div class="sched-card__body">
-							<h3 class="sched-card__name">Salt + Infrared Combo</h3>
-							<p class="sched-card__desc">Both therapies in one visit for whole body wellness</p>
-							<div class="sched-card__price">$55 <span>/ total</span></div>
-							<div class="sched-card__sub-price">Save $10</div>
+						<div class="hv2-card__body">
+							<h3 class="hv2-card__name">Salt + Infrared Combo</h3>
+							<div class="hv2-card__price">$55 <span>total</span></div>
+							<h4 class="hv2-card__benefits-title">Benefits</h4>
+							<ul class="hv2-card__benefits">
+								<li>Whole body wellness</li>
+								<li>Relaxation</li>
+								<li>Save $10</li>
+							</ul>
+							<span class="hv2-btn">Book Now</span>
 						</div>
-					</div>
-
-					<!-- Combo, 2 people -->
-					<div class="sched-card" data-service="combo2" data-price="70">
-						<div class="sched-card__check">
-							<svg fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-						</div>
-						<div class="sched-card__icon">
-							<svg class="sched-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<rect x="8" y="28" width="30" height="32" rx="5" stroke="#69B5AD" stroke-width="2" fill="none"/>
-								<circle cx="23" cy="48" r="2" fill="#69B5AD" opacity="0.4"/>
-								<circle cx="18" cy="52" r="1.5" fill="#69B5AD" opacity="0.3"/>
-								<rect x="42" y="28" width="30" height="32" rx="5" stroke="#c4956a" stroke-width="2" fill="none"/>
-								<path d="M50 20c1 3 2 5 2 8" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-								<path d="M57 18c0 4 0 6 0 10" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-								<path d="M64 20c-1 3-2 5-2 8" stroke="#e8a065" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-								<path d="M36 40l8 0" stroke="#69B5AD" stroke-width="2" stroke-linecap="round"/>
-								<path d="M36 46l8 0" stroke="#c4956a" stroke-width="2" stroke-linecap="round"/>
-							</svg>
-						</div>
-						<div class="sched-card__body">
-							<h3 class="sched-card__name">Infrared/Salt (2 People) Combo</h3>
-							<p class="sched-card__desc">Both therapies in one visit, for you and a guest</p>
-							<div class="sched-card__price">$70 <span>/ for two people</span></div>
-						</div>
-					</div>
+					</article>
 				</div>
 
 			</div>
