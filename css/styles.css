@@ -586,6 +586,18 @@ ul.breadcrumb > .not-active > a { color: gray; }
   margin-top: auto;
 }
 
+#topicals .product-price-options {
+  margin: auto 0;
+}
+
+#topicals .product-price-options .price-option {
+  margin-top: 0;
+}
+
+#topicals .product-price-options ~ .click-hint {
+  padding-top: 0;
+}
+
 .softgels-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(300px, 360px));
