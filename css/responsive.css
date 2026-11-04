@@ -758,6 +758,7 @@
     grid-template-columns: 1fr;
     gap: 16px;
     padding: 0 16px;
+    grid-auto-rows: 1fr;
   }
 }
 
