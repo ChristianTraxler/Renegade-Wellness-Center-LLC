@@ -1,0 +1,78 @@
+# Keeps the live Supabase Free-plan project from being paused for inactivity.
+#
+# Supabase pauses a Free project after about 7 days without database activity,
+# which would take the booking page offline. A few REST requests per day are
+# enough to prevent that.
+#
+# The Renegade-Wellness-Test repo runs the same kind of job. This one is a
+# second, independent copy. This repo is public, and GitHub turns off schedules
+# in public repos after 60 days with no commits, so if the job ever goes quiet
+# here, re-enable it from the Actions tab.
+#
+# Uses the live project's public anon key (the one in js/supabase-config.js),
+# stored as the SUPABASE_ANON_KEY repo secret. Update the secret if the key is
+# rotated. SELECT on `inventory` is allowed for the public under RLS.
+#
+# If every attempt fails the job fails, and GitHub emails the workflow author.
+
+name: Supabase keep-alive
+
+on:
+  schedule:
+    # Twice a day, UTC, on odd minutes: top-of-hour crons get dropped under load.
+    # Offset from the test repo's 09:17 and 21:17 runs to spread the pings out.
+    - cron: '43 3 * * *'
+    - cron: '43 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    name: ping live project
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      SUPABASE_URL: https://laanxujxiioesvsyccwb.supabase.co
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+    steps:
+      - name: Query the database
+        run: |
+          set -u
+          if [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "::error::SUPABASE_ANON_KEY secret is not set on this repo"
+            exit 1
+          fi
+
+          # Three cheap, distinct queries per run = "a few requests" per day.
+          queries=(
+            'inventory?select=id&limit=1'
+            'inventory?select=id&category=eq._system&limit=1'
+            'inventory?select=id&category=neq._system&limit=1'
+          )
+
+          for q in "${queries[@]}"; do
+            ok=0
+            for attempt in 1 2 3; do
+              body=$(curl -sS --max-time 30 \
+                -w '\n%{http_code}' \
+                "$SUPABASE_URL/rest/v1/$q" \
+                -H "apikey: $SUPABASE_ANON_KEY" \
+                -H "Authorization: Bearer $SUPABASE_ANON_KEY") || body=$'\n000'
+              code=${body##*$'\n'}
+              json=${body%$'\n'*}
+              if [ "$code" = "200" ] && [ "$json" != "[]" ]; then
+                echo "ok   $q -> $code $json"
+                ok=1
+                break
+              fi
+              echo "warn $q -> HTTP $code (attempt $attempt): $json"
+              sleep $((attempt * 20))
+            done
+            if [ "$ok" -ne 1 ]; then
+              echo "::error::Supabase did not answer $q after 3 attempts"
+              exit 1
+            fi
+          done
+          echo "Supabase live project is alive"
