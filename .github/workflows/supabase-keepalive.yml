@@ -15,7 +15,7 @@
 #
 # If every attempt fails the job fails, and GitHub emails the workflow author.
 
-name: Supabase keep-alive
+name: Supabase keep awake
 
 on:
   schedule:
